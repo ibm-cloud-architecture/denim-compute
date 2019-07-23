@@ -1,0 +1,1493 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>IBM Cloud Private - Denim Compute - A Cloud Pak for Automation reference implementation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#topology-and-sizing" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Denim Compute - A Cloud Pak for Automation reference implementation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Denim Compute - A Cloud Pak for Automation reference implementation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                IBM Cloud Private
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.ibm.com/CASE/denim-compute" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Denim Compute - A Cloud Pak for Automation reference implementation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Denim Compute - A Cloud Pak for Automation reference implementation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.ibm.com/CASE/denim-compute" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Use case
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Use case
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/use-case-definition/" title="Use case definition" class="md-nav__link">
+      Use case definition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Scenario walkthrough" class="md-nav__link">
+      Scenario walkthrough
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Environment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Environment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../create-vms/" title="Creating VMs" class="md-nav__link">
+      Creating VMs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3" checked>
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Platform install
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Platform install
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        IBM Cloud Private
+      </label>
+    
+    <a href="./" title="IBM Cloud Private" class="md-nav__link md-nav__link--active">
+      IBM Cloud Private
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#topology-and-sizing" title="Topology and sizing" class="md-nav__link">
+    Topology and sizing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#icp4a-sizing" title="ICP4A sizing" class="md-nav__link">
+    ICP4A sizing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icp-sizing" title="ICP sizing" class="md-nav__link">
+    ICP sizing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selected-topology" title="Selected topology" class="md-nav__link">
+    Selected topology
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install" title="Install" class="md-nav__link">
+    Install
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-vm-templates" title="Create VM templates" class="md-nav__link">
+    Create VM templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-vm-templates" title="Configure VM templates" class="md-nav__link">
+    Configure VM templates
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allow-root-login" title="Allow root login" class="md-nav__link">
+    Allow root login
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-ntp" title="Update NTP" class="md-nav__link">
+    Update NTP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-virtual-memory" title="Configure Virtual Memory" class="md-nav__link">
+    Configure Virtual Memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-nfs-common-packages" title="Install NFS common packages" class="md-nav__link">
+    Install NFS common packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-python" title="Install Python" class="md-nav__link">
+    Install Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-docker" title="Install Docker" class="md-nav__link">
+    Install Docker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone-cluster-vms" title="Clone cluster VMs" class="md-nav__link">
+    Clone cluster VMs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-icp" title="Install ICP" class="md-nav__link">
+    Install ICP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-the-icp-environment" title="Deploy the ICP environment" class="md-nav__link">
+    Deploy the ICP environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-openshift/" title="RedHat OpenShift" class="md-nav__link">
+      RedHat OpenShift
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-cam/" title="Installing CAM" class="md-nav__link">
+      Installing CAM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-baw/" title="Installing BAW" class="md-nav__link">
+      Installing BAW
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../install-bai/" title="Installing BAI" class="md-nav__link">
+      Installing BAI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Design
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Design
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/workflow/" title="Workflow" class="md-nav__link">
+      Workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/decisions/" title="Decisions" class="md-nav__link">
+      Decisions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/insights/" title="Insights" class="md-nav__link">
+      Insights
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Workflow
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Workflow
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/workflow-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/process-flow-control/" title="Process flow control" class="md-nav__link">
+      Process flow control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/process-services/" title="Process services" class="md-nav__link">
+      Process services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/process-user-interface/" title="Process user interface" class="md-nav__link">
+      Process user interface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/case-activities/" title="Case activities" class="md-nav__link">
+      Case activities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/case-user-interface/" title="Case user interface" class="md-nav__link">
+      Case user interface
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/decisions/" title="Decisions" class="md-nav__link">
+      Decisions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Showtime
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Showtime
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../showtime/deploy-solution/" title="Deploy" class="md-nav__link">
+      Deploy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../showtime/run-solution/" title="Run" class="md-nav__link">
+      Run
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../references/" title="References" class="md-nav__link">
+      References
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#topology-and-sizing" title="Topology and sizing" class="md-nav__link">
+    Topology and sizing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#icp4a-sizing" title="ICP4A sizing" class="md-nav__link">
+    ICP4A sizing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#icp-sizing" title="ICP sizing" class="md-nav__link">
+    ICP sizing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selected-topology" title="Selected topology" class="md-nav__link">
+    Selected topology
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install" title="Install" class="md-nav__link">
+    Install
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-vm-templates" title="Create VM templates" class="md-nav__link">
+    Create VM templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-vm-templates" title="Configure VM templates" class="md-nav__link">
+    Configure VM templates
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#allow-root-login" title="Allow root login" class="md-nav__link">
+    Allow root login
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-ntp" title="Update NTP" class="md-nav__link">
+    Update NTP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-virtual-memory" title="Configure Virtual Memory" class="md-nav__link">
+    Configure Virtual Memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-nfs-common-packages" title="Install NFS common packages" class="md-nav__link">
+    Install NFS common packages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-python" title="Install Python" class="md-nav__link">
+    Install Python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-docker" title="Install Docker" class="md-nav__link">
+    Install Docker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone-cluster-vms" title="Clone cluster VMs" class="md-nav__link">
+    Clone cluster VMs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-icp" title="Install ICP" class="md-nav__link">
+    Install ICP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-the-icp-environment" title="Deploy the ICP environment" class="md-nav__link">
+    Deploy the ICP environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>IBM Cloud Private</h1>
+                
+                <p>The components involved in building the Denim Compute environment for <a href="https://www.ibm.com/support/knowledgecenter/SSBS6K_3.2.0/kc_welcome_containers.html">IBM Cloud Private</a> are shown on the figure below:</p>
+<p><img alt="IBM Cloud Pak for Automation with ICP" src="../images/icp4a-on-icp.jpg" /></p>
+<h2 id="topology-and-sizing">Topology and sizing</h2>
+<p>One of the goal of Denim Compute is to create a highly available environment to run solutions with the IBM Cloud Pak for Automation. This section reviews a set of documents that provide configuration and sizing recommendations towards that goal.</p>
+<h3 id="icp4a-sizing">ICP4A sizing</h3>
+<ul>
+<li><a href="https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/hardwareReqsForProduct?deliverableId=77D6C42017D411E9AEAFE0FEBCE2D22F&amp;osPlatforms=Linux&amp;duComponentIds=D002%7CD001%7CS005%7CS008%7CS003%7CS006%7CS004%7CS007">This report</a> provides hardware requirements (CPU, RAM, disk) for the different ICP4A components, but it is difficult to derive an aggregated requirement for a cluster that will support multiple capabilities.</li>
+</ul>
+<h3 id="icp-sizing">ICP sizing</h3>
+<p>For ICP sizing, this <a href="https://github.com/ibm-cloud-architecture/refarch-privatecloud/blob/master/icp-on-rhel/icp-system-requirements.md">ICP system requirement document</a> from the IBM Cloud Private Reference Architecture is very useful, especially the "Summary of production system requirements" section.</p>
+<h3 id="selected-topology">Selected topology</h3>
+<p>Based on various sizing guidance, we settled on the following topology for our HA cluster:</p>
+<p><img alt="" src="../images/icp-cluster-topology.png" /></p>
+<p>We created:</p>
+<ul>
+<li>(1) boot node</li>
+<li>(3) master nodes</li>
+<li>(2) proxy nodes</li>
+<li>(2) management nodes</li>
+<li>(4) worker nodes (BAI pushed us to four nodes)</li>
+<li>(1) shared services node (DB2, LDAP, NFS server)</li>
+<li>(3) BAW nodes (one Deployment Manager and two nodes)</li>
+</ul>
+<h2 id="install">Install</h2>
+<p>We use <a href="https://github.com/ibm-cloud-architecture/refarch-privatecloud/blob/master/Installing_ICp_on_prem_ubuntu.md">these instructions</a> from the from the IBM Cloud Private Reference Architecture as the primary reference.</p>
+<h3 id="create-vm-templates">Create VM templates</h3>
+<p>We created our environment in a VMware vSphere environment. To start, we created two templates that we would use to clone all of the ICP and BAW nodes. The shared services node was a one-off and we didn't create a template to clone it.</p>
+<p>Both templates used this operating system:</p>
+<ul>
+<li>Distributor ID: Ubuntu</li>
+<li>Description:    Ubuntu 16.04.6 LTS</li>
+<li>Release:        16.04</li>
+<li>Codename:       xenial</li>
+</ul>
+<p>Here is the worker template:</p>
+<p><img alt="" src="../images/202-worker-template.png" /></p>
+<p>The worker template was used for boot, proxy, worker and BAW nodes.</p>
+<p>Here is the master template:</p>
+<p><img alt="" src="../images/204-master-template.png" /></p>
+<p>The master template was used for master and management nodes.</p>
+<p><strong>NB</strong>: The shared services node uses Red Hat Enterprise Linux Server release 7.6 (Maipo) and has 8 CPU, 32 GB RAM and 300 GB disk space. No template was used to create it.</p>
+<h3 id="configure-vm-templates">Configure VM templates</h3>
+<p>Before we cloned our nodes from the templates, we followed some configuration steps. This is better because if we cloned first, we would have to do the same step on every clone.</p>
+<h4 id="allow-root-login">Allow root login</h4>
+<p>Execute the following commands on both template VMs. This enables root login remotely via <code>ssh</code>.</p>
+<ul>
+<li>Set a password for the root user</li>
+</ul>
+<pre><code>sudo su - # provide your user password to get to the root shell
+passwd # Set the root password
+</code></pre>
+
+<ul>
+<li>Enable remote login as root</li>
+</ul>
+<pre><code>sed -i 's/prohibit-password/yes/' /etc/ssh sshd_config
+systemctl restart ssh
+</code></pre>
+
+<h4 id="update-ntp">Update NTP</h4>
+<p>ICP requires all nodes be in time synchronization, so we need to update the NTP (Network Time Protocol) settings to make sure time stays in sync.</p>
+<ul>
+<li>Get the latest apt updates and install ntp</li>
+</ul>
+<pre><code>apt-get update
+apt-get install -y ntp
+</code></pre>
+
+<ul>
+<li>If using an internal NTP server, edit <code>/etc/ntp.conf</code> and add your internal server to the list and then restart the ntp server. In the following configuration, the server is configured to use a local NTP server (<code>ntp.{your-network-name}.local</code>) and fall back to public servers if that server is unavailable.</li>
+</ul>
+<pre><code># Specify one or more NTP servers.
+pool ntp.{your-network-name}.local
+</code></pre>
+
+<ul>
+<li>
+<p>After making configuration changes restart the NTP server with the command <code>systemctl restart ntp</code></p>
+</li>
+<li>
+<p>Test the status of your NTP servers to make sure they are working.</p>
+</li>
+</ul>
+<pre><code>$ ntpq -p
+remote                          refid      st t when poll reach   delay   offset  jitter
+========================================================================================
+*ntp.{your-network-name}.local 129.6.15.30 2 u  183 1024  377    0.770   -0.140   1.026
+</code></pre>
+
+<ul>
+<li>If the ufw firewall is enabled, disable it. ICP will install iptables.</li>
+</ul>
+<pre><code>$ ufw disable
+Firewall stopped and disabled on system startup
+
+$ ufw status
+Status: inactive
+</code></pre>
+
+<h4 id="configure-virtual-memory">Configure Virtual Memory</h4>
+<p>This configuration is required for ELK.</p>
+<ul>
+<li>Update the vm.max_map_count setting to 262144:</li>
+</ul>
+<pre><code>sysctl -w vm.max_map_count=262144
+</code></pre>
+
+<ul>
+<li>Make the changes permanent by adding the following line to the bottom of the <code>/etc/sysctl.conf</code> file:</li>
+</ul>
+<pre><code>vm.max_map_count=262144
+</code></pre>
+
+<ul>
+<li>To check the current value, use the following command:</li>
+</ul>
+<pre><code>$ sysctl vm.max_map_count
+vm.max_map_count = 262144
+</code></pre>
+
+<h4 id="install-nfs-common-packages">Install NFS common packages</h4>
+<pre><code>apt-get install -y nfs-common
+</code></pre>
+
+<h4 id="install-python">Install Python</h4>
+<pre><code>apt-get install -y python-setuptools
+</code></pre>
+
+<h4 id="install-docker">Install Docker</h4>
+<ul>
+<li>Update your ubuntu repositories:</li>
+</ul>
+<pre><code>apt-get update
+</code></pre>
+
+<ul>
+<li>Install Linux image extra packages</li>
+</ul>
+<pre><code>apt-get install -y linux-image-extra-$(uname -r) linux-image-extra-virtual
+</code></pre>
+
+<ul>
+<li>Install additional needed packages</li>
+</ul>
+<pre><code>apt-get install -y apt-transport-https ca-certificates curl software-properties-common
+</code></pre>
+
+<p><strong>N.B.</strong>: These packages may all exist depending on what packages were included when the operating system installed. If they already exist, you will just see output indicating they already exist. If you assume they exist, however, and do not do this step and they are not there, the installation will fail.</p>
+<ul>
+<li>Add Docker’s official GPG key</li>
+</ul>
+<pre><code>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+</code></pre>
+
+<ul>
+<li>Verify that the key fingerprint is 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88</li>
+</ul>
+<pre><code>$ apt-key fingerprint 0EBFCD88
+pub   4096R/0EBFCD88 2017-02-22
+Key fingerprint = 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+uid                  Docker Release (CE deb) &lt;docker@docker.com&gt;
+sub   4096R/F273FCD8 2017-02-22
+</code></pre>
+
+<ul>
+<li>Setup the docker stable repository and update the local cache</li>
+</ul>
+<pre><code>add-apt-repository &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot;
+apt-get update
+</code></pre>
+
+<ul>
+<li>Install docker</li>
+</ul>
+<pre><code>apt-get install -y docker-ce
+</code></pre>
+
+<ul>
+<li>Make sure docker is running and pulling correctly from the internet</li>
+</ul>
+<pre><code>docker run hello-world
+</code></pre>
+
+<p>This should downloaded the latest hello-world docker image version and put some text on the screen indicating a working installation.</p>
+<h3 id="clone-cluster-vms">Clone cluster VMs</h3>
+<ul>
+<li>Shutdown your VMs: <code>shutdown -h now</code></li>
+<li>Using those VMs, convert them to templates.</li>
+<li>Clone your templates for each of the needed nodes in your cluster as specified below. </li>
+</ul>
+<p>Note that you can create a minimal, non-HA environment by just using a single node for each below (a Vulnerability Advisor (VA) is not required):</p>
+<ul>
+<li>master template -&gt; icp-master1, icp-master2, icp-master3</li>
+<li>master template -&gt; icp-mgmt1, icp-mgmt2</li>
+<li>worker template -&gt; icp-proxy1, icp-proxy2</li>
+<li>worker template -&gt; icp-worker1, icp-worker2, icp-worker3, icp-worker4</li>
+<li>worker template -&gt; icp-boot</li>
+<li>worker template -&gt; baw1, baw2, baw3</li>
+</ul>
+<p><strong>N.B.</strong>: We created the shared services node as a one-off and used RHEL. For High Availability and to provide for workload persistent storage, you will need an NFS node which does not need to be configured with any of the packages used by the above server. If an enterprise NFS server already exists which can be used for this environment it can be used, otherwise, an additional NFS node will need to be created to support this environment.</p>
+<ul>
+<li>Configure your newly cloned VMs and set their hostnames and static IP addresses.</li>
+</ul>
+<p><strong>N.B.</strong>: The VMs can use DHCP assigned IP addresses, however, DHCP addresses are subject to change and if any addresses change your environment will break. For any kind of permanent environment, static IP addresses should be used.</p>
+<p>If your network interface is configured for DHCP, boot all of the newly provisioned nodes and then, using the VMware console, login to each VM and reconfigure the hostname and add the appropriate static IP address.</p>
+<p>IMPORTANT: If you do not have a DHCP server and configured your original VMs with a static IPs, you will need to boot each VM in turn, configuring each with its new IP address before booting the next to prevent having duplicate IP addresses on your network.</p>
+<p>Perform the following tasks to change the IP address and hostname on each respective node.</p>
+<ul>
+<li>
+<p>Change the hostname using <code>hostnamectl set-hostname node_name</code>, replacing <code>node_nam</code>e with the new hostname for your node.</p>
+</li>
+<li>
+<p>Modify <code>/etc/network/interfaces</code> to configure a static IP address. Your file should look something like this on Ubuntu 16.04 (other OS may be slightly different):</p>
+</li>
+</ul>
+<pre><code># This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto ens160
+iface ens160 inet static
+address 172.16.53.220
+netmask 255.255.0.0
+broadcast 172.16.255.255
+gateway 172.16.255.250
+dns-nameservers 172.16.0.11 172.16.0.17
+dns-search {your-network-name}.local
+</code></pre>
+
+<ul>
+<li>
+<p>Shut down the VM: <code>shutdown -r now</code></p>
+</li>
+<li>
+<p>Configure passwordless SSH from the master node to all other nodes. You should now have all of your hosts prepared, named properly, and containing the proper IP addresses. The next step is to configure passwordless SSH between the boot-master node and the other nodes. You first need to create a passwordless SSH key that can be used across the implementation.</p>
+</li>
+<li>
+<p>Login as to the boot node as root</p>
+</li>
+<li>From the root’s home directory (<code>cd ~</code>), execute:</li>
+</ul>
+<pre><code>ssh-keygen -t rsa -P ''     # Upper case P and two single quotes for no password
+</code></pre>
+
+<ul>
+<li>Accept the default location of <code>/root/.ssh/id_rsa</code> for the new key file</li>
+<li>Executing <code>ls ~/.ssh</code> should show three files: id_rsa, id_rsa.pub and known_hosts</li>
+<li>Copy the resulting id_rsa key file from the boot node to each node in the cluster</li>
+</ul>
+<pre><code>ssh-copy-id -i .ssh/id_rsa root@node_name
+</code></pre>
+
+<p>You will be required to type the root password for each node during this process, but not thereafter.  When this is complete you should be able to ssh from the boot node to each of the other nodes without having to provide a password. Test this now by executing the following for each node in the cluster, using <code>ssh root@node_name</code></p>
+<p>Now update the <code>/etc/hosts</code> file on your boot node and add entries for each of your nodes and propagate that file to all of your other nodes. For example:</p>
+<pre><code># /etc/hosts
+172.16.52.220  dbamc-icp-ubuntu-boot.{your-network-name}.local dbamc-icp-ubuntu-boot boot
+172.16.52.221  dbamc-icp-ubuntu-master1.{your-network-name}.local dbamc-icp-ubuntu-master1 master1
+172.16.52.222  dbamc-icp-ubuntu-master2.{your-network-name}.local dbamc-icp-ubuntu-master2 master2
+172.16.52.223  dbamc-icp-ubuntu-master3.{your-network-name}.local dbamc-icp-ubuntu-master3 master3
+172.16.52.224  dbamc-icp-ubuntu-mgmt1.{your-network-name}.local dbamc-icp-ubuntu-mgmt1 mgmt1
+172.16.52.225  dbamc-icp-ubuntu-mgmt2.{your-network-name}.local dbamc-icp-ubuntu-mgmt2 mgmt2
+172.16.52.226  dbamc-icp-ubuntu-proxy1.{your-network-name}.local dbamc-icp-ubuntu-proxy1 proxy1
+172.16.52.227  dbamc-icp-ubuntu-proxy2.{your-network-name}.local dbamc-icp-ubuntu-proxy2 proxy2
+172.16.52.228  dbamc-icp-ubuntu-worker1.{your-network-name}.local dbamc-icp-ubuntu-worker1 worker1
+172.16.52.229  dbamc-icp-ubuntu-worker2.{your-network-name}.local dbamc-icp-ubuntu-worker2 worker2
+172.16.52.230  dbamc-icp-ubuntu-worker3.{your-network-name}.local dbamc-icp-ubuntu-worker3 worker3
+172.16.52.231  dbamc-icp-ubuntu-worker4.{your-network-name}.local dbamc-icp-ubuntu-worker4 worker4
+172.16.52.212  dbamc-icp-shared-services.{your-network-name}.local dbamc-icp-shared-services
+</code></pre>
+
+<p>With your <code>/etc/hosts</code> file configured correctly on the boot node, propagate it to all the other nodes in your cluster with remote copy:</p>
+<pre><code>scp /etc/hosts node_name:/etc/hosts
+</code></pre>
+
+<p>Your VMs are now ready to install ICP. </p>
+<h3 id="install-icp">Install ICP</h3>
+<ul>
+<li>Load your ICP tarball into your boot node's docker registry. Only on the boot node, load the inception image from the ICP tarball into boot node's local docker registry.</li>
+</ul>
+<pre><code>tar -xvf /downloads/ibm-cloud-private-x86_64-3.1.2.tar.gz ibm-inception-amd64-3.1.2.tar -O |docker load
+</code></pre>
+
+<p>Note that this will take quite some time and a lot of disk space and memory because tar has to gunzip the entire tar file before it can extract any images. This takes memory, filespace in /tmp, and quite a lot of time. </p>
+<p>You can check the name and tag of the current inception image. To find your release information execute the following command on the boot node:</p>
+<pre><code>$ docker images -a |grep inception
+ibmcom/icp-inception-amd64                      3.1.2-ee                         4dbdab8a176e        5 months ago        779MB
+</code></pre>
+
+<p>In this case, the inception image name is <code>ibmcom/icp-inception-amd64</code> and the version tag is <code>3.1.2-ee</code>.
+You will replace the image name and version tag in the next commands with the ones you got when you issued the command above.</p>
+<ul>
+<li>
+<p>Create a directory to hold installation configuration files
+<code>mkdir /opt/icp
+cd /opt/icp</code></p>
+</li>
+<li>
+<p>Extract the installation configuration files</p>
+</li>
+</ul>
+<pre><code>docker run -e LICENSE=accept --rm -v /opt/icp:/data ibmcom/icp-inception-amd64:3.1.2-ee cp -r cluster /data
+</code></pre>
+
+<p>After this command, you should have a folder named <code>/opt/icp/cluster</code>. Because you are installing the Enterprise Edition, you have to move the ICP tarball to the <code>/opt/icp/cluster/images</code> directory.</p>
+<pre><code>mkdir -p  /opt/icp/cluster/images
+mv /downloads/ibm-cloud-private-x86_64-3.1.2.tar.gz /opt/icp/cluster/images/
+</code></pre>
+
+<ul>
+<li>Copy the ssh key to the installation directory</li>
+</ul>
+<pre><code>cp ~/.ssh/id_rsa /opt/icp/cluster/ssh_key
+chmod 400 /opt/icp/cluster/ssh_key
+</code></pre>
+
+<ul>
+<li>Edit the <code>/opt/icp/cluster/hosts</code> file and enter the IP addresses of all nodes. The result should look something like this:</li>
+</ul>
+<pre><code>[master]
+172.16.52.221
+172.16.52.222
+172.16.52.223
+
+[worker]
+172.16.52.228
+172.16.52.229
+172.16.52.230
+172.16.52.231
+
+[proxy]
+172.16.52.226
+172.16.52.227
+
+[management]
+172.16.52.224
+172.16.52.225
+
+#[va]
+#5.5.5.5
+</code></pre>
+
+<ul>
+<li>Share NFS directories. In an HA environment, there are three directories which must be shared by all master nodes. These are <code>/var/lib/registry</code>, <code>/var/lib/icp/audit</code>, and <code>/var/log/audit</code>.
+On your NFS server, create directories for each of these paths e.g. <code>/data/registry</code>, <code>/data/audit</code>, and <code>/data/log/audit</code>.</li>
+</ul>
+<pre><code>mkdir -p /data/registry
+mkdir -p /data/audit
+mkdir -p /data/log/audit
+</code></pre>
+
+<p>Your NFS server should export the directories with the sync parameter set. Add these lines to the <code>/etc/exports</code> file on the NFS server. For example:</p>
+<pre><code>/data/registry *(rw,sync,no_root_squash)
+/data/audit *(rw,sync,no_root_squash)
+/data/log/audit *(rw,sync,no_root_squash)
+</code></pre>
+
+<p>Execute the <code>exportfs</code> command to make sure the directories are exported.</p>
+<pre><code>exportfs -ra
+</code></pre>
+
+<p>On each of the master nodes, edit the <code>/etc/fstab</code> file so that the mounts will be reestablished after a reboot. The <code>/etc/fstab</code> entries should look something like this:</p>
+<pre><code>172.16.52.212:/data/registry /var/lib/registry nfs rw,suid,dev,exec,auto,nouser,async,soft 1 2
+172.16.52.212:/data/audit /var/lib/icp/audit nfs rw,suid,dev,exec,auto,nouser,async,soft 1 2
+172.16.52.212:/data/log/audit /var/log/audit nfs rw,suid,dev,exec,auto,nouser,async,soft 1 2
+</code></pre>
+
+<p>Mount the directories in the current environment</p>
+<pre><code>    mount /var/lib/registry
+    mount /var/lib/icp/audit
+    mount /var/log/audit
+</code></pre>
+
+<p><strong>N.B.</strong>: You can also run this command:</p>
+<pre><code>mount -a
+</code></pre>
+
+<p>which will remount everything in the <code>/etc/fstab</code> file.</p>
+<p>You can validate that you successfully mounted a remote directory by running this command:</p>
+<pre><code>$ df -P -T /var/log/audit | tail -n +2 | awk '{print $2}'
+nfs4
+</code></pre>
+
+<p>If you see <code>nfs4</code>, then you are pointing to the remote directory. If you see <code>ext4</code>, you are still pointing to a local directory.</p>
+<h3 id="deploy-the-icp-environment">Deploy the ICP environment</h3>
+<p>On the boot node, run these commands:</p>
+<pre><code>cd /opt/icp/cluster
+docker run --rm -t -e LICENSE=accept --net=host -v /opt/icp/cluster:/installer/cluster ibmcom/icp-inception-amd64:3.1.2-ee install -vvv |tee install.log
+</code></pre>
+
+<p>Some time later (about 30 minutes), you should have a deployed IBM Cloud private implementation.
+You can login to your cluster with a browser with credentials admin/admin.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../create-vms/" title="Creating VMs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Creating VMs
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../install-openshift/" title="RedHat OpenShift" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                RedHat OpenShift
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

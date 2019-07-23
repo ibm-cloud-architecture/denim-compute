@@ -1,0 +1,1240 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Process user interface - Denim Compute - A Cloud Pak for Automation reference implementation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#process-user-interface" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Denim Compute - A Cloud Pak for Automation reference implementation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Denim Compute - A Cloud Pak for Automation reference implementation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Process user interface
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.ibm.com/CASE/denim-compute" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Denim Compute - A Cloud Pak for Automation reference implementation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Denim Compute - A Cloud Pak for Automation reference implementation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.ibm.com/CASE/denim-compute" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Use case
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Use case
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/use-case-definition/" title="Use case definition" class="md-nav__link">
+      Use case definition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Scenario walkthrough" class="md-nav__link">
+      Scenario walkthrough
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Environment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Environment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/create-vms/" title="Creating VMs" class="md-nav__link">
+      Creating VMs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Platform install
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Platform install
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/install-icp/" title="IBM Cloud Private" class="md-nav__link">
+      IBM Cloud Private
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/install-openshift/" title="RedHat OpenShift" class="md-nav__link">
+      RedHat OpenShift
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/install-cam/" title="Installing CAM" class="md-nav__link">
+      Installing CAM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/install-baw/" title="Installing BAW" class="md-nav__link">
+      Installing BAW
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/install-bai/" title="Installing BAI" class="md-nav__link">
+      Installing BAI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Design
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Design
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/workflow/" title="Workflow" class="md-nav__link">
+      Workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/decisions/" title="Decisions" class="md-nav__link">
+      Decisions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/insights/" title="Insights" class="md-nav__link">
+      Insights
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1" checked>
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Workflow
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Workflow
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../workflow-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-flow-control/" title="Process flow control" class="md-nav__link">
+      Process flow control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-services/" title="Process services" class="md-nav__link">
+      Process services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Process user interface
+      </label>
+    
+    <a href="./" title="Process user interface" class="md-nav__link md-nav__link--active">
+      Process user interface
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#referencing-views" title="Referencing views" class="md-nav__link">
+    Referencing views
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-formulas" title="Using formulas" class="md-nav__link">
+    Using formulas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-events-examples" title="View events examples" class="md-nav__link">
+    View events examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-view-api-manipulation" title="Table view API manipulation" class="md-nav__link">
+    Table view API manipulation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-table-rows-with-flyout" title="Editing table rows with Flyout" class="md-nav__link">
+    Editing table rows with Flyout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-reusable-functions-in-a-view" title="Putting reusable functions in a view" class="md-nav__link">
+    Putting reusable functions in a view
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transitioning-to-client-side-scripts" title="Transitioning to client-side scripts" class="md-nav__link">
+    Transitioning to client-side scripts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coach-views-loading-order" title="Coach views loading order" class="md-nav__link">
+    Coach views loading order
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deferred-section-views-and-asynchronous-loading" title="Deferred section views and asynchronous loading" class="md-nav__link">
+    Deferred section views and asynchronous loading
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forcing-boundary-event-triggers" title="Forcing boundary event triggers" class="md-nav__link">
+    Forcing boundary event triggers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-control-reacting-to-binding-changes" title="Map control reacting to binding changes" class="md-nav__link">
+    Map control reacting to binding changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-view-configuration-option-complex-bo" title="Access view configuration option complex BO" class="md-nav__link">
+    Access view configuration option complex BO
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../case-activities/" title="Case activities" class="md-nav__link">
+      Case activities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../case-user-interface/" title="Case user interface" class="md-nav__link">
+      Case user interface
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../decisions/" title="Decisions" class="md-nav__link">
+      Decisions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Showtime
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Showtime
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../showtime/deploy-solution/" title="Deploy" class="md-nav__link">
+      Deploy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../showtime/run-solution/" title="Run" class="md-nav__link">
+      Run
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../references/" title="References" class="md-nav__link">
+      References
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#referencing-views" title="Referencing views" class="md-nav__link">
+    Referencing views
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-formulas" title="Using formulas" class="md-nav__link">
+    Using formulas
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-events-examples" title="View events examples" class="md-nav__link">
+    View events examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-view-api-manipulation" title="Table view API manipulation" class="md-nav__link">
+    Table view API manipulation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editing-table-rows-with-flyout" title="Editing table rows with Flyout" class="md-nav__link">
+    Editing table rows with Flyout
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#putting-reusable-functions-in-a-view" title="Putting reusable functions in a view" class="md-nav__link">
+    Putting reusable functions in a view
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transitioning-to-client-side-scripts" title="Transitioning to client-side scripts" class="md-nav__link">
+    Transitioning to client-side scripts
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coach-views-loading-order" title="Coach views loading order" class="md-nav__link">
+    Coach views loading order
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deferred-section-views-and-asynchronous-loading" title="Deferred section views and asynchronous loading" class="md-nav__link">
+    Deferred section views and asynchronous loading
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forcing-boundary-event-triggers" title="Forcing boundary event triggers" class="md-nav__link">
+    Forcing boundary event triggers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-control-reacting-to-binding-changes" title="Map control reacting to binding changes" class="md-nav__link">
+    Map control reacting to binding changes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-view-configuration-option-complex-bo" title="Access view configuration option complex BO" class="md-nav__link">
+    Access view configuration option complex BO
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="process-user-interface">Process User Interface</h1>
+<h2 id="referencing-views">Referencing views</h2>
+<p>The BPM UI API provides a number of ways to reference other controls (Views)
+depending on the context. The most simple example is to reference a control from
+itself:</p>
+<p><img alt="" src="../images/baw-process-user-interface14.png" /></p>
+<p>Next when you want to reference another control inside an event of a control you
+use the <code>${\&lt;controlId\&gt;}</code> notation:</p>
+<p><img alt="" src="../images/baw-process-user-interface15.png" /></p>
+<p>You can use a shortcut notation of <code>getSibling()</code> to refer to a control at same
+level (i.e. inside the same view):</p>
+<p><img alt="" src="../images/baw-process-user-interface16.png" /></p>
+<p>From inside a Table column you need to use <code>${../\&lt;controlId\&gt;}</code> to navigate up
+to reference controls at the same level as the Table (this principle also
+applies from inside a view to reference things that are siblings of the view on
+the parent Coach):</p>
+<p><img alt="" src="../images/baw-process-user-interface17.png" /></p>
+<p>(Note the above also shows an example of using internal Table shortcut
+references – in this case to reference a control from same row with <code>${txtSKU=}</code>
+notation).</p>
+<p>To reference controls that are on the Coach (the page) you use <code>page.ui.get()</code>:</p>
+<p><img alt="" src="../images/baw-process-user-interface18.png" /></p>
+<p>To reference controls inside a view’s logic use <code>this.ui.get()</code>:</p>
+<p><img alt="" src="../images/baw-process-user-interface19.png" /></p>
+<p>To reference view logic (functions) from a contained control inside a view use
+<code>view.xxx</code>:</p>
+<p><img alt="" src="../images/baw-process-user-interface20.png" /></p>
+<h2 id="using-formulas">Using formulas</h2>
+<p>The BPM UI API provides formulas where you reference other fields and when those
+fields change the formula is automatically recalculated. An example of that is
+in the Create Settlement Offer Coach where the Claim Settlement Amount is a
+calculated field that uses a formula to refer to other fields. Any time one of
+those referenced fields changes then the formula is re-evaluated:</p>
+<p><img alt="" src="../images/baw-process-user-interface21.png" /></p>
+<p>However sometimes setting a formula does not meet the requirements and you have
+to adopt an alternative approach. Here is an example of trying to set a formula
+that references the selected rows in some tables:</p>
+<p><img alt="" src="../images/baw-process-user-interface22.png" /></p>
+<p>The first issue is that it gives errors because the <code>getSelectedRecord()</code> at load
+returns null:</p>
+<p><img alt="" src="../images/baw-process-user-interface23.png" /></p>
+<p>The second issue (and the critical one in this case) is that an automatic update
+does not seem to get triggered when you select the row in the table. To work
+around this we take a different approach were we will use a function to perform
+the calculation and set the target field and place this function in a reusable
+view that we then add to the Coach:</p>
+<p><img alt="" src="../images/baw-process-user-interface24.png" /></p>
+<p>The view function is shown here:</p>
+<p><img alt="" src="../images/baw-process-user-interface25.png" /></p>
+<p>Now then the table row is selected we can call the view’s function from the
+event:</p>
+<p><img alt="" src="../images/baw-process-user-interface26.png" /></p>
+<h2 id="view-events-examples">View events examples</h2>
+<p>Events on a view (control) are the key to detecting a change and reacting to it
+(e.g. a data field is set or updated) with BPM UI API calls. A typical event is
+an on click of a button – here is an example of invoking a view’s function and
+passing in as an argument a reference to another control’s bound data property:</p>
+<p><img alt="" src="../images/baw-process-user-interface27.png" /></p>
+<p>Here is an example of reacting to a data change event and it also shows you can
+put multiple statements in the implementation (you can even add arbitrary JS
+logic like <code>if() {} else {}</code>):</p>
+<p><img alt="" src="../images/baw-process-user-interface28.png" /></p>
+<p>Her is an example of detecting a table row selection:</p>
+<p><img alt="" src="../images/baw-process-user-interface29.png" /></p>
+<h2 id="table-view-api-manipulation">Table view API manipulation</h2>
+<p>The BPM UI Table view API has a number of methods, snippets of the ones that
+were used most regularly in the processing are shown here:</p>
+<p><img alt="" src="../images/baw-process-user-interface30.png" /></p>
+<p><img alt="" src="../images/baw-process-user-interface31.png" /></p>
+<p><img alt="" src="../images/baw-process-user-interface32.png" /></p>
+<p><img alt="" src="../images/baw-process-user-interface33.png" /></p>
+<p><img alt="" src="../images/baw-process-user-interface34.png" /></p>
+<p><img alt="" src="../images/baw-process-user-interface35.png" /></p>
+<h2 id="editing-table-rows-with-flyout">Editing table rows with Flyout</h2>
+<p>The BPM UI Samples (and Salient Spark site Table control referencing a demo
+<a href="https://www.youtube.com/watch?v=ZxnvDCDY8CA">https://www.youtube.com/watch?v=ZxnvDCDY8CA</a>) recommend using a view inside a
+table column that edits a row (and uses Deferred Sections for lazy loading). The
+key to this is that the Modal section is placed within a table column and bound
+to the list’s <code>currentItem</code>:</p>
+<p><img alt="" src="../images/baw-process-user-interface5.png" /></p>
+<p>While this allows for editing the table row, it makes direct edits to the
+underlying row and does not preserve the existing value. In our scenario we want
+to provide an enhanced user experience so they can Edit a row and then decide
+whether to commit those changes or cancel them. To support this we can not use
+the approach of binding to the list’s <code>currentItem</code>. Instead we create a separate
+local variable of type <code>VehiclePart</code> which represents the currently editable Part
+and bind that to the Modal that will include the Part editing fields:</p>
+<p><img alt="" src="../images/baw-process-user-interface6.png" /></p>
+<p>When <code>Edit</code> is clicked the event then calls an <code>editPart()</code> method defined in a
+reusable view and passes in the <code>SKU</code> for the selected row:</p>
+<p><img alt="" src="../images/baw-process-user-interface7.png" /></p>
+<p>Here is the <code>editPart()</code> method within <code>Provide Repair Estimate Functions</code> view that
+then sets the bound data on the mobile from the selected item in the Parts table
+plus it also sets a hidden field for the part index as we will need to reference
+this in the case of the user choosing the <code>Save Changes</code> option on the Modal:</p>
+<p><img alt="" src="../images/baw-process-user-interface8.png" /></p>
+<p>The <code>Save Changes</code> boundary event is then used to transition to a client-side
+script where the <code>partsList</code> is updated at the saved index (and if the user
+selects to <code>Cancel</code> we just close the Modal and do not make any updates to the
+<code>partsList</code>):</p>
+<p><img alt="" src="../images/baw-process-user-interface9.png" /></p>
+<h2 id="putting-reusable-functions-in-a-view">Putting reusable functions in a view</h2>
+<p>Formulas etc on controls are great for one time actions but you often find that
+you want to do multiple things on an event and while you can add many statements
+separated by <em>“;”</em> in an event it becomes unwieldly and difficult to maintain.
+Also if you find yourself having to do a lot of chained behavior on different
+controls (e.g. a table updates so you have to check button visibility, plus
+popup a model, plus re-initialize a variable, etc) then it is hard to keep
+track. (Another example is for a Table with a requirement to switch Button
+visibility depending on row count – the Table’s <code>on rows loaded</code> event worked for
+most cases but it did not fire when you programmatically called <code>table.add()</code> to
+add a new row). So we considered it better to have a function that does the
+multiple things and call that function. However if you use <code>Custom HTML</code> on a
+Coach then you can’t reference that function in client-side scripts so you would
+end up with duplicating the logic (where you had to transition out of Coach and
+call the same behavioural logic). To get round this we created a view that has
+no content (well we put a hidden 100px Spacer on it so we could see it visually
+on the parent Coach canvas):</p>
+<p><img alt="" src="../images/baw-process-user-interface45.png" /></p>
+<p>And an example of referencing the functions:</p>
+<p><img alt="" src="../images/baw-process-user-interface46.png" /></p>
+<p>The downside is that the view with functions has to refer to control Id names
+that are volatile (if they change on Coach then the code inside the view
+functions will break):</p>
+<p><img alt="" src="../images/baw-process-user-interface47.png" /></p>
+<p>However you would be in a similar situation if you used <code>Custom HTML</code> as again you
+would have to edit the code for every change to a <code>Control ID</code>. </p>
+<h2 id="transitioning-to-client-side-scripts">Transitioning to client-side scripts</h2>
+<p>While the ability to encapsulate all UI logic in a view is desirable to allow
+for maximum reuse, sometimes it is not possible to self-contain everything on
+the Coach or in a view – you have to transition out to a <code>client-side script</code> to
+complete the necessary logic. The most common situation is where you need to
+refer to a variable that is not bound to anything on the coach so it does not
+have any DOM representation that you can make BPM UI API calls (e.g.
+<code>page.ui.get(\&lt;controlId\&gt;)</code>) against. Here is an example from the <code>Tender For
+Estimates</code> Coach where the <code>vehicleList.repairerList</code> does not have any binding to
+a visual control and so it cannot be referenced in BPM UI API calls:</p>
+<p><img alt="" src="../images/baw-process-user-interface10.png" /></p>
+<p>Here is another example where there is a reference to <code>duplicatePartWarning</code> which has no binding on the Coach:</p>
+<p><img alt="" src="../images/baw-process-user-interface11.png" /></p>
+<p>(Note: <code>duplicatePartWarning</code> is a String bound to the Help section of a <code>Modal
+Alert</code> view from UI Toolkit that is added on the Coach and there is no exposed
+API method on it that lets you set the Help value thus the need to manipulate
+the <code>duplicatePartWarning</code> variable):</p>
+<p><img alt="" src="../images/baw-process-user-interface12.png" /></p>
+<p>Note in both of the above cases it may be possible to avoid these transitions if
+really necessary by putting hidden controls on the Coach that are bound to the
+variables that need to be manipulated. That way the BPM UI API can be used to
+access and update the bindings on those hidden controls.</p>
+<p>An other example is where the event is not exposed – such as in a Modal with
+buttons encapsulated within it so you cannot get access to the button events:</p>
+<p><img alt="" src="../images/baw-process-user-interface12_fix.png" /></p>
+<p>You have to then react to the boundary event instead and transition to a
+<code>client-side script</code>:</p>
+<p><img alt="" src="../images/baw-process-user-interface13.png" /></p>
+<p>You may also be able to avoid this situation in a number of (increasing
+complexity in terms of coding) ways. The easiest solution might be to not
+encapsulate the buttons inside the Modal but have them directly on the Coach /
+view that needs to react to their events. An alternative, and more complex,
+option would be to expose the inner button events to the interface of the
+containing view. This requires using BPM UI Coach Framework APIs to detect the
+button events programmatically and to fire an event option on the parent view.</p>
+<h2 id="coach-views-loading-order">Coach views loading order</h2>
+<p>The loading order of the tree of views contained in a coach is inside out – a
+section with controls loads after all the contained controls inside it have
+loaded and so on. We utilise a top level <code>Vertical Layout</code> container in each Coach
+and do initialization things that reference multiple controls in the <code>onLoad()</code>
+event of it – that way we can ensure all dependent controls are already loaded
+and can be referenced with <code>page.ui.get(\&lt;controlId\&gt;)</code> / <code>${\&lt;controlId\&gt;}</code> etc.
+Here is an example with the outermost <code>Vertical Layout</code> shown and in there it
+calls an embedded view with the JS functions to perform checking whether to
+enable the <code>Complete</code> button or not:</p>
+<p><img alt="" src="../images/baw-process-user-interface38.png" /></p>
+<h2 id="deferred-section-views-and-asynchronous-loading">Deferred section views and asynchronous loading</h2>
+<p>A common pattern when using a Modal popup is to defer the loading of it until
+needed (especially if it is complex and put within the column of a table) using
+the <code>Deferred Section</code> (DS) view. You have to be very careful about the loading
+order – you will get errors showing up in the browser debugger such as
+“<em>page.ui.get(\&lt;controlId>) not defined</em>” if you are trying to reference DOM
+items that are not loaded yet. A way to avoid such issues is to encapsulate the
+actions in a function and ensure it is called only when the DS has loaded. Here
+is a view with a DS that inside has a Modal and a Table and other controls:</p>
+<p><img alt="" src="../images/baw-process-user-interface39.png" /></p>
+<p>An initializing function (<code>showModal()</code> below) is called from parent Coach (say
+from a button click event) that checks whether the DS is loaded and if not it
+calls <code>lazyLoad()</code> on it otherwise it calls the function that prepares the view by
+setting visibility etc:</p>
+<p><img alt="" src="../images/baw-process-user-interface40.png" /></p>
+<p>This same <code>prepareView()</code> function should be called only when the DS has
+lazy-loaded:</p>
+<p><img alt="" src="../images/baw-process-user-interface41.png" /></p>
+<h2 id="forcing-boundary-event-triggers">Forcing boundary event triggers</h2>
+<p>Sometimes you want to react to an event on a control by executing some
+<code>client-side script</code> logic but the control does not have its own boundary event
+that fits the need. So you add a <code>Navigation Event</code> control:</p>
+<p><img alt="" src="../images/baw-process-user-interface42.png" /></p>
+<p>And in the source for the event (in this example the return from a <code>Service Call</code>)
+you call <code>fire()</code> on it:</p>
+<p><img alt="" src="../images/baw-process-user-interface43.png" /></p>
+<p>Which then lets you transition out to the <code>client-side script</code>:</p>
+<p><img alt="" src="../images/baw-process-user-interface44.png" /></p>
+<h2 id="map-control-reacting-to-binding-changes">Map control reacting to binding changes</h2>
+<p>We use a BPM UI <code>Map</code> view in the <code>Tender for Estimates</code> Coach to show the location
+of a <code>Vehicle</code>. The BPM UI <code>Map</code> view has configuration options for the <code>latitude</code> /
+<code>longitude</code> settings:</p>
+<p><img alt="" src="../images/baw-process-user-interface1.png" /></p>
+<p>While these work on first load of the <code>Map</code> inside the popup Modal on the Coach,
+subsequent changing of these values (for example when the selected Vehicle is
+changed) did not trigger an update of the location shown on the Map. To get
+around this we need to use a specific <code>Map</code> API method. First let’s look at the
+sequence of events, When a <code>Vehicle</code> is selected the <code>ZIP</code> is passed to a <code>Service Call</code> view (<code>Get Coordinates</code>) which invokes a service to translate the <code>ZIP</code> into
+Geo coordinates. On return from that <code>Service Call</code> we then need to force a transition and that is done by in turn calling the <code>fire()</code> method of a <code>Navigation Event</code> view:</p>
+<p><img alt="" src="../images/baw-process-user-interface2.png" /></p>
+<p>The <code>Navigation Event</code> then provides us a boundary event which we can use to
+transition to the <code>Show Map</code> <code>client-side script</code>:</p>
+<p><img alt="" src="../images/baw-process-user-interface3.png" /></p>
+<p>And in the script (among other things) we have to explicitly call the
+<code>setCenter()</code> method on the <code>Map</code> to ensure it refreshes:</p>
+<p><img alt="" src="../images/baw-process-user-interface4.png" /></p>
+<p>Note that while this results in the <code>Map</code> correctly showing the new coordinates,
+however the <code>Marker</code> is not shown (it may be possible to set this with the method
+<a href="https://support.salientprocess.com/docs/enterprise/Map.html#addMarker">https://support.salientprocess.com/docs/enterprise/Map.html#addMarker</a> but we
+did not check this as it was not vital to the scenario).</p>
+<h2 id="access-view-configuration-option-complex-bo">Access view configuration option complex BO</h2>
+<p>There is a defined way to navigate through the structure of a complex BO
+(<code>Business Object</code>) bound as a configuration option of a view. In this case you
+get the top level BO (<code>searchableVehicleParts</code>) and then a property that is a list
+(<code>partsList</code>):</p>
+<p><img alt="" src="../images/baw-process-user-interface36.png" /></p>
+<p>Then a further call uses the index to get a specific entry from the list and
+then reference attributes of that entry (an instance of <code>VehiclePart</code> BO):</p>
+<p><img alt="" src="../images/baw-process-user-interface37.png" /></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../process-services/" title="Process services" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Process services
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../case-activities/" title="Case activities" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Case activities
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

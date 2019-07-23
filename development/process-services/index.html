@@ -1,0 +1,948 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Process services - Denim Compute - A Cloud Pak for Automation reference implementation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#process-services" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Denim Compute - A Cloud Pak for Automation reference implementation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Denim Compute - A Cloud Pak for Automation reference implementation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Process services
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.ibm.com/CASE/denim-compute" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Denim Compute - A Cloud Pak for Automation reference implementation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Denim Compute - A Cloud Pak for Automation reference implementation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.ibm.com/CASE/denim-compute" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Github
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Use case
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Use case
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/use-case-definition/" title="Use case definition" class="md-nav__link">
+      Use case definition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Scenario walkthrough" class="md-nav__link">
+      Scenario walkthrough
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Environment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Environment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/create-vms/" title="Creating VMs" class="md-nav__link">
+      Creating VMs
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Platform install
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Platform install
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/install-icp/" title="IBM Cloud Private" class="md-nav__link">
+      IBM Cloud Private
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/install-openshift/" title="RedHat OpenShift" class="md-nav__link">
+      RedHat OpenShift
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/install-cam/" title="Installing CAM" class="md-nav__link">
+      Installing CAM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/install-baw/" title="Installing BAW" class="md-nav__link">
+      Installing BAW
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/install-bai/" title="Installing BAI" class="md-nav__link">
+      Installing BAI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Design
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Design
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/workflow/" title="Workflow" class="md-nav__link">
+      Workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/decisions/" title="Decisions" class="md-nav__link">
+      Decisions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/insights/" title="Insights" class="md-nav__link">
+      Insights
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1" checked>
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Workflow
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Workflow
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../workflow-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-flow-control/" title="Process flow control" class="md-nav__link">
+      Process flow control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Process services
+      </label>
+    
+    <a href="./" title="Process services" class="md-nav__link md-nav__link--active">
+      Process services
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#process-message-exchange" title="Process message exchange" class="md-nav__link">
+    Process message exchange
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-properties-synchronization" title="Case properties synchronization" class="md-nav__link">
+    Case properties synchronization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#odm-integration" title="ODM integration" class="md-nav__link">
+    ODM integration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ecm-integration" title="ECM integration" class="md-nav__link">
+    ECM integration
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-user-interface/" title="Process user interface" class="md-nav__link">
+      Process user interface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../case-activities/" title="Case activities" class="md-nav__link">
+      Case activities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../case-user-interface/" title="Case user interface" class="md-nav__link">
+      Case user interface
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../decisions/" title="Decisions" class="md-nav__link">
+      Decisions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Showtime
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Showtime
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../showtime/deploy-solution/" title="Deploy" class="md-nav__link">
+      Deploy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../showtime/run-solution/" title="Run" class="md-nav__link">
+      Run
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../references/" title="References" class="md-nav__link">
+      References
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#process-message-exchange" title="Process message exchange" class="md-nav__link">
+    Process message exchange
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-properties-synchronization" title="Case properties synchronization" class="md-nav__link">
+    Case properties synchronization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#odm-integration" title="ODM integration" class="md-nav__link">
+    ODM integration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ecm-integration" title="ECM integration" class="md-nav__link">
+    ECM integration
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="process-services">Process services</h1>
+<p>This section provides details on service flow implementation chains of process activities. To understand the processes themselves that this section builds upon, please see <a href="../process-flow-control">Process flow control</a>.</p>
+<h2 id="process-message-exchange">Process message exchange</h2>
+<p>Processes communicate asynchronously via message events whereby one process will send an outbound message and the other receives it. In the figure below we see an example of this pattern whereby the sending process (<code>Signal Adjuster Report Created</code>) on the left side and the receiving process (<code>Initiate Claims Processing</code>) on the right side reference the same message Under Cover Agent (UCA).</p>
+<p><img alt="" src="../images/process-services1.png" /></p>
+<p>In the sending process, the outbound message event has <code>Data Mapping</code> setup with a mapping to the correlating data plus the event payload. The correlating data is important because there is a need to identify the specific <code>Initiate Claims Processing</code> process instance that is awaiting the response from <code>Signale Adjuster Report Created</code>.</p>
+<p><img alt="" src="../images/process-services2.png" /></p>
+<p>Here on the other side of the exchange you can see that the event data's <code>claimCorrelationId</code> is designated as the correlation variable and is used then to compare to the <code>claimCaseId</code> values of instances in order to match and resume processing in the correct instance.</p>
+<p><img alt="" src="../images/process-services3.png" /></p>
+<h2 id="case-properties-synchronization">Case properties synchronization</h2>
+<p>In order for Case properties to be referenced inside processes they need to be retrieved. Inside the process, an <code>AutoClaim Business Object</code> is modeled which represents those data items of interest to the process, a large majority of which are also Case properties.</p>
+<p><img alt="" src="../images/process-services4.png" /></p>
+<p>A framework of services has been developed to allow for obtaining Case properties and setting them on the various levels within the complex Business Object (BO) structure (and updating them as we will cover later in this section). The principle is that each BO within a higher level complex structure has a mapping service such as illustrated in the below <code>Map Vehicle Input</code> (which is inside the <code>Denim Compute Auto Claim Toolkit</code>) for a vehicle object. That service in turn calls a generic service <code>Map BO Input</code> to perform the mapping.</p>
+<p><img alt="" src="../images/process-services5.png" /></p>
+<p>The data mapping on the service accepts as input an <code>ANY</code> type representing the BO to populate and then returns it populated with data from the corresponding Case properties. The other key input is a String list representing the set of property to attribute mappings.</p>
+<p><img alt="" src="../images/process-services6.png" /></p>
+<p>In the <code>Set Vehicle Mappings</code>script, the CSV list is created. This list has an entry for each target attribute in the BO and passes in for each entry a formatted string, an example of which is highlighted. To take that value <code>DENI1_VehicleMake:make:String</code> the first part represents the unique name of the case property, the second is the BO attribute name, and the third is the data type.</p>
+<p><img alt="" src="../images/process-services7.png" /></p>
+<p>Here is the corresponding case property named <code>Vehicle Make</code> showing where the unique identifier comes from inside <code>Case Builder</code>.</p>
+<p><img alt="" src="../images/process-services8.png" /></p>
+<p>The <code>Map BO Input</code> service is shown here, it makes calls to a number of helper services in order to interact with Case using the JavaScript API.<br />
+<img alt="" src="../images/process-services9.png" /></p>
+<p>Returning to the mapping, the higher level AutoClaim BO is mapped similarly in a service <code>Map AutoClaim Input</code> and also it delegates to lower level services (such as <code>Map Vehicle Input</code> shown earlier) to perform the mappings of the contained BOs within it.</p>
+<p><img alt="" src="../images/process-services10.png" /></p>
+<p>When data is required to be updated in Case the pattern is to set the inputs on and invoke a generic service <code>Write Case Properties</code> as illustrated in the service <code>Update Claim Settlement Details</code> (found in the <code>Denim Compute Auto Claims</code> Toolkit) shown here.</p>
+<p><img alt="" src="../images/process-services11.png" /></p>
+<p>The <code>Map Properties</code> script sets the <code>casePropertyUpdateList</code> variable used as the input mapping on the target <code>Write Case Properties</code> service.</p>
+<p><img alt="" src="../images/process-services12.png" /></p>
+<h2 id="odm-integration">ODM integration</h2>
+<p>BAW integration to ODM is by using a REST <code>External Service</code>. The service includes the three ODM operations used in the scenario, it is named <code>Denim ODM Service</code> and found in the <code>Denim Compute Decision Services Toolkit</code> Toolkit shown here:</p>
+<p><img alt="" src="../images/process-services13.png" /></p>
+<p>An example usage of the <code>External Service</code> is in <code>Perform Claim Segmentation</code> within <code>Denim Compute Auto Claim Toolkit</code> Toolkit. Note in the scenario that there is a boundary error event handler in case the ODM service is unavailable and this then sets the outputs to follow a default path. The inputs to the ODM operation are set from case properties using the pattern already described in the <em>Case properties synchronization</em> sub-section above.</p>
+<p><img alt="" src="../images/process-services14.png" /></p>
+<h2 id="ecm-integration">ECM integration</h2>
+<p>BAW uses two main patterns to integrate to ECM, first it has to read existing documents from ECM in order to display them to the user inside client-side human service coaches and second it has to write a new JSON document to ECM with the complex data structures populated within BPM. For the first pattern a service flow named <code>Get Claim ECM Documents</code> in <code>Denim Compute Auto Claims Toolkit</code> Toolkit is called from the <code>Loss Assessment</code> process as shown here.</p>
+<p><img alt="" src="../images/process-services15.png" /></p>
+<p>In the <code>Data Mapping</code> inputs to that service we provide the <code>claimCaseId</code> and <code>claimSubfolderPath</code> which are used to find the Case ECM folder and the sub folder within it of interest (in this situation that is <code>Damages Evidence</code>).</p>
+<p><img alt="" src="../images/process-services16.png" /></p>
+<p>Here is the <code>Get Claim ECM Documents</code> service flow where it uses the <code>Content Integration</code> feature to makes calls to <code>Get Folder by Path</code> and <code>Get Documents in Folder</code>.</p>
+<p><img alt="" src="../images/process-services17.png" /></p>
+<p>It then filters the returned documents to ensure that they match the <code>Document Class</code> of interest and that they have metadata for the <code>Vehicle Plate</code> that matches the vehicle that is bound to this particular service flow.</p>
+<p><img alt="" src="../images/process-services18.png" /></p>
+<p>The <code>Loss Assessment</code> process we saw earlier then invokes the <code>Tender for Estimates</code> <code>Client Side Human Service</code>. In the <code>Coach</code> layout a reusable <code>View</code> named <code>Vehicle Documents</code> (found in <code>Denim Compute Auto Claims - Common</code> Toolkit) is used and has the documents that were retrieved bound to it.</p>
+<p><img alt="" src="../images/process-services19.png" /></p>
+<p>In <code>Vehicle Documents</code> a Viewer control from the <code>Content Management</code> Toolkit is used to display the document content as shown here.</p>
+<p><img alt="" src="../images/process-services20.png" /></p>
+<p>Moving now to the second pattern, in the <code>Initiate Claims Processing</code> process one of the last activities is to store the JSON representation of the complex BO structure in the Case folder by invoking the service flow <code>Write AutoClaim JSON Output</code>.</p>
+<p><img alt="" src="../images/process-services21.png" /></p>
+<p>In <code>Write AutoClaim JSON Output</code> (within <code>Denim Compute Auto Claims</code> Toolkit) the steps include a call to a <code>Content Integration</code> step using the <code>Create document</code> operation.</p>
+<p><img alt="" src="../images/process-services22.png" /></p>
+<p>A previous step <code>Convert to JSON</code> is used to parse the <code>AutoClaim</code> BO and convert it into native JS equivalents and from that to extract the JSON formatted output.</p>
+<p><img alt="" src="../images/process-services23.png" /></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../process-flow-control/" title="Process flow control" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Process flow control
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../process-user-interface/" title="Process user interface" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Process user interface
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
