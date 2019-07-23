@@ -22,15 +22,6 @@ Since the Cloud Pak for Automation is on a continuous release schedule, the arch
 
 ---
 
-## GitHub repositories
-In parallel to browing this documentation, you can visit:
-
-- The <a name="icp4a-deployment-repo"/>[`denim-compute` repository](https://github.ibm.com/CASE/denim-compute), where you'll find the source for the DBA solution.
-
-- The <a name="icp4a-deployment-repo"/>[`icp4a-deployment` repository](https://github.ibm.com/CASE/icp4a-deployment), where you'll find the source for install scripts.
-
----
-
 ## What's new <a name="whats-new"></a>
 
 ### As of 07/12/19

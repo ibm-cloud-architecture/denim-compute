@@ -1,13 +1,13 @@
 # <img src="./book/docs/images/denim-compute.png" width="90"/> Denim Compute - an ICP4A reference implementation
 This reference implementation uses the IBM Cloud Pak for Automation to exemplify how the different capabilities of the IBM Digital Business Automation platform come together on a container-centric management environment to support the execution of a complex business process. 
 
-You will find the details about the environment, architecture, design and implementation of this end-to-end use case in the [documentation pages](https://pages.github.ibm.com/CASE/denim-compute/).
+You will find the details about the environment, architecture, design and implementation of this end-to-end use case in the [documentation pages](https://pages.github.com/ibm-cloud-architecture/denim-compute/).
 
 
 ---
 
 ## Platform install
-Platform install scripts are available in the [icp4a-deployment](https://github.ibm.com/CASE/icp4a-deployment) GitHub repo.
+Cloud Pak for Automation platform install scripts are available in the [ibm-cloud-architecture/icp4a-deployment](https://github.com/ibm-cloud-architecture/icp4a-deployment) GitHub repo.
 
 ---
 
