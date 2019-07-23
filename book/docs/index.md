@@ -24,5 +24,4 @@ Since the Cloud Pak for Automation is on a continuous release schedule, the arch
 
 ## What's new <a name="whats-new"></a>
 
-### As of 07/12/19
-This is the initial release!
+- **07/22/19** Initial release!
