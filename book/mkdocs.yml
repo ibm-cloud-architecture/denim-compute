@@ -1,5 +1,5 @@
 site_name: Denim Compute - A Cloud Pak for Automation reference implementation
-repo_url: https://github.ibm.com/CASE/denim-compute
+repo_url: https://github.com/ibm-cloud-architecture/denim-compute
 
 nav:
     - Introduction: index.md
