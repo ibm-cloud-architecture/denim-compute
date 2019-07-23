@@ -39,13 +39,13 @@ Even after Workflow containers are available, customers will still want to or ne
 
 ## About BAW
 
-### Installing through CAM (ICP4A 19.0.1 and before)
+### Installing through CAM (Cloud Pak 19.0.1 and before)
 
 The install of BAW  involves the use of the IBM Cloud Automation Manager (CAM).
 While BAW can be installed on manually provisioned VMs, the use of CAM brings the following benefits:
 
 - It facilitates the replication of the install process to multiple environments (e.g. DEV, TEST, PROD, etc.)
-- It allows to have the same metering in ICP that the Docker containers use and go to the same dashboard. This means that VPC usage can be tracked for all Docker and non-Docker based offerings within ICP4A.
+- It allows to have the same metering in ICP that the Docker containers use and go to the same dashboard. This means that VPC usage can be tracked for all Docker and non-Docker based offerings within the Cloud Pak.
 
 ### BAW/CPE compatibility (BAW 19.0.02 and before)
 

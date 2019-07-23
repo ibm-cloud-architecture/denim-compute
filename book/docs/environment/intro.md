@@ -10,5 +10,5 @@ In the next sections, we detail how to:
 - Install the individual DBA components (BAW, ODM, BAI, ...).
 
 ## Scripted install and deployment
-A collection of Ansible scripts to configure and install platforms, and deploy the ICP4A components are available in the `ibm-cloud-architecture/icp4a-deployment` GitHub repository.
+A collection of Ansible scripts to configure and install platforms, and deploy the Cloud Pak components are available in the `ibm-cloud-architecture/icp4a-deployment` GitHub repository.
 

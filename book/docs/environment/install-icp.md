@@ -6,9 +6,9 @@ The components involved in building the Denim Compute environment for [IBM Cloud
 
 One of the goal of Denim Compute is to create a highly available environment to run solutions with the IBM Cloud Pak for Automation. This section reviews a set of documents that provide configuration and sizing recommendations towards that goal.
 
-### ICP4A sizing
+### Cloud Pak sizing
 
-- [This report](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/hardwareReqsForProduct?deliverableId=77D6C42017D411E9AEAFE0FEBCE2D22F&osPlatforms=Linux&duComponentIds=D002%7CD001%7CS005%7CS008%7CS003%7CS006%7CS004%7CS007) provides hardware requirements (CPU, RAM, disk) for the different ICP4A components, but it is difficult to derive an aggregated requirement for a cluster that will support multiple capabilities.
+- [This report](https://www.ibm.com/software/reports/compatibility/clarity-reports/report/html/hardwareReqsForProduct?deliverableId=77D6C42017D411E9AEAFE0FEBCE2D22F&osPlatforms=Linux&duComponentIds=D002%7CD001%7CS005%7CS008%7CS003%7CS006%7CS004%7CS007) provides hardware requirements (CPU, RAM, disk) for the different Cloud Pak components, but it is difficult to derive an aggregated requirement for a cluster that will support multiple capabilities.
 
 ### ICP sizing
 

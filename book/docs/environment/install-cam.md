@@ -4,7 +4,7 @@ IBM Cloud Automation Manager (CAM) is a cloud management solution in IBM Cloud P
 
 Cloud Automation Manager uses open source Terraform to manage and deliver cloud infrastructure as code. Cloud infrastructure that is delivered as code is reusable, is able to be placed under version control, can be shared across distributed teams, and can be used to easily replicate environments.
 
-In relation to ICP4A, CAM is used to deploy IBM Business Automation Workflow (BAW) to traditional WebSphere nodes.
+In relation to the Cloud Pak, CAM is used to deploy IBM Business Automation Workflow (BAW) to traditional WebSphere nodes.
 
 Eventually, IBM BAW will be deployed as containers which will mean that CAM would not be used in this case.
 
