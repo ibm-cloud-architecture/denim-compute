@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>ad-hoc validations</name>
+  <uuid>0747dc70-5c47-4186-bbf1-91e82a0414fb</uuid>
+</ilog.rules.studio.model.base:RulePackage>

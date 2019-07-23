@@ -1,0 +1,25 @@
+- name: List Decision Services
+  uri:
+    url: "{{ dc_url }}/decisioncenter-api/v1/decisionservices?datasource={{ datasource }}"
+    method: GET
+    url_username: "{{ dc_login }}"
+    url_password: "{{ dc_password }}"
+    validate_certs: no
+    return_content: yes
+    force_basic_auth: yes
+  register: ds_output
+
+- name: List Decision Services Output
+  debug:
+    msg: "{{ ds_output.json }}"
+
+- name: Get Decision Service
+  set_fact:
+    ds_id: "{{ item.id }}"
+  with_items: "{{ ds_output.json.elements }}"
+  when: item.name == ds_project_name
+
+- name: Decision Service ID
+  debug:
+    msg: "{{ ds_id }}"
+  when: ds_id is defined

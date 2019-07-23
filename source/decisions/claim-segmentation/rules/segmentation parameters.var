@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>segmentation parameters</name>
+  <uuid>f0c09f35-3ee2-412e-b4be-831d34131a99</uuid>
+  <variables name="complexity" type="com.ibm.gse.dc.response.ComplexityAssessment" initialValue="new com.ibm.gse.dc.response.ComplexityAssessment()" verbalization="the complexity"/>
+</ilog.rules.studio.model.base:VariableSet>

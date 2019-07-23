@@ -1,0 +1,16 @@
+- name: Install 'curl'
+  package:
+    name: curl
+    state: present
+
+- name: Import Decision Service
+  shell: |
+    RESULT=$(curl --user {{ dc_login }}:{{ dc_password }} --max-time {{ import_timeout }} -sk -F file=@{{ ds_file_path }} -o /dev/null -w "%{http_code}" -X POST {{ dc_url }}/decisioncenter-api/v1/decisionservices/import?datasource={{ datasource }}&enableDGF=false)
+    echo $RESULT
+  register: import_output
+
+- name: Import Decision Service output
+  debug:
+    msg: "{{ import_output }}"
+
+- include_tasks: get-ds.yaml

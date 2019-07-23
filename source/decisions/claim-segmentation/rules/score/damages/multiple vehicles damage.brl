@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>multiple vehicles damage</name>
+  <uuid>e8f7016b-0e0e-4f33-93a4-6050adc9b88e</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	'the accident' has multiple parties involved and
+	the damages estimate of the reporting party of 'the accident' + the damages estimate of the other party of 'the accident' is more than 5000
+then
+	 add 3 points to the damage component of 'the complexity' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

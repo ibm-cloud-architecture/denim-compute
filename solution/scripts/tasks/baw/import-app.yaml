@@ -1,0 +1,11 @@
+- name: Import App
+  shell: |
+    RESULT=$(curl --user {{ wc_login }}:{{ wc_password }} --max-time {{ import_timeout }} --header 'Content-Type: multipart/form-data' --header 'Accept: application/json' --header 'BPMCSRFToken: {{ wc_token }}' -sk -F install_file=@{{ app_file_path }} -o /dev/null -w "%{http_code}" -X POST {{ wc_url }}/ops/std/bpm/containers/install?inactive=false&caseOverwrite=false)
+    echo $RESULT
+  register: import_output
+
+- name: Import App output
+  debug:
+    msg: "{{ import_output }}"
+
+- include_tasks: get-app.yaml

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.query.extractor="http://ilog.rules.studio/model/query/extractor.ecore" rulesetName="assess_fraud" usingRuleflow="true" ruleflowName="assess fraud" targetRuleProjectName="fraud-assessment">
+  <name>assess-fraud</name>
+  <uuid>d41b9605-e8bf-4668-92d7-eebdc9df2158</uuid>
+  <referencedVariables variableName="fraud" variableSetName="fraud parameters" direction="OUT">
+    <variableSet href="../../fraud-assessment/rules/fraud%20parameters.var#477a5477-2db6-442f-b96a-0643453159c7"/>
+  </referencedVariables>
+  <referencedVariables variableName="claim" variableSetName="parameters">
+    <variableSet href="../../claim-bom/rules/parameters.var#d63db55d-5150-4211-af47-b608d280342a"/>
+  </referencedVariables>
+  <referencedVariables variableName="policy" variableSetName="parameters">
+    <variableSet href="../../claim-bom/rules/parameters.var#d63db55d-5150-4211-af47-b608d280342a"/>
+  </referencedVariables>
+  <ruleflow href="../../fraud-assessment/rules/assess%20fraud.rfl#e06e8f72-bd79-41a0-a433-27b63086762f"/>
+  <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="assess-fraud_extractor" validator="Default Validator"/>
+  <targetRuleProject href="../../fraud-assessment#2be0cff0-aacd-426c-b7fc-8b0db1fdcc39"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.ruleflow:RuleFlow xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.ruleflow="http://ilog.rules.studio/model/ruleflow.ecore">
+  <name>segment claim</name>
+  <uuid>d4b44387-06ad-4e88-8111-d1300e32f822</uuid>
+  <locale>en_US</locale>
+  <categories>any</categories>
+  <rfModel>
+<Ruleflow xmlns="http://schemas.ilog.com/Rules/7.0/Ruleflow">
+  <Body>
+    <TaskList>
+      <StartTask Identifier="task_6"/>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="score" Ordering="Default">
+        <RuleList>
+          <Package Name="score"/>
+        </RuleList>
+      </RuleTask>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="normalize" Ordering="Default">
+        <RuleList>
+          <Package Name="normalize"/>
+        </RuleList>
+      </RuleTask>
+      <RuleTask ExecutionMode="Fastpath" ExitCriteria="None" Identifier="segment" Ordering="Default">
+        <RuleList>
+          <Package Name="segment"/>
+        </RuleList>
+      </RuleTask>
+      <StopTask Identifier="task_7"/>
+    </TaskList>
+    <NodeList>
+      <TaskNode Identifier="node_3" Task="score"/>
+      <TaskNode Identifier="node_4" Task="normalize"/>
+      <TaskNode Identifier="node_5" Task="segment"/>
+      <TaskNode Identifier="node_6" Task="task_6"/>
+      <TaskNode Identifier="node_7" Task="task_7"/>
+    </NodeList>
+    <TransitionList>
+      <Transition Identifier="transition_1" Source="node_3" Target="node_4"/>
+      <Transition Identifier="transition_2" Source="node_4" Target="node_5"/>
+      <Transition Identifier="transition_4" Source="node_6" Target="node_3"/>
+      <Transition Identifier="transition_5" Source="node_5" Target="node_7"/>
+    </TransitionList>
+  </Body>
+  <Resources>
+    <ResourceSet Locale="en_US">
+      <Data Name="node_4#width">102.0</Data>
+      <Data Name="node_3#height">40.0</Data>
+      <Data Name="node_4#height">40.0</Data>
+      <Data Name="node_7#y">352.0</Data>
+      <Data Name="node_3#width">102.0</Data>
+      <Data Name="node_5#height">40.0</Data>
+      <Data Name="node_6#height">21.0</Data>
+      <Data Name="node_7#height">22.0</Data>
+      <Data Name="node_7#name">node_2</Data>
+      <Data Name="node_6#name">node_0</Data>
+      <Data Name="node_7#width">22.0</Data>
+      <Data Name="node_3#y">91.0</Data>
+      <Data Name="node_4#x">51.0</Data>
+      <Data Name="node_4#y">181.0</Data>
+      <Data Name="node_5#x">51.0</Data>
+      <Data Name="node_5#y">271.0</Data>
+      <Data Name="node_6#x">51.0</Data>
+      <Data Name="node_6#width">21.0</Data>
+      <Data Name="node_5#width">102.0</Data>
+      <Data Name="node_6#y">10.5</Data>
+      <Data Name="node_7#x">51.0</Data>
+      <Data Name="node_3#x">51.0</Data>
+    </ResourceSet>
+  </Resources>
+  <Properties/>
+</Ruleflow></rfModel>
+</ilog.rules.studio.model.ruleflow:RuleFlow>

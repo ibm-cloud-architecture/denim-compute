@@ -1,0 +1,25 @@
+- name: List Decision Service Deployments
+  uri:
+    url: "{{ dc_url }}/decisioncenter-api/v1/decisionservices/{{ ds_id }}/deployments?datasource={{ datasource }}"
+    method: GET
+    url_username: "{{ dc_login }}"
+    url_password: "{{ dc_password }}"
+    validate_certs: no
+    return_content: yes
+    force_basic_auth: yes
+  register: deployments_output
+
+- name: List Decision Service Deployments Output
+  debug:
+    msg: "{{ deployments_output }}"
+
+- name: Get Decision Service Deployment
+  set_fact:
+    deployment_id: "{{ item.id }}"
+  with_items: "{{ deployments_output.json.elements }}"
+  when: item.name == ds_deployment_name
+
+- name: Decision Service Deployment ID
+  debug:
+    msg: "{{ deployment_id }}"
+  when: deployment_id is defined

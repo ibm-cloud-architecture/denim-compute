@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>claim near expiration</name>
+  <uuid>7949011e-5c74-41e7-8c9b-9abf878a2eac</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions
+	set 'occurence date' to the occured date and time of 'the accident' ; 
+if
+	the number of days between 'occurence date' and the expiration date of 'the policy' is less than 7 and
+	the number of months between the effective date of 'the policy' and 'occurence date' is less than 12 and
+	the description of 'the accident' is one of { Scratch or Dent , Hail }
+then
+	add 18 points to the score of 'the fraud' ;
+	add "Small claim within a week of policy expiration" to the reasons of 'the fraud' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

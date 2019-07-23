@@ -1,0 +1,23 @@
+- name: Login Workflow Center
+  uri:
+    url: "{{ wc_url }}/ops/system/login"
+    method: POST
+    validate_certs: no
+    url_username: "{{ wc_login }}"
+    url_password: "{{ wc_password }}"
+    body:
+      refresh_groups: true
+      requested_lifetime: 7200
+    body_format: json
+    return_content: yes
+    force_basic_auth: yes
+    status_code: 201
+  register: login_output
+
+- name: Set Login Token
+  set_fact:
+    wc_token: "{{ login_output.json.csrf_token }}"
+
+- name: Print Login Token
+  debug:
+    msg: "{{ wc_token }}"

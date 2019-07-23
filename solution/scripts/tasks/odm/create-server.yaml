@@ -1,0 +1,13 @@
+- name: Create Execution Server
+  uri:
+    url: "{{ dc_url }}/decisioncenter-api/v1/server?datasource={{ datasource }}"
+    method: PUT
+    validate_certs: no
+    url_username: "{{ dc_login }}"
+    url_password: "{{ dc_password }}"
+    body: "{{ lookup('template', './templates/server.json.j2') }}"
+    return_content: yes
+    force_basic_auth: yes
+    body_format: json
+
+- include_tasks: get-server.yaml

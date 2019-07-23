@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.query.extractor="http://ilog.rules.studio/model/query/extractor.ecore" rulesetName="segment_claim" usingRuleflow="true" ruleflowName="segment claim" targetRuleProjectName="claim-segmentation">
+  <name>segment-claim</name>
+  <uuid>8f320b8f-89d2-436d-95b3-5be1fb5b39aa</uuid>
+  <referencedVariables variableName="complexity" variableSetName="segmentation parameters" direction="OUT">
+    <variableSet href="../../claim-segmentation/rules/segmentation%20parameters.var#f0c09f35-3ee2-412e-b4be-831d34131a99"/>
+  </referencedVariables>
+  <referencedVariables variableName="claim" variableSetName="parameters">
+    <variableSet href="../../claim-bom/rules/parameters.var#d63db55d-5150-4211-af47-b608d280342a"/>
+  </referencedVariables>
+  <referencedVariables variableName="policy" variableSetName="parameters">
+    <variableSet href="../../claim-bom/rules/parameters.var#d63db55d-5150-4211-af47-b608d280342a"/>
+  </referencedVariables>
+  <ruleflow href="../../claim-segmentation/rules/segment%20claim.rfl#d4b44387-06ad-4e88-8111-d1300e32f822"/>
+  <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="segment-claim_extractor" validator="Default Validator"/>
+  <targetRuleProject href="../../claim-segmentation#1c02b934-37b8-49e3-b872-2095f68fb494"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

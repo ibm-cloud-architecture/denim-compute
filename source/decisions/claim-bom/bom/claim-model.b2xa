@@ -1,0 +1,487 @@
+<b2x:translation xmlns:b2x="http://schemas.ilog.com/JRules/1.3/Translation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.ilog.com/JRules/1.3/Translation ilog/rules/schemas/1_3/b2x.xsd">
+    <id>25ab7026-237a-4fbb-a696-82da793c87f6</id>
+    <lang>ARL</lang>
+    <class>
+        <businessName>com.ibm.gse.dc.BodilyInjury</businessName>
+        <attribute>
+            <name>extentVirtual</name>
+            <getter language="arl"><![CDATA[
+            return this.extent;
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>involvementVirtual</name>
+            <getter language="arl"><![CDATA[
+            return this.involvement;
+            ]]></getter>
+        </attribute>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.Loss</businessName>
+        <attribute>
+            <name>descriptionVirtual</name>
+            <getter language="arl"><![CDATA[
+            return this.description;
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>weatherConditionVirtual</name>
+            <getter language="arl"><![CDATA[
+            return this.weatherCondition;
+            ]]></getter>
+        </attribute>
+        <method>
+            <name>hasMultiplePartiesInvolved</name>
+            <body language="arl"><![CDATA[
+            return (this.otherParty != null);
+            ]]></body>
+        </method>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.Party</businessName>
+        <attribute>
+            <name>contextVirtual</name>
+            <getter language="arl"><![CDATA[
+            return this.context;
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>purposeVirtual</name>
+            <getter language="arl"><![CDATA[
+            return this.purpose;
+            ]]></getter>
+        </attribute>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.Policy</businessName>
+        <import>java.util.*</import>
+        <attribute>
+            <name>coverageVirtual</name>
+            <getter language="arl"><![CDATA[
+            return this.coverage;
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>salesChannelVirtual</name>
+            <getter language="arl"><![CDATA[
+            return this.salesChannel;
+            ]]></getter>
+        </attribute>
+        <method>
+            <name>vehicleAge</name>
+            <body language="arl"><![CDATA[
+            int year = java.lang.Integer.parseInt(this.vehicleYear);
+GregorianCalendar calendar = new GregorianCalendar();
+calendar.setTime(new Date());
+return (calendar.get(Calendar.YEAR) - year);
+            ]]></body>
+        </method>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.PolicyHolder</businessName>
+        <attribute>
+            <name>educationVirtual</name>
+            <getter language="arl"><![CDATA[
+            return this.education;
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>employmentStatusVirtual</name>
+            <getter language="arl"><![CDATA[
+            return this.employmentStatus;
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>maritalStatusVirtual</name>
+            <getter language="arl"><![CDATA[
+            return this.maritalStatus;
+            ]]></getter>
+        </attribute>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.response.FraudAssessment</businessName>
+        <method>
+            <name>addToScore</name>
+            <parameter type="int"/>
+            <body language="arl"><![CDATA[
+            this.score = this.score + added;
+            ]]></body>
+        </method>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.types.Coverage</businessName>
+        <executionName>java.lang.Object</executionName>
+        <attribute>
+            <name>Basic</name>
+            <getter language="irl"><![CDATA[
+            return "Basic";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Extended</name>
+            <getter language="irl"><![CDATA[
+            return "Extended";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Premium</name>
+            <getter language="irl"><![CDATA[
+            return "Premium";
+            ]]></getter>
+        </attribute>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.types.DamageDescription</businessName>
+        <executionName>java.lang.Object</executionName>
+        <attribute>
+            <name>Collision</name>
+            <getter language="irl"><![CDATA[
+            return "Collision";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Hail</name>
+            <getter language="irl"><![CDATA[
+            return "Hail";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Other</name>
+            <getter language="irl"><![CDATA[
+            return "Other";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>ScratchOrDent</name>
+            <getter language="irl"><![CDATA[
+            return "Scratch or Dent";
+            ]]></getter>
+        </attribute>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.types.Education</businessName>
+        <executionName>java.lang.Object</executionName>
+        <attribute>
+            <name>Bachelor</name>
+            <getter language="irl"><![CDATA[
+            return "Bachelor";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>College</name>
+            <getter language="irl"><![CDATA[
+            return "College";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Doctor</name>
+            <getter language="irl"><![CDATA[
+            return "Doctor";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>HighSchool</name>
+            <getter language="irl"><![CDATA[
+            return "High School";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Master</name>
+            <getter language="irl"><![CDATA[
+            return "Master";
+            ]]></getter>
+        </attribute>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.types.EmploymentStatus</businessName>
+        <executionName>java.lang.Object</executionName>
+        <attribute>
+            <name>Disabled</name>
+            <getter language="irl"><![CDATA[
+            return "Disabled";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Employed</name>
+            <getter language="irl"><![CDATA[
+            return "Employed";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>MedicalLeave</name>
+            <getter language="irl"><![CDATA[
+            return "Medical Leave";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Retired</name>
+            <getter language="irl"><![CDATA[
+            return "Retired";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Unemployed</name>
+            <getter language="irl"><![CDATA[
+            return "Unemployed";
+            ]]></getter>
+        </attribute>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.types.ExtentOfInjury</businessName>
+        <executionName>java.lang.Object</executionName>
+        <attribute>
+            <name>Fatal</name>
+            <getter language="irl"><![CDATA[
+            return "Fatal";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Light</name>
+            <getter language="irl"><![CDATA[
+            return "Light";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Severe</name>
+            <getter language="irl"><![CDATA[
+            return "Severe";
+            ]]></getter>
+        </attribute>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.types.InvolvementInAccident</businessName>
+        <executionName>java.lang.Object</executionName>
+        <attribute>
+            <name>Driver</name>
+            <getter language="irl"><![CDATA[
+            return "Driver";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Other</name>
+            <getter language="irl"><![CDATA[
+            return "Other";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Passenger</name>
+            <getter language="irl"><![CDATA[
+            return "Passenger";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Pedestrian</name>
+            <getter language="irl"><![CDATA[
+            return "Pedestrian";
+            ]]></getter>
+        </attribute>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.types.LocationType</businessName>
+        <executionName>java.lang.Object</executionName>
+        <attribute>
+            <name>Rural</name>
+            <getter language="irl"><![CDATA[
+            return "Rural";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Suburban</name>
+            <getter language="irl"><![CDATA[
+            return "Suburban";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Urban</name>
+            <getter language="irl"><![CDATA[
+            return "Urban";
+            ]]></getter>
+        </attribute>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.types.MaritalStatus</businessName>
+        <executionName>java.lang.Object</executionName>
+        <attribute>
+            <name>Divorced</name>
+            <getter language="irl"><![CDATA[
+            return "Divorced";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Married</name>
+            <getter language="irl"><![CDATA[
+            return "Married";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Single</name>
+            <getter language="irl"><![CDATA[
+            return "Single";
+            ]]></getter>
+        </attribute>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.types.PurposeOfUse</businessName>
+        <executionName>java.lang.Object</executionName>
+        <attribute>
+            <name>DrivingForEmployer</name>
+            <getter language="irl"><![CDATA[
+            return "Driving For Employer";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Personal</name>
+            <getter language="irl"><![CDATA[
+            return "Personal";
+            ]]></getter>
+        </attribute>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.types.SalesChannel</businessName>
+        <executionName>java.lang.Object</executionName>
+        <attribute>
+            <name>Agent</name>
+            <getter language="irl"><![CDATA[
+            return "Agent";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Branch</name>
+            <getter language="irl"><![CDATA[
+            return "Branch";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>CallCenter</name>
+            <getter language="irl"><![CDATA[
+            return "CallCenter";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Web</name>
+            <getter language="irl"><![CDATA[
+            return "Web";
+            ]]></getter>
+        </attribute>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.types.VehicleClass</businessName>
+        <executionName>java.lang.Object</executionName>
+        <attribute>
+            <name>FourDoorCar</name>
+            <getter language="irl"><![CDATA[
+            return "Four Door Car";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>LuxuryCar</name>
+            <getter language="irl"><![CDATA[
+            return "Luxury Car";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>LuxurySUV</name>
+            <getter language="irl"><![CDATA[
+            return "Luxury SUV";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>SUV</name>
+            <getter language="irl"><![CDATA[
+            return "SUV";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>SportsCar</name>
+            <getter language="irl"><![CDATA[
+            return "Sports Car";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>TwoDoorCar</name>
+            <getter language="irl"><![CDATA[
+            return "Two Door Car";
+            ]]></getter>
+        </attribute>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.types.VehicleContext</businessName>
+        <executionName>java.lang.Object</executionName>
+        <attribute>
+            <name>Moving</name>
+            <getter language="irl"><![CDATA[
+            return "Moving";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Other</name>
+            <getter language="irl"><![CDATA[
+            return "Other";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Parked</name>
+            <getter language="irl"><![CDATA[
+            return "Parked";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>StoppedInTraffic</name>
+            <getter language="irl"><![CDATA[
+            return "Stopped In Traffic";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Unknown</name>
+            <getter language="irl"><![CDATA[
+            return "Unknown";
+            ]]></getter>
+        </attribute>
+    </class>
+    <class>
+        <businessName>com.ibm.gse.dc.types.WeatherCondition</businessName>
+        <executionName>java.lang.Object</executionName>
+        <attribute>
+            <name>Cloudy</name>
+            <getter language="irl"><![CDATA[
+            return "Cloudy";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>FreezingRain</name>
+            <getter language="irl"><![CDATA[
+            return "Freezing Rain";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>HeavyRain</name>
+            <getter language="irl"><![CDATA[
+            return "Heavy Rain";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>LightRain</name>
+            <getter language="irl"><![CDATA[
+            return "Light Rain";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Snow</name>
+            <getter language="irl"><![CDATA[
+            return "Snow";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Sunny</name>
+            <getter language="irl"><![CDATA[
+            return "Sunny";
+            ]]></getter>
+        </attribute>
+        <attribute>
+            <name>Unknown</name>
+            <getter language="irl"><![CDATA[
+            return "Unknown";
+            ]]></getter>
+        </attribute>
+    </class>
+</b2x:translation>

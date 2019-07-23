@@ -1,0 +1,29 @@
+- name: Unset dashboard_id
+  set_fact:
+    dashboard_id: ""
+
+- name: Search Kibana Dashboard
+  uri:
+    url: "{{ kibana_url }}/api/saved_objects/_find?type=dashboard&search={{ dashboard_name | urlencode }}&search_fields=title"
+    method: GET
+    url_username: "{{ kibana_login }}"
+    url_password: "{{ kibana_password }}"
+    validate_certs: no
+    return_content: yes
+    force_basic_auth: yes
+  register: dashboard_output
+
+- name: Search Kibana Dashboard Output
+  debug:
+    msg: "{{ dashboard_output.json }}"
+
+- name: Get Kibana Dashboard
+  set_fact:
+    dashboard_id: "{{ item.id }}"
+  with_items: "{{ dashboard_output.json.saved_objects }}"
+  when: item.attributes.title == dashboard_name
+
+- name: Kibana Dashboard ID
+  debug:
+    msg: "{{ dashboard_id }}"
+  when: dashboard_id is defined and dashboard_id != ""

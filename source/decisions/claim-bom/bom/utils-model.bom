@@ -1,0 +1,11 @@
+
+property uuid "51d1c852-fa61-43df-9587-35415ad6f21f"
+package utils;
+
+
+public class MathUtil
+{
+    public static int max(int value1, int value2);
+    public static int min(int value1, int value2);
+}
+

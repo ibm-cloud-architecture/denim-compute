@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>vehicle dumping</name>
+  <uuid>eb0e89e1-9fc0-431e-8c26-e2f05a7b8735</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if 
+	the description of the loss of 'the claim' is Other and
+	the age of the vehicle on 'the policy' is more than 15
+then
+	add 15 points to the score of 'the fraud' ;
+	add "Old vehicle declared stolen" to the reasons of 'the fraud' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

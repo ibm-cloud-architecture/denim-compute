@@ -1,0 +1,45 @@
+- hosts: localhost
+  tasks:
+    - name: Deploy decision service
+      block:   
+      - include_tasks: tasks/odm/get-ds.yaml
+
+      - include_tasks: tasks/odm/import-ds.yaml
+        when: ds_id is undefined
+
+      - include_tasks: tasks/odm/get-deployment.yaml
+
+      - include_tasks: tasks/odm/get-server.yaml
+
+      - include_tasks: tasks/odm/create-server.yaml
+        when: server_id is undefined
+
+      - include_tasks: tasks/odm/deploy-ds.yaml
+      tags:
+      - deploy_ds
+    
+    - name: Load the BPM/Case application
+      block:
+      - include_tasks: tasks/baw/login.yaml
+
+      - include_tasks: tasks/baw/get-app.yaml
+
+      - include_tasks: tasks/baw/import-app.yaml
+        when: app_id is undefined
+      
+      tags:
+      - load_case
+
+    - name: Import the Kibana dashboards
+      block:
+      - include_tasks: tasks/bai/get-dashboard.yaml
+        vars:
+          dashboard_name: "{{ odm_dashboard_name }}"
+
+      - include_tasks: tasks/bai/import-dashboard.yaml
+        vars:
+          dashboard_name: "{{ odm_dashboard_name }}"
+          dashboard_file_path: "{{ odm_dashboard_file_path }}"
+        when: dashboard_id is undefined or dashboard_id == ""
+      tags:
+      - import_dashboard

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>hail on sunny day</name>
+  <uuid>5db1ebda-7353-440f-9cbe-f585c3619af1</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	the weather condition of 'the accident' is Sunny and
+	the description of 'the accident' is Hail 
+then
+	add 95 points to the score of 'the fraud' ;
+	add "Hail on a sunny day is improbable" to the reasons of 'the fraud' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

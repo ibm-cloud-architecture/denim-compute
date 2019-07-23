@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>fraud parameters</name>
+  <uuid>477a5477-2db6-442f-b96a-0643453159c7</uuid>
+  <variables name="fraud" type="com.ibm.gse.dc.response.FraudAssessment" initialValue="new com.ibm.gse.dc.response.FraudAssessment()" verbalization="the fraud"/>
+</ilog.rules.studio.model.base:VariableSet>

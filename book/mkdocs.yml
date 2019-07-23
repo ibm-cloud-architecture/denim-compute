@@ -1,0 +1,42 @@
+site_name: Denim Compute - A Cloud Pak for Automation reference implementation
+repo_url: https://github.ibm.com/CASE/denim-compute
+
+nav:
+    - Introduction: index.md
+    - Use case:
+        - Use case definition: ./usecase/use-case-definition.md
+        - Scenario walkthrough: ./usecase/resources/denim-compute-scenario-walkthrough.pdf
+    - Environment:
+        - Introduction: ./environment/intro.md
+        - Creating VMs: ./environment/create-vms.md
+        - Platform install:
+            - IBM Cloud Private: ./environment/install-icp.md
+            - RedHat OpenShift: ./environment/install-openshift.md
+        - Installing CAM: ./environment/install-cam.md
+        - Installing BAW: ./environment/install-baw.md
+        - Installing BAI: ./environment/install-bai.md
+        - Sundries: ./environment/sundries.md
+    - Design:
+        - Workflow: ./design/workflow.md
+        - Decisions: ./design/decisions.md
+        - Insights: ./design/insights.md
+        - Sundries: ./design/sundries.md
+    - Development:
+        - Workflow: 
+            - Introduction: ./development/workflow-intro.md
+            - Process flow control: ./development/process-flow-control.md
+            - Process services: ./development/process-services.md
+            - Process user interface: ./development/process-user-interface.md
+            - Case activities: ./development/case-activities.md
+            - Case user interface: ./development/case-user-interface.md
+        - Decisions: ./development/decisions.md
+        - Sundries: ./development/sundries.md
+    - Showtime:
+        - Deploy: ./showtime/deploy-solution.md
+        - Run: ./showtime/run-solution.md
+    - References: references.md
+
+theme: 
+  name: material
+
+extra_css: ["extra.css"]

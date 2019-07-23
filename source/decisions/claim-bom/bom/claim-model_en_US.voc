@@ -1,0 +1,276 @@
+# Vocabulary Properties
+com.ibm.gse.dc.Policy.monthsSincePolicyInception()#phrase.navigation = the number of months since the inception of {this}
+uuid = 7ed14cb1-ca80-4303-ae13-d49b2076c2d9
+
+# com.ibm.gse.dc.BodilyInjury
+com.ibm.gse.dc.BodilyInjury#concept.label = injury
+com.ibm.gse.dc.BodilyInjury.extentVirtual#phrase.navigation = {extent} of {this}
+com.ibm.gse.dc.BodilyInjury.involvementVirtual#phrase.navigation = {involvement} of {this}
+
+# com.ibm.gse.dc.Claim
+com.ibm.gse.dc.Claim#concept.label = claim
+com.ibm.gse.dc.Claim.amount#phrase.navigation = {estimated amount} of {this}
+com.ibm.gse.dc.Claim.loss#phrase.navigation = {loss} of {this}
+com.ibm.gse.dc.Claim.number#phrase.navigation = {number} of {this}
+
+# com.ibm.gse.dc.Location
+com.ibm.gse.dc.Location#concept.label = location
+com.ibm.gse.dc.Location.city#phrase.navigation = {city} of {this}
+com.ibm.gse.dc.Location.latitude#phrase.navigation = {latitude} of {this}
+com.ibm.gse.dc.Location.longitude#phrase.navigation = {longitude} of {this}
+com.ibm.gse.dc.Location.state#phrase.navigation = {state} of {this}
+com.ibm.gse.dc.Location.street#phrase.navigation = {street} of {this}
+com.ibm.gse.dc.Location.zip#phrase.navigation = {zip} of {this}
+
+# com.ibm.gse.dc.Loss
+com.ibm.gse.dc.Loss#concept.label = loss
+com.ibm.gse.dc.Loss.damages#phrase.navigation = {damage} of {this}
+com.ibm.gse.dc.Loss.descriptionVirtual#phrase.navigation = {description} of {this}
+com.ibm.gse.dc.Loss.hasMultiplePartiesInvolved()#phrase.navigation = {this} has multiple parties involved
+com.ibm.gse.dc.Loss.injuries#phrase.navigation = {injury} of {this}
+com.ibm.gse.dc.Loss.location#phrase.navigation = {accident location} of {this}
+com.ibm.gse.dc.Loss.numberOfWitnesses#phrase.navigation = {number of witnesses} of {this}
+com.ibm.gse.dc.Loss.occuredDateTime#phrase.navigation = {occured date and time} of {this}
+com.ibm.gse.dc.Loss.onPrivateProperty#phrase.navigation = {this} is on private property
+com.ibm.gse.dc.Loss.otherParty#phrase.navigation = {other party} of {this}
+com.ibm.gse.dc.Loss.reportedDateTime#phrase.navigation = {reported date and time} of {this}
+com.ibm.gse.dc.Loss.reportingParty#phrase.navigation = {reporting party} of {this}
+com.ibm.gse.dc.Loss.weatherConditionVirtual#phrase.navigation = {weather condition} of {this}
+
+# com.ibm.gse.dc.Party
+com.ibm.gse.dc.Party#concept.label = party
+com.ibm.gse.dc.Party.contextVirtual#phrase.navigation = {context} of {this}
+com.ibm.gse.dc.Party.driverAddress#phrase.navigation = {driver address} of {this}
+com.ibm.gse.dc.Party.driverDOB#phrase.navigation = {driver DOB} of {this}
+com.ibm.gse.dc.Party.firstName#phrase.navigation = {first name} of {this}
+com.ibm.gse.dc.Party.insuranceCarrier#phrase.navigation = {insurance carrier} of {this}
+com.ibm.gse.dc.Party.lastName#phrase.navigation = {last name} of {this}
+com.ibm.gse.dc.Party.purposeVirtual#phrase.navigation = {purpose} of {this}
+com.ibm.gse.dc.Party.usedWithPermission#phrase.navigation = {this} is used with permission
+com.ibm.gse.dc.Party.vehicleDamageEstimate#phrase.navigation = {damages estimate} of {this}
+
+# com.ibm.gse.dc.Policy
+com.ibm.gse.dc.Policy#concept.label = policy
+com.ibm.gse.dc.Policy.coverageVirtual#phrase.navigation = {coverage} of {this}
+com.ibm.gse.dc.Policy.dateOfLastClaim#phrase.navigation = {date of last claim} of {this}
+com.ibm.gse.dc.Policy.effective#phrase.navigation = {effective} date of {this}
+com.ibm.gse.dc.Policy.expiration#phrase.navigation = {expiration} date of {this}
+com.ibm.gse.dc.Policy.monthlyPremium#phrase.navigation = {monthly premium} of {this}
+com.ibm.gse.dc.Policy.number#phrase.navigation = {number} of {this}
+com.ibm.gse.dc.Policy.policyHolder#phrase.navigation = {policy holder} of {this}
+com.ibm.gse.dc.Policy.salesChannelVirtual#phrase.navigation = {sales channel} of {this}
+com.ibm.gse.dc.Policy.vehicleAge()#phrase.navigation = the age of the vehicle on {this}
+com.ibm.gse.dc.Policy.vehicleMake#phrase.navigation = {vehicle make} of {this}
+com.ibm.gse.dc.Policy.vehicleModel#phrase.navigation = {vehicle model} of {this}
+com.ibm.gse.dc.Policy.vehicleYear#phrase.navigation = {vehicle year} of {this}
+
+# com.ibm.gse.dc.PolicyHolder
+com.ibm.gse.dc.PolicyHolder#concept.label = policy holder
+com.ibm.gse.dc.PolicyHolder.address#phrase.navigation = {address} of {this}
+com.ibm.gse.dc.PolicyHolder.educationVirtual#phrase.navigation = {education} of {this}
+com.ibm.gse.dc.PolicyHolder.employmentStatusVirtual#phrase.navigation = {employment status} of {this}
+com.ibm.gse.dc.PolicyHolder.firstName#phrase.navigation = {first name} of {this}
+com.ibm.gse.dc.PolicyHolder.lastName#phrase.navigation = {last name} of {this}
+com.ibm.gse.dc.PolicyHolder.maritalStatusVirtual#phrase.navigation = {marital status} of {this}
+com.ibm.gse.dc.PolicyHolder.monthlyIncome#phrase.navigation = {monthly income} of {this}
+
+# com.ibm.gse.dc.PropertyDamage
+com.ibm.gse.dc.PropertyDamage#concept.label = property damage
+com.ibm.gse.dc.PropertyDamage.estimatedAmount#phrase.navigation = {estimated amount} of {this}
+com.ibm.gse.dc.PropertyDamage.totalEstimatedAmount(java.util.List)#phrase.navigation = the total estimated amount of {0}
+
+# com.ibm.gse.dc.response.ComplexityAssessment
+com.ibm.gse.dc.response.ComplexityAssessment#concept.label = complexity assessment
+
+# com.ibm.gse.dc.response.ComplexityAssessment.Complexity
+com.ibm.gse.dc.response.ComplexityAssessment.Complexity#concept.label = complexity
+com.ibm.gse.dc.response.ComplexityAssessment.Complexity.High#instance.label = High
+com.ibm.gse.dc.response.ComplexityAssessment.Complexity.Low#instance.label = Low
+com.ibm.gse.dc.response.ComplexityAssessment.Complexity.Medium#instance.label = Medium
+com.ibm.gse.dc.response.ComplexityAssessment.addToDamageComponent(int)#phrase.action = add {0} points to the damage component of {this}
+com.ibm.gse.dc.response.ComplexityAssessment.addToInjuryComponent(int)#phrase.action = add {0} points to the injury component of {this}
+com.ibm.gse.dc.response.ComplexityAssessment.addToOthersComponent(int)#phrase.action = add {0} points to the others component of {this}
+com.ibm.gse.dc.response.ComplexityAssessment.complexity#phrase.action = set the complexity of {this} to {complexity}
+com.ibm.gse.dc.response.ComplexityAssessment.complexity#phrase.navigation = {complexity} of {this}
+com.ibm.gse.dc.response.ComplexityAssessment.damageComponent#phrase.action = set the damage component of {this} to {damage component}
+com.ibm.gse.dc.response.ComplexityAssessment.damageComponent#phrase.navigation = {damage component} of {this}
+com.ibm.gse.dc.response.ComplexityAssessment.injuryComponent#phrase.action = set the injury component of {this} to {injury component}
+com.ibm.gse.dc.response.ComplexityAssessment.injuryComponent#phrase.navigation = {injury component} of {this}
+com.ibm.gse.dc.response.ComplexityAssessment.normalizedScore#phrase.action = set the normalized score of {this} to {normalized score}
+com.ibm.gse.dc.response.ComplexityAssessment.normalizedScore#phrase.navigation = {normalized score} of {this}
+com.ibm.gse.dc.response.ComplexityAssessment.othersComponent#phrase.action = set the others component of {this} to {others component}
+com.ibm.gse.dc.response.ComplexityAssessment.othersComponent#phrase.navigation = {others component} of {this}
+com.ibm.gse.dc.response.ComplexityAssessment.rawScore#phrase.action = set the raw score of {this} to {raw score}
+com.ibm.gse.dc.response.ComplexityAssessment.rawScore#phrase.navigation = {raw score} of {this}
+
+# com.ibm.gse.dc.response.EscalationAssessment
+com.ibm.gse.dc.response.EscalationAssessment#concept.label = escalation assessment
+com.ibm.gse.dc.response.EscalationAssessment.addReason(java.lang.String)#phrase.action = add {0} to the reasons of {this}
+com.ibm.gse.dc.response.EscalationAssessment.reasons#phrase.action = set the reasons of {this} to {reason}
+com.ibm.gse.dc.response.EscalationAssessment.reasons#phrase.navigation = {reason} of {this}
+com.ibm.gse.dc.response.EscalationAssessment.required#phrase.action = make it {required} that {this} is required
+com.ibm.gse.dc.response.EscalationAssessment.required#phrase.navigation = {this} is required
+
+# com.ibm.gse.dc.response.FraudAssessment
+com.ibm.gse.dc.response.FraudAssessment#concept.label = fraud assessment
+com.ibm.gse.dc.response.FraudAssessment.addReason(java.lang.String)#phrase.action = add {0} to the reasons of {this}
+com.ibm.gse.dc.response.FraudAssessment.addToScore(int)#phrase.action = add {0} points to the score of {this}
+com.ibm.gse.dc.response.FraudAssessment.reasons#phrase.action = set the reasons of {this} to {reason}
+com.ibm.gse.dc.response.FraudAssessment.reasons#phrase.navigation = {reason} of {this}
+com.ibm.gse.dc.response.FraudAssessment.score#phrase.action = set the score of {this} to {score}
+com.ibm.gse.dc.response.FraudAssessment.score#phrase.navigation = {score} of {this}
+
+# com.ibm.gse.dc.types.Coverage
+com.ibm.gse.dc.types.Coverage#concept.label = com.ibm.gse.dc.types.Coverage
+com.ibm.gse.dc.types.Coverage.Basic#instance.documentation = Basic
+com.ibm.gse.dc.types.Coverage.Basic#instance.label = Basic
+com.ibm.gse.dc.types.Coverage.Extended#instance.documentation = Extended
+com.ibm.gse.dc.types.Coverage.Extended#instance.label = Extended
+com.ibm.gse.dc.types.Coverage.Premium#instance.documentation = Premium
+com.ibm.gse.dc.types.Coverage.Premium#instance.label = Premium
+
+# com.ibm.gse.dc.types.DamageDescription
+com.ibm.gse.dc.types.DamageDescription#concept.label = com.ibm.gse.dc.types.Damagedescription
+com.ibm.gse.dc.types.DamageDescription.Collision#instance.documentation = Collision
+com.ibm.gse.dc.types.DamageDescription.Collision#instance.label = Collision
+com.ibm.gse.dc.types.DamageDescription.Hail#instance.documentation = Hail
+com.ibm.gse.dc.types.DamageDescription.Hail#instance.label = Hail
+com.ibm.gse.dc.types.DamageDescription.Other#instance.documentation = Other
+com.ibm.gse.dc.types.DamageDescription.Other#instance.label = Other
+com.ibm.gse.dc.types.DamageDescription.ScratchOrDent#instance.documentation = Scratch or Dent
+com.ibm.gse.dc.types.DamageDescription.ScratchOrDent#instance.label = Scratch or Dent
+
+# com.ibm.gse.dc.types.Education
+com.ibm.gse.dc.types.Education#concept.label = com.ibm.gse.dc.types.Education
+com.ibm.gse.dc.types.Education.Bachelor#instance.documentation = Bachelor
+com.ibm.gse.dc.types.Education.Bachelor#instance.label = Bachelor
+com.ibm.gse.dc.types.Education.College#instance.documentation = College
+com.ibm.gse.dc.types.Education.College#instance.label = College
+com.ibm.gse.dc.types.Education.Doctor#instance.documentation = Doctor
+com.ibm.gse.dc.types.Education.Doctor#instance.label = Doctor
+com.ibm.gse.dc.types.Education.HighSchool#instance.documentation = HighSchool
+com.ibm.gse.dc.types.Education.HighSchool#instance.label = High School
+com.ibm.gse.dc.types.Education.Master#instance.documentation = Master
+com.ibm.gse.dc.types.Education.Master#instance.label = Master
+
+# com.ibm.gse.dc.types.EmploymentStatus
+com.ibm.gse.dc.types.EmploymentStatus#concept.label = com.ibm.gse.dc.types.EmploymentStatus
+com.ibm.gse.dc.types.EmploymentStatus.Disabled#instance.documentation = Disabled
+com.ibm.gse.dc.types.EmploymentStatus.Disabled#instance.label = Disabled
+com.ibm.gse.dc.types.EmploymentStatus.Employed#instance.documentation = Employed
+com.ibm.gse.dc.types.EmploymentStatus.Employed#instance.label = Employed
+com.ibm.gse.dc.types.EmploymentStatus.MedicalLeave#instance.documentation = MedicalLeave
+com.ibm.gse.dc.types.EmploymentStatus.MedicalLeave#instance.label = Medical Leave
+com.ibm.gse.dc.types.EmploymentStatus.Retired#instance.documentation = Retired
+com.ibm.gse.dc.types.EmploymentStatus.Retired#instance.label = Retired
+com.ibm.gse.dc.types.EmploymentStatus.Unemployed#instance.documentation = Unemployed
+com.ibm.gse.dc.types.EmploymentStatus.Unemployed#instance.label = Unemployed
+
+# com.ibm.gse.dc.types.ExtentOfInjury
+com.ibm.gse.dc.types.ExtentOfInjury#concept.label = com.ibm.gse.dc.types.ExtentOfInjury
+com.ibm.gse.dc.types.ExtentOfInjury.Fatal#instance.documentation = Fatal
+com.ibm.gse.dc.types.ExtentOfInjury.Fatal#instance.label = Fatal
+com.ibm.gse.dc.types.ExtentOfInjury.Light#instance.documentation = Light
+com.ibm.gse.dc.types.ExtentOfInjury.Light#instance.label = Light
+com.ibm.gse.dc.types.ExtentOfInjury.Severe#instance.documentation = Severe
+com.ibm.gse.dc.types.ExtentOfInjury.Severe#instance.label = Severe
+
+# com.ibm.gse.dc.types.InvolvementInAccident
+com.ibm.gse.dc.types.InvolvementInAccident#concept.label = com.ibm.gse.dc.types.InvolvementInAccident
+com.ibm.gse.dc.types.InvolvementInAccident.Driver#instance.documentation = Driver
+com.ibm.gse.dc.types.InvolvementInAccident.Driver#instance.label = Driver
+com.ibm.gse.dc.types.InvolvementInAccident.Other#instance.documentation = Other
+com.ibm.gse.dc.types.InvolvementInAccident.Other#instance.label = Other
+com.ibm.gse.dc.types.InvolvementInAccident.Passenger#instance.documentation = Passenger
+com.ibm.gse.dc.types.InvolvementInAccident.Passenger#instance.label = Passenger
+com.ibm.gse.dc.types.InvolvementInAccident.Pedestrian#instance.documentation = Pedestrian
+com.ibm.gse.dc.types.InvolvementInAccident.Pedestrian#instance.label = Pedestrian
+
+# com.ibm.gse.dc.types.LocationType
+com.ibm.gse.dc.types.LocationType#concept.label = com.ibm.gse.dc.types.ResidenceLocation
+com.ibm.gse.dc.types.LocationType.Rural#instance.documentation = Rural
+com.ibm.gse.dc.types.LocationType.Rural#instance.label = Rural
+com.ibm.gse.dc.types.LocationType.Suburban#instance.documentation = Suburban
+com.ibm.gse.dc.types.LocationType.Suburban#instance.label = Suburban
+com.ibm.gse.dc.types.LocationType.Urban#instance.documentation = Urban
+com.ibm.gse.dc.types.LocationType.Urban#instance.label = Urban
+
+# com.ibm.gse.dc.types.MaritalStatus
+com.ibm.gse.dc.types.MaritalStatus#concept.label = com.ibm.gse.dc.types.MaritalStatus
+com.ibm.gse.dc.types.MaritalStatus.Divorced#instance.documentation = Divorced
+com.ibm.gse.dc.types.MaritalStatus.Divorced#instance.label = Divorced
+com.ibm.gse.dc.types.MaritalStatus.Married#instance.documentation = Married
+com.ibm.gse.dc.types.MaritalStatus.Married#instance.label = Married
+com.ibm.gse.dc.types.MaritalStatus.Single#instance.documentation = Single
+com.ibm.gse.dc.types.MaritalStatus.Single#instance.label = Single
+
+# com.ibm.gse.dc.types.PurposeOfUse
+com.ibm.gse.dc.types.PurposeOfUse#concept.label = com.ibm.gse.dc.types.PurposeOfUse
+com.ibm.gse.dc.types.PurposeOfUse.DrivingForEmployer#instance.documentation = DrivingForEmployer
+com.ibm.gse.dc.types.PurposeOfUse.DrivingForEmployer#instance.label = Driving For Employer
+com.ibm.gse.dc.types.PurposeOfUse.Personal#instance.documentation = Personal
+com.ibm.gse.dc.types.PurposeOfUse.Personal#instance.label = Personal
+
+# com.ibm.gse.dc.types.SalesChannel
+com.ibm.gse.dc.types.SalesChannel#concept.label = com.ibm.gse.dc.types.SalesChannel
+com.ibm.gse.dc.types.SalesChannel.Agent#instance.documentation = Agent
+com.ibm.gse.dc.types.SalesChannel.Agent#instance.label = Agent
+com.ibm.gse.dc.types.SalesChannel.Branch#instance.documentation = Branch
+com.ibm.gse.dc.types.SalesChannel.Branch#instance.label = Branch
+com.ibm.gse.dc.types.SalesChannel.CallCenter#instance.documentation = CallCenter
+com.ibm.gse.dc.types.SalesChannel.CallCenter#instance.label = Call Center
+com.ibm.gse.dc.types.SalesChannel.Web#instance.documentation = Web
+com.ibm.gse.dc.types.SalesChannel.Web#instance.label = Web
+
+# com.ibm.gse.dc.types.VehicleClass
+com.ibm.gse.dc.types.VehicleClass#concept.label = com.ibm.gse.dc.types.VehicleClass
+com.ibm.gse.dc.types.VehicleClass.FourDoorCar#instance.documentation = FourDoorCar
+com.ibm.gse.dc.types.VehicleClass.FourDoorCar#instance.label = Four Door Car
+com.ibm.gse.dc.types.VehicleClass.LuxuryCar#instance.documentation = LuxuryCar
+com.ibm.gse.dc.types.VehicleClass.LuxuryCar#instance.label = Luxury Car
+com.ibm.gse.dc.types.VehicleClass.LuxurySUV#instance.documentation = LuxurySUV
+com.ibm.gse.dc.types.VehicleClass.LuxurySUV#instance.label = Luxury SUV
+com.ibm.gse.dc.types.VehicleClass.SUV#instance.documentation = SUV
+com.ibm.gse.dc.types.VehicleClass.SUV#instance.label = SUV
+com.ibm.gse.dc.types.VehicleClass.SportsCar#instance.documentation = SportsCar
+com.ibm.gse.dc.types.VehicleClass.SportsCar#instance.label = Sports Car
+com.ibm.gse.dc.types.VehicleClass.TwoDoorCar#instance.documentation = TwoDoorCar
+com.ibm.gse.dc.types.VehicleClass.TwoDoorCar#instance.label = Two Door Car
+
+# com.ibm.gse.dc.types.VehicleContext
+com.ibm.gse.dc.types.VehicleContext#concept.label = com.ibm.gse.dc.types.VehicleContext
+com.ibm.gse.dc.types.VehicleContext.Moving#instance.documentation = Moving
+com.ibm.gse.dc.types.VehicleContext.Moving#instance.label = Moving
+com.ibm.gse.dc.types.VehicleContext.Other#instance.documentation = Other
+com.ibm.gse.dc.types.VehicleContext.Other#instance.label = Other
+com.ibm.gse.dc.types.VehicleContext.Parked#instance.documentation = Parked
+com.ibm.gse.dc.types.VehicleContext.Parked#instance.label = Parked
+com.ibm.gse.dc.types.VehicleContext.StoppedInTraffic#instance.documentation = StoppedInTraffic
+com.ibm.gse.dc.types.VehicleContext.StoppedInTraffic#instance.label = Stopped In Traffic
+com.ibm.gse.dc.types.VehicleContext.Unknown#instance.documentation = Unknown
+com.ibm.gse.dc.types.VehicleContext.Unknown#instance.label = Unknown
+
+# com.ibm.gse.dc.types.WeatherCondition
+com.ibm.gse.dc.types.WeatherCondition#concept.label = com.ibm.gse.dc.types.WeatherCondition
+com.ibm.gse.dc.types.WeatherCondition.Cloudy#instance.documentation = Cloudy
+com.ibm.gse.dc.types.WeatherCondition.Cloudy#instance.label = Cloudy
+com.ibm.gse.dc.types.WeatherCondition.FreezingRain#instance.documentation = FreezingRain
+com.ibm.gse.dc.types.WeatherCondition.FreezingRain#instance.label = Freezing Rain
+com.ibm.gse.dc.types.WeatherCondition.HeavyRain#instance.documentation = HeavyRain
+com.ibm.gse.dc.types.WeatherCondition.HeavyRain#instance.label = Heavy Rain
+com.ibm.gse.dc.types.WeatherCondition.LightRain#instance.documentation = LightRain
+com.ibm.gse.dc.types.WeatherCondition.LightRain#instance.label = Light Rain
+com.ibm.gse.dc.types.WeatherCondition.Snow#instance.documentation = Snow
+com.ibm.gse.dc.types.WeatherCondition.Snow#instance.label = Snow
+com.ibm.gse.dc.types.WeatherCondition.Sunny#instance.documentation = Sunny
+com.ibm.gse.dc.types.WeatherCondition.Sunny#instance.label = Sunny
+com.ibm.gse.dc.types.WeatherCondition.Unknown#instance.documentation = Unknown
+com.ibm.gse.dc.types.WeatherCondition.Unknown#instance.label = Unknown
+
+# com.ibm.gse.dc.util.DateUtil
+com.ibm.gse.dc.util.DateUtil#concept.label = date util
+com.ibm.gse.dc.util.DateUtil.getDaysBetween(java.util.Date,java.util.Date)#phrase.navigation = the number of days between {0} and {1}
+com.ibm.gse.dc.util.DateUtil.getMonthsBetween(java.util.Date,java.util.Date)#phrase.navigation = the number of months between {0} and {1}
+com.ibm.gse.dc.util.DateUtil.getYearsBetween(java.util.Date,java.util.Date)#phrase.navigation = the number of years between {0} and {1}
+com.ibm.gse.dc.util.DateUtil.today()#phrase.navigation = now
+com.ibm.gse.dc.util.DateUtil.yearToday()#phrase.navigation = today's year

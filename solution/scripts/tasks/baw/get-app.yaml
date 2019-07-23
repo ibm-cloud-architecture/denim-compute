@@ -1,0 +1,23 @@
+- name: List Process Apps
+  uri:
+    url: "{{ wc_url }}/ops/std/bpm/containers?type=PA"
+    method: GET
+    validate_certs: no
+    url_username: "{{ wc_login }}"
+    url_password: "{{ wc_password }}"
+    return_content: yes
+    force_basic_auth: yes
+    headers:
+      BPMCSRFToken: "{{ wc_token }}"
+  register: process_apps_output
+
+- name: Get Process App
+  set_fact:
+    app_id: "{{ item.id }}"
+  with_items: "{{ process_apps_output.json.containers }}"
+  when: item.container == app_short_name
+
+- name: Process App ID
+  debug:
+    msg: "{{ app_id }}"
+  when: app_id is defined

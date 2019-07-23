@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>parameters</name>
+  <uuid>d63db55d-5150-4211-af47-b608d280342a</uuid>
+  <variables name="claim" type="com.ibm.gse.dc.Claim" initialValue="" verbalization="the claim"/>
+  <variables name="policy" type="com.ibm.gse.dc.Policy" initialValue="" verbalization="the policy"/>
+  <variables name="accident" type="com.ibm.gse.dc.Loss" initialValue="claim.loss" verbalization="the accident"/>
+</ilog.rules.studio.model.base:VariableSet>

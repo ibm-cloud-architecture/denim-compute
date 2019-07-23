@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Deployment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" ruleAppName="claim_processing" managingXom="true">
+  <name>claim-processing</name>
+  <uuid>79ea33aa-d842-491e-883b-8db193c5a4db</uuid>
+  <targets label="Local RES"/>
+  <targets label="DBAMC cluster"/>
+  <operations operationName="assess-fraud">
+    <operation href="assess-fraud.dop#d41b9605-e8bf-4668-92d7-eebdc9df2158"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+    <properties key="bai.emitter.enabled">
+      <value><![CDATA[true]]></value>
+    </properties>
+    <properties key="bai.emitter.input">
+      <value><![CDATA[true]]></value>
+    </properties>
+    <properties key="bai.emitter.output">
+      <value><![CDATA[true]]></value>
+    </properties>
+  </operations>
+  <operations operationName="review-escalation">
+    <operation href="review-escalation.dop#319a65be-38fa-4a7e-aee3-95db9130f6c2"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+    <properties key="bai.emitter.enabled">
+      <value><![CDATA[true]]></value>
+    </properties>
+    <properties key="bai.emitter.input">
+      <value><![CDATA[true]]></value>
+    </properties>
+    <properties key="bai.emitter.output">
+      <value><![CDATA[true]]></value>
+    </properties>
+  </operations>
+  <operations operationName="segment-claim">
+    <operation href="segment-claim.dop#8f320b8f-89d2-436d-95b3-5be1fb5b39aa"/>
+    <properties key="ruleset.version">
+      <value><![CDATA[1.0]]></value>
+    </properties>
+    <properties key="bai.emitter.enabled">
+      <value><![CDATA[true]]></value>
+    </properties>
+    <properties key="bai.emitter.input">
+      <value><![CDATA[true]]></value>
+    </properties>
+    <properties key="bai.emitter.output">
+      <value><![CDATA[true]]></value>
+    </properties>
+  </operations>
+  <versionPolicies label="Increment minor version numbers" ruleset="INCREMENT_MINOR" recurrent="true">
+    <description><![CDATA[Updates the minor version for each ruleset. Makes the new version available but retains previous versions.]]></description>
+  </versionPolicies>
+  <versionPolicies label="Use the base version numbers" default="true" recurrent="true">
+    <description><![CDATA[Uses the numbers provided in the deployment configuration. Replaces the latest version of each ruleset with this release. Used for hot fixes or development.]]></description>
+  </versionPolicies>
+  <versionPolicies label="The user can define the version numbers" ruleset="MANUAL" recurrent="true">
+    <description><![CDATA[Allows you to enter your own version numbers. Used for hot fixes or updates to an earlier release.]]></description>
+  </versionPolicies>
+</com.ibm.rules.studio.model.decisionservice:Deployment>

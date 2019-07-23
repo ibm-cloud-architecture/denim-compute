@@ -1,0 +1,25 @@
+- name: List Execution Servers
+  uri:
+    url: "{{ dc_url }}/decisioncenter-api/v1/servers?datasource={{ datasource }}"
+    method: GET
+    url_username: "{{ dc_login }}"
+    url_password: "{{ dc_password }}"
+    validate_certs: no
+    return_content: yes
+    force_basic_auth: yes
+  register: servers_output
+
+- name: List Execution Servers Output
+  debug:
+    msg: "{{ servers_output }}"
+
+- name: Get Execution Server
+  set_fact:
+    server_id: "{{ item.id }}"
+  with_items: "{{ servers_output.json.elements }}"
+  when: item.name == server_name
+
+- name: Execution Server ID
+  debug:
+    msg: "{{ server_id }}"
+  when: server_id is defined

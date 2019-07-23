@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>sum of property damages</name>
+  <uuid>d7dfd771-da3c-4abe-a7b7-2ee0f9f92cae</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if 
+	 the total estimated amount of the damages of 'the accident' is at least 10000
+then
+	add 7 points to the damage component of 'the complexity' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

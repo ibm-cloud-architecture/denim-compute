@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:RulePackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>normalize</name>
+  <uuid>8afee0ed-5ca1-4378-adc0-ee3f3343fb89</uuid>
+</ilog.rules.studio.model.base:RulePackage>

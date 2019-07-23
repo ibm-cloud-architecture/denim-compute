@@ -1,0 +1,16 @@
+- name: Import ODM Dashboard
+  uri:
+    url: "{{ kibana_url }}/api/saved_objects/_bulk_create?overwrite=true"
+    method: POST
+    validate_certs: no
+    url_username: "{{ kibana_login }}"
+    url_password: "{{ kibana_password }}"
+    body: "{{ lookup('file', dashboard_file_path) }}"
+    return_content: yes
+    force_basic_auth: yes
+    body_format: json
+    headers:
+      kbn-xsrf: true
+      Content-Type: application/json
+
+- include_tasks: get-dashboard.yaml

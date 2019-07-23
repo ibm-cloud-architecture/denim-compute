@@ -1,0 +1,37 @@
+# ODM configuration
+dc_url: https://172.16.52.226:32340
+res_url: https://172.16.52.226:30035/res
+
+dc_login: odmAdmin
+dc_password: odmAdmin
+
+datasource: jdbc/ilogDataSource
+ds_project_name: claim-processing
+ds_deployment_name: claim-processing
+ds_file_path: ../odm/claim-processing-decision.zip
+server_name: RES Server
+
+# Timeout in seconds for the Decision Service import and BAW App import REST calls
+import_timeout: 600
+
+# Timeout in seconds for the Decision Service deploy REST call
+deploy_timeout: 300
+
+# BAW configuration
+wc_url: https://172.16.52.233:9444
+
+wc_login: deadmin
+wc_password: deadmin
+
+app_short_name: DENI1
+app_file_path: ../baw/claim-processing-process.twx
+
+
+# BAI configuration
+kibana_url: https://172.16.52.216:31341
+kibana_login: admin
+kibana_password: passw0rd
+odm_dashboard_name: Claim Dashboard
+baw_dashboard_name: BAW Dashboard
+odm_dashboard_file_path: ../bai/odm-bai-dashboard.json
+baw_dashboard_file_path: ../bai/baw-bai-dashboard.json

@@ -1,0 +1,7 @@
+# Vocabulary Properties
+uuid = e2781d89-aa0a-48ee-8888-111dedbf7cda
+
+# utils.MathUtil
+utils.MathUtil#concept.label = math util
+utils.MathUtil.max(int,int)#phrase.navigation = the higher of {0} and {1}
+utils.MathUtil.min(int,int)#phrase.navigation = the lower of {0} and {1}

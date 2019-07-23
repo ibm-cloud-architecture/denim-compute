@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.base:VariableSet xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.base="http://ilog.rules.studio/model/base.ecore">
+  <name>escalation parameters</name>
+  <uuid>4983c57f-2f20-43c4-a02b-36a2e46e899b</uuid>
+  <variables name="escalation" type="com.ibm.gse.dc.response.EscalationAssessment" initialValue="new com.ibm.gse.dc.response.EscalationAssessment()" verbalization="the escalation"/>
+</ilog.rules.studio.model.base:VariableSet>

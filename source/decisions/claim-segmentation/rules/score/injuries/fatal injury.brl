@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>fatal injury</name>
+  <uuid>8967a263-15a6-455a-a15c-be97f48eda8c</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+	there is at least one injury in the injuries of 'the accident' where the extent of this injury is Fatal ,
+then
+	add 10 points to the injury component of 'the complexity' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

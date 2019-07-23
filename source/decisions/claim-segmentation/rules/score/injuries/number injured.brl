@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>number injured</name>
+  <uuid>3fac4c6d-d394-4458-84ee-2e55ea1cc816</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[definitions
+	set 'number injured' to the number of elements in the injuries of 'the accident' ;  
+then
+	add 2 * 'number injured' points to the injury component of 'the complexity' ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

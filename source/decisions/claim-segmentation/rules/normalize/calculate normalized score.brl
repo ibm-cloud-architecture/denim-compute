@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>calculate normalized score</name>
+  <uuid>d17141a7-2296-41b8-a49f-76d55e214b4e</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[then
+	set the raw score of 'the complexity' to 
+		the damage component of 'the complexity' +
+		the injury component of 'the complexity' +
+		the others component of 'the complexity' ; 
+		
+	set the normalized score of 'the complexity' to 
+		the lower of the raw score of 'the complexity' and 10 ;]]></definition>
+</ilog.rules.studio.model.brl:ActionRule>

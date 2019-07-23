@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.ibm.rules.studio.model.decisionservice:Operation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.ibm.rules.studio.model.decisionservice="http://com.ibm.rules.studio/model/decisionservice.ecore" xmlns:ilog.rules.studio.model.query.extractor="http://ilog.rules.studio/model/query/extractor.ecore" rulesetName="review_escalation" usingRuleflow="true" ruleflowName="assess escalation" targetRuleProjectName="escalation-review">
+  <name>review-escalation</name>
+  <uuid>319a65be-38fa-4a7e-aee3-95db9130f6c2</uuid>
+  <referencedVariables variableName="claim" variableSetName="parameters">
+    <variableSet href="../../claim-bom/rules/parameters.var#d63db55d-5150-4211-af47-b608d280342a"/>
+  </referencedVariables>
+  <referencedVariables variableName="policy" variableSetName="parameters">
+    <variableSet href="../../claim-bom/rules/parameters.var#d63db55d-5150-4211-af47-b608d280342a"/>
+  </referencedVariables>
+  <referencedVariables variableName="escalation" variableSetName="escalation parameters" direction="OUT">
+    <variableSet href="../../escalation-review/rules/escalation%20parameters.var#4983c57f-2f20-43c4-a02b-36a2e46e899b"/>
+  </referencedVariables>
+  <ruleflow href="../../escalation-review/rules/assess%20escalation.rfl#36d5f675-e32c-4e4d-a26f-e5c00ed154ff"/>
+  <extractor xsi:type="ilog.rules.studio.model.query.extractor:QueryExtractor" name="review-escalation_extractor" validator="Default Validator"/>
+  <targetRuleProject href="../../escalation-review#1edd1b2e-2f76-4080-85ff-539713666a5c"/>
+</com.ibm.rules.studio.model.decisionservice:Operation>

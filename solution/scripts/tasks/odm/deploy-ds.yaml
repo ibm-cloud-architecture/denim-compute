@@ -1,0 +1,10 @@
+- name: Deploy Decision Service
+  uri:
+    url: "{{ dc_url }}/decisioncenter-api/v1/deployments/{{ deployment_id }}/deploy?datasource={{ datasource }}&serverId={{ server_id }}"
+    method: POST
+    validate_certs: no
+    url_username: "{{ dc_login }}"
+    url_password: "{{ dc_password }}"
+    return_content: yes
+    force_basic_auth: yes
+    timeout: "{{ deploy_timeout }}"

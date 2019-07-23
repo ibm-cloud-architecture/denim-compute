@@ -1,0 +1,395 @@
+
+property loadGetterSetterAsProperties "true"
+property origin "xom:/claim-bom//claim-xom"
+property uuid "9c18ca25-1765-464c-a90a-f6f590a8245c"
+package com.ibm.gse.dc;
+
+
+public class BodilyInjury
+{
+    public string extent;
+    public readonly com.ibm.gse.dc.types.ExtentOfInjury extentVirtual;
+    public string involvement;
+    public readonly com.ibm.gse.dc.types.InvolvementInAccident involvementVirtual;
+    public BodilyInjury();
+}
+
+public class Claim
+{
+    public int amount;
+    public com.ibm.gse.dc.Loss loss;
+    public string number;
+    public Claim();
+}
+
+public class Location
+{
+    public string city;
+    public float latitude;
+    public float longitude;
+    public string state;
+    public string street;
+    public string zip;
+    public Location();
+}
+
+public class Loss
+{
+    public java.util.List damages domain 0,* class com.ibm.gse.dc.PropertyDamage;
+    public string description;
+    public readonly com.ibm.gse.dc.types.DamageDescription descriptionVirtual;
+    public java.util.List injuries domain 0,* class com.ibm.gse.dc.BodilyInjury;
+    public com.ibm.gse.dc.Location location;
+    public int numberOfWitnesses;
+    public java.util.Date occuredDateTime;
+    public boolean onPrivateProperty;
+    public com.ibm.gse.dc.Party otherParty;
+    public java.util.Date reportedDateTime;
+    public com.ibm.gse.dc.Party reportingParty;
+    public string weatherCondition;
+    public readonly com.ibm.gse.dc.types.WeatherCondition weatherConditionVirtual;
+    public Loss();
+    public boolean hasMultiplePartiesInvolved();
+}
+
+public class Party
+{
+    public string context;
+    public readonly com.ibm.gse.dc.types.VehicleContext contextVirtual;
+    public com.ibm.gse.dc.Location driverAddress;
+    public java.util.Date driverDOB;
+    public string firstName;
+    public string insuranceCarrier;
+    public string lastName;
+    public string purpose;
+    public readonly com.ibm.gse.dc.types.PurposeOfUse purposeVirtual;
+    public boolean usedWithPermission;
+    public int vehicleDamageEstimate;
+    public Party();
+}
+
+public class Policy
+{
+    public string coverage;
+    public readonly com.ibm.gse.dc.types.Coverage coverageVirtual;
+    public java.util.Date dateOfLastClaim;
+    public java.util.Date effective;
+    public java.util.Date expiration;
+    public int monthlyPremium;
+    public string number;
+    public com.ibm.gse.dc.PolicyHolder policyHolder;
+    public string salesChannel;
+    public readonly com.ibm.gse.dc.types.SalesChannel salesChannelVirtual;
+    public string vehicleMake;
+    public string vehicleModel;
+    public string vehicleYear;
+    public Policy();
+    public int vehicleAge();
+}
+
+public class PolicyHolder
+{
+    public com.ibm.gse.dc.Location address;
+    public string education;
+    public readonly com.ibm.gse.dc.types.Education educationVirtual;
+    public string employmentStatus;
+    public readonly com.ibm.gse.dc.types.EmploymentStatus employmentStatusVirtual;
+    public string firstName;
+    public string lastName;
+    public string maritalStatus;
+    public readonly com.ibm.gse.dc.types.MaritalStatus maritalStatusVirtual;
+    public int monthlyIncome;
+    public PolicyHolder();
+}
+
+public class PropertyDamage
+{
+    public int estimatedAmount;
+    public PropertyDamage();
+    public static int totalEstimatedAmount(java.util.List arg domain 0,* class com.ibm.gse.dc.PropertyDamage);
+}
+
+package com.ibm.gse.dc.response;
+
+
+public class ComplexityAssessment
+{
+
+    static public final class Complexity
+            extends java.lang.Enum
+    {
+        domain {static Low, static Medium, static High}
+        public static final readonly com.ibm.gse.dc.response.ComplexityAssessment.Complexity High;
+        public static final readonly com.ibm.gse.dc.response.ComplexityAssessment.Complexity Low;
+        public static final readonly com.ibm.gse.dc.response.ComplexityAssessment.Complexity Medium;
+        public static com.ibm.gse.dc.response.ComplexityAssessment.Complexity valueOf(string arg);
+        public static com.ibm.gse.dc.response.ComplexityAssessment.Complexity[] values();
+    }
+    public com.ibm.gse.dc.response.ComplexityAssessment.Complexity complexity;
+    public int damageComponent;
+    public int injuryComponent;
+    public int normalizedScore;
+    public int othersComponent;
+    public int rawScore;
+    public ComplexityAssessment();
+    public void addToDamageComponent(int arg);
+    public void addToInjuryComponent(int arg);
+    public void addToOthersComponent(int arg);
+}
+
+public class EscalationAssessment
+{
+    public java.util.List reasons domain 0,* class string;
+    public boolean required;
+    public EscalationAssessment();
+    public void addReason(string arg);
+}
+
+public class FraudAssessment
+{
+    public java.util.List reasons domain 0,* class string;
+    public double score;
+    public FraudAssessment();
+    public void addReason(string arg);
+    public void addToScore(int added);
+}
+
+package com.ibm.gse.dc.types;
+
+
+public class Coverage
+        property "com.ibm.rules.domainProvider.msexcel.b2xColumn" "1"
+        property "com.ibm.rules.domainProvider.msexcel.documentationColumn.en" "3"
+        property "com.ibm.rules.domainProvider.msexcel.hasHeader" "true"
+        property "com.ibm.rules.domainProvider.msexcel.labelColumn.en" "2"
+        property "com.ibm.rules.domainProvider.msexcel.sheetIndex" "11"
+        property "com.ibm.rules.domainProvider.msexcel.valueColumn" "0"
+        property domainProviderResource "domains.xlsx"
+        property domainValueProviderName "com.ibm.rules.domainProvider.msexcel2007"
+{
+    domain {static Basic, static Extended, static Premium}
+    public static final readonly com.ibm.gse.dc.types.Coverage Basic;
+    public static final readonly com.ibm.gse.dc.types.Coverage Extended;
+    public static final readonly com.ibm.gse.dc.types.Coverage Premium;
+}
+
+public class DamageDescription
+        property "com.ibm.rules.domainProvider.msexcel.b2xColumn" "1"
+        property "com.ibm.rules.domainProvider.msexcel.documentationColumn.en" "3"
+        property "com.ibm.rules.domainProvider.msexcel.hasHeader" "true"
+        property "com.ibm.rules.domainProvider.msexcel.labelColumn.en" "2"
+        property "com.ibm.rules.domainProvider.msexcel.sheetIndex" "12"
+        property "com.ibm.rules.domainProvider.msexcel.valueColumn" "0"
+        property domainProviderResource "domains.xlsx"
+        property domainValueProviderName "com.ibm.rules.domainProvider.msexcel2007"
+{
+    domain {static ScratchOrDent, static Collision, static Hail, static Other}
+    public static final readonly com.ibm.gse.dc.types.DamageDescription Collision;
+    public static final readonly com.ibm.gse.dc.types.DamageDescription Hail;
+    public static final readonly com.ibm.gse.dc.types.DamageDescription Other;
+    public static final readonly com.ibm.gse.dc.types.DamageDescription ScratchOrDent;
+}
+
+public class Education
+        property "com.ibm.rules.domainProvider.msexcel.b2xColumn" "1"
+        property "com.ibm.rules.domainProvider.msexcel.documentationColumn.en" "3"
+        property "com.ibm.rules.domainProvider.msexcel.hasHeader" "true"
+        property "com.ibm.rules.domainProvider.msexcel.labelColumn.en" "2"
+        property "com.ibm.rules.domainProvider.msexcel.sheetIndex" "4"
+        property "com.ibm.rules.domainProvider.msexcel.valueColumn" "0"
+        property domainProviderResource "domains.xlsx"
+        property domainValueProviderName "com.ibm.rules.domainProvider.msexcel2007"
+{
+    domain {static HighSchool, static College, static Bachelor, static Master, static Doctor}
+    public static final readonly com.ibm.gse.dc.types.Education Bachelor;
+    public static final readonly com.ibm.gse.dc.types.Education College;
+    public static final readonly com.ibm.gse.dc.types.Education Doctor;
+    public static final readonly com.ibm.gse.dc.types.Education HighSchool;
+    public static final readonly com.ibm.gse.dc.types.Education Master;
+}
+
+public class EmploymentStatus
+        property "com.ibm.rules.domainProvider.msexcel.b2xColumn" "1"
+        property "com.ibm.rules.domainProvider.msexcel.documentationColumn.en" "3"
+        property "com.ibm.rules.domainProvider.msexcel.hasHeader" "true"
+        property "com.ibm.rules.domainProvider.msexcel.labelColumn.en" "2"
+        property "com.ibm.rules.domainProvider.msexcel.sheetIndex" "3"
+        property "com.ibm.rules.domainProvider.msexcel.valueColumn" "0"
+        property domainProviderResource "domains.xlsx"
+        property domainValueProviderName "com.ibm.rules.domainProvider.msexcel2007"
+{
+    domain {static Employed, static Unemployed, static MedicalLeave, static Disabled, static Retired}
+    public static final readonly com.ibm.gse.dc.types.EmploymentStatus Disabled;
+    public static final readonly com.ibm.gse.dc.types.EmploymentStatus Employed;
+    public static final readonly com.ibm.gse.dc.types.EmploymentStatus MedicalLeave;
+    public static final readonly com.ibm.gse.dc.types.EmploymentStatus Retired;
+    public static final readonly com.ibm.gse.dc.types.EmploymentStatus Unemployed;
+}
+
+public class ExtentOfInjury
+        property "com.ibm.rules.domainProvider.msexcel.b2xColumn" "1"
+        property "com.ibm.rules.domainProvider.msexcel.documentationColumn.en" "3"
+        property "com.ibm.rules.domainProvider.msexcel.hasHeader" "true"
+        property "com.ibm.rules.domainProvider.msexcel.labelColumn.en" "2"
+        property "com.ibm.rules.domainProvider.msexcel.sheetIndex" "1"
+        property "com.ibm.rules.domainProvider.msexcel.valueColumn" "0"
+        property domainProviderResource "domains.xlsx"
+        property domainValueProviderName "com.ibm.rules.domainProvider.msexcel2007"
+{
+    domain {static Light, static Severe, static Fatal}
+    public static final readonly com.ibm.gse.dc.types.ExtentOfInjury Fatal;
+    public static final readonly com.ibm.gse.dc.types.ExtentOfInjury Light;
+    public static final readonly com.ibm.gse.dc.types.ExtentOfInjury Severe;
+}
+
+public class InvolvementInAccident
+        property "com.ibm.rules.domainProvider.msexcel.b2xColumn" "1"
+        property "com.ibm.rules.domainProvider.msexcel.documentationColumn.en" "3"
+        property "com.ibm.rules.domainProvider.msexcel.hasHeader" "true"
+        property "com.ibm.rules.domainProvider.msexcel.labelColumn.en" "2"
+        property "com.ibm.rules.domainProvider.msexcel.sheetIndex" "0"
+        property "com.ibm.rules.domainProvider.msexcel.valueColumn" "0"
+        property domainProviderResource "domains.xlsx"
+        property domainValueProviderName "com.ibm.rules.domainProvider.msexcel2007"
+{
+    domain {static Driver, static Passenger, static Pedestrian, static Other}
+    public static final readonly com.ibm.gse.dc.types.InvolvementInAccident Driver;
+    public static final readonly com.ibm.gse.dc.types.InvolvementInAccident Other;
+    public static final readonly com.ibm.gse.dc.types.InvolvementInAccident Passenger;
+    public static final readonly com.ibm.gse.dc.types.InvolvementInAccident Pedestrian;
+}
+
+public class LocationType
+        property "com.ibm.rules.domainProvider.msexcel.b2xColumn" "1"
+        property "com.ibm.rules.domainProvider.msexcel.documentationColumn.en" "3"
+        property "com.ibm.rules.domainProvider.msexcel.hasHeader" "true"
+        property "com.ibm.rules.domainProvider.msexcel.labelColumn.en" "2"
+        property "com.ibm.rules.domainProvider.msexcel.sheetIndex" "6"
+        property "com.ibm.rules.domainProvider.msexcel.valueColumn" "0"
+        property domainProviderResource "domains.xlsx"
+        property domainValueProviderName "com.ibm.rules.domainProvider.msexcel2007"
+{
+    domain {static Urban, static Suburban, static Rural}
+    public static final readonly com.ibm.gse.dc.types.LocationType Rural;
+    public static final readonly com.ibm.gse.dc.types.LocationType Suburban;
+    public static final readonly com.ibm.gse.dc.types.LocationType Urban;
+}
+
+public class MaritalStatus
+        property "com.ibm.rules.domainProvider.msexcel.b2xColumn" "1"
+        property "com.ibm.rules.domainProvider.msexcel.documentationColumn.en" "3"
+        property "com.ibm.rules.domainProvider.msexcel.hasHeader" "true"
+        property "com.ibm.rules.domainProvider.msexcel.labelColumn.en" "2"
+        property "com.ibm.rules.domainProvider.msexcel.sheetIndex" "5"
+        property "com.ibm.rules.domainProvider.msexcel.valueColumn" "0"
+        property domainProviderResource "domains.xlsx"
+        property domainValueProviderName "com.ibm.rules.domainProvider.msexcel2007"
+{
+    domain {static Single, static Married, static Divorced}
+    public static final readonly com.ibm.gse.dc.types.MaritalStatus Divorced;
+    public static final readonly com.ibm.gse.dc.types.MaritalStatus Married;
+    public static final readonly com.ibm.gse.dc.types.MaritalStatus Single;
+}
+
+public class PurposeOfUse
+        property "com.ibm.rules.domainProvider.msexcel.b2xColumn" "1"
+        property "com.ibm.rules.domainProvider.msexcel.documentationColumn.en" "3"
+        property "com.ibm.rules.domainProvider.msexcel.hasHeader" "true"
+        property "com.ibm.rules.domainProvider.msexcel.labelColumn.en" "2"
+        property "com.ibm.rules.domainProvider.msexcel.sheetIndex" "8"
+        property "com.ibm.rules.domainProvider.msexcel.valueColumn" "0"
+        property domainProviderResource "domains.xlsx"
+        property domainValueProviderName "com.ibm.rules.domainProvider.msexcel2007"
+{
+    domain {static DrivingForEmployer, static Personal}
+    public static final readonly com.ibm.gse.dc.types.PurposeOfUse DrivingForEmployer;
+    public static final readonly com.ibm.gse.dc.types.PurposeOfUse Personal;
+}
+
+public class SalesChannel
+        property "com.ibm.rules.domainProvider.msexcel.b2xColumn" "1"
+        property "com.ibm.rules.domainProvider.msexcel.documentationColumn.en" "3"
+        property "com.ibm.rules.domainProvider.msexcel.hasHeader" "true"
+        property "com.ibm.rules.domainProvider.msexcel.labelColumn.en" "2"
+        property "com.ibm.rules.domainProvider.msexcel.sheetIndex" "9"
+        property "com.ibm.rules.domainProvider.msexcel.valueColumn" "0"
+        property domainProviderResource "domains.xlsx"
+        property domainValueProviderName "com.ibm.rules.domainProvider.msexcel2007"
+{
+    domain {static Agent, static Web, static CallCenter, static Branch}
+    public static final readonly com.ibm.gse.dc.types.SalesChannel Agent;
+    public static final readonly com.ibm.gse.dc.types.SalesChannel Branch;
+    public static final readonly com.ibm.gse.dc.types.SalesChannel CallCenter;
+    public static final readonly com.ibm.gse.dc.types.SalesChannel Web;
+}
+
+public class VehicleClass
+        property "com.ibm.rules.domainProvider.msexcel.b2xColumn" "1"
+        property "com.ibm.rules.domainProvider.msexcel.documentationColumn.en" "3"
+        property "com.ibm.rules.domainProvider.msexcel.hasHeader" "true"
+        property "com.ibm.rules.domainProvider.msexcel.labelColumn.en" "2"
+        property "com.ibm.rules.domainProvider.msexcel.sheetIndex" "7"
+        property "com.ibm.rules.domainProvider.msexcel.valueColumn" "0"
+        property domainProviderResource "domains.xlsx"
+        property domainValueProviderName "com.ibm.rules.domainProvider.msexcel2007"
+{
+    domain {static TwoDoorCar, static FourDoorCar, static SUV, static SportsCar, static LuxurySUV, static LuxuryCar}
+    public static final readonly com.ibm.gse.dc.types.VehicleClass FourDoorCar;
+    public static final readonly com.ibm.gse.dc.types.VehicleClass LuxuryCar;
+    public static final readonly com.ibm.gse.dc.types.VehicleClass LuxurySUV;
+    public static final readonly com.ibm.gse.dc.types.VehicleClass SUV;
+    public static final readonly com.ibm.gse.dc.types.VehicleClass SportsCar;
+    public static final readonly com.ibm.gse.dc.types.VehicleClass TwoDoorCar;
+}
+
+public class VehicleContext
+        property "com.ibm.rules.domainProvider.msexcel.b2xColumn" "1"
+        property "com.ibm.rules.domainProvider.msexcel.documentationColumn.en" "3"
+        property "com.ibm.rules.domainProvider.msexcel.hasHeader" "true"
+        property "com.ibm.rules.domainProvider.msexcel.labelColumn.en" "2"
+        property "com.ibm.rules.domainProvider.msexcel.sheetIndex" "10"
+        property "com.ibm.rules.domainProvider.msexcel.valueColumn" "0"
+        property domainProviderResource "domains.xlsx"
+        property domainValueProviderName "com.ibm.rules.domainProvider.msexcel2007"
+{
+    domain {static Unknown, static Moving, static StoppedInTraffic, static Parked, static Other}
+    public static final readonly com.ibm.gse.dc.types.VehicleContext Moving;
+    public static final readonly com.ibm.gse.dc.types.VehicleContext Other;
+    public static final readonly com.ibm.gse.dc.types.VehicleContext Parked;
+    public static final readonly com.ibm.gse.dc.types.VehicleContext StoppedInTraffic;
+    public static final readonly com.ibm.gse.dc.types.VehicleContext Unknown;
+}
+
+public class WeatherCondition
+        property "com.ibm.rules.domainProvider.msexcel.b2xColumn" "1"
+        property "com.ibm.rules.domainProvider.msexcel.documentationColumn.en" "3"
+        property "com.ibm.rules.domainProvider.msexcel.hasHeader" "true"
+        property "com.ibm.rules.domainProvider.msexcel.labelColumn.en" "2"
+        property "com.ibm.rules.domainProvider.msexcel.sheetIndex" "2"
+        property "com.ibm.rules.domainProvider.msexcel.valueColumn" "0"
+        property domainProviderResource "domains.xlsx"
+        property domainValueProviderName "com.ibm.rules.domainProvider.msexcel2007"
+{
+    domain {static Unknown, static Sunny, static Cloudy, static LightRain, static HeavyRain, static FreezingRain, static Snow}
+    public static final readonly com.ibm.gse.dc.types.WeatherCondition Cloudy;
+    public static final readonly com.ibm.gse.dc.types.WeatherCondition FreezingRain;
+    public static final readonly com.ibm.gse.dc.types.WeatherCondition HeavyRain;
+    public static final readonly com.ibm.gse.dc.types.WeatherCondition LightRain;
+    public static final readonly com.ibm.gse.dc.types.WeatherCondition Snow;
+    public static final readonly com.ibm.gse.dc.types.WeatherCondition Sunny;
+    public static final readonly com.ibm.gse.dc.types.WeatherCondition Unknown;
+}
+
+package com.ibm.gse.dc.util;
+
+
+public class DateUtil
+{
+    public DateUtil();
+    public static int getDaysBetween(java.util.Date arg1, java.util.Date arg2);
+    public static int getMonthsBetween(java.util.Date arg1, java.util.Date arg2);
+    public static int getYearsBetween(java.util.Date arg1, java.util.Date arg2);
+    public static java.util.Date today();
+    public static int yearToday();
+}
+

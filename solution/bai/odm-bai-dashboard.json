@@ -1,0 +1,123 @@
+[
+  {
+    "id": "349013d0-922a-11e9-83a5-4d0745c1615e",
+    "type": "dashboard",
+    "attributes": {
+      "title": "Claim Dashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[\n  {\n    \"embeddableConfig\": {\n      \"vis\": {\n        \"colors\": {\n          \"High\": \"#E24D42\",\n          \"Low\": \"#7EB26D\",\n          \"Medium\": \"#F9934E\"\n        },\n        \"legendOpen\": false\n      }\n    },\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 0,\n      \"w\": 14,\n      \"h\": 13,\n      \"i\": \"1\"\n    },\n    \"id\": \"bf42f210-922d-11e9-83a5-4d0745c1615e\",\n    \"panelIndex\": \"1\",\n    \"title\": \"Claim Complexity\",\n    \"type\": \"visualization\",\n    \"version\": \"6.5.3\"\n  },\n  {\n    \"embeddableConfig\": {},\n    \"gridData\": {\n      \"x\": 0,\n      \"y\": 13,\n      \"w\": 28,\n      \"h\": 7,\n      \"i\": \"2\"\n    },\n    \"id\": \"659c70d0-9249-11e9-83a5-4d0745c1615e\",\n    \"panelIndex\": \"2\",\n    \"title\": \"Claim Fraud Score\",\n    \"type\": \"visualization\",\n    \"version\": \"6.5.3\"\n  },\n  {\n    \"gridData\": {\n      \"x\": 14,\n      \"y\": 0,\n      \"w\": 14,\n      \"h\": 13,\n      \"i\": \"3\"\n    },\n    \"version\": \"6.5.3\",\n    \"panelIndex\": \"3\",\n    \"type\": \"visualization\",\n    \"id\": \"f6361c40-9249-11e9-83a5-4d0745c1615e\",\n    \"embeddableConfig\": {\n      \"vis\": {\n        \"colors\": {\n          \"true\": \"#447EBC\",\n          \"false\": \"#DEDAF7\"\n        },\n        \"legendOpen\": false\n      }\n    },\n    \"title\": \"Claim Escalation\"\n  }\n]",
+      "optionsJSON": "{\n  \"darkTheme\": false,\n  \"hidePanelTitles\": false,\n  \"useMargins\": true\n}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "id": "edafef10-922b-11e9-83a5-4d0745c1615e",
+    "type": "search",
+    "attributes": {
+      "title": "Claim Escalation",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "data.claim_processing.review_escalation.out.escalation.required"
+      ],
+      "sort": [
+        "timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dba-odm-timeseries-timestamp\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"meta\":{\"index\":\"dba-odm-timeseries-timestamp\",\"negate\":false,\"disabled\":false,\"alias\":\"Claim Escalation\",\"type\":\"phrase\",\"key\":\"rulesetPath\",\"value\":\"/claim_processing/1.0/review_escalation/1.0\",\"params\":{\"query\":\"/claim_processing/1.0/review_escalation/1.0\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"rulesetPath\":{\"query\":\"/claim_processing/1.0/review_escalation/1.0\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "id": "0c346480-922b-11e9-83a5-4d0745c1615e",
+    "type": "search",
+    "attributes": {
+      "title": "Claim Complexity",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "data.claim_processing.segment_claim.out.complexity.complexity"
+      ],
+      "sort": [
+        "timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dba-odm-timeseries-timestamp\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"meta\":{\"index\":\"dba-odm-timeseries-timestamp\",\"negate\":false,\"disabled\":false,\"alias\":\"Claim Complexity\",\"type\":\"phrase\",\"key\":\"rulesetPath\",\"value\":\"/claim_processing/1.0/segment_claim/1.0\",\"params\":{\"query\":\"/claim_processing/1.0/segment_claim/1.0\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"rulesetPath\":{\"query\":\"/claim_processing/1.0/segment_claim/1.0\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "id": "4c65cda0-922b-11e9-83a5-4d0745c1615e",
+    "type": "search",
+    "attributes": {
+      "title": "Claim Fraud",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "data.claim_processing.assess_fraud.out.fraud.score"
+      ],
+      "sort": [
+        "timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"dba-odm-timeseries-timestamp\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":\"Claim Fraud\",\"disabled\":false,\"index\":\"dba-odm-timeseries-timestamp\",\"key\":\"rulesetPath\",\"negate\":false,\"params\":{\"query\":\"/claim_processing/1.0/assess_fraud/1.0\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"/claim_processing/1.0/assess_fraud/1.0\"},\"query\":{\"match\":{\"rulesetPath\":{\"query\":\"/claim_processing/1.0/assess_fraud/1.0\",\"type\":\"phrase\"}}}}]}"
+      }
+    }
+  },
+  {
+    "id": "bf42f210-922d-11e9-83a5-4d0745c1615e",
+    "type": "visualization",
+    "attributes": {
+      "title": "Claim Complexity Visualization",
+      "visState": "{\"title\":\"Claim Complexity Visualization\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"data.claim_processing.segment_claim.out.complexity.complexity.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Complexity\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Medium\":\"#F9934E\",\"Low\":\"#7EB26D\",\"High\":\"#E24D42\"}}}",
+      "description": "",
+      "savedSearchId": "0c346480-922b-11e9-83a5-4d0745c1615e",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "id": "659c70d0-9249-11e9-83a5-4d0745c1615e",
+    "type": "visualization",
+    "attributes": {
+      "title": "Claim Fraud Visualization",
+      "visState": "{\"title\":\"Claim Fraud Visualization\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"median\",\"schema\":\"metric\",\"params\":{\"field\":\"data.claim_processing.assess_fraud.out.fraud.score\",\"percents\":[50],\"customLabel\":\"Fraud Score\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"data.claim_processing.assess_fraud.out.fraud.score\",\"customLabel\":\"Max Fraud Score\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "4c65cda0-922b-11e9-83a5-4d0745c1615e",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "id": "f6361c40-9249-11e9-83a5-4d0745c1615e",
+    "type": "visualization",
+    "attributes": {
+      "title": "Claim Escalation Visualization",
+      "visState": "{\"title\":\"Claim Escalation Visualization\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Escalations\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"data.claim_processing.review_escalation.out.escalation.required\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"true\":\"#447EBC\",\"false\":\"#DEDAF7\"}}}",
+      "description": "",
+      "savedSearchId": "edafef10-922b-11e9-83a5-4d0745c1615e",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  }
+]

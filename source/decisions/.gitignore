@@ -1,0 +1,12 @@
+# Compiled rule files
+*.sem
+
+# Deployment reports
+*.html
+
+# Package files
+*.dsar
+
+#Sync files
+.syncEntries
+
