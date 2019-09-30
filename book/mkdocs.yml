@@ -1,21 +1,24 @@
 site_name: Denim Compute - A Cloud Pak for Automation reference implementation
-repo_url: https://github.com/ibm-cloud-architecture/denim-compute 
+repo_url: https://github.com/ibm-cloud-architecture/denim-compute/
 
 nav:
     - Introduction: index.md
     - Use case:
         - Use case definition: ./usecase/use-case-definition.md
-        - Scenario walkthrough: ./usecase/resources/denim-compute-scenario-walkthrough.pdf
+        - Scenarios:
+            - Introduction: ./usecase/scenarios-intro.md
+            - Main scenario walkthrough: ./usecase/resources/denim-compute-scenario-walkthrough.pdf
+            - BACA scenario walkthrough: ./usecase/baca-scenario-walkthrough.md
+            - BAI scenario walkthrough: ./usecase/bai-scenario-walkthrough.md
     - Environment:
-        - Introduction: ./environment/intro.md
-        - Creating VMs: ./environment/create-vms.md
-        - Platform install:
-            - IBM Cloud Private: ./environment/install-icp.md
-            - RedHat OpenShift: ./environment/install-openshift.md
-        - Installing CAM: ./environment/install-cam.md
-        - Installing BAW: ./environment/install-baw.md
-        - Installing BAI: ./environment/install-bai.md
-        - Sundries: ./environment/sundries.md
+        - OpenShift:
+            - Introduction: ./environment/rhos-intro.md
+            - Create OCP cluster: ./environment/rhos-create-cluster.md
+            - Installing ODM: ./environment/rhos-install-odm.md
+            - Installing BAW: ./environment/rhos-install-baw.md
+            - Installing BACA: ./environment/rhos-install-baca.md
+            - Installing BAI: ./environment/rhos-install-bai.md
+            - Installing CM: ./environment/rhos-install-cm.md
     - Design:
         - Workflow: ./design/workflow.md
         - Decisions: ./design/decisions.md
@@ -29,7 +32,10 @@ nav:
             - Process user interface: ./development/process-user-interface.md
             - Case activities: ./development/case-activities.md
             - Case user interface: ./development/case-user-interface.md
+            - Workflow for emulated BAI: ./development/bai-emulated-workflow.md
         - Decisions: ./development/decisions.md
+        - Insights: ./development/insights.md
+        - Capture: ./development/capture.md
         - Sundries: ./development/sundries.md
     - Showtime:
         - Deploy: ./showtime/deploy-solution.md

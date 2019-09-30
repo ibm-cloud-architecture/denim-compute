@@ -1,6 +1,6 @@
 # Process services
 
-This section provides details on service flow implementation chains of process activities. To understand the processes themselves that this section builds upon, please see [Process flow control](../process-flow-control).
+This section provides details on service flow implementation chains of process activities. To understand the processes themselves that this section builds upon, please see the [Process flow control](process-flow-control.md) section.
 
 ## Process message exchange
 
@@ -100,3 +100,47 @@ In `Write AutoClaim JSON Output` (within `Denim Compute Auto Claims` Toolkit) th
 A previous step `Convert to JSON` is used to parse the `AutoClaim` BO and convert it into native JS equivalents and from that to extract the JSON formatted output.
 
 ![](images/process-services23.png)
+
+## BACA integration
+As seen in the design section [Mediated BACA Integration](/design/workflow/#mediated-baca-integration), the `Case Activity` implementation (`Process Repair Estimate`) on receipt of an estimate PDF processes the document via BACA and then sends an event notification where it sets correlation data and the `VehicleRepair` BO.
+
+![](images/process-services24.png)
+
+The event message correlates to the corresponding running instance of `Provide Repair Estimates Per Repairer` by matching on the correlation key data (the combination of `claimNumber`, `repairerCode`, and `vehicleVIN`). This then interrupts (and in effect cancels) the user task `Provide Repair Estimate` as it is no longer needed when the `VehicleRepair` data has been validated and provided by the BACA integration.
+
+![](images/process-services25.png)
+
+`Process Repair Estimate` invokes the linked process `Handle Received Vehicle Repair Estimate` in `Denim Compute Auto Claims Toolkit` to perform the main logic to fetch the uploaded document, provide it to BACA and parse the results and then create the event data for return to `Process Repair Estimate`.
+
+![](images/process-services26.png)
+
+The interaction with BACA is done via a mediation [microservice](/development/microservices/) implemented in NodeJS and deployed on Red Hat OpenShift Container Platform (OCP). The `Service Flow` invoked by `Handle Received Vehicle Repair Estimate` that handles the top level interaction with the microservice is `Analyze and Parse Auto Repair Estimate` shown below. The high level sequence of the logic is :-
+
+- Call the microservice to upload the PDF for analysis
+- Wait before making a call to the microservice to check the status of the analysis and check that it has been parsed OK
+- Retrieve the resulting Vehicle Repair Estimate from the microservice
+
+![](images/process-services27.png)
+
+The integration to the microservice (which in turn integrates to BACA) is self-contained in the Toolkit named `Denim Compute Content Analysis Services`. The REST integration to the microservice is via an `External Service` that exposes several operations (but not all as some cannot be processed in BAW as we shall see later).
+
+![](images/process-services28.png)
+
+The `Service Flow` named `Request Auto Repair Estimate Analysis` shown below needs to use a `Script` node to invoke one of the operations on the interface. This is because that operation (named `requestAnalysis` that allows for a file upload) uses a MIME type of `multipart/form-data` which BAW does not yet support.
+![](images/process-services29.png)
+
+The `Service Flow` named `Get BACA Analysis Status` invokes the `External Service` operation named `getStatusByAnalyzerId`  as shown below.
+
+![](images/process-services30.png)
+
+The `Data Mapping` section shows the various input data supplied to the operation. A number of these are `REST Headers` data and the other is the `analyzerId` which is returned as a response from the previous call to the `requestAnalysis` operation.
+
+![](images/process-services31.png)
+
+The `Service Flow` named `Get BACA Analysis Results` invokes the `External Service` operation named `retrieveJSONByAnalyzerId` in order to retrieve the resulting parsed estimate data from BACA.
+
+![](images/process-services32.png)
+
+Finally the flow also invokes the `External Service` operation named `cleanupByAnalyzerId` in order to delete the resources used by the request inside BACA.
+
+![](images/process-services33.png)

@@ -1,4 +1,4 @@
-# Process User Interface
+# Process user interface
 
 ## Referencing views
 

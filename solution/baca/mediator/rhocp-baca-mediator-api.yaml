@@ -1,0 +1,419 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: BACA REST API mediation app for BAW
+  description: 'Puts a scenario focussed facade in front of BACA API for consumption by BAW Service Flows'
+basePath: /denim/baca/v1
+host: denim-compute-rhocp.ibm.com # This is just a placeholder that needs replacing on every deployment
+consumes:
+  - multipart/form-data
+  - application/json
+schemes:
+  - http
+securityDefinitions:
+  basicAuth: 
+      type: basic
+security:
+  - basicAuth: []
+paths:
+  /ping:
+    get:
+      tags:
+      - "ping"
+      summary: "Ping the API"
+      description: "Ping the API"
+      operationId: "ping"
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: Successfully pinged the endpoint
+          schema:
+            $ref: '#/definitions/BACAPingResponse'
+      security:
+      - basicAuth: []
+  /analyze:
+    post:
+      tags:
+      - "analyze"
+      summary: "Upload a document (PDF) to be analyzed"
+      description: "Upload a document (PDF) to be analyzed"
+      operationId: "requestAnalysis"
+      consumes:
+        - multipart/form-data
+      produces:
+      - "application/json"
+      parameters:
+      - name: "X-BACA-Host"
+        in: "header"
+        description: "BACA Host in format hostname or hostname:port"
+        required: true
+        type: "string"
+      - name: "X-BACA-APIKey"
+        in: "header"
+        description: "BACA API Key"
+        required: true
+        type: "string"
+      - name: "X-BACA-Auth"
+        in: "header"
+        description: "BACA authorization in format Basic <Base64 encoded user:password>"
+        required: true
+        type: "string"
+      - name: "X-Claim-Number"
+        in: "header"
+        description: "Auto Claim number to associate with the request"
+        required: true
+        type: "string"
+      - name: file
+        in: formData
+        type: file
+        description: file to be processed
+        required: true
+      responses:
+        '202':
+          description: Successfully uploaded the content for analysis
+          schema:
+            $ref: '#/definitions/BACAAnalyzeResponse'
+        '400':
+          description: Invalid parameters passed
+          schema:
+            $ref: '#/definitions/BACAAnalyzeResponse'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/BACAAnalyzeResponse'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/BACAAnalyzeResponse'
+      security:
+      - basicAuth: [] 
+  /status/{analyzerId}:
+    get:
+      tags:
+      - "status"
+      summary: "Get status of an analysis"
+      description: "Get status of an analysis"
+      operationId: "getStatusByAnalyzerId"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "X-BACA-Host"
+        in: "header"
+        description: "BACA Host in format hostname or hostname:port"
+        required: true
+        type: "string"
+      - name: "X-BACA-APIKey"
+        in: "header"
+        description: "BACA API Key"
+        required: true
+        type: "string"
+      - name: "X-BACA-Auth"
+        in: "header"
+        description: "BACA authorization in format Basic <Base64 encoded user:password>"
+        required: true
+        type: "string"
+      - name: "analyzerId"
+        in: "path"
+        description: "analyzerId of request to check status of"
+        required: true
+        type: "string"
+      responses:
+        '200':
+          description: Successfully retrieved the content analyzer details
+          schema:
+            $ref: '#/definitions/BACAStatusResponse'
+        '400':
+          description: Invalid parameters passed
+          schema:
+            $ref: '#/definitions/BACAStatusResponse'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/BACAStatusResponse'
+        '404':
+          description: Content not found
+          schema:
+            $ref: '#/definitions/BACAStatusResponse'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/BACAStatusResponse'
+      security:
+      - basicAuth: []
+  /retrieve/{analyzerId}:
+    get:
+      tags:
+      - "retrieve"
+      summary: "Retrieve (JSON) results of an analysis"
+      description: "Retrieve (JSON) results of an analysis"
+      operationId: "retrieveJSONByAnalyzerId"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "X-BACA-Host"
+        in: "header"
+        description: "BACA Host in format hostname or hostname:port"
+        required: true
+        type: "string"
+      - name: "X-BACA-APIKey"
+        in: "header"
+        description: "BACA API Key"
+        required: true
+        type: "string"
+      - name: "X-BACA-Auth"
+        in: "header"
+        description: "BACA authorization in format Basic <Base64 encoded user:password>"
+        required: true
+        type: "string"
+      - name: "analyzerId"
+        in: "path"
+        description: "analyzerId of request to retrieve results for"
+        required: true
+        type: "string"
+      responses:
+        '200':
+          description: Successfully retrieved the content analyzer results
+          schema:
+            $ref: '#/definitions/BACARetrieveResponse'
+        '400':
+          description: Invalid parameters passed
+          schema:
+            $ref: '#/definitions/BACARetrieveResponse'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/BACARetrieveResponse'
+        '404':
+          description: Content not found
+          schema:
+            $ref: '#/definitions/BACARetrieveResponse'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/BACARetrieveResponse'
+      security:
+      - basicAuth: []
+  /cleanup/{analyzerId}:
+    delete:
+      tags:
+      - "cleanup"
+      summary: "Remove all resources in BACA for the analyzerId"
+      description: "Remove all resources in BACA for the analyzerId"
+      operationId: "cleanupByAnalyzerId"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "X-BACA-Host"
+        in: "header"
+        description: "BACA Host in format hostname or hostname:port"
+        required: true
+        type: "string"
+      - name: "X-BACA-APIKey"
+        in: "header"
+        description: "BACA API Key"
+        required: true
+        type: "string"
+      - name: "X-BACA-Auth"
+        in: "header"
+        description: "BACA authorization in format Basic <Base64 encoded user:password>"
+        required: true
+        type: "string"
+      - name: "analyzerId"
+        in: "path"
+        description: "analyzerId of request to release resources"
+        required: true
+        type: "string"
+      responses:
+        '200':
+          description: Successfully removed the content analysis resources
+          schema:
+            $ref: '#/definitions/BACACleanupResponse'
+        '400':
+          description: Invalid parameters passed
+          schema:
+            $ref: '#/definitions/BACACleanupResponse'
+        '401':
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/BACACleanupResponse'
+        '404':
+          description: Content not found
+          schema:
+            $ref: '#/definitions/BACACleanupResponse'
+        '500':
+          description: Internal error
+          schema:
+            $ref: '#/definitions/BACACleanupResponse'
+      security:
+      - basicAuth: []
+definitions:
+  BACAPingResponse:
+    type: object
+    properties:
+      message:
+        type: string
+        description: A message confirming API endpoint is receiving
+  ApiStatus:
+    type: object
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+        description: HTTP response code
+      message:
+        type: string
+        description: The response message
+  ErrorInfo:
+    type: object
+    required:
+      - errorId
+      - explanation
+      - action
+    properties:
+      errorId:
+        type: string
+        format: string
+        description: Unique error id to identify the error
+      explanation:
+        type: string
+        description: A detailed explanation of the error
+      action:
+        type: string
+        description: The action the caller can take to possibly resolve the error
+  BACAStatusInfo:
+    type: array
+    items:
+      type: object
+      properties:
+        type:
+          type: string
+        status:
+          type: string
+          enum:
+            - InProgress
+            - Completed
+            - Failed
+          description: The completion status
+  BACAStatusData:
+    type: object
+    properties:
+      analyzerId:
+        type: string
+      uniqueId:
+        type: string
+      statusDetails:
+        $ref: '#/definitions/BACAStatusInfo'
+  BACAAnalyzeData:
+    type: object
+    properties:
+      analyzerId:
+        type: string
+      message:
+        type: string
+  BACAAnalyzeResponse:
+    type: object
+    properties:
+      responseType:
+        type: string
+        enum:
+          - Normal
+          - Error
+      status:
+        $ref: '#/definitions/ApiStatus'
+      data:
+        $ref: '#/definitions/BACAAnalyzeData'
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorInfo'
+  BACAStatusResponse:
+    type: object
+    properties:
+      responseType:
+        type: string
+        enum:
+          - Normal
+          - Error
+      status:
+        $ref: '#/definitions/ApiStatus'
+      data:
+        $ref: '#/definitions/BACAStatusData'
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorInfo'
+  BACADenimPart:
+    type: object
+    properties:
+      sku:
+        type: string
+      description: 
+        type: string
+      qty:
+        type: integer
+      price:
+        type: integer
+  BACADenimEstimateData:
+    type: object
+    properties:
+      claimNumber:
+        type: string
+      repairerCode:
+        type: string
+      vehicleMake:
+        type: string
+      vehicleModel:
+        type: string
+      vehicleVIN:
+        type: string
+      laborCost:
+        type: integer
+      taxPercentage:
+        type: integer
+      estimateTotal:
+        type: integer
+      estimateParts:
+        type: array
+        items:
+          $ref: '#/definitions/BACADenimPart'
+  BACARetrieveData:
+    type: object
+    properties:
+      analyzerId:
+        type: string
+      estimateData:
+        $ref: '#/definitions/BACADenimEstimateData'
+  BACARetrieveResponse:
+    type: object
+    properties:
+      responseType:
+        type: string
+        enum:
+          - Normal
+          - Error
+      status:
+        $ref: '#/definitions/ApiStatus'
+      data:
+        $ref: '#/definitions/BACARetrieveData'
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorInfo'
+  BACACleanupResponse:
+    type: object
+    properties:
+      responseType:
+        type: string
+        enum:
+          - Normal
+          - Error
+      status:
+        $ref: '#/definitions/ApiStatus'
+      errors:
+        type: array
+        items:
+          $ref: '#/definitions/ErrorInfo'

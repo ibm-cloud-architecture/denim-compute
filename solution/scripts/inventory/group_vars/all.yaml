@@ -24,7 +24,7 @@ wc_login: deadmin
 wc_password: deadmin
 
 app_short_name: DENI1
-app_file_path: ../baw/claim-processing-process.twx
+app_file_path: ../baw/auto-claims-workflow.twx
 
 
 # BAI configuration

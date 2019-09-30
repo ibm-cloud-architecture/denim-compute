@@ -1,4 +1,4 @@
-# Business decisions implementation
+# Decisions development
 
 ## Business Object Model
 
@@ -57,15 +57,15 @@ We have set-up the following properties in the deployment configuration. Once de
 ## Ruleset testing
 Once the claim processing decision service projects are deployed to Decision Center, you can exercise test scenarios on the different decision operations.
 
-Sample test scenarios, in the form of business users friendly Excel spreadsheets, are provided here: `{denim-compute-repo}/solution/odm/test`. To run a test suite, open the `claim-processing` decision service, and on the `Tests` tab, click the `New Test Suite` (+ sig) button, the select the decision operation you want to test, for example `segment-claim`:
+Sample test scenarios, in the form of business users friendly Excel spreadsheets, are provided [here](https://github.com/ibm-cloud-architecture/denim-compute/solution/odm/test). To run a test suite, open the `claim-processing` decision service, and on the `Tests` tab, click the `New Test Suite` (+ sig) button, the select the decision operation you want to test, for example `segment-claim`:
 
-![Test decisions](./images/decision-testing-1.png)
+![Test decisions](images/decision-testing-1.png)
 
 In the file to use of the `Scenarios` section of the page, select the `Scenario File - Claim Segmentation.xlsx` file, then click the `Save and Run` button:
 
-![Test decisions](./images/decision-testing-2.png)
+![Test decisions](images/decision-testing-2.png)
 
 One the test suite run is complete, you will be switched to the `Reports` tab. You can then click on the newly generated test execution report to inspect the individual test scenarios execution:
 
-![Test decisions](./images/decision-testing-3.png)
+![Test decisions](images/decision-testing-3.png)
 

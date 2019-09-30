@@ -1,0 +1,22 @@
+{
+	"name": "rhocp-baca-mediator",
+	"version": "0.2.0",
+	"description": "BACA REST API facade app",
+	"scripts": {
+		"start": "node app/server.js"
+	},
+	"dependencies": {
+		"express": "^4.17.x",
+		"fs-extra": "^8.1.0",
+		"request": "^2.88.0",
+		"r2": "^2.0.x",
+		"js-base64": "^2.5.1",
+		"multiparty": "^4.1.4",
+		"lodash": "^4.17.15",
+		"moment": "^2.24.x"
+	},
+	"repository": {},
+	"engines": {
+		"node": "10.16.x"
+	}
+}

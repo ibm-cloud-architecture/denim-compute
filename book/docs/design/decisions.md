@@ -19,7 +19,11 @@ Output of the three decisions is captured by the classes below:
 
 ## Rule projects
 
-The rule projects are organized as a decision service in a standard fashion, placing the BOM in a separate project that is referenced by the individual rule projects. Each 
+The rule projects are organized as a decision service in a standard fashion, placing the BOM in a separate project that is referenced by the individual rule projects.
+
+Each rule project depending directly on the BOM project is directly associated with a specific decision operation.
+
+The `claim-processing` main project does not contain any rule artifact and is mainly used to define the decision operations and the deployment configuration that will allow the rulesets deployment to the Rule Execution Server.
 
 ![Rule projects](images/odm-projects-organization.png "Rule projects")
 
@@ -28,27 +32,27 @@ The rule projects are organized as a decision service in a standard fashion, pla
 
 The claim fraud assessment decision service is a good candidate to inject a fraud detection service based on a machine learning (ML) model. The typical division of responsibility is that the ML model excels in detecting patterns of fraud, while rules can flag outliers, marginal or heuristic cases that have been detected but do not yet represent a pattern.
 
-**NB**: We are planning to integrate the ML-based scoring model for fraud in a future Denim Compute iteration. For now, we just have a clean set of labeled data (see `{denim-compute-repo}/source/ml/denim-insurance_fraud-data.csv`).
+**NB**: We are planning to integrate the ML-based scoring model for fraud in a future Denim Compute iteration. For now, we just have a clean set of labeled data (see the [denim-insurance_fraud-data.csv](`https://github.com/ibm-cloud-architecture/denim-compute/source/ml/denim-insurance_fraud-data.csv`) file).
 
-This sample fraud dataset is a good fit for the AutoAI feature of [Waston Studio](https://cloud.ibm.com/catalog/services/machine-learning):
+This sample fraud dataset is a good fit for the AutoAI feature of [Watson Studio](https://cloud.ibm.com/catalog/services/machine-learning):
 
-![AutoAI project](./images/ml-project-type.png)
+![AutoAI project](images/ml-project-type.png)
 
 AutoAI will automatically determine a set of ML pipelines that perform well given the dataset and the dependent feature (in our case, the `Fraudulent` column).
 
-![AutoAI setup](./images/ml-auto-ai-setup.png)
+![AutoAI setup](images/ml-auto-ai-setup.png)
 
 - After the experiment execution completes, Watson AutoAI presents the possible pipelines to choose from, each with their associated KPIs.
 
-![AutoAI outcome](./images/ml-auto-ai-experiment.png)
+![AutoAI outcome](images/ml-auto-ai-experiment.png)
 
 - Once the desired pipeline is selected, it can be simply operationalized by creating a deployment, which exposes a scoring end-point:
 
-![AutoAI web-service](./images/ml-auto-ai-ws.png)
+![AutoAI web-service](images/ml-auto-ai-ws.png)
 
 - From there, the scoring service can be manually tested:
 
-![AutoAI test](./images/ml-auto-ai-test.png)
+![AutoAI test](images/ml-auto-ai-test.png)
 
 Sample input:
 ```

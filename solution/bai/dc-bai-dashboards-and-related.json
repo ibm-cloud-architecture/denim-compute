@@ -1,0 +1,528 @@
+[
+  {
+    "_id": "57019330-b45d-11e9-bd75-ef95e1e7bef6",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Denim Compute - Completed Auto Claims",
+      "hits": 0,
+      "description": "Denim Compute completed Auto Claims instances",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":4,\"w\":18,\"h\":5,\"i\":\"1\"},\"id\":\"38db96d0-af8f-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{\"mapCenter\":[38.75408327579141,-104.45800781250001],\"mapZoom\":4},\"gridData\":{\"x\":24,\"y\":9,\"w\":24,\"h\":15,\"i\":\"2\"},\"id\":\"3f8a2860-afae-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":9,\"w\":24,\"h\":15,\"i\":\"3\"},\"id\":\"fd0f4470-afad-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{\"vis\":{\"colors\":{\"Claims\":\"#65C5DB\",\"Max Settlement\":\"#BF1B00\",\"Min Settlement\":\"#9AC48A\"},\"legendOpen\":true}},\"gridData\":{\"x\":24,\"y\":24,\"w\":24,\"h\":15,\"i\":\"5\"},\"id\":\"113a4d20-afac-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":74,\"w\":48,\"h\":16,\"i\":\"8\"},\"id\":\"b467fed0-afb0-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":90,\"w\":48,\"h\":16,\"i\":\"10\"},\"id\":\"29be02c0-afc4-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"10\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{\"vis\":{\"legendOpen\":true}},\"gridData\":{\"x\":34,\"y\":54,\"w\":14,\"h\":20,\"i\":\"11\"},\"id\":\"9bc152b0-afaa-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"11\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":18,\"y\":4,\"w\":17,\"h\":5,\"i\":\"12\"},\"id\":\"b5844100-b070-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"12\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":35,\"y\":4,\"w\":13,\"h\":5,\"i\":\"13\"},\"id\":\"e0fea000-b070-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"13\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":39,\"w\":24,\"h\":15,\"i\":\"14\"},\"id\":\"d331e2a0-b068-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"14\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{\"vis\":{\"defaultColors\":{\"0 - 15000\":\"rgb(0,104,55)\",\"15000 - 25000\":\"rgb(255,255,190)\",\"25000 - 100000\":\"rgb(165,0,38)\"},\"legendOpen\":false}},\"gridData\":{\"x\":0,\"y\":54,\"w\":34,\"h\":10,\"i\":\"15\"},\"id\":\"cf9342a0-b069-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"15\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{\"vis\":{\"defaultColors\":{\"0 - 1000\":\"rgb(0,104,55)\",\"1000 - 2000\":\"rgb(255,255,190)\",\"2000 - 4000\":\"rgb(165,0,38)\"},\"legendOpen\":false}},\"gridData\":{\"x\":0,\"y\":64,\"w\":34,\"h\":10,\"i\":\"16\"},\"id\":\"e99c73b0-b069-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"16\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":24,\"w\":24,\"h\":15,\"i\":\"20\"},\"id\":\"442eb180-b06f-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"20\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":4,\"i\":\"21\"},\"id\":\"352e2980-b782-11e9-bd75-ef95e1e7bef6\",\"panelIndex\":\"21\",\"title\":\"\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"gridData\":{\"x\":24,\"y\":39,\"w\":24,\"h\":15,\"i\":\"22\"},\"version\":\"6.7.1\",\"panelIndex\":\"22\",\"type\":\"visualization\",\"id\":\"f1cd6be0-b7a1-11e9-87a5-3b0218994e25\",\"embeddableConfig\":{}}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"exists\":{\"field\":\"completedTime\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"dba-process-summaries\",\"key\":\"completedTime\",\"negate\":false,\"type\":\"exists\",\"value\":\"exists\"}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"dba-process-summaries\",\"key\":\"data.AutoClaimTG.trackingScenario.string.keyword\",\"negate\":false,\"params\":{\"query\":\"EMULATED\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"EMULATED\"},\"query\":{\"match\":{\"data.AutoClaimTG.trackingScenario.string.keyword\":{\"query\":\"EMULATED\",\"type\":\"phrase\"}}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "5e4fdda0-b470-11e9-bd75-ef95e1e7bef6",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Denim Compute - Suspected Fraudulent Auto Claims",
+      "hits": 0,
+      "description": "Denim Compute Auto Claims instances that were assessed as potential fraud cases",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":10,\"w\":24,\"h\":15,\"i\":\"3\"},\"id\":\"fd0f4470-afad-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{\"vis\":{\"defaultColors\":{\"0 - 10000\":\"rgb(0,104,55)\",\"10000 - 25000\":\"rgb(255,255,190)\",\"25000 - 100000\":\"rgb(165,0,38)\"},\"legendOpen\":false}},\"gridData\":{\"x\":19,\"y\":25,\"w\":29,\"h\":15,\"i\":\"16\"},\"id\":\"e99c73b0-b069-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"16\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":24,\"y\":10,\"w\":24,\"h\":15,\"i\":\"20\"},\"id\":\"31007f40-b46a-11e9-bd75-ef95e1e7bef6\",\"panelIndex\":\"20\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":40,\"w\":48,\"h\":14,\"i\":\"21\"},\"id\":\"6e00e1d0-b46c-11e9-bd75-ef95e1e7bef6\",\"panelIndex\":\"21\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":25,\"w\":19,\"h\":15,\"i\":\"22\"},\"id\":\"f109a6c0-b46c-11e9-bd75-ef95e1e7bef6\",\"panelIndex\":\"22\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":4,\"w\":48,\"h\":6,\"i\":\"23\"},\"id\":\"18b440a0-b48f-11e9-bd75-ef95e1e7bef6\",\"panelIndex\":\"23\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":4,\"i\":\"24\"},\"id\":\"6e75b4b0-b782-11e9-bd75-ef95e1e7bef6\",\"panelIndex\":\"24\",\"type\":\"visualization\",\"version\":\"6.7.1\",\"title\":\"\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"exists\":{\"field\":\"completedTime\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"dba-process-summaries\",\"key\":\"completedTime\",\"negate\":false,\"type\":\"exists\",\"value\":\"exists\"}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"dba-process-summaries\",\"key\":\"data.AutoClaimUpdatesTG.claimFraudStatus.string.keyword\",\"negate\":true,\"params\":{\"query\":\"Not Suspected\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"Not Suspected\"},\"query\":{\"match\":{\"data.AutoClaimUpdatesTG.claimFraudStatus.string.keyword\":{\"query\":\"Not Suspected\",\"type\":\"phrase\"}}}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"dba-process-summaries\",\"key\":\"data.AutoClaimUpdatesTG.claimFraudStatus.string.keyword\",\"negate\":true,\"params\":{\"query\":\"Not Assessed\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"Not Assessed\"},\"query\":{\"match\":{\"data.AutoClaimUpdatesTG.claimFraudStatus.string.keyword\":{\"query\":\"Not Assessed\",\"type\":\"phrase\"}}}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":true,\"index\":\"dba-process-summaries\",\"key\":\"data.AutoClaimUpdatesTG.claimFraudStatus.string.keyword\",\"negate\":false,\"params\":{\"query\":\"Confirmed\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"Confirmed\"},\"query\":{\"match\":{\"data.AutoClaimUpdatesTG.claimFraudStatus.string.keyword\":{\"query\":\"Confirmed\",\"type\":\"phrase\"}}}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"dba-process-summaries\",\"key\":\"data.AutoClaimTG.trackingScenario.string.keyword\",\"negate\":false,\"params\":{\"query\":\"EMULATED\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"EMULATED\"},\"query\":{\"match\":{\"data.AutoClaimTG.trackingScenario.string.keyword\":{\"query\":\"EMULATED\",\"type\":\"phrase\"}}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "8e983a10-b45d-11e9-bd75-ef95e1e7bef6",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Denim Compute - Active Auto Claims",
+      "hits": 0,
+      "description": "Denim Compute Auto Claims instances that are currently being processed",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":9,\"w\":24,\"h\":15,\"i\":\"3\"},\"id\":\"fd0f4470-afad-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":54,\"w\":48,\"h\":15,\"i\":\"8\"},\"id\":\"b467fed0-afb0-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":4,\"w\":48,\"h\":5,\"i\":\"12\"},\"id\":\"b5844100-b070-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"12\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{\"vis\":{\"defaultColors\":{\"0 - 10000\":\"rgb(0,104,55)\",\"10000 - 25000\":\"rgb(255,255,190)\",\"25000 - 100000\":\"rgb(165,0,38)\"},\"legendOpen\":false}},\"gridData\":{\"x\":19,\"y\":39,\"w\":29,\"h\":15,\"i\":\"16\"},\"id\":\"e99c73b0-b069-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"16\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":24,\"w\":22,\"h\":15,\"i\":\"19\"},\"id\":\"01eb5fb0-b06c-11e9-9539-211cc2fda8fc\",\"panelIndex\":\"19\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":24,\"y\":9,\"w\":24,\"h\":15,\"i\":\"20\"},\"id\":\"31007f40-b46a-11e9-bd75-ef95e1e7bef6\",\"panelIndex\":\"20\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":69,\"w\":48,\"h\":14,\"i\":\"21\"},\"id\":\"6e00e1d0-b46c-11e9-bd75-ef95e1e7bef6\",\"panelIndex\":\"21\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":39,\"w\":19,\"h\":15,\"i\":\"22\"},\"id\":\"f109a6c0-b46c-11e9-bd75-ef95e1e7bef6\",\"panelIndex\":\"22\",\"type\":\"visualization\",\"version\":\"6.7.1\"},{\"gridData\":{\"x\":22,\"y\":24,\"w\":26,\"h\":15,\"i\":\"23\"},\"version\":\"6.7.1\",\"panelIndex\":\"23\",\"type\":\"visualization\",\"id\":\"c38acfc0-b46d-11e9-bd75-ef95e1e7bef6\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":0,\"y\":0,\"w\":48,\"h\":4,\"i\":\"24\"},\"version\":\"6.7.1\",\"panelIndex\":\"24\",\"type\":\"visualization\",\"id\":\"4bc9f930-b782-11e9-bd75-ef95e1e7bef6\",\"embeddableConfig\":{},\"title\":\"\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"exists\":{\"field\":\"completedTime\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"dba-process-summaries\",\"key\":\"completedTime\",\"negate\":true,\"type\":\"exists\",\"value\":\"exists\"}},{\"meta\":{\"index\":\"dba-process-summaries\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"data.AutoClaimTG.trackingScenario.string.keyword\",\"value\":\"EMULATED\",\"params\":{\"query\":\"EMULATED\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"data.AutoClaimTG.trackingScenario.string.keyword\":{\"query\":\"EMULATED\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+    "_type": "search",
+    "_source": {
+      "title": "Denim Compute - Auto Claims All Processes",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "data.AutoClaimUpdatesTG.claimNumber.string",
+        "data.AutoClaimUpdatesTG.claimStatus.string",
+        "data.AutoClaimTG.driverAge.integer",
+        "data.AutoClaimUpdatesTG.claimType.string",
+        "data.AutoClaimUpdatesTG.claimFraudStatus.string",
+        "data.AutoClaimUpdatesTG.claimSettlementAmount.integer",
+        "data.AutoClaimUpdatesTG.damagesEstimateAmount.integer",
+        "completedTime",
+        "data.AutoClaimTG.lossDateTime.dateTime",
+        "data.AutoClaimTG.lossDateReported.dateTime",
+        "data.AutoClaimUpdatesTG.claimSettlementDate.dateTime"
+      ],
+      "sort": [
+        "timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"denim-index-pattern-process-s\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"dba-process-summaries\",\"key\":\"processApplicationName\",\"negate\":false,\"params\":{\"query\":\"Denim Compute Auto Claims\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"Denim Compute Auto Claims\"},\"query\":{\"match\":{\"processApplicationName\":{\"query\":\"Denim Compute Auto Claims\",\"type\":\"phrase\"}}}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"dba-process-summaries\",\"key\":\"type\",\"negate\":false,\"params\":{\"query\":\"process\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"process\"},\"query\":{\"match\":{\"type\":{\"query\":\"process\",\"type\":\"phrase\"}}}},{\"$state\":{\"store\":\"appState\"},\"exists\":{\"field\":\"data.AutoClaimTG.trackingScenario.string.keyword\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"dba-process-summaries\",\"key\":\"data.AutoClaimTG.trackingScenario.string.keyword\",\"negate\":false,\"type\":\"exists\",\"value\":\"exists\"}},{\"$state\":{\"store\":\"appState\"},\"exists\":{\"field\":\"completedTime\"},\"meta\":{\"alias\":null,\"disabled\":true,\"index\":\"dba-process-summaries\",\"key\":\"completedTime\",\"negate\":false,\"type\":\"exists\",\"value\":\"exists\"}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":true,\"index\":\"dba-process-summaries\",\"key\":\"data.AutoClaimUpdatesTG.claimType.string.keyword\",\"negate\":false,\"params\":{\"query\":\"Complex\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"Complex\"},\"query\":{\"match\":{\"data.AutoClaimUpdatesTG.claimType.string.keyword\":{\"query\":\"Complex\",\"type\":\"phrase\"}}}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":true,\"index\":\"dba-process-summaries\",\"key\":\"data.AutoClaimUpdatesTG.claimFraudStatus.string.keyword\",\"negate\":true,\"params\":{\"query\":\"Not Suspected\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"Not Suspected\"},\"query\":{\"match\":{\"data.AutoClaimUpdatesTG.claimFraudStatus.string.keyword\":{\"query\":\"Not Suspected\",\"type\":\"phrase\"}}}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":true,\"index\":\"dba-process-summaries\",\"key\":\"data.AutoClaimUpdatesTG.claimFraudStatus.string.keyword\",\"negate\":true,\"params\":{\"query\":\"Not Assessed\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"Not Assessed\"},\"query\":{\"match\":{\"data.AutoClaimUpdatesTG.claimFraudStatus.string.keyword\":{\"query\":\"Not Assessed\",\"type\":\"phrase\"}}}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":true,\"index\":\"dba-process-summaries\",\"key\":\"data.AutoClaimTG.lossState.string.keyword\",\"negate\":false,\"params\":{\"query\":\"FL\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"FL\"},\"query\":{\"match\":{\"data.AutoClaimTG.lossState.string.keyword\":{\"query\":\"FL\",\"type\":\"phrase\"}}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "d43810a0-afbb-11e9-9539-211cc2fda8fc",
+    "_type": "search",
+    "_source": {
+      "title": "Denim Compute - Auto Claims Active Processes",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "name",
+        "data.AutoClaimUpdatesTG.claimNumber.string",
+        "data.AutoClaimUpdatesTG.claimStatus.string",
+        "data.AutoClaimTG.driverAge.integer",
+        "data.AutoClaimUpdatesTG.claimType.string",
+        "data.AutoClaimUpdatesTG.claimFraudStatus.string",
+        "data.AutoClaimUpdatesTG.claimSettlementAmount.integer",
+        "data.AutoClaimUpdatesTG.damagesEstimateAmount.integer",
+        "completedTime",
+        "data.AutoClaimTG.lossDateTime.dateTime",
+        "data.AutoClaimTG.lossDateReported.dateTime",
+        "data.AutoClaimUpdatesTG.claimSettlementDate.dateTime"
+      ],
+      "sort": [
+        "timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"denim-index-pattern-process-s\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"exists\":{\"field\":\"completedTime\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"dba-process-summaries\",\"key\":\"completedTime\",\"negate\":true,\"type\":\"exists\",\"value\":\"exists\"}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"dba-process-summaries\",\"key\":\"type\",\"negate\":false,\"params\":{\"query\":\"process\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"process\"},\"query\":{\"match\":{\"type\":{\"query\":\"process\",\"type\":\"phrase\"}}}},{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"dba-process-summaries\",\"key\":\"processApplicationName\",\"negate\":false,\"params\":{\"query\":\"Denim Compute Auto Claims\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"Denim Compute Auto Claims\"},\"query\":{\"match\":{\"processApplicationName\":{\"query\":\"Denim Compute Auto Claims\",\"type\":\"phrase\"}}}},{\"$state\":{\"store\":\"appState\"},\"exists\":{\"field\":\"data.AutoClaimTG.trackingScenario.string.keyword\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"dba-process-summaries\",\"key\":\"data.AutoClaimTG.trackingScenario.string.keyword\",\"negate\":false,\"type\":\"exists\",\"value\":\"exists\"}}]}"
+      }
+    }
+  },
+  {
+    "_id": "b467fed0-afb0-11e9-9539-211cc2fda8fc",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Claims by Vehicle Make",
+      "visState": "{\"title\":\"Denim Compute - Claims by Vehicle Make\",\"type\":\"table\",\"params\":{\"perPage\":3,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":true,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Claims\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"data.AutoClaimTG.insuredVehicleMake.string.keyword\",\"size\":7,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Policy Holder\",\"row\":false}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"data.AutoClaimTG.otherVehicleMake.string.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Third Party\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "cf9342a0-b069-11e9-9539-211cc2fda8fc",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Avg Settlements by Policy Cover (Horiz)",
+      "visState": "{\"title\":\"Denim Compute - Avg Settlements by Policy Cover (Horiz)\",\"type\":\"gauge\",\"params\":{\"type\":\"gauge\",\"addTooltip\":true,\"addLegend\":true,\"isDisplayWarning\":false,\"gauge\":{\"verticalSplit\":false,\"extendRange\":true,\"percentageMode\":false,\"gaugeType\":\"Arc\",\"gaugeStyle\":\"Full\",\"backStyle\":\"Full\",\"orientation\":\"vertical\",\"colorSchema\":\"Green to Red\",\"gaugeColorMode\":\"Labels\",\"colorsRange\":[{\"from\":0,\"to\":15000},{\"from\":15000,\"to\":25000},{\"from\":25000,\"to\":100000}],\"invertColors\":false,\"labels\":{\"show\":true,\"color\":\"black\"},\"scale\":{\"show\":true,\"labels\":false,\"color\":\"#333\"},\"type\":\"meter\",\"style\":{\"bgWidth\":0.9,\"width\":0.9,\"mask\":false,\"bgMask\":false,\"maskBars\":50,\"bgFill\":\"#eee\",\"bgColor\":false,\"subText\":\"\",\"fontSize\":60,\"labelColor\":true}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Settlements\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"data.AutoClaimTG.policyCoverage.string.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Policy\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 15000\":\"rgb(0,104,55)\",\"15000 - 25000\":\"rgb(255,255,190)\",\"25000 - 100000\":\"rgb(165,0,38)\"}}}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "9bc152b0-afaa-11e9-9539-211cc2fda8fc",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Claims by Fraud Status",
+      "visState": "{\"title\":\"Denim Compute - Claims by Fraud Status\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"top\",\"isDonut\":false,\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Claims\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimFraudStatus.string.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Fraud Status\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":true}}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "31007f40-b46a-11e9-bd75-ef95e1e7bef6",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Max Estimate by Loss State",
+      "visState": "{\"title\":\"Denim Compute - Max Estimate by Loss State\",\"type\":\"region_map\",\"params\":{\"legendPosition\":\"bottomright\",\"addTooltip\":true,\"colorSchema\":\"Green to Red\",\"selectedLayer\":{\"name\":\"USA States\",\"origin\":\"elastic_maps_service\",\"id\":\"usa_states\",\"created_at\":\"2017-04-26T19:45:22.377820\",\"attribution\":\"<a href=\\\"https://www.openstreetmap.org/copyright\\\">&#169; OpenStreetMap contributors</a> | <a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a>\",\"fields\":[{\"type\":\"id\",\"name\":\"iso_3166_2\",\"description\":\"ISO 3166-2 code\"},{\"type\":\"id\",\"name\":\"postal\",\"description\":\"FIPS 5-2 alpha code (US states)\"},{\"type\":\"property\",\"name\":\"name\",\"description\":\"name\"}],\"format\":{\"type\":\"geojson\"},\"layerId\":\"elastic_maps_service.USA States\",\"isEMS\":true},\"emsHotLink\":\"https://maps.elastic.co/v6.7?locale=en#file/usa_states\",\"selectedJoinField\":{\"type\":\"id\",\"name\":\"postal\",\"description\":\"FIPS 5-2 alpha code (US states)\"},\"isDisplayWarning\":true,\"wms\":{\"enabled\":false,\"options\":{\"format\":\"image/png\",\"transparent\":true},\"selectedTmsLayer\":{\"origin\":\"elastic_maps_service\",\"id\":\"road_map\",\"minZoom\":0,\"maxZoom\":10,\"attribution\":\"<p>&#169; <a href=\\\"https://www.openstreetmap.org/copyright\\\">OpenStreetMap contributors</a>|<a href=\\\"https://openmaptiles.org\\\">OpenMapTiles</a>|<a href=\\\"https://www.maptiler.com\\\">MapTiler</a>|<a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a></p>&#10;\"}},\"mapZoom\":2,\"mapCenter\":[0,0],\"outlineWeight\":1,\"showAllShapes\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.damagesEstimateAmount.integer\",\"customLabel\":\"Maximum Estimate\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"data.AutoClaimTG.lossState.string.keyword\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Loss State\"}}]}",
+      "uiStateJSON": "{\"mapZoom\":4,\"mapCenter\":[33.8339199536547,-95.71289062500001]}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "c38acfc0-b46d-11e9-bd75-ef95e1e7bef6",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Estimates by Weather Condition",
+      "visState": "{\"title\":\"Denim Compute - Estimates by Weather Condition\",\"type\":\"line\",\"params\":{\"type\":\"line\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Damages Estimate\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Avg Estimate\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true},{\"show\":true,\"mode\":\"normal\",\"type\":\"histogram\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"2\",\"label\":\"Min Estimate\"},\"valueAxis\":\"ValueAxis-1\"},{\"show\":true,\"mode\":\"normal\",\"type\":\"histogram\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"4\",\"label\":\"Max Estimate\"},\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.damagesEstimateAmount.integer\",\"customLabel\":\"Avg Estimate\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"min\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.damagesEstimateAmount.integer\",\"customLabel\":\"Min Estimate\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"data.AutoClaimTG.lossWeatherCondition.string.keyword\",\"size\":6,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Weather Conditions\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.damagesEstimateAmount.integer\",\"customLabel\":\"Max Estimate\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Total Settlement\":\"#58140C\",\"Avg Settlement\":\"#AEA2E0\"}}}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "8e8b6f30-b465-11e9-bd75-ef95e1e7bef6",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Avg Settlements by Policy Cover (Vert)",
+      "visState": "{\"title\":\"Denim Compute - Avg Settlements by Policy Cover (Vert)\",\"type\":\"gauge\",\"params\":{\"type\":\"gauge\",\"addTooltip\":true,\"addLegend\":true,\"isDisplayWarning\":false,\"gauge\":{\"verticalSplit\":true,\"extendRange\":true,\"percentageMode\":false,\"gaugeType\":\"Arc\",\"gaugeStyle\":\"Full\",\"backStyle\":\"Full\",\"orientation\":\"vertical\",\"colorSchema\":\"Green to Red\",\"gaugeColorMode\":\"Labels\",\"colorsRange\":[{\"from\":0,\"to\":15000},{\"from\":15000,\"to\":25000},{\"from\":25000,\"to\":100000}],\"invertColors\":false,\"labels\":{\"show\":true,\"color\":\"black\"},\"scale\":{\"show\":true,\"labels\":false,\"color\":\"#333\"},\"type\":\"meter\",\"style\":{\"bgWidth\":0.9,\"width\":0.9,\"mask\":false,\"bgMask\":false,\"maskBars\":50,\"bgFill\":\"#eee\",\"bgColor\":false,\"subText\":\"\",\"fontSize\":60,\"labelColor\":true}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Settlements\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"data.AutoClaimTG.policyCoverage.string.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Policy\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 15000\":\"rgb(0,104,55)\",\"15000 - 25000\":\"rgb(255,255,190)\",\"25000 - 100000\":\"rgb(165,0,38)\"}}}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "3f8a2860-afae-11e9-9539-211cc2fda8fc",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Max Settlement by Loss State",
+      "visState": "{\"title\":\"Denim Compute - Max Settlement by Loss State\",\"type\":\"region_map\",\"params\":{\"legendPosition\":\"bottomright\",\"addTooltip\":true,\"colorSchema\":\"Green to Red\",\"selectedLayer\":{\"name\":\"USA States\",\"origin\":\"elastic_maps_service\",\"id\":\"usa_states\",\"created_at\":\"2017-04-26T19:45:22.377820\",\"attribution\":\"<a href=\\\"https://www.openstreetmap.org/copyright\\\">&#169; OpenStreetMap contributors</a> | <a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a>\",\"fields\":[{\"type\":\"id\",\"name\":\"iso_3166_2\",\"description\":\"ISO 3166-2 code\"},{\"type\":\"id\",\"name\":\"postal\",\"description\":\"FIPS 5-2 alpha code (US states)\"},{\"type\":\"property\",\"name\":\"name\",\"description\":\"name\"}],\"format\":{\"type\":\"geojson\"},\"layerId\":\"elastic_maps_service.USA States\",\"isEMS\":true},\"emsHotLink\":\"https://maps.elastic.co/v6.7?locale=en#file/usa_states\",\"selectedJoinField\":{\"type\":\"id\",\"name\":\"postal\",\"description\":\"FIPS 5-2 alpha code (US states)\"},\"isDisplayWarning\":true,\"wms\":{\"enabled\":false,\"options\":{\"format\":\"image/png\",\"transparent\":true},\"selectedTmsLayer\":{\"origin\":\"elastic_maps_service\",\"id\":\"road_map\",\"minZoom\":0,\"maxZoom\":10,\"attribution\":\"<p>&#169; <a href=\\\"https://www.openstreetmap.org/copyright\\\">OpenStreetMap contributors</a>|<a href=\\\"https://openmaptiles.org\\\">OpenMapTiles</a>|<a href=\\\"https://www.maptiler.com\\\">MapTiler</a>|<a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a></p>&#10;\"}},\"mapZoom\":2,\"mapCenter\":[0,0],\"outlineWeight\":1,\"showAllShapes\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Maximum Settlement\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"data.AutoClaimTG.lossState.string.keyword\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Loss State\"}}]}",
+      "uiStateJSON": "{\"mapZoom\":4,\"mapCenter\":[33.8339199536547,-95.71289062500001]}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "fd0f4470-afad-11e9-9539-211cc2fda8fc",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Claims by Loss State",
+      "visState": "{\"title\":\"Denim Compute - Claims by Loss State\",\"type\":\"region_map\",\"params\":{\"legendPosition\":\"bottomright\",\"addTooltip\":true,\"colorSchema\":\"Green to Red\",\"selectedLayer\":{\"name\":\"USA States\",\"origin\":\"elastic_maps_service\",\"id\":\"usa_states\",\"created_at\":\"2017-04-26T19:45:22.377820\",\"attribution\":\"<a href=\\\"https://www.openstreetmap.org/copyright\\\">&#169; OpenStreetMap contributors</a> | <a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a>\",\"fields\":[{\"type\":\"id\",\"name\":\"iso_3166_2\",\"description\":\"ISO 3166-2 code\"},{\"type\":\"id\",\"name\":\"postal\",\"description\":\"FIPS 5-2 alpha code (US states)\"},{\"type\":\"property\",\"name\":\"name\",\"description\":\"name\"}],\"format\":{\"type\":\"geojson\"},\"layerId\":\"elastic_maps_service.USA States\",\"isEMS\":true},\"emsHotLink\":\"https://maps.elastic.co/v6.7?locale=en#file/usa_states\",\"selectedJoinField\":{\"type\":\"id\",\"name\":\"postal\",\"description\":\"FIPS 5-2 alpha code (US states)\"},\"isDisplayWarning\":true,\"wms\":{\"enabled\":false,\"options\":{\"format\":\"image/png\",\"transparent\":true},\"selectedTmsLayer\":{\"origin\":\"elastic_maps_service\",\"id\":\"road_map\",\"minZoom\":0,\"maxZoom\":10,\"attribution\":\"<p>&#169; <a href=\\\"https://www.openstreetmap.org/copyright\\\">OpenStreetMap contributors</a>|<a href=\\\"https://openmaptiles.org\\\">OpenMapTiles</a>|<a href=\\\"https://www.maptiler.com\\\">MapTiler</a>|<a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a></p>&#10;\"}},\"mapZoom\":2,\"mapCenter\":[0,0],\"outlineWeight\":1,\"showAllShapes\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Claims\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"data.AutoClaimTG.lossState.string.keyword\",\"size\":50,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Loss State\"}}]}",
+      "uiStateJSON": "{\"mapZoom\":4,\"mapCenter\":[35.28150065789119,-90.43945312500001]}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "29be02c0-afc4-11e9-9539-211cc2fda8fc",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Avg Settlement by Vehicle Make",
+      "visState": "{\"title\":\"Denim Compute - Avg Settlement by Vehicle Make\",\"type\":\"table\",\"params\":{\"perPage\":3,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Average Settlement\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"data.AutoClaimTG.insuredVehicleMake.string.keyword\",\"size\":7,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Policy Holder\",\"row\":false}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"data.AutoClaimTG.otherVehicleMake.string.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Third Party\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "dc256370-b3ae-11e9-bd75-ef95e1e7bef6",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Claims and Total Settlements by Weather Condition",
+      "visState": "{\"title\":\"Denim Compute - Claims and Total Settlements by Weather Condition\",\"type\":\"line\",\"params\":{\"type\":\"line\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Claims\"}},{\"id\":\"ValueAxis-2\",\"name\":\"RightAxis-1\",\"type\":\"value\",\"position\":\"right\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Total Settlement\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"normal\",\"data\":{\"label\":\"Claims\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true},{\"show\":true,\"mode\":\"normal\",\"type\":\"line\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"2\",\"label\":\"Total Settlement\"},\"valueAxis\":\"ValueAxis-2\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Claims\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Total Settlement\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"data.AutoClaimTG.lossWeatherCondition.string.keyword\",\"size\":6,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Weather Conditions\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Total Settlement\":\"#58140C\",\"Avg Settlement\":\"#AEA2E0\"}}}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "442eb180-b06f-11e9-9539-211cc2fda8fc",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Weekly Avg Settlements, Estimates, Deltas",
+      "visState": "{\"title\":\"Denim Compute - Weekly Avg Settlements, Estimates, Deltas\",\"type\":\"horizontal_bar\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":200},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":75,\"filter\":true,\"truncate\":100},\"title\":{\"text\":\"Settlement\"}}],\"seriesParams\":[{\"show\":true,\"type\":\"histogram\",\"mode\":\"normal\",\"data\":{\"label\":\"Settlement\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true},{\"show\":true,\"mode\":\"normal\",\"type\":\"histogram\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"2\",\"label\":\"Estimates\"},\"valueAxis\":\"ValueAxis-1\"},{\"show\":true,\"mode\":\"normal\",\"type\":\"histogram\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"3\",\"label\":\"Deltas\"},\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Settlement\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.damagesEstimateAmount.integer\",\"customLabel\":\"Estimates\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"ClaimDelta\",\"customLabel\":\"Deltas\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"data.AutoClaimTG.lossDateTime.dateTime\",\"timeRange\":{\"from\":\"now-15m\",\"to\":\"now\",\"mode\":\"quick\"},\"useNormalizedEsInterval\":true,\"interval\":\"w\",\"time_zone\":\"Europe/London\",\"drop_partials\":false,\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Loss Date\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "d331e2a0-b068-11e9-9539-211cc2fda8fc",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Settlements by Weather Condition",
+      "visState": "{\"title\":\"Denim Compute - Settlements by Weather Condition\",\"type\":\"line\",\"params\":{\"type\":\"line\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Average Settlement\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Average Settlement\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true},{\"show\":true,\"mode\":\"normal\",\"type\":\"histogram\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"2\",\"label\":\"Min Settlement\"},\"valueAxis\":\"ValueAxis-1\"},{\"show\":true,\"mode\":\"normal\",\"type\":\"histogram\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"4\",\"label\":\"Max Settlement\"},\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Average Settlement\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"min\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Min Settlement\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"data.AutoClaimTG.lossWeatherCondition.string.keyword\",\"size\":6,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Weather Conditions\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Max Settlement\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Total Settlement\":\"#58140C\",\"Avg Settlement\":\"#AEA2E0\"}}}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "38db96d0-af8f-11e9-9539-211cc2fda8fc",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Settlement Amounts",
+      "visState": "{\"title\":\"Denim Compute - Settlement Amounts\",\"type\":\"metric\",\"params\":{\"addLegend\":false,\"addTooltip\":true,\"metric\":{\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"invertColors\":false,\"labels\":{\"show\":true},\"metricColorMode\":\"None\",\"percentageMode\":false,\"style\":{\"bgColor\":false,\"bgFill\":\"#000\",\"fontSize\":20,\"labelColor\":false,\"subText\":\"\"},\"useRanges\":false},\"type\":\"metric\"},\"aggs\":[{\"id\":\"13\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Claims\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Total Settlement\"}},{\"id\":\"10\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Maximum Settlement\"}},{\"id\":\"12\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Average Settlement\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "b5844100-b070-11e9-9539-211cc2fda8fc",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Estimate Amounts",
+      "visState": "{\"title\":\"Denim Compute - Estimate Amounts\",\"type\":\"metric\",\"params\":{\"addLegend\":false,\"addTooltip\":true,\"metric\":{\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"invertColors\":false,\"labels\":{\"show\":true},\"metricColorMode\":\"None\",\"percentageMode\":false,\"style\":{\"bgColor\":false,\"bgFill\":\"#000\",\"fontSize\":20,\"labelColor\":false,\"subText\":\"\"},\"useRanges\":false},\"type\":\"metric\"},\"aggs\":[{\"id\":\"13\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Claims\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.damagesEstimateAmount.integer\",\"customLabel\":\"Total Estimate\"}},{\"id\":\"10\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.damagesEstimateAmount.integer\",\"customLabel\":\"Maximum Estimate\"}},{\"id\":\"12\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.damagesEstimateAmount.integer\",\"customLabel\":\"Average Estimate\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "e0fea000-b070-11e9-9539-211cc2fda8fc",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Delta Amounts",
+      "visState": "{\"title\":\"Denim Compute - Delta Amounts\",\"type\":\"metric\",\"params\":{\"addLegend\":false,\"addTooltip\":true,\"metric\":{\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"invertColors\":false,\"labels\":{\"show\":true},\"metricColorMode\":\"None\",\"percentageMode\":false,\"style\":{\"bgColor\":false,\"bgFill\":\"#000\",\"fontSize\":20,\"labelColor\":false,\"subText\":\"\"},\"useRanges\":false},\"type\":\"metric\"},\"aggs\":[{\"id\":\"13\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Claims\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"ClaimDelta\",\"customLabel\":\"Total Delta\"}},{\"id\":\"10\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"ClaimDelta\",\"customLabel\":\"Maximum Delta\"}},{\"id\":\"12\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"ClaimDelta\",\"customLabel\":\"Average Delta\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "f07e1ee0-afa6-11e9-9539-211cc2fda8fc",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Settlements by Loss Date",
+      "visState": "{\"title\":\"Denim Compute - Settlements by Loss Date\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"AC Settlement\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"AC Settlement\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"AC Settlement\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"data.AutoClaimTG.lossDateTime.dateTime\",\"timeRange\":{\"from\":\"now-15m\",\"to\":\"now\",\"mode\":\"quick\"},\"useNormalizedEsInterval\":true,\"interval\":\"M\",\"time_zone\":\"Europe/London\",\"drop_partials\":false,\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Loss Date\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "1d8b3660-afa8-11e9-9539-211cc2fda8fc",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Claims by Loss Date",
+      "visState": "{\"title\":\"Denim Compute - Claims by Loss Date\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Claims\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Claims\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Claims\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"data.AutoClaimTG.lossDateTime.dateTime\",\"timeRange\":{\"from\":\"now-15m\",\"to\":\"now\",\"mode\":\"quick\"},\"useNormalizedEsInterval\":true,\"interval\":\"w\",\"time_zone\":\"Europe/London\",\"drop_partials\":false,\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Loss Date\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "f109a6c0-b46c-11e9-bd75-ef95e1e7bef6",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Estimates by Driver Age",
+      "visState": "{\"title\":\"Denim Compute - Estimates by Driver Age\",\"type\":\"horizontal_bar\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":200},\"position\":\"left\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"legendPosition\":\"right\",\"seriesParams\":[{\"show\":true,\"mode\":\"normal\",\"type\":\"histogram\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"4\",\"label\":\"Min Estimate\"},\"valueAxis\":\"ValueAxis-1\"},{\"data\":{\"id\":\"1\",\"label\":\"Max Estimate\"},\"drawLinesBetweenPoints\":true,\"mode\":\"normal\",\"show\":true,\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"},{\"data\":{\"id\":\"3\",\"label\":\"Average Estimate\"},\"drawLinesBetweenPoints\":true,\"mode\":\"normal\",\"show\":true,\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"times\":[],\"type\":\"histogram\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":true,\"rotate\":75,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"bottom\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Damages Estimate\"},\"type\":\"value\"}]},\"aggs\":[{\"id\":\"4\",\"enabled\":true,\"type\":\"min\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.damagesEstimateAmount.integer\",\"customLabel\":\"Min Estimate\"}},{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.damagesEstimateAmount.integer\",\"customLabel\":\"Max Estimate\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"data.AutoClaimTG.driverAge.integer\",\"interval\":10,\"min_doc_count\":true,\"extended_bounds\":{\"min\":20,\"max\":100},\"customLabel\":\"Driver Age\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.damagesEstimateAmount.integer\",\"customLabel\":\"Average Estimate\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":true}}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "6e00e1d0-b46c-11e9-bd75-ef95e1e7bef6",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Avg Estimate by Vehicle Make",
+      "visState": "{\"title\":\"Denim Compute - Avg Estimate by Vehicle Make\",\"type\":\"table\",\"params\":{\"perPage\":3,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.damagesEstimateAmount.integer\",\"customLabel\":\"Average Estimate\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"data.AutoClaimTG.insuredVehicleMake.string.keyword\",\"size\":7,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":true,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Policy Holder\",\"row\":false}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"data.AutoClaimTG.otherVehicleMake.string.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Third Party\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "18b440a0-b48f-11e9-bd75-ef95e1e7bef6",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Suspected Fraud Amounts",
+      "visState": "{\"title\":\"Denim Compute - Suspected Fraud Amounts\",\"type\":\"metric\",\"params\":{\"addLegend\":false,\"addTooltip\":true,\"metric\":{\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"invertColors\":false,\"labels\":{\"show\":true},\"metricColorMode\":\"None\",\"percentageMode\":false,\"style\":{\"bgColor\":false,\"bgFill\":\"#000\",\"fontSize\":20,\"labelColor\":false,\"subText\":\"\"},\"useRanges\":false},\"type\":\"metric\"},\"aggs\":[{\"id\":\"13\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Claims\"}},{\"id\":\"14\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Total Settlement\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.damagesEstimateAmount.integer\",\"customLabel\":\"Total Estimate\"}},{\"id\":\"15\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Max Settlement\"}},{\"id\":\"10\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.damagesEstimateAmount.integer\",\"customLabel\":\"Max Estimate\"}},{\"id\":\"16\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Avg Settlement\"}},{\"id\":\"12\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.damagesEstimateAmount.integer\",\"customLabel\":\"Avg Estimate\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "113a4d20-afac-11e9-9539-211cc2fda8fc",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Settlements by Driver Age",
+      "visState": "{\"title\":\"Denim Compute - Settlements by Driver Age\",\"type\":\"horizontal_bar\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":200},\"position\":\"left\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"legendPosition\":\"right\",\"seriesParams\":[{\"show\":true,\"mode\":\"normal\",\"type\":\"histogram\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"4\",\"label\":\"Min Settlement\"},\"valueAxis\":\"ValueAxis-1\"},{\"data\":{\"id\":\"1\",\"label\":\"Max Settlement\"},\"drawLinesBetweenPoints\":true,\"mode\":\"normal\",\"show\":true,\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"},{\"data\":{\"id\":\"3\",\"label\":\"Avg Settlement\"},\"drawLinesBetweenPoints\":true,\"mode\":\"normal\",\"show\":true,\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"},{\"show\":true,\"mode\":\"normal\",\"type\":\"histogram\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"5\",\"label\":\"Claims\"},\"valueAxis\":\"ValueAxis-2\"}],\"times\":[],\"type\":\"histogram\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":true,\"rotate\":75,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"bottom\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Total Settlement\"},\"type\":\"value\"},{\"id\":\"ValueAxis-2\",\"labels\":{\"filter\":true,\"rotate\":75,\"show\":true,\"truncate\":100},\"name\":\"TopAxis-1\",\"position\":\"top\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Claims\"},\"type\":\"value\"}]},\"aggs\":[{\"id\":\"4\",\"enabled\":true,\"type\":\"min\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Min Settlement\"}},{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Max Settlement\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"data.AutoClaimTG.driverAge.integer\",\"interval\":10,\"min_doc_count\":true,\"extended_bounds\":{\"min\":20,\"max\":100},\"customLabel\":\"Driver Age\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimSettlementAmount.integer\",\"customLabel\":\"Avg Settlement\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Claims\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":true,\"colors\":{\"Claims\":\"#65C5DB\",\"Max Settlement\":\"#BF1B00\",\"Min Settlement\":\"#9AC48A\"}}}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "c98138d0-b795-11e9-87a5-3b0218994e25",
+    "_type": "visualization",
+    "_source": {
+      "title": "IWA Denim Compute - Active Claims by Age and Status",
+      "visState": "{\"title\":\"IWA Denim Compute - Active Claims by Age and Status\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100,\"filter\":false,\"rotate\":0},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Claims\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Claims\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"Claims\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"date_range\",\"schema\":\"segment\",\"params\":{\"field\":\"FormattedLossDate\",\"ranges\":[{\"from\":\"now-2w/w\",\"to\":\"now\"},{\"from\":\"now-4w/w\",\"to\":\"now-2w/w\"},{\"to\":\"now-4w/w\",\"from\":\"now-6w/w\"},{\"to\":\"now-6w/w\",\"from\":\"now-8w/w\"},{\"to\":\"now-8w/w\",\"from\":\"now-10w/w\"},{\"to\":\"now-10w/w\",\"from\":\"now-12w/w\"}],\"customLabel\":\"Claim Age\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimStatus.string.keyword\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Claim Status\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":true}}",
+      "description": "",
+      "savedSearchId": "d43810a0-afbb-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "01eb5fb0-b06c-11e9-9539-211cc2fda8fc",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Active Claims by Age and Status",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{\"customLabel\":\"Claims\"},\"schema\":\"metric\",\"type\":\"count\"},{\"enabled\":true,\"id\":\"3\",\"params\":{\"customLabel\":\"Claim Age\",\"field\":\"FormattedLossDate\",\"ranges\":[{\"from\":\"now-2w/w\",\"to\":\"now\"},{\"from\":\"now-4w/w\",\"to\":\"now-2w/w\"},{\"from\":\"now-6w/w\",\"to\":\"now-4w/w\"},{\"from\":\"now-8w/w\",\"to\":\"now-6w/w\"},{\"from\":\"now-10w/w\",\"to\":\"now-8w/w\"},{\"from\":\"now-12w/w\",\"to\":\"now-10w/w\"}]},\"schema\":\"segment\",\"type\":\"date_range\"},{\"enabled\":true,\"id\":\"4\",\"params\":{\"customLabel\":\"Claim Status\",\"field\":\"data.AutoClaimUpdatesTG.claimStatus.string.keyword\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"size\":5},\"schema\":\"group\",\"type\":\"terms\"}],\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"category\"}],\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"legendPosition\":\"right\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Claims\"},\"drawLinesBetweenPoints\":true,\"mode\":\"stacked\",\"show\":\"true\",\"showCircles\":true,\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"times\":[],\"type\":\"histogram\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"mode\":\"normal\",\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Claims\"},\"type\":\"value\"}]},\"title\":\"Denim Compute - Active Claims by Age and Status\",\"type\":\"histogram\"}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":true}}",
+      "description": "",
+      "savedSearchId": "d43810a0-afbb-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "f1cd6be0-b7a1-11e9-87a5-3b0218994e25",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Settlement Duration by Fraud Status",
+      "visState": "{\"title\":\"Denim Compute - Settlement Duration by Fraud Status\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Duration\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"normal\",\"data\":{\"label\":\"Avg Time\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true},{\"show\":true,\"mode\":\"stacked\",\"type\":\"histogram\",\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"data\":{\"id\":\"3\",\"label\":\"Max Time\"},\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"SettlementDuration\",\"customLabel\":\"Avg Time\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.claimFraudStatus.string.keyword\",\"size\":5,\"order\":\"asc\",\"orderBy\":\"_key\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Claim Fraud Status\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"SettlementDuration\",\"customLabel\":\"Max Time\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Avg Time\":\"#65C5DB\",\"Max Time\":\"#BF1B00\"}}}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "e99c73b0-b069-11e9-9539-211cc2fda8fc",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Avg Estimates by Policy Cover",
+      "visState": "{\"title\":\"Denim Compute - Avg Estimates by Policy Cover\",\"type\":\"gauge\",\"params\":{\"type\":\"gauge\",\"addTooltip\":true,\"addLegend\":true,\"isDisplayWarning\":false,\"gauge\":{\"verticalSplit\":false,\"extendRange\":true,\"percentageMode\":false,\"gaugeType\":\"Arc\",\"gaugeStyle\":\"Full\",\"backStyle\":\"Full\",\"orientation\":\"vertical\",\"colorSchema\":\"Green to Red\",\"gaugeColorMode\":\"Labels\",\"colorsRange\":[{\"from\":0,\"to\":10000},{\"from\":10000,\"to\":25000},{\"from\":25000,\"to\":100000}],\"invertColors\":false,\"labels\":{\"show\":true,\"color\":\"black\"},\"scale\":{\"show\":true,\"labels\":false,\"color\":\"#333\"},\"type\":\"meter\",\"style\":{\"bgWidth\":0.9,\"width\":0.9,\"mask\":false,\"bgMask\":false,\"maskBars\":50,\"bgFill\":\"#eee\",\"bgColor\":false,\"subText\":\"\",\"fontSize\":60,\"labelColor\":true}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"data.AutoClaimUpdatesTG.damagesEstimateAmount.integer\",\"customLabel\":\"Estimates\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"data.AutoClaimTG.policyCoverage.string.keyword\",\"size\":3,\"order\":\"desc\",\"orderBy\":\"1\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"Policy\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 10000\":\"rgb(0,104,55)\",\"10000 - 25000\":\"rgb(255,255,190)\",\"25000 - 100000\":\"rgb(165,0,38)\"}}}",
+      "description": "",
+      "savedSearchId": "3d96d740-ae16-11e9-9539-211cc2fda8fc",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "6e75b4b0-b782-11e9-bd75-ef95e1e7bef6",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Suspected Fraudulent Auto Claims Breadcrumb Markdown",
+      "visState": "{\"title\":\"Denim Compute - Suspected Fraudulent Auto Claims Breadcrumb Markdown\",\"type\":\"markdown\",\"params\":{\"fontSize\":12,\"markdown\":\"[Completed Auto Claims](https://bai-prod-release-ibm-dba-ek-kibana-baiproject.dccluster-06984b2d85682a68a3a5ac25e90299e6-0001.us-east.containers.appdomain.cloud/app/kibana#/dashboard/57019330-b45d-11e9-bd75-ef95e1e7bef6?_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A5000)%2Ctime%3A(from%3Anow-15m%2Cmode%3Aquick%2Cto%3Anow))) > [Active Auto Claims](https://bai-prod-release-ibm-dba-ek-kibana-baiproject.dccluster-06984b2d85682a68a3a5ac25e90299e6-0001.us-east.containers.appdomain.cloud/app/kibana#/dashboard/8e983a10-b45d-11e9-bd75-ef95e1e7bef6?_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A5000)%2Ctime%3A(from%3Anow-15m%2Cmode%3Aquick%2Cto%3Anow))) > **Suspected Fraudulent Auto Claims**\",\"openLinksInNewTab\":false},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "352e2980-b782-11e9-bd75-ef95e1e7bef6",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Completed Auto Claims Breadcrumb Markdown",
+      "visState": "{\"title\":\"Denim Compute - Completed Auto Claims Breadcrumb Markdown\",\"type\":\"markdown\",\"params\":{\"fontSize\":12,\"markdown\":\"**Completed Auto Claims** > [Active Auto Claims](https://bai-prod-release-ibm-dba-ek-kibana-baiproject.dccluster-06984b2d85682a68a3a5ac25e90299e6-0001.us-east.containers.appdomain.cloud/app/kibana#/dashboard/8e983a10-b45d-11e9-bd75-ef95e1e7bef6?_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A5000)%2Ctime%3A(from%3Anow-15m%2Cmode%3Aquick%2Cto%3Anow))) > [Suspected Fraudulent Auto Claims](https://bai-prod-release-ibm-dba-ek-kibana-baiproject.dccluster-06984b2d85682a68a3a5ac25e90299e6-0001.us-east.containers.appdomain.cloud/app/kibana#/dashboard/5e4fdda0-b470-11e9-bd75-ef95e1e7bef6?_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A5000)%2Ctime%3A(from%3Anow-15m%2Cmode%3Aquick%2Cto%3Anow)))\",\"openLinksInNewTab\":false},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "4bc9f930-b782-11e9-bd75-ef95e1e7bef6",
+    "_type": "visualization",
+    "_source": {
+      "title": "Denim Compute - Active Auto Claims Breadcrumb Markdown",
+      "visState": "{\"title\":\"Denim Compute - Active Auto Claims Breadcrumb Markdown\",\"type\":\"markdown\",\"params\":{\"fontSize\":12,\"markdown\":\"[Completed Auto Claims](https://bai-prod-release-ibm-dba-ek-kibana-baiproject.dccluster-06984b2d85682a68a3a5ac25e90299e6-0001.us-east.containers.appdomain.cloud/app/kibana#/dashboard/57019330-b45d-11e9-bd75-ef95e1e7bef6?_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A5000)%2Ctime%3A(from%3Anow-15m%2Cmode%3Aquick%2Cto%3Anow))) > **Active Auto Claims** > [Suspected Fraudulent Auto Claims](https://bai-prod-release-ibm-dba-ek-kibana-baiproject.dccluster-06984b2d85682a68a3a5ac25e90299e6-0001.us-east.containers.appdomain.cloud/app/kibana#/dashboard/5e4fdda0-b470-11e9-bd75-ef95e1e7bef6?_g=(refreshInterval%3A(pause%3A!f%2Cvalue%3A5000)%2Ctime%3A(from%3Anow-15m%2Cmode%3Aquick%2Cto%3Anow)))\",\"openLinksInNewTab\":false},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  }
+]

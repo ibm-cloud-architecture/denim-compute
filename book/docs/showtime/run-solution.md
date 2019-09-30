@@ -9,9 +9,9 @@
 
 ![Deploy Case solution](images/deploy-case-solution.png "Deploy Case solution")
 
-##Create Case security configuration
+## Create Case security configuration
 
-- In the `Workflow Center`select the solution and click the contextual menu and then `Advanced`.
+- In the Workflow Center, select the solution and click the contextual menu and then `Advanced`.
 
 ![](images/case-security1.png)
 
@@ -63,9 +63,11 @@
 
 ![](images/case-security13.png)
 
-##Create BPM user groups
+## Create BPM user groups
 
-- The solution has a number of BPM `Teams` defined that need to map to users and groups. To do that launch the `Process Admin Console` and then select `Server Admin` section. Within that select `User Management` and `Group Management` and type `denim` in `Select Group to Modify` and you should see the groups that have been created as a result of the `Team` definitions.
+- The solution has a number of BPM `Teams` defined that need to map to users and groups. To do that, launch the `Process Admin Console` and then select `Server Admin` section.
+
+- Within that select `User Management` and `Group Management` and type `denim` in `Select Group to Modify` and you should see the groups that have been created as a result of the `Team` definitions.
 
 ![](images/bpm-user-groups1.png)
 
@@ -73,15 +75,19 @@
 
 ![](images/bpm-user-groups2.png)
 
-##Configure servers 
+## Configure servers 
 
-- The solution integrates to ODM and ECM by using defined `Servers`. By default these are mapped to the environment the IBM team used in testing. You have to now re-map these to your own environment based on how you configured it in the [Environment](../../environment/intro) section. To do this you must first ensure the deployed BAW solition is activated. Select it in `Workflow Center` and click the `View Details` icon in the lower left corner of the tile.
+The solution integrates to ODM and ECM by using defined `Servers`. By default these are mapped to the environment the IBM team used in testing. You have to now re-map these to your own cluster environment.
+
+- To do this you must first ensure the deployed BAW solution is activated. Select it in the Workflow Center and click the `View Details` icon in the lower left corner of the tile.
 
 ![](images/config-servers1.png)
 
-- Next choose the `Snapshots` section, select your snapshot and from the contextual menu you `Activate` it.
+- Next choose the `Snapshots` section, select your snapshot (NB: the latest available snapshot is now v0.10.0) and from the contextual menu you `Activate` it.
 
 ![](images/config-servers2.png)
+
+Note the next steps reference environment variables which require information from the [deployment of the microservice](#deploy-the-baca-mediator-microservice) so if you have not completed that yet then go to that section and return here to complete the `BAW` servers configuration.
 
 - After this you can now go to the `Process Admin Console` and you should see the snapshot in the list of `Installed Apps`.
 
@@ -91,6 +97,113 @@
 
 ![](images/config-servers4.png)
 
-- You should change the settings for the respective servers to match how you installed your environment (the `Hostname`, `Port` and user credentials need to be configured).
+- You should change the settings for the respective configured servers to match how you installed your environment (the `Hostname`, `Port` (if non standard) and user credentials (where relevant) need to be configured).
 
 ![](images/config-servers5.png)
+
+- You should provide entries for the highlighted environment variables (note for `BACA` you get these values from the `API` section of the administration console, `bacaAuth` needs to be Base64 encoded of username:password).
+
+![](images/config-servers6.png)
+
+## Configure BACA ontology
+Currently `Business Automation Content Analyzer (BACA)` only allows for the import and export of an entire ontology, there is no merge capability of selective import. Therefore we recommend that you backup any existing ontology before proceeding.
+
+- So first use the **Export Ontology** option as shown and save your existing ontology.
+
+![](images/config-baca1.png)
+
+- Then use **Import Ontology** and select the JSON file you should download from `https://github.com/ibm-cloud-architecture/denim-compute/solution/baca/` directory as shown.
+
+![](images/config-baca2.png)
+
+- You should now have an ontology similar to that shown here.
+
+![](images/config-baca3.png)
+
+When you are finished with trying out the [BACA scenario](/usecase/baca-scenario-walkthrough/) you can re-import the saved JSON export of your original ontology.
+
+## Deploy the BACA Mediator microservice
+
+**NB The instructions that follow are for the Red Hat OpenShift Container Platform (OCP) environment the team used which is version 3.11.**
+
+### Configure GitHub repository
+We recommend using a secure private repository rather than a `GitHub` Public one and these instructions assume that is the case. The start point is that you should fork this repository so that you can then configure your own security settings.
+
+- Generate an `SSH Key pair` and ensure to specify the flag for no passphrase as shown below.
+
+![](images/micro-config-github1.png)
+
+- In your target GitHub repository go to `Settings` then `Deploy keys` and click **Add deploy key**. 
+
+![](images/micro-config-github2.png)
+
+- Provide a meaningful title that shows what the key is for (in our case to allow source code deploy in OCP) and then upload the public key that was generated earlier and then click **Add key**.
+
+![](images/micro-config-github3.png)
+
+- You should now have something like that shown below for our repository.
+
+![](images/micro-config-github4.png)
+
+### Create Project in OCP
+- From the OCP web console select the **Create Project** option.
+
+![](images/micro-config-rhocp1.png)
+
+- Provide a name (we suggest something like `baca-mediate-app`) and **Create**.
+
+![](images/micro-config-rhocp2.png)
+
+### Create Secret in OCP
+We need to create a secret to reference the `SSH Key` generated earlier for interacting with the source repository in `GitHub`.
+
+- In the newly created Project, select `Resources`, then `Secrets` and click **Create Secret**.
+
+![](images/micro-config-rhocp3.png)
+
+- Select `Source Secret`, enter the name `dc-gh-baca-mediator-secret`, select `SSH Key` and click **Browse.." and then find the `SSH Private Key` generated earlier.
+
+![](images/micro-config-rhocp4.png)
+
+- Check the option to link the secret and choose `builder` as the target `Service Account`, then click **Create** to finish.
+
+![](images/micro-config-rhocp5.png)
+
+### Deploy using Source to Image (S2I)
+There are a number of options for deploying to OCP, we are going to use `Source to Image` which directly builds from a source code repository such as `GitHub`.
+
+- Click **Add to Project** and select the **Browse Catalog** option.
+
+![](images/micro-config-rhocp6.png)
+
+- Find and select the `Node.js` option which launches a dialog as shown here.
+
+![](images/micro-config-rhocp7.png)
+
+- Supply an application name and provide the SSH url for the target GitHub repository. Then it is important to click the **advanced options** link as we need to configure some non-standard items as this is a secure repository.
+
+![](images/micro-config-rhocp8.png)
+
+- Find the `Source Secret` section and select the earlier `Secret` that you created.
+
+![](images/micro-config-rhocp9.png)
+
+- There are many other options available but we want to go with the defaults so scroll down and click the **Create** button to complete.
+
+![](images/micro-config-rhocp10.png)
+
+- A number of `Kubernetes Resources` will now be created including a `Build Config` and `Build` that will pull the source and build a deployment. When done on the overview section you should see summary information for the `Deployment Config` including that it has 1 `Pod` (note in a realistic environment we would set this to have > 1 Pod for failover but it makes it easier for us to see logs with this 1 Pod running without having to configure an `ELK` stack) and it is running. Take note also of the `Route` highlighted which is the public ingress point to the microservice and this is needed for configuring the environment variable in the `BAW` [config section](/showtime/run-solution/#configure-servers) above.
+
+![](images/micro-config-rhocp11.png)
+
+- Expand the twisty and you see more information on the `Deployment Config` including links to other resources which you can click on and explore. For now we want to verify the `Pod` is as expected so click on the icon of the `Pod` (top right).
+
+![](images/micro-config-rhocp12.png)
+
+- You are taken to the `Pod` summary and within that there is a `Logs` tab.
+
+![](images/micro-config-rhocp13.png)
+
+- In the `Logs` you can now verify that the microservice is up and ready to accept requests.
+
+![](images/micro-config-rhocp14.png)
