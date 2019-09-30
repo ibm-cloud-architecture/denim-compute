@@ -1,0 +1,1343 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Create OCP cluster - Denim Compute - A Cloud Pak for Automation reference implementation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#prepare-a-boot-node" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Denim Compute - A Cloud Pak for Automation reference implementation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Denim Compute - A Cloud Pak for Automation reference implementation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Create OCP cluster
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/denim-compute/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Denim Compute - A Cloud Pak for Automation reference implementation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Denim Compute - A Cloud Pak for Automation reference implementation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/denim-compute/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Use case
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Use case
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/use-case-definition/" title="Use case definition" class="md-nav__link">
+      Use case definition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Scenarios
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Scenarios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/scenarios-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario walkthrough" class="md-nav__link">
+      Main scenario walkthrough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/baca-scenario-walkthrough/" title="BACA scenario walkthrough" class="md-nav__link">
+      BACA scenario walkthrough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/bai-scenario-walkthrough/" title="BAI scenario walkthrough" class="md-nav__link">
+      BAI scenario walkthrough
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Environment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Environment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1">
+      OpenShift
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        OpenShift
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rhos-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Create OCP cluster
+      </label>
+    
+    <a href="./" title="Create OCP cluster" class="md-nav__link md-nav__link--active">
+      Create OCP cluster
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-a-boot-node" title="Prepare a boot node" class="md-nav__link">
+    Prepare a boot node
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-ibmcloud-cli" title="Install ibmcloud CLI" class="md-nav__link">
+    Install ibmcloud CLI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-oc-cli" title="Install oc CLI" class="md-nav__link">
+    Install oc CLI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-the-cloud-pak-images" title="Load the Cloud Pak images" class="md-nav__link">
+    Load the Cloud Pak images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-helm" title="Install Helm" class="md-nav__link">
+    Install Helm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-shared-services" title="Setup shared services" class="md-nav__link">
+    Setup shared services
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-nfs" title="Setup NFS" class="md-nav__link">
+    Setup NFS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-db2" title="Setup DB2" class="md-nav__link">
+    Setup DB2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-ibm-sds" title="Setup IBM SDS" class="md-nav__link">
+    Setup IBM SDS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rhos-install-odm/" title="Installing ODM" class="md-nav__link">
+      Installing ODM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rhos-install-baw/" title="Installing BAW" class="md-nav__link">
+      Installing BAW
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rhos-install-baca/" title="Installing BACA" class="md-nav__link">
+      Installing BACA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rhos-install-bai/" title="Installing BAI" class="md-nav__link">
+      Installing BAI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rhos-install-cm/" title="Installing CM" class="md-nav__link">
+      Installing CM
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Design
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Design
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/workflow/" title="Workflow" class="md-nav__link">
+      Workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/decisions/" title="Decisions" class="md-nav__link">
+      Decisions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/insights/" title="Insights" class="md-nav__link">
+      Insights
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Workflow
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Workflow
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/workflow-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/process-flow-control/" title="Process flow control" class="md-nav__link">
+      Process flow control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/process-services/" title="Process services" class="md-nav__link">
+      Process services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/process-user-interface/" title="Process user interface" class="md-nav__link">
+      Process user interface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/case-activities/" title="Case activities" class="md-nav__link">
+      Case activities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/case-user-interface/" title="Case user interface" class="md-nav__link">
+      Case user interface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/bai-emulated-workflow/" title="Workflow for emulated BAI" class="md-nav__link">
+      Workflow for emulated BAI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/decisions/" title="Decisions" class="md-nav__link">
+      Decisions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/insights/" title="Insights" class="md-nav__link">
+      Insights
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/capture/" title="Capture" class="md-nav__link">
+      Capture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Showtime
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Showtime
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../showtime/deploy-solution/" title="Deploy" class="md-nav__link">
+      Deploy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../showtime/run-solution/" title="Run" class="md-nav__link">
+      Run
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../references/" title="References" class="md-nav__link">
+      References
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prepare-a-boot-node" title="Prepare a boot node" class="md-nav__link">
+    Prepare a boot node
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-ibmcloud-cli" title="Install ibmcloud CLI" class="md-nav__link">
+    Install ibmcloud CLI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-oc-cli" title="Install oc CLI" class="md-nav__link">
+    Install oc CLI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load-the-cloud-pak-images" title="Load the Cloud Pak images" class="md-nav__link">
+    Load the Cloud Pak images
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-helm" title="Install Helm" class="md-nav__link">
+    Install Helm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-shared-services" title="Setup shared services" class="md-nav__link">
+    Setup shared services
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-nfs" title="Setup NFS" class="md-nav__link">
+    Setup NFS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-db2" title="Setup DB2" class="md-nav__link">
+    Setup DB2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setup-ibm-sds" title="Setup IBM SDS" class="md-nav__link">
+    Setup IBM SDS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ibm-cloud-architecture/denim-compute/edit/master/docs/environment/rhos-create-cluster.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Create OCP cluster</h1>
+                
+                <p>IBM Cloud allows the creation of managed OpenShift clusters. The architecture of this service is shown on the figure below, with more information available <a href="https://cloud.ibm.com/docs/containers?topic=containers-openshift_tutorial">here</a>.</p>
+<p><img alt="Managed OCP on IBM Cloud" src="../images/rhos-cluster-arch.png" /></p>
+<p>To deploy a managed OpenShift cluster on IBM Cloud, ensure that you have the following IBM Cloud IAM access policies:</p>
+<ul>
+<li>The Administrator platform role for IBM Cloud Kubernetes Service</li>
+<li>The Writer or Manager service role for IBM Cloud Kubernetes Service</li>
+<li>The Administrator platform role for IBM Cloud Container Registry</li>
+</ul>
+<p>Make sure that the API key for the IBM Cloud region and resource group is set up with the correct infrastructure permissions, Super User, or the minimum roles to create a cluster.</p>
+<p>Once your account has the above IAM policies:</p>
+<ul>
+<li>Log in to your IBM Account.</li>
+<li>Select Kubernetes from the hamburger menu and click <code>Create Cluster</code>.</li>
+<li>For Select a plan, choose Standard.</li>
+<li>For the Cluster type and version, choose OpenShift. Red Hat OpenShift on IBM Cloud supports OpenShift version 3.11 only, which includes Kubernetes version 1.11. The operating system is Red Hat Enterprise Linux 7.</li>
+<li>Fill out your cluster name, resource group, and tags.</li>
+<li>For the Location, set the geography to North America or Europe, select either a Single one availability zone, and then select Washington, DC or London worker zones.</li>
+<li>For Default worker pool, choose an available flavor for your worker nodes, ideally with at least 16 cores and 32 GB RAM.</li>
+<li>Set a number of worker nodes to create per zone; We will use 4 nodes for our cluster.</li>
+<li>Finish by clicking on <code>Create cluster</code>.</li>
+<li>From the cluster details page, click OpenShift web console.</li>
+<li>From the dropdown menu in the OpenShift container platform menu bar, click <code>Application Console</code>. The Application Console lists all project namespaces in your cluster. You can navigate to a namespace to view your applications, builds, and other Kubernetes resources.</li>
+</ul>
+<h2 id="prepare-a-boot-node">Prepare a boot node</h2>
+<p>As the master nodes are managed by IBM Cloud and cannot be accessed via <code>ssh</code>, we have to choose a boot node to proceed further with the installation. The boot node can be a linux VM or your Mac laptop. The boot node needs to have sufficient disk space and latest version of the docker installed. Additionally on the boot node, various CLIs need to be installed.</p>
+<h3 id="install-ibmcloud-cli">Install <code>ibmcloud</code> CLI</h3>
+<p><code>ibmcloud</code> can be installed using <code>curl -sL https://ibm.biz/idt-installer | bash</code>.
+Once installed, verify access:</p>
+<ul>
+<li>Run <code>ibmcloud login -sso</code></li>
+<li>Get the onetime code to login and then select the appropriate account you have deployed the OpenShift cluster to.</li>
+<li>Run the command <code>ibmcloud ks clusters</code> which displays the OpenShift clusters.  </li>
+</ul>
+<h3 id="install-oc-cli">Install <code>oc</code> CLI</h3>
+<p>For information about how to install the OpenShift CLI <code>oc</code> on your operating system's path, see the <a href="https://cloud.ibm.com/docs/openshift?topic=openshift-openshift-cli">docs</a>. Once installed, from the OpenShift web console menu bar, click your profile <code>IAM#user.name@email.com &gt; Copy Login Command</code>. Paste the copied oc login command into your terminal to authenticate via the CLI.</p>
+<h2 id="load-the-cloud-pak-images">Load the Cloud Pak images</h2>
+<p>Download the Cloud Pak from Software Downloads or Passport Advantage. 
+To load the package into managed OpenShift internal registry, you need to sign into the docker registry. To login to the docker registry, use the command:</p>
+<pre><code>docker login -u $(oc whoami) -p $(oc whoami -t) docker-registry.default.svc:5000
+</code></pre>
+
+<p>The above command fails as <code>docker-registry.default.svc</code> is not accessible from outside. To expose that, open another command window. Login to OpenShift (oc, kubectl commands should be able to run).Run the command:</p>
+<pre><code>kubectl -n default port-forward svc/docker-registry 5000:5000 &amp;
+</code></pre>
+
+<p>This exposes port 5000 on the boot node (wherever this is run). You need to leave the window open or else the port-forwarding will stop. Update <code>/etc/hosts</code> with <code>127.0.0.1 docker-registry.default.svc</code> and you can now login to Docker.</p>
+<h2 id="install-helm">Install Helm</h2>
+<ul>
+<li>Create namespace tiller:</li>
+</ul>
+<pre><code>oc new-project tiller
+oc project tiller
+</code></pre>
+
+<ul>
+<li>Add the line into file <code>~/.bash_profile</code> and apply the environment variable change</li>
+</ul>
+<pre><code>export TILLER_NAMESPACE=tiller
+source ~/.bash_profile
+</code></pre>
+
+<ul>
+<li>Initialize Helm</li>
+</ul>
+<pre><code>wget https://get.helm.sh/helm-v2.14.2-linux-amd64.tar.gz
+tar xzvf helm-v2.14.2-linux-amd64.tar.gz
+cd linux-amd64
+chmod 755 helm
+rm -rf /usr/local/bin/helm
+mv helm /usr/local/bin/helm
+helm init --client-only
+</code></pre>
+
+<ul>
+<li>Create Tiller by OpenShift template:</li>
+</ul>
+<pre><code>oc process -f https://github.com/openshift/origin/raw/master/examples/helm/tiller-template.yaml -p TILLER_NAMESPACE=&quot;tiller&quot; -p HELM_VERSION=v2.14.2 | oc create -f -
+oc rollout status deployment tiller
+
+helm version
+</code></pre>
+
+<h2 id="setup-shared-services">Setup shared services</h2>
+<h3 id="setup-nfs">Setup NFS</h3>
+<ul>
+<li>Install NFS:</li>
+</ul>
+<pre><code>yum install nfs-utils
+</code></pre>
+
+<ul>
+<li>Create share folders:</li>
+</ul>
+<pre><code>mkdir -p /data/persistentvolumes
+mkdir -p /data/casemanagement
+</code></pre>
+
+<ul>
+<li>Add the share folders paths into file <code>/etc/exports</code>:</li>
+</ul>
+<pre><code>/data/persistentvolumes *(rw,sync,no_root_squash)
+/data/casemanagement *(rw,sync,no_root_squash)
+</code></pre>
+
+<ul>
+<li>Start NFS:</li>
+</ul>
+<pre><code>systemctl enable nfs-server.service
+systemctl start nfs-server.service
+</code></pre>
+
+<h3 id="setup-db2">Setup DB2</h3>
+<p>Using DB2 version v11.1.1.1 (required for BACA).</p>
+<ul>
+<li>Unpack installation files:</li>
+</ul>
+<pre><code>yum install unzip
+tar xzvf DB2_AWSE_REST_Svr_11.1_Lnx_86-64.tar.gz
+unzip DB2_AWSE_Restricted_Activation_11.1.zip
+</code></pre>
+
+<ul>
+<li>Install DB2 by response file:</li>
+</ul>
+<pre><code>/data/downloads/db2/server_awse_o/db2setup -r /root/db2/db2server-dba.rsp
+</code></pre>
+
+<ul>
+<li>Add license:</li>
+</ul>
+<pre><code>/opt/ibm/db2/V11.1/adm/db2licm -a /data/downloads/db2/awse_o/db2/license/db2awse_o.lic
+</code></pre>
+
+<ul>
+<li>You can ignore the following warning while installing DB2:</li>
+</ul>
+<pre><code>Summary of prerequisites that are not met on the current system: 
+DBT3514W  The db2prereqcheck utility failed to find the following 32-bit library file: &quot;/lib/libpam.so*&quot;. 
+DBT3514W  The db2prereqcheck utility failed to find the following 32-bit library file: &quot;libstdc++.so.6&quot;.
+</code></pre>
+
+<ul>
+<li>Upgrade DB2 from v11.1.0 to v11.1.1.1:</li>
+</ul>
+<pre><code>tar xzvf special_36118_linuxx64_universal_fixpack.tar.gz
+
+## Stop the instance db2inst1
+su - db2inst1
+db2 list application
+db2 force applications all
+db2 terminate
+db2stop force
+db2licd -end
+exit
+
+ps -ef |grep db2fm
+/opt/ibm/db2/V11.1/bin/db2fmcu -d
+/opt/ibm/db2/V11.1/bin/db2fm -i db2inst1 -D
+
+## Disable auto start
+/opt/ibm/db2/V11.1/instance/db2iauto -off db2inst1
+
+su - db2inst1
+ipclean
+exit
+
+su - dasusr1
+/opt/ibm/db2/V11.1/das/bin/db2admin stop
+exit
+
+## Upgrade DB2
+cd /data/downloads/db2/fixpack11.1.1/universal
+./installFixPack -b /opt/ibm/db2/V11.1
+
+## Upgrade DB2 instance
+/opt/ibm/db2/V11.1/instance/db2iupdt db2inst1
+/opt/ibm/db2/V11.1/instance/db2iauto -on db2inst1
+su - db2inst1
+db2start
+db2level
+exit
+</code></pre>
+
+<ul>
+<li>Create the ODM database:</li>
+</ul>
+<pre><code>su - db2inst1
+db2start
+db2 create database odmdb automatic storage yes using codeset UTF-8 territory US pagesize 32768;
+db2 connect to odmdb
+db2 list applications
+</code></pre>
+
+<h3 id="setup-ibm-sds">Setup IBM SDS</h3>
+<p>Using IBM  Security Directory Server version 6.4.</p>
+<ul>
+<li>Mount SDS ISO:</li>
+</ul>
+<pre><code>mkdir /mnt/iso
+mount -t iso9660 -o loop /data/downloads/sds/sds64-linux-x86-64.iso /mnt/iso/
+</code></pre>
+
+<ul>
+<li>Install SDS:</li>
+</ul>
+<pre><code>yum install ksh
+
+# setup ldap user and group
+groupadd idsldap
+useradd -g idsldap -d /home/idsldap -m -s /bin/ksh idsldap
+passwd idsldap
+## enter &lt;password&gt;
+
+usermod -a -G idsldap root
+groups root
+
+# skip db2 installation
+mkdir -p /opt/ibm/ldap/V6.4/install
+touch /opt/ibm/ldap/V6.4/install/IBMLDAP_INSTALL_SKIPDB2REQ
+
+# install gskit
+cd /mnt/iso/ibm_gskit
+rpm -Uhv gsk*linux.x86_64.rpm
+
+# install sds rpms
+cd /mnt/iso/license
+./idsLicense
+## Enter 1 to accept the license agreement
+
+cd /mnt/iso/images
+rpm --force -ihv idsldap*rpm
+
+cd cd /data/downloads/sds
+unzip sds64-premium-feature-act-pkg.zip
+cd /data/downloads/sds/sdsV6.4/entitlement
+rpm --force -ihv idsldap-ent64-6.4.0-0.x86_64.rpm
+
+# install ibm jdk
+cd /mnt/iso/ibm_jdk
+tar -xf 6.0.16.2-ISS-JAVA-LinuxX64-FP0002.tar -C /opt/ibm/ldap/V6.4/
+
+# setup db2 path
+vi /opt/ibm/ldap/V6.4/etc/ldapdb.properties
+currentDB2InstallPath=/opt/ibm/db2/V11.1
+currentDB2Version=11.1.0.0
+
+# create and configure instance
+cd /opt/ibm/ldap/V6.4/sbin
+./idsadduser -u dsinst1 -g grinst1 -w &lt;password&gt;
+# Enter 1 to continue
+
+# create instance
+./idsicrt -I dsinst1 -p 389 -s 636 -e mysecretkey! -l /home/dsinst1 -G grinst1 -w &lt;password&gt;
+# Enter 1 to continue
+
+# configure a database for a directory server instance.
+./idscfgdb -I dsinst1 -a dsinst1 -w &lt;password&gt; -t dsinst1 -l /home/dsinst1
+
+# set the administration DN and administrative password for an instance
+./idsdnpw -I dsinst1 -u cn=root -p &lt;password&gt;
+
+# Add suffix
+./idscfgsuf -I dsinst1 -s o=IBM,c=US
+</code></pre>
+
+<ul>
+<li>Start SDS Server:</li>
+</ul>
+<pre><code>./ibmslapd -I dsinst1
+./ibmdiradm -I dsinst1
+</code></pre>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../rhos-intro/" title="Introduction" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Introduction
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../rhos-install-odm/" title="Installing ODM" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Installing ODM
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

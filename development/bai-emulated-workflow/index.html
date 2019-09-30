@@ -1,0 +1,1019 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Workflow for emulated BAI - Denim Compute - A Cloud Pak for Automation reference implementation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#workflow-for-emulated-bai" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Denim Compute - A Cloud Pak for Automation reference implementation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Denim Compute - A Cloud Pak for Automation reference implementation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Workflow for emulated BAI
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/denim-compute/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Denim Compute - A Cloud Pak for Automation reference implementation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Denim Compute - A Cloud Pak for Automation reference implementation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/denim-compute/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Use case
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Use case
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/use-case-definition/" title="Use case definition" class="md-nav__link">
+      Use case definition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Scenarios
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Scenarios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/scenarios-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario walkthrough" class="md-nav__link">
+      Main scenario walkthrough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/baca-scenario-walkthrough/" title="BACA scenario walkthrough" class="md-nav__link">
+      BACA scenario walkthrough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/bai-scenario-walkthrough/" title="BAI scenario walkthrough" class="md-nav__link">
+      BAI scenario walkthrough
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Environment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Environment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      OpenShift
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        OpenShift
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-create-cluster/" title="Create OCP cluster" class="md-nav__link">
+      Create OCP cluster
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-install-odm/" title="Installing ODM" class="md-nav__link">
+      Installing ODM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-install-baw/" title="Installing BAW" class="md-nav__link">
+      Installing BAW
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-install-baca/" title="Installing BACA" class="md-nav__link">
+      Installing BACA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-install-bai/" title="Installing BAI" class="md-nav__link">
+      Installing BAI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-install-cm/" title="Installing CM" class="md-nav__link">
+      Installing CM
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Design
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Design
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/workflow/" title="Workflow" class="md-nav__link">
+      Workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/decisions/" title="Decisions" class="md-nav__link">
+      Decisions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/insights/" title="Insights" class="md-nav__link">
+      Insights
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1" checked>
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Workflow
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Workflow
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../workflow-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-flow-control/" title="Process flow control" class="md-nav__link">
+      Process flow control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-services/" title="Process services" class="md-nav__link">
+      Process services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-user-interface/" title="Process user interface" class="md-nav__link">
+      Process user interface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../case-activities/" title="Case activities" class="md-nav__link">
+      Case activities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../case-user-interface/" title="Case user interface" class="md-nav__link">
+      Case user interface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Workflow for emulated BAI
+      </label>
+    
+    <a href="./" title="Workflow for emulated BAI" class="md-nav__link md-nav__link--active">
+      Workflow for emulated BAI
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-and-rationale" title="Introduction and rationale" class="md-nav__link">
+    Introduction and rationale
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emulated-auto-claims-workflow" title="Emulated auto claims workflow" class="md-nav__link">
+    Emulated auto claims workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emulation-batch-generator" title="Emulation batch generator" class="md-nav__link">
+    Emulation batch generator
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../decisions/" title="Decisions" class="md-nav__link">
+      Decisions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../insights/" title="Insights" class="md-nav__link">
+      Insights
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../capture/" title="Capture" class="md-nav__link">
+      Capture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Showtime
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Showtime
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../showtime/deploy-solution/" title="Deploy" class="md-nav__link">
+      Deploy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../showtime/run-solution/" title="Run" class="md-nav__link">
+      Run
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../references/" title="References" class="md-nav__link">
+      References
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-and-rationale" title="Introduction and rationale" class="md-nav__link">
+    Introduction and rationale
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emulated-auto-claims-workflow" title="Emulated auto claims workflow" class="md-nav__link">
+    Emulated auto claims workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emulation-batch-generator" title="Emulation batch generator" class="md-nav__link">
+    Emulation batch generator
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ibm-cloud-architecture/denim-compute/edit/master/docs/development/bai-emulated-workflow.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="workflow-for-emulated-bai">Workflow for emulated BAI</h1>
+<h2 id="introduction-and-rationale">Introduction and rationale</h2>
+<p>The integration with Business Automation Insights (BAI) is best illustrated in the special scenario <a href="../../usecase/bai-scenario-walkthrough/">BAI scenario walkthrough</a>. While the main scenario BAW workflow as seen in <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf">Main scenario walkthrough</a> is also integrated with BAI, the amount of human interaction in that workflow makes it hard in a short space of elapsed time to demonstrate a realistic BAI business situation where there would be 100s, 1000s or more claim instances processed. Therefore an additional workflow was designed and implemented in order to provide an emulated close approximation of the main workflow while also allowing for batch loading of large amounts of instances so that the resulting BAI Dashboards would have interesting and more true-to-life aggregated data to gain insights from.</p>
+<h2 id="emulated-auto-claims-workflow">Emulated auto claims workflow</h2>
+<p>The BAI emulation workflow is accessed from the Process Apps section of BAW Workflow Center as shown below.
+<img alt="" src="../images/bai-emulated-workflow1.png" /></p>
+<p>The <code>Emulate Auto Claim Processing</code> process is shown below. It matches the main steps with tracking enabled in the main scenario workflow (in terms of the activity names and the flow of control). All the steps are system steps with no human interaction so that the emulation can run without any need for intervention. The color-coding shows that there are Straight Through Processing (STP) activities (in green) and emulated long-running activities (in orange).
+<img alt="" src="../images/bai-emulated-workflow2.png" /></p>
+<p>The data passed around in variables is a <code>EmulatedAutoClaim Business Object (BO)</code> which contains <code>controlData</code> of type <code>ClaimControl</code> and <code>processData</code> of type <code>ClaimData</code>. The <code>ClaimControl BO</code> shown expanded here contains settings that are used to determine what kind of an Auto Claim instance this will be and what emulated wait times to implement for each of the long-running activities in scope.
+<img alt="" src="../images/bai-emulated-workflow3.png" /></p>
+<p>The <code>ClaimData BO</code> contains attributes that map one-to-one to the tracked fields that are defined in the <code>Tracking Groups</code> used to send business event data over the <code>Dynamic Event Framework (DEF)</code> to BAI.
+<img alt="" src="../images/bai-emulated-workflow4.png" /></p>
+<p>Looking a little further at the process activities, here we see an example of an STP activity <code>Claim Initial Preparation</code> which is implemented as a <code>Service Flow</code> named <code>Activity Controller</code> (this is a generic service that implements all the activity logic).
+<img alt="" src="../images/bai-emulated-workflow5.png" /></p>
+<p>In the data mapping for the activity the <code>autoClaim.processData</code> and <code>autoClaim.controlData</code> are passed in and out of the service along with the <code>activityName</code>. The initial instantiation and population of these BOs is done in the emulation batch generator discussed in  <a href="#emulation-batch-generator">Emulation batch generator</a> later.
+<img alt="" src="../images/bai-emulated-workflow6.png" /></p>
+<p>In the <code>Activity Controller Service Flow</code> the script step contains various helper functions and in the main logic it has a switch statement to provide specific processing according to he passed in <code>activityName</code>. It updates the business data in <code>claimData</code> using values of other business data and control settings in <code>control</code> (which is the <code>ClaimControl</code> BO).
+<img alt="" src="../images/bai-emulated-workflow7.png" /></p>
+<p>Back in <code>Emulate Auto Claim Processing</code> the activity <code>Estimate Damage</code> is an example of a long-running activity (in the main scenario it would have one or more human interactions). It is implemented by a linked process named <code>Emulate Long Running Activity</code>.
+<img alt="" src="../images/bai-emulated-workflow8.png" /></p>
+<p>The <code>Emulate Long Running Activity</code> process also calls the <code>Activity Controller Service Flow</code>, however it does it after a timer delay where the amount of time is controlled by <code>activityWaitTime</code> which has been passed in to this process from the calling process <code>Emulate Auto Claim Processing</code>.
+<img alt="" src="../images/bai-emulated-workflow9.png" /></p>
+<p>Here again in <code>Activity Controller</code> you can see the relevant part of the script where the processing for the <code>Estimate Damage</code> activity takes place. The estimates are derived by calling a function <code>getVehicleDamage</code>.
+<img alt="" src="../images/bai-emulated-workflow10.png" /></p>
+<p>The called function within the script is shown here, it uses various random assignments of values according to the relative perceived values of the various vehicle makes (for example repairs to a Mercedes are likely to be most expensive relative to the configured maximum claim amount).
+<img alt="" src="../images/bai-emulated-workflow11.png" /></p>
+<h2 id="emulation-batch-generator">Emulation batch generator</h2>
+<p>The emulation batch generator is a process that allows the user to set control values that control a batch run of between 100 and 10000 instances of an emulated auto claim. The process definition <code>Denim Compute Auto Claims - Emulation Generator</code> is shown below.
+<img alt="" src="../images/bai-emulated-workflow12.png" /></p>
+<p>The user interaction to allow setting the emulation control parameters is an activity <code>Set Emulation Controls</code> which is implemented as a <code>Client-Side Human Service</code> with the same name. The data collected is then passed as output into the process (to the <code>tw.local.control</code> variable).
+<img alt="" src="../images/bai-emulated-workflow13.png" /></p>
+<p>The variable is an instance of <code>EmulationControl BO</code> shown below which stores the user settings to be later used in setting up the batch of instances and configuring the control data on each instance in the batch.
+<img alt="" src="../images/bai-emulated-workflow14.png" /></p>
+<p>The next activity in the process (<code>Configure Batch Control</code>) uses this data to then set up how the batches are to be controlled.
+<img alt="" src="../images/bai-emulated-workflow15.png" /></p>
+<p>The rest of the <code>Denim Compute Auto Claims - Emulation Generator</code> process involves looping for the entire requested set of instances and within that setting up a batch (with a time delay between them in <code>Set Batch Delay</code>) and looping within that batch to configure (<code>Configure Emulation Instances</code>) and start (<code>Start Auto Claim Instance</code>) emulated claim instances.
+<img alt="" src="../images/bai-emulated-workflow16.png" /></p>
+<p>The activity <code>Set Batch Delay</code> is implemented by a <code>Linked Process</code> named <code>Emulate - Set Batch Delay</code> which uses a <code>Timer</code> to delay a few minutes between each batch submission.
+<img alt="" src="../images/bai-emulated-workflow17.png" /></p>
+<p>The <code>Configure Emulation Instances Service Flow</code> implements the activity <code>Configure Emulation Instances</code> and is shown below. This service uses the over control data for the emulation and the batch parameters to create a list of <code>EmulatedAutoClaim BOs</code> where each will be sent as the start data for creating and instance of <code>Emulate Auto Claim Processing</code> (see <a href="#emulated-auto-claims-workflow">Emulated Auto Claims workflow</a> above).
+<img alt="" src="../images/bai-emulated-workflow18.png" /></p>
+<p>The <code>Create Control Data</code> step sets up the control data for a specific instance, for example as shown in the code it checks what the scenario type is and sets things like the timing delays based on that (and it in turn uses helper functions to get random numbers within ranges to calculate the timings and ensure a spread of differentiated data).
+<img alt="" src="../images/bai-emulated-workflow19.png" /></p>
+<p><code>Create Control Data</code> calls a further service flow named <code>Create Initial Claim Data</code> which sets the values of static data such as policy and loss data pertaining to the claim. The example below shows some of the potential options values for the data in <code>Create Policy Related Data</code>.
+<img alt="" src="../images/bai-emulated-workflow20.png" /></p>
+<p>The script also includes some helper functions referenced in the main logic to get random data and it also chooses from the options lists based on a roll-of-the-dice additional random choice.
+<img alt="" src="../images/bai-emulated-workflow21.png" /></p>
+<p>Each emulation run includes a single outlier case which is designed to skew the normal data trends and be identifiable in the <code>BAI Dashboards</code>. When the instance within the batch within the emulation has been designated to contain that <code>outlier</code> is encountered, the logic in <code>Set Outlier Overrides</code> is used to set special values as shown here (hint: use your favorite search engine if you don't know what the <code>otherVehicleMake / model</code> is referring to).
+<img alt="" src="../images/bai-emulated-workflow22.png" /></p>
+<p>Finally to complete the story, the process activity <code>Start Auto Claim Instance</code> is implemented by a call to the <code>Linked Process</code> named <code>Emulate - Start Auto Claim Instance</code>. This then uses the passed in instance of <code>EmulatedAutoClaim BO</code> that has been configured in previous steps to invoke and start a process instance via a <code>send message event</code> as shown here.
+<img alt="" src="../images/bai-emulated-workflow23.png" /></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../case-user-interface/" title="Case user interface" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Case user interface
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../decisions/" title="Decisions" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Decisions
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

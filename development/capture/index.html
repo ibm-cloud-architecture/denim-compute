@@ -1,0 +1,1108 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Capture - Denim Compute - A Cloud Pak for Automation reference implementation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#capture-development" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Denim Compute - A Cloud Pak for Automation reference implementation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Denim Compute - A Cloud Pak for Automation reference implementation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Capture
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/denim-compute/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Denim Compute - A Cloud Pak for Automation reference implementation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Denim Compute - A Cloud Pak for Automation reference implementation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/denim-compute/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Use case
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Use case
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/use-case-definition/" title="Use case definition" class="md-nav__link">
+      Use case definition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Scenarios
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Scenarios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/scenarios-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario walkthrough" class="md-nav__link">
+      Main scenario walkthrough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/baca-scenario-walkthrough/" title="BACA scenario walkthrough" class="md-nav__link">
+      BACA scenario walkthrough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/bai-scenario-walkthrough/" title="BAI scenario walkthrough" class="md-nav__link">
+      BAI scenario walkthrough
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Environment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Environment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      OpenShift
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        OpenShift
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-create-cluster/" title="Create OCP cluster" class="md-nav__link">
+      Create OCP cluster
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-install-odm/" title="Installing ODM" class="md-nav__link">
+      Installing ODM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-install-baw/" title="Installing BAW" class="md-nav__link">
+      Installing BAW
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-install-baca/" title="Installing BACA" class="md-nav__link">
+      Installing BACA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-install-bai/" title="Installing BAI" class="md-nav__link">
+      Installing BAI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-install-cm/" title="Installing CM" class="md-nav__link">
+      Installing CM
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Design
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Design
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/workflow/" title="Workflow" class="md-nav__link">
+      Workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/decisions/" title="Decisions" class="md-nav__link">
+      Decisions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/insights/" title="Insights" class="md-nav__link">
+      Insights
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Workflow
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Workflow
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../workflow-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-flow-control/" title="Process flow control" class="md-nav__link">
+      Process flow control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-services/" title="Process services" class="md-nav__link">
+      Process services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-user-interface/" title="Process user interface" class="md-nav__link">
+      Process user interface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../case-activities/" title="Case activities" class="md-nav__link">
+      Case activities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../case-user-interface/" title="Case user interface" class="md-nav__link">
+      Case user interface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bai-emulated-workflow/" title="Workflow for emulated BAI" class="md-nav__link">
+      Workflow for emulated BAI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../decisions/" title="Decisions" class="md-nav__link">
+      Decisions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../insights/" title="Insights" class="md-nav__link">
+      Insights
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Capture
+      </label>
+    
+    <a href="./" title="Capture" class="md-nav__link md-nav__link--active">
+      Capture
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#baca-ontology" title="BACA ontology" class="md-nav__link">
+    BACA ontology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baca-related-micro-services" title="BACA-related micro-services" class="md-nav__link">
+    BACA-related micro-services
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analyze-a-document" title="Analyze a document" class="md-nav__link">
+    Analyze a document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-analysis-status" title="Retrieve analysis status" class="md-nav__link">
+    Retrieve analysis status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-json-result" title="Retrieve JSON result" class="md-nav__link">
+    Retrieve JSON result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-resources" title="Delete resources" class="md-nav__link">
+    Delete resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packaging" title="Packaging" class="md-nav__link">
+    Packaging
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Showtime
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Showtime
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../showtime/deploy-solution/" title="Deploy" class="md-nav__link">
+      Deploy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../showtime/run-solution/" title="Run" class="md-nav__link">
+      Run
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../references/" title="References" class="md-nav__link">
+      References
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#baca-ontology" title="BACA ontology" class="md-nav__link">
+    BACA ontology
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baca-related-micro-services" title="BACA-related micro-services" class="md-nav__link">
+    BACA-related micro-services
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analyze-a-document" title="Analyze a document" class="md-nav__link">
+    Analyze a document
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-analysis-status" title="Retrieve analysis status" class="md-nav__link">
+    Retrieve analysis status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-json-result" title="Retrieve JSON result" class="md-nav__link">
+    Retrieve JSON result
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-resources" title="Delete resources" class="md-nav__link">
+    Delete resources
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#packaging" title="Packaging" class="md-nav__link">
+    Packaging
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ibm-cloud-architecture/denim-compute/edit/master/docs/development/capture.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="capture-development">Capture development</h1>
+<p>Business Automation Content Analyzer (BACA) is a <em>no code</em> environment. So, although we include this topic under the Development section, it is really rather configuration that is done for a BACA solution.</p>
+<p>It is used in the solution when BAW needs to automatically process an uploaded vehicle repair estimate. For further details please see the design section <a href="/design/workflow/#mediated-baca-integration">Mediated BACA integration</a>.</p>
+<h2 id="baca-ontology">BACA ontology</h2>
+<p>In the BACA front-end, the Ontology Management Tool is used to define document classes such as our <code>Auto Repair Estimate</code> and within that, we define a set of keys which is data we want to train BACA to recognize in uploaded documents and to parse the results out (in our case we want the JSON representation).</p>
+<p>In the image below we show the set of keys and have highlighted one example <code>repairer code</code>. We also then define a set of key aliases for a key to represent the different terms we might expect in a document that really mean the field is a <code>repairer code</code>.</p>
+<p><img alt="" src="../images/baca-ontology1.png" /></p>
+<p>Just to illustrate the different keys, below we see the focus on <code>tax rate</code> and it expanded to show the various key aliases defined for it.</p>
+<p><img alt="" src="../images/baca-ontology2.png" /></p>
+<p>Note that the <a href="/showtime/run-solution/">Showtime</a> section  documents that in BAW, there are a number of environment variables related to BACA that need to be specified when configuring the deployed solution. The API section of the BACA front-end is where you find the <code>API Key</code> and the host information for the endpoint (the <code>Request URL</code> section).</p>
+<p><img alt="" src="../images/baca-api1.png" /></p>
+<h2 id="baca-related-micro-services">BACA-related micro-services</h2>
+<p>A BACA Mediator micro-service has been developed that is used by BAW (as described in <a href="/development/process-services/#baca-integration">BACA integration</a>) to interact with BACA (for details see <a href="/development/content-analyzer/">Content Analyser</a>). The micro-service is implemented in Node.js and deployed on the Red Hat OpenShift Container Platform (OCP).</p>
+<h3 id="analyze-a-document">Analyze a document</h3>
+<p>For this single micro-service, and because we are not showing a full CI/CD DevOps cycle, we are using a simple code editor to display the code.
+If you are interested in Cloud Native development using the latest tooling, then have a look at <a href="https://kabanero.io/">Kabanero</a>.</p>
+<p>The <a href="https://github.com/ibm-cloud-architecture/denim-compute/solution/baca/mediator">application</a> is shown here with the core Node.js code (<code>server.js</code>) to declare dependencies and use <code>Express</code> to start a HTTP Server listening for inbound REST requests.</p>
+<p><img alt="" src="../images/microservices-baca1.png" /></p>
+<p>Node.js is a modular runtime, you declare dependencies on other packages and then specify them (along with the metadata about the application itself) in the <code>package.json</code> file shown here.</p>
+<p><img alt="" src="../images/microservices-baca2.png" /></p>
+<p>Returning to <code>server.js</code>, we expose a <code>HTTP POST</code> method to allow consumers (in our case this is BAW) to send a document to be analyzed by BACA. The code is commented with the major steps involved in processing the file and then delegating to the <code>BACAAccessor</code> class to perform the analysis.</p>
+<p><img alt="" src="../images/microservices-baca3.png" /></p>
+<p>We expose the various services using OpenAPI 2.0 and here we see the provided YAML document describing the interface. This is where the operations that BAW invokes are referenced and how they map to the REST paths.</p>
+<p><img alt="" src="../images/microservices-baca4.png" /></p>
+<p>The <code>BACAAccessor</code> class is shown below. It exposes methods to implement the core logic for each of the REST methods exposed in <code>server.js</code>. Here you can see the <code>analyze</code> method of the class.</p>
+<p><img alt="" src="../images/microservices-baca5.png" /></p>
+<p>The remainder of the method implementation uses the <code>request</code> Node.js module to make the outbound HTTP REST API call to BACA and process the results (using in turn some helper mapper functions).</p>
+<p><img alt="" src="../images/microservices-baca6.png" /></p>
+<p>The mapping helpers are provided in <code>utils/mapping-utils.js</code> and they in turn make use of a common Node.js utility module called <code>lodash</code>.</p>
+<p><img alt="" src="../images/microservices-baca7.png" /></p>
+<h3 id="retrieve-analysis-status">Retrieve analysis status</h3>
+<p>The other exposed REST methods follow a similar pattern. After uploading a document to BACA for analysis you check the status to verify it was parsed successfully. The <code>/status/:analyzerId</code> REST method is shown below.</p>
+<p><img alt="" src="../images/microservices-baca8.png" /></p>
+<p>The delegated implementation is the <code>status</code> method in <code>BACAAccessor</code> as shown below.</p>
+<p><img alt="" src="../images/microservices-baca9.png" /></p>
+<h3 id="retrieve-json-result">Retrieve JSON result</h3>
+<p>Once an uploaded analysis has completed and the status reports it has been parsed successfully, you then need to call BACA to retrieve the results. This is where the micro-service has the most post-processing to do because the JSON payload from BACA is quite complex and we need to expose a more business interface to BAW plus we have to manipulate the BACA returned JSON in order to construct the nested array structure of <code>Vehicle Parts</code> inside the estimate.</p>
+<p>As with the other methods, the point of entry is in <code>server.js</code> which then delegates to <code>BACAAccessor</code> to do the heavy lifting. It also passes in a callback function (<code>processBACARetrieve</code>) that will process the response.</p>
+<p><img alt="" src="../images/microservices-baca10.png" /></p>
+<p>In <code>BACAAccessor</code> the <code>retrieve</code> method invokes BACA and then processes the response. It uses helper methods and functions to process the response which we will see next.</p>
+<p><img alt="" src="../images/microservices-baca11.png" /></p>
+<p>BACA returns identified data as a set of key-value pairs (KVP). The <code>mapKVPData</code> method shown below is used to extract those KVP entries that match the ones that we are interested in (as represented in the passed in parameter <code>kvpKeys</code>).</p>
+<p><img alt="" src="../images/microservices-baca12.png" /></p>
+<p>The next helper function that is invoked <code>parseTableList</code> is provided in the <code>utils\tablelist-utils.js</code> file. BACA when it encounters a table construct in a document returns the data in a complex nested structure within the JSON referred to as the <code>TableList</code>.</p>
+<p>This has to be processed in order to identify the table and data within it that maps to our desire list of vehicle part objects. This is done by calling the function <code>getTableForClass</code> (shown here) to get the specific table and then <code>createItemsList</code> to process the items from it.</p>
+<p><img alt="" src="../images/microservices-baca13.png" /></p>
+<p>The <code>createItemsList</code> function has to walk a tree of complex nested structures returned from BACA in order to identify (based on <code>BACA ontology keys</code>) object structures that are intended by the presence of repeated data in a table under column headings.</p>
+<p><img alt="" src="../images/microservices-baca14.png" /></p>
+<p>Back in <code>server.js</code> the callback function that was passed to the <code>BACAAccessor</code> method is invoked with the response. It first sets up some mappings in order to translate the BACA objects to ones that are expected by BAW and are defined in the OpenAPI interface of our micro-service. </p>
+<p><img alt="" src="../images/microservices-baca15.png" /></p>
+<p>The function then invokes a helper function <code>mapEstimateData</code> to create the final response data and then sets it on the HTTP Response.</p>
+<p><img alt="" src="../images/microservices-baca16.png" /></p>
+<p>This helper function is defined in the <code>utils\estimate-mappers.js</code> file. It in turn invokes a number of other functions to parse different parts of the target structure (we will look at these next).</p>
+<p><img alt="" src="../images/microservices-baca17.png" /></p>
+<p>The <code>getSourceValue</code> function shown below is used to map and manipulate the top level KVP data that is in the estimate (the vehicle identity and total amounts fields).</p>
+<p><img alt="" src="../images/microservices-baca18.png" /></p>
+<p>The <code>extractEstimateParts</code> function first calls <code>getCandidatePart</code> in order to get the part data from the array and then it filters on those that have a valid first property representing the key of the object (the <code>sku</code> in our case). This is necessary because not all candidate parts are in fact parts because the repairers also include labor costs in the table which has a similar structure but it not in fact a part object at all.</p>
+<p><img alt="" src="../images/microservices-baca19.png" /></p>
+<p>The <code>getCandidatePart</code> function is used to map the item to a potential part (which may also be the special labor cost item) and convert the more generic data to the specific types expected.</p>
+<p><img alt="" src="../images/microservices-baca20.png" /></p>
+<p>Finally the <code>extractLaborCost</code> function reuses <code>getCandidatePart</code> and then parses the data to identify the special case where the candidate has no <code>sku</code> property but contains the other expected fields. It then calculates the total cost to return to the caller.</p>
+<p><img alt="" src="../images/microservices-baca21.png" /></p>
+<h3 id="delete-resources">Delete resources</h3>
+<p>Once you have finished with an analysis in BACA, there is an API to call that will remove any resources used (such as the uploaded document the analysis was performed against).</p>
+<p>As with the other methods, the point of entry is in <code>server.js</code> which then delegates to the <code>cleanup</code> method in <code>BACAAccessor</code>. It then sends the HTTP Response on return from <code>BACAAccessor</code>.</p>
+<p><img alt="" src="../images/microservices-baca22.png" /></p>
+<p>The <code>cleanup</code> method is shown which then invokes BACA using the r2 Node.js module and processes the response.</p>
+<p><img alt="" src="../images/microservices-baca23.png" /></p>
+<h3 id="packaging">Packaging</h3>
+<p>In order to run the micro-service in a Kubernetes environment (such as our target OCP environment),  we have to provide a declarative <code>Dockerfile</code> that is used by <code>Docker</code> to build the container for deployment.</p>
+<p>This is shown below which contains various directives for copying source code and configuring permissions and specifying the initial entry script to run.
+<img alt="" src="../images/microservices-baca24.png" /></p>
+<p>And here is that entry script which simple invokes an <code>npm</code> command that was defined earlier in the Node.js packaging file <code>package.json</code>.
+<img alt="" src="../images/microservices-baca25.png" /></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../insights/" title="Insights" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Insights
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../sundries/" title="Sundries" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Sundries
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

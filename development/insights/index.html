@@ -1,0 +1,1106 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Insights - Denim Compute - A Cloud Pak for Automation reference implementation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#insights-development" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Denim Compute - A Cloud Pak for Automation reference implementation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Denim Compute - A Cloud Pak for Automation reference implementation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Insights
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/denim-compute/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Denim Compute - A Cloud Pak for Automation reference implementation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Denim Compute - A Cloud Pak for Automation reference implementation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/ibm-cloud-architecture/denim-compute/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Use case
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Use case
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/use-case-definition/" title="Use case definition" class="md-nav__link">
+      Use case definition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Scenarios
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Scenarios
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/scenarios-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario walkthrough" class="md-nav__link">
+      Main scenario walkthrough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/baca-scenario-walkthrough/" title="BACA scenario walkthrough" class="md-nav__link">
+      BACA scenario walkthrough
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../usecase/bai-scenario-walkthrough/" title="BAI scenario walkthrough" class="md-nav__link">
+      BAI scenario walkthrough
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Environment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Environment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1">
+    
+    <label class="md-nav__link" for="nav-3-1">
+      OpenShift
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        OpenShift
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-create-cluster/" title="Create OCP cluster" class="md-nav__link">
+      Create OCP cluster
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-install-odm/" title="Installing ODM" class="md-nav__link">
+      Installing ODM
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-install-baw/" title="Installing BAW" class="md-nav__link">
+      Installing BAW
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-install-baca/" title="Installing BACA" class="md-nav__link">
+      Installing BACA
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-install-bai/" title="Installing BAI" class="md-nav__link">
+      Installing BAI
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../environment/rhos-install-cm/" title="Installing CM" class="md-nav__link">
+      Installing CM
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Design
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Design
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/workflow/" title="Workflow" class="md-nav__link">
+      Workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/decisions/" title="Decisions" class="md-nav__link">
+      Decisions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/insights/" title="Insights" class="md-nav__link">
+      Insights
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../design/sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-1" type="checkbox" id="nav-5-1">
+    
+    <label class="md-nav__link" for="nav-5-1">
+      Workflow
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-1">
+        Workflow
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../workflow-intro/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-flow-control/" title="Process flow control" class="md-nav__link">
+      Process flow control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-services/" title="Process services" class="md-nav__link">
+      Process services
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../process-user-interface/" title="Process user interface" class="md-nav__link">
+      Process user interface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../case-activities/" title="Case activities" class="md-nav__link">
+      Case activities
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../case-user-interface/" title="Case user interface" class="md-nav__link">
+      Case user interface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../bai-emulated-workflow/" title="Workflow for emulated BAI" class="md-nav__link">
+      Workflow for emulated BAI
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../decisions/" title="Decisions" class="md-nav__link">
+      Decisions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Insights
+      </label>
+    
+    <a href="./" title="Insights" class="md-nav__link md-nav__link--active">
+      Insights
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baw-tracking-general" title="BAW tracking (general)" class="md-nav__link">
+    BAW tracking (general)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baw-tracking-main-scenario" title="BAW tracking (main scenario)" class="md-nav__link">
+    BAW tracking (main scenario)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baw-tracking-emulated-scenario" title="BAW tracking (emulated scenario)" class="md-nav__link">
+    BAW tracking (emulated scenario)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-kibana-search-index-patterns" title="BAI (Kibana) Search Index Patterns" class="md-nav__link">
+    BAI (Kibana) Search Index Patterns
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-kibana-searches" title="BAI (Kibana) searches" class="md-nav__link">
+    BAI (Kibana) searches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-kibana-visualizations" title="BAI (Kibana) visualizations" class="md-nav__link">
+    BAI (Kibana) visualizations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-kibana-dashboards" title="BAI (Kibana) dashboards" class="md-nav__link">
+    BAI (Kibana) dashboards
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../capture/" title="Capture" class="md-nav__link">
+      Capture
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sundries/" title="Sundries" class="md-nav__link">
+      Sundries
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Showtime
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Showtime
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../showtime/deploy-solution/" title="Deploy" class="md-nav__link">
+      Deploy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../showtime/run-solution/" title="Run" class="md-nav__link">
+      Run
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../references/" title="References" class="md-nav__link">
+      References
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baw-tracking-general" title="BAW tracking (general)" class="md-nav__link">
+    BAW tracking (general)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baw-tracking-main-scenario" title="BAW tracking (main scenario)" class="md-nav__link">
+    BAW tracking (main scenario)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#baw-tracking-emulated-scenario" title="BAW tracking (emulated scenario)" class="md-nav__link">
+    BAW tracking (emulated scenario)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-kibana-search-index-patterns" title="BAI (Kibana) Search Index Patterns" class="md-nav__link">
+    BAI (Kibana) Search Index Patterns
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-kibana-searches" title="BAI (Kibana) searches" class="md-nav__link">
+    BAI (Kibana) searches
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-kibana-visualizations" title="BAI (Kibana) visualizations" class="md-nav__link">
+    BAI (Kibana) visualizations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bai-kibana-dashboards" title="BAI (Kibana) dashboards" class="md-nav__link">
+    BAI (Kibana) dashboards
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/ibm-cloud-architecture/denim-compute/edit/master/docs/development/insights.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="insights-development">Insights development</h1>
+<h2 id="introduction">Introduction</h2>
+<p>This section provides more in depth details to the design information in the <a href="../../design/insights/">Insights design</a> section. </p>
+<p>In order to integrate from BAW to BAI we have augmented different BAW solutions. The main scenario (see the <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf">main scenario walkthrough</a>) is configured but as this involved a lot of human interaction it takes some time to progress through instances. In order to generate load and demonstrate realistic levels of claim cases we also have an emulated process and this is used as the basis for the BAI Dashboards as demonstrated in the <a href="../../usecase/bai-scenario-walkthrough/">BAI scenario walkthrough</a>.</p>
+<h2 id="baw-tracking-general">BAW tracking (general)</h2>
+<p>The data to be tracked in the workflows and sent to BAI as <code>Dynamic Event Framework (DEF)</code> events is defined in <code>Tracking Groups</code> in the <code>BAW Toolkit</code> named <code>Denim Compute Auto Claims - Common</code>.
+<img alt="" src="../images/insights-devt-baw1.png" /></p>
+<p>Here you see they are found in the <code>Performance</code> section within <code>Process Designer</code>. <code>AutoClaimTG</code> is used to track static data that is available at the start of the workflow while <code>AutoClaimUpdatesTG</code> tracks more dynamic data that is updated in several places as the workflow progresses through to final settlement of the claim.
+<img alt="" src="../images/insights-devt-baw2.png" /></p>
+<p>Here we see the details within one of the <code>Tracking Groups</code> and highlighted is one of the <code>Tracked Fields</code> named <code>lossDateReported</code> of type <code>Date/Time</code>.
+<img alt="" src="../images/insights-devt-baw3.png" /></p>
+<h2 id="baw-tracking-main-scenario">BAW tracking (main scenario)</h2>
+<p>For further information on the workflow itself please see <a href="../workflow-intro/">Development - Workflow</a>. In the main scenario workflow the tracking points are set in <code>Initiate Claims Processing</code> as highlighted in the image below.
+<img alt="" src="../images/insights-devt-baw4.png" /></p>
+<p>The <code>linked process</code> named <code>Loss Assessment</code> also has some additional tracking points defined as shown below.
+<img alt="" src="../images/insights-devt-baw5.png" /></p>
+<p>The <code>Post Tracking Point</code> on the activity <code>Claim Initial Preparation</code> is highlighted below. Here you can see that it is <code>Tracking Group</code> named <code>AutoClaimTG</code> that is used and has data from the variables of the process mapped to the <code>tracked fields</code>. 
+<img alt="" src="../images/insights-devt-baw6.png" /></p>
+<p>In the rest of the process the more dynamic data is mapped in various places to <code>AutoClaimUpdatesTG</code>. In the highlighted example an explicit <code>Tracking Intermediate Event</code>is used because you cannot map to two different <code>Tracking Groups</code> at the same point, so because the data is available after <code>Claim Initial Preparation</code> we need this additional tracking point to capture the dynamic updates in <code>AutoClaimUpdatesTG</code>.
+<img alt="" src="../images/insights-devt-baw7.png" /></p>
+<h2 id="baw-tracking-emulated-scenario">BAW tracking (emulated scenario)</h2>
+<p>For further information on the workflow itself please see the <a href="../bai-emulated-workflow/">Workflow for emulated BAI</a> section. In the emulated scenario workflow the tracking points are set in <code>Emulate Auto Claim Processing</code> as highlighted in the image below.
+<img alt="" src="../images/insights-devt-baw8.png" /></p>
+<p>The <code>Pre Tracking Point</code> on the activity <code>Claim Initial Preparation</code> is highlighted below. Here you can see that it is <code>Tracking Group</code> named <code>AutoClaimTG</code> that is used and has data from the variables of the process mapped to the <code>tracked fields</code>.
+<img alt="" src="../images/insights-devt-baw9.png" /></p>
+<p>The <code>Post Tracking Point</code> on the activity <code>Claim Initial Preparation</code> is highlighted below. Here you can see that it is <code>Tracking Group</code> named <code>AutoClaimUpdatesTG</code> that is used and has data from the variables of the process mapped to the <code>tracked fields</code>. This differs slightly from the main scenario it emulates due to the fact that there the initial data for tracking is available at the start of <code>Claim Initial Preparation</code> (because the workflow configures the emulated data prior to this activity).
+<img alt="" src="../images/insights-devt-baw10.png" /></p>
+<h2 id="bai-kibana-search-index-patterns">BAI (Kibana) Search Index Patterns</h2>
+<p>In the <code>BAI Kibana Dashboards</code> some of the <code>Visualizations</code> reference <code>Scripted fields</code> defined on an <code>Index Pattern</code>. These are used where there is a requirement to derive or calculate data fields from the source <code>tracked fields</code> passed as events. The <code>Scripted fields</code> section is shown here on <code>process-s*</code> which is the chosen <code>Index Pattern</code> that has been used as the basis for <code>Searches</code>, <code>Visualizations</code>, and <code>Dashboards</code>.
+<img alt="" src="../images/insights-devt-baw11.png" /></p>
+<p>Below you can see that three <code>Scripted fields</code> have been defined named <code>ClaimDelta</code>, <code>Settlement Duration</code>, and <code>FormattedLossDate</code>. <code>ClaimDelta</code> is used to calculate the difference between estimate and settlement amounts in the claim which is then used in the <code>Visualization</code> named <code>Denim Compute - Delta Amounts</code>. <code>SettlementDuration</code> is used to calculate the time difference between the date the loss was reported and the date the claim was settled. <code>FormattedLossDate</code> is just a way to display the loss date in a more condensed format in order to display it more succinctly on the <code>Visualization</code> named <code>Denim Compute - Settlement Duration by Loss Status</code>.
+<img alt="" src="../images/insights-devt-baw12.png" /></p>
+<h2 id="bai-kibana-searches">BAI (Kibana) searches</h2>
+<p>The data events sent from BAW to BAI are organized into active and completed summaries. BAI then has a number of <code>Index Patterns</code> defined that reference the <code>ElasticSearch</code> indices for these summaries. For the scenario end goal of showing claim summaries on various charts (<code>Visualizations</code>) we want just the top level process summary information. Here in the <code>Search</code> definition named <code>Denim Compute - Auto Claims All Processes</code> we are using the <code>process-s* Index Pattern</code> and have configured various <code>Filters</code> so that we only see process level data for our process application. Note there are a number of <code>Filters</code> configured and set as disabled. What this allows is for the user to turn them on / off in order to search for specific results in here while leaving the default saved settings that are relied upon by the <code>Visualizations</code> that aggregate the data for display in the <code>Dashboards</code>.
+<img alt="" src="../images/insights-devt-baw13.png" /></p>
+<p>The <code>Search</code> is configured with viewable columns based on the <code>Selected fields</code> section where these fields have been added from the <code>Available fields</code> section below.
+<img alt="" src="../images/insights-devt-baw14.png" /></p>
+<h2 id="bai-kibana-visualizations">BAI (Kibana) visualizations</h2>
+<p>All of the <code>Visualizations</code> defined start with the keywords "Denim Compute" and can be found by providing a search entry as shown here.
+<img alt="" src="../images/insights-devt-baw15.png" /></p>
+<p>To take an example of a <code>Pie</code> type here you see <code>Denim Compute - Claims by Fraud Status</code> and it references the <code>Search</code> we discussed in the previous section. In this example it uses a <code>Count aggregation</code> and then divides the <code>Pie</code> into <code>Buckets</code> based on the unique <code>Terms</code> found in the events for the <code>claimFraudStatus tracked field</code>.
+<img alt="" src="../images/insights-devt-baw16.png" /></p>
+<p>In the <code>Options</code> section here we could have elected to <code>Show Labels</code> however we found that they did not resize properly when subsequently laying out in the available space of the target <code>Dashboard</code> which seems to be a <code>Kibana</code> issue.
+<img alt="" src="../images/insights-devt-baw17.png" /></p>
+<p>An example of a <code>Metric</code> type is shown here in <code>Denim Compute - Delta Amounts</code>. The <code>Metrics</code> section shows that the source field is the <code>ClaimData Scripted field</code> discussed earlier.
+<img alt="" src="../images/insights-devt-baw18.png" /></p>
+<p>In <code>Denim Compute - Settlements by Driver Age</code> we have an example of a <code>Bar</code> type that shows various aggregates for comparison side by side on a bar chart. The dimension (defined in the <code>Buckets</code> section) that they are organised by is the driver's age (<code>driverAge tracked field</code>). Additionally a <code>Histogram</code> is used as the <code>bucket type</code> which then automatically groups the age ranges into groups of 10.
+<img alt="" src="../images/insights-devt-baw19.png" /></p>
+<p>In this <code>Bar</code> we want to show aggregates that have different scales (for example the Claims numbers will be much lower that the settlement amounts), therefore to do that we assign the aggregates to different axes in the <code>Metrics &amp; Axes</code> section.
+<img alt="" src="../images/insights-devt-baw20.png" /></p>
+<p>In <code>Denim Compute - Max Settlement by Loss State</code> we have an example of a <code>Region Map</code> type that shows data according to the US state it relates to (specifically the <code>lossState tracked field</code>).
+<img alt="" src="../images/insights-devt-baw21.png" /></p>
+<p>In the <code>Options</code> section the settings are configured specific to rendering US states on the map (which matches our scenario data that only uses a subset of US states).
+<img alt="" src="../images/insights-devt-baw22.png" /></p>
+<p>In <code>Denim Compute - Avg Estimates by Policy Cover</code> we have an example of a <code>Gauge</code> type that organises estimated amounts according to the type of Policy Cover.
+<img alt="" src="../images/insights-devt-baw23.png" /></p>
+<p><code>Gauges</code> allow for setting ranges that allow you to track things like a RAG status as illustrated here. This is done by configuring <code>Ranges</code> as shown.
+<img alt="" src="../images/insights-devt-baw24.png" /></p>
+<p>In <code>Denim Compute - Avg Settlement by Vehicle Make</code> we have an example of a <code>Data Table</code> type that organises settlement amounts according to the policy holder's vehicle make and within that the vehicle make of the other vehicle involved. In the <code>Buckets</code> section the <code>Split Table</code> setting arranges columns of the <code>insuredVehicleMake tracked field</code> and <code>Split Rows</code> further sub-divides each row against the <code>otherVehicleMake tracked field</code>.
+<img alt="" src="../images/insights-devt-baw25.png" /></p>
+<p>When using this <code>Data Table</code> we spotted a deficiency in the options the <code>Kibana Visualization</code> provides. Ideally we want to display the average figures for the column as well as for the intersections of insured vehicle / other vehicle. However the only option is to <code>Show total</code> which in facts adds all the averages up and is not what we want. This is not displayed on the provided saved <code>Visualization</code> named <code>Denim Compute - Avg Settlement by Vehicle Make</code>, we are only showing it here in order to illustrate the issue).
+<img alt="" src="../images/insights-devt-baw26.png" /></p>
+<p>There are various other <code>Visualizations</code> for you to explore, we have covered the essential ones here that illustrate some of the data and configuration patterns used.</p>
+<h2 id="bai-kibana-dashboards">BAI (Kibana) dashboards</h2>
+<p>The Kibana Dashboards provided for the scenario are shown below.
+<img alt="" src="../images/insights-devt-baw27.png" /></p>
+<p>Looking in more detail at one of them (<code>Denim Compute - Completed Auto Claims</code>), here we have <code>Filters</code> defined on the <code>Dashboard</code> itself. This allows for reusing <code>Visualizations</code> and their underlying <code>Searches</code> across different <code>Dashboards</code> by setting <code>Filters</code> here that are specific to the intent of the <code>Dashboard</code> (in this case to only focus on completed Auto Claim instances). Navigating between the provided <code>Dashboards</code> is achieved by <code>breadcrumbs</code> implemented in <code>Markdown</code> in a special type of <code>Markdown Visualization</code>. Also highlighted are two of the earlier covered <code>Visualizations</code> laid out as tiles on the <code>Dashboard</code>. 
+<img alt="" src="../images/insights-devt-baw28.png" /></p>
+<p>Below you see the different <code>Filters</code> defined for the other <code>Dashboards</code> in the scenario. There is also a disabled <code>Filter</code> in the case of <code>Denim Compute - Suspected Fraudulent Auto Claims</code> which means all potential frauds are displayed by default. The end user can then enable and adjust the provided filter to drill down into the sub-categories of suspected fraud (those confirmed to be real frauds versus those cleared by the fraud investigation).
+<img alt="" src="../images/insights-devt-baw29.png" /></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../decisions/" title="Decisions" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Decisions
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../capture/" title="Capture" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Capture
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
