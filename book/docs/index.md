@@ -28,14 +28,14 @@ Since the Cloud Pak for Automation is on a continuous release schedule, the arch
 ### On 08/30/19
 The following features have been added:
 
-- [BACA integration scenario](../usecase/baca-scenario-walkthrough.md): The Denim Compute implementation now demonstrates automatic detection of an uploaded repair shop estimate and extraction of data from it using BACA.
+- [BACA integration scenario](./usecase/baca-scenario-walkthrough.md): The Denim Compute implementation now demonstrates automatic detection of an uploaded repair shop estimate and extraction of data from it using BACA.
 
 ### On 08/08/19
 The following features have been added:
 
-- [Cloud Pak deployment on managed OpenShift](../environment/rhos-intro.md): The Denim Compute has been ported and tested on a managed OpenShift cluster on IBM Cloud, and installation of the different components on OpenShift is documented.
+- [Cloud Pak deployment on managed OpenShift](./environment/rhos-intro.md): The Denim Compute has been ported and tested on a managed OpenShift cluster on IBM Cloud, and installation of the different components on OpenShift is documented.
 
-- [BAI dashboards for BPMN](../usecase/bai-scenario-walkthrough.md): The Denim Compute implementation now demonstrates the monitoring of BPM business events with complex BAI dashboards.
+- [BAI dashboards for BPMN](./usecase/bai-scenario-walkthrough.md): The Denim Compute implementation now demonstrates the monitoring of BPM business events with complex BAI dashboards.
 
 ### On 07/12/19
 - Published the initial release.
