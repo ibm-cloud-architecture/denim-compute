@@ -24,7 +24,7 @@ Once the new button opens, verify that the Action "Script Action" is selected, t
 
 ![Script Action](images/work-item-toolbar-sa-validate-complete.PNG)
 
-The source code of the script action can be found in the [`validate-and-complete-workitem.js`](https://github.com/ibm-cloud-architecture/denim-compute/source/casevalidate-and-complete-workitem.js).
+The source code of the script action can be found in the [`validate-and-complete-workitem.js`](https://github.com/ibm-cloud-architecture/denim-compute/blob/master/source/case/validate-and-complete-workitem.js).
 
 ## Transfer case property to document
 When a user files a document into the case, for instance a Police Report, some case properties should be transferred and automatically updated into the document class (Case Document Type).
@@ -41,4 +41,4 @@ Select the custom button "Add Document and Set Property" and review the settings
 
 ![Script Action](images/case-information-toolbar-add-doc-set-prop-edit.PNG)
 
-The script action source code can be found in the [`file-police-report.js`](https://github.com/ibm-cloud-architecture/denim-compute/source/case/file-police-report.js)/source/case.
+The script action source code can be found in the [`file-police-report.js`](https://github.com/ibm-cloud-architecture/denim-compute/blob/master/source/case/file-police-report.js)/source/case.

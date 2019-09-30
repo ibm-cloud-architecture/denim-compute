@@ -28,7 +28,7 @@ A BACA Mediator micro-service has been developed that is used by BAW (as describ
 For this single micro-service, and because we are not showing a full CI/CD DevOps cycle, we are using a simple code editor to display the code.
 If you are interested in Cloud Native development using the latest tooling, then have a look at [Kabanero](https://kabanero.io/).
 
-The [application](https://github.com/ibm-cloud-architecture/denim-compute/solution/baca/mediator) is shown here with the core Node.js code (`server.js`) to declare dependencies and use `Express` to start a HTTP Server listening for inbound REST requests.
+The [application](https://github.com/ibm-cloud-architecture/denim-compute/tree/master/solution/baca/mediator) is shown here with the core Node.js code (`server.js`) to declare dependencies and use `Express` to start a HTTP Server listening for inbound REST requests.
 
 ![](images/microservices-baca1.png)
 

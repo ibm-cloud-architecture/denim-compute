@@ -118,8 +118,7 @@ were used most regularly in the processing are shown here:
 
 ## Editing table rows with Flyout
 
-The BPM UI Samples (and Salient Spark site Table control referencing a demo
-<https://www.youtube.com/watch?v=ZxnvDCDY8CA>) recommend using a view inside a
+The BPM UI Samples recommend using a view inside a
 table column that edits a row (and uses Deferred Sections for lazy loading). The
 key to this is that the Modal section is placed within a table column and bound
 to the list’s `currentItem`:

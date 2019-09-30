@@ -23,15 +23,15 @@
 
 ![](images/case-security3.png)
 
-- Provide a `Security manifest name` and click `Next`.
+- Provide a `Security manifest name` (e.g. `denim_security_config`) and click `Next`.
 
 ![](images/case-security4.png)
 
-- Set permissions against the security `Roles` (in this example all permissions are assigned to each `Role`) and click `Next`.
+- Set permissions against the security roles (in this example all permissions are assigned to each role) and click `Next`.
 
 ![](images/case-security5.png)
 
-- You can then set the adminstrators, if you want you can `Add` others.
+- In this step, you set the administrators. You can add administrators besides the pre-defined one if you want, by clicking the `Add` button, or you can just click `Next`.
 
 ![](images/case-security6.png)
 
@@ -39,15 +39,15 @@
 
 ![](images/case-security7.png)
 
-- Next you map groups and users to the Case `Roles`. Select each `Role` and click `Add` then follow the earlier instructions for how to find and assign users and groups.
+- Next you map groups and users to the Case roles. Select each role and click `Add` then follow the earlier instructions for how to find and assign users and groups.
 
 ![](images/case-security8.png)
 
-- In this example we have just added a default user to the `Claim Intake Services` `Role`. You repeat these steps for the other `Roles`.
+- In this example, we have just added a default user to the `Claim Intake Services` `Role`. You repeat these steps for the other `Roles`.
 
 ![](images/case-security9.png)
 
-- Here is the final situation were example users are added to each `Role` (if you want a more realistic scenario you should setup different users and groups and assign them to the `Roles`). Click `Next` when done with this section.
+- Here is the final situation, where example users are added to each role (if you want a more realistic scenario you should setup different users and groups and assign them to the roles). Click `Next` when done with this section.
 
 ![](images/case-security10.png)
 
@@ -65,21 +65,21 @@
 
 ## Create BPM user groups
 
-- The solution has a number of BPM `Teams` defined that need to map to users and groups. To do that, launch the `Process Admin Console` and then select `Server Admin` section.
+- The solution has a number of BPM teams defined that need to be mapped to users and groups. To do that, launch the Process Admin Console and then select `Server Admin` section.
 
-- Within that select `User Management` and `Group Management` and type `denim` in `Select Group to Modify` and you should see the groups that have been created as a result of the `Team` definitions.
+- Open `User Management`, select `Group Management` and type `denim` in `Select Group to Modify` and you should see the groups that have been created as a result of the team definitions.
 
 ![](images/bpm-user-groups1.png)
 
-- You then need to assign users and groups for your environment against those pre-defined groups. Here is an example were we have assigned a number of users to the `denim-adjusters` group.
+- You then need to assign users and groups for your environment against those pre-defined groups. Here is an example where we have assigned a number of users to the `denim-adjusters` group.
 
 ![](images/bpm-user-groups2.png)
 
 ## Configure servers 
 
-The solution integrates to ODM and ECM by using defined `Servers`. By default these are mapped to the environment the IBM team used in testing. You have to now re-map these to your own cluster environment.
+The solution integrates with the ODM and ECM components by using defined servers. By default, these are mapped to the environment that we used for testing purpose. Obviously, you have to re-map these servers to your own cluster environment. To do this, use the following instructions:
 
-- To do this you must first ensure the deployed BAW solution is activated. Select it in the Workflow Center and click the `View Details` icon in the lower left corner of the tile.
+- First, ensure that the deployed BAW solution is activated. Select it in the Workflow Center and click the `View Details` icon in the lower left corner of the tile.
 
 ![](images/config-servers1.png)
 
@@ -87,7 +87,7 @@ The solution integrates to ODM and ECM by using defined `Servers`. By default th
 
 ![](images/config-servers2.png)
 
-Note the next steps reference environment variables which require information from the [deployment of the microservice](#deploy-the-baca-mediator-microservice) so if you have not completed that yet then go to that section and return here to complete the `BAW` servers configuration.
+Note the next steps reference environment variables which require information from the [deployment of the micro-service](#deploy-the-baca-mediator-microservice) so if you have not completed that yet then go to that section and return here to complete the `BAW` servers configuration.
 
 - After this you can now go to the `Process Admin Console` and you should see the snapshot in the list of `Installed Apps`.
 
@@ -108,23 +108,23 @@ Note the next steps reference environment variables which require information fr
 ## Configure BACA ontology
 Currently `Business Automation Content Analyzer (BACA)` only allows for the import and export of an entire ontology, there is no merge capability of selective import. Therefore we recommend that you backup any existing ontology before proceeding.
 
-- So first use the **Export Ontology** option as shown and save your existing ontology.
+- First use the `Export Ontology` option as shown and save your existing ontology.
 
 ![](images/config-baca1.png)
 
-- Then use **Import Ontology** and select the JSON file you should download from `https://github.com/ibm-cloud-architecture/denim-compute/solution/baca/` directory as shown.
+- Then use `Import Ontology` and select the [`dc-baca-ontology.json`](https://github.com/ibm-cloud-architecture/denim-compute/blob/master/solution/baca/dc-baca-ontology.json) file.
 
 ![](images/config-baca2.png)
 
-- You should now have an ontology similar to that shown here.
+- You should now have an ontology similar to that shown below:
 
 ![](images/config-baca3.png)
 
 When you are finished with trying out the [BACA scenario](/usecase/baca-scenario-walkthrough/) you can re-import the saved JSON export of your original ontology.
 
-## Deploy the BACA Mediator microservice
+## Deploy the BACA Mediator micro-service
 
-**NB The instructions that follow are for the Red Hat OpenShift Container Platform (OCP) environment the team used which is version 3.11.**
+**NB:** The following instructions are for an OCP 3.11 cluster.
 
 ### Configure GitHub repository
 We recommend using a secure private repository rather than a `GitHub` Public one and these instructions assume that is the case. The start point is that you should fork this repository so that you can then configure your own security settings.
@@ -192,7 +192,7 @@ There are a number of options for deploying to OCP, we are going to use `Source 
 
 ![](images/micro-config-rhocp10.png)
 
-- A number of `Kubernetes Resources` will now be created including a `Build Config` and `Build` that will pull the source and build a deployment. When done on the overview section you should see summary information for the `Deployment Config` including that it has 1 `Pod` (note in a realistic environment we would set this to have > 1 Pod for failover but it makes it easier for us to see logs with this 1 Pod running without having to configure an `ELK` stack) and it is running. Take note also of the `Route` highlighted which is the public ingress point to the microservice and this is needed for configuring the environment variable in the `BAW` [config section](/showtime/run-solution/#configure-servers) above.
+- A number of `Kubernetes Resources` will now be created including a `Build Config` and `Build` that will pull the source and build a deployment. When done on the overview section you should see summary information for the `Deployment Config` including that it has 1 `Pod` (note in a realistic environment we would set this to have > 1 Pod for failover but it makes it easier for us to see logs with this 1 Pod running without having to configure an `ELK` stack) and it is running. Take note also of the `Route` highlighted which is the public ingress point to the micro-service and this is needed for configuring the environment variable in the `BAW` [config section](/showtime/run-solution/#configure-servers) above.
 
 ![](images/micro-config-rhocp11.png)
 
@@ -204,6 +204,6 @@ There are a number of options for deploying to OCP, we are going to use `Source 
 
 ![](images/micro-config-rhocp13.png)
 
-- In the `Logs` you can now verify that the microservice is up and ready to accept requests.
+- In the `Logs` you can now verify that the micro-service is up and ready to accept requests.
 
 ![](images/micro-config-rhocp14.png)

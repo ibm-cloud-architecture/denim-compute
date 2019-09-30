@@ -32,7 +32,7 @@ The `claim-processing` main project does not contain any rule artifact and is ma
 
 The claim fraud assessment decision service is a good candidate to inject a fraud detection service based on a machine learning (ML) model. The typical division of responsibility is that the ML model excels in detecting patterns of fraud, while rules can flag outliers, marginal or heuristic cases that have been detected but do not yet represent a pattern.
 
-**NB**: We are planning to integrate the ML-based scoring model for fraud in a future Denim Compute iteration. For now, we just have a clean set of labeled data (see the [denim-insurance-fraud-data.csv](`https://github.com/ibm-cloud-architecture/denim-compute/source/ml/denim-insurance-fraud-data.csv`) file).
+**NB**: We are planning to integrate the ML-based scoring model for fraud in a future Denim Compute iteration. For now, we just have a clean set of labeled data (see the [`denim-insurance-fraud-data.csv`](https://github.com/ibm-cloud-architecture/denim-compute/blob/master/source/ml/denim-insurance-fraud-data.csv) file).
 
 This sample fraud dataset is a good fit for the AutoAI feature of [Watson Studio](https://cloud.ibm.com/catalog/services/machine-learning):
 
