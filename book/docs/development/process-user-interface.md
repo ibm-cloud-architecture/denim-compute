@@ -320,9 +320,7 @@ And in the script (among other things) we have to explicitly call the
 ![](images/baw-process-user-interface4.png)
 
 Note that while this results in the `Map` correctly showing the new coordinates,
-however the `Marker` is not shown (it may be possible to set this with the method
-<https://support.salientprocess.com/docs/enterprise/Map.html#addMarker> but we
-did not check this as it was not vital to the scenario).
+however the `Marker` is not shown.
 
 ## Access view configuration option complex BO
 

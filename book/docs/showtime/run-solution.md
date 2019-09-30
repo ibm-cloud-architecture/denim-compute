@@ -75,7 +75,7 @@
 
 ![](images/bpm-user-groups2.png)
 
-## Configure servers 
+## Configure servers <a name="configure-servers"></a>
 
 The solution integrates with the ODM and ECM components by using defined servers. By default, these are mapped to the environment that we used for testing purpose. Obviously, you have to re-map these servers to your own cluster environment. To do this, use the following instructions:
 
@@ -120,7 +120,7 @@ Currently `Business Automation Content Analyzer (BACA)` only allows for the impo
 
 ![](images/config-baca3.png)
 
-When you are finished with trying out the [BACA scenario](/usecase/baca-scenario-walkthrough/) you can re-import the saved JSON export of your original ontology.
+When you are finished with trying out the [BACA scenario](../usecase/baca-scenario-walkthrough.md) you can re-import the saved JSON export of your original ontology.
 
 ## Deploy the BACA Mediator micro-service
 
@@ -192,7 +192,7 @@ There are a number of options for deploying to OCP, we are going to use `Source 
 
 ![](images/micro-config-rhocp10.png)
 
-- A number of `Kubernetes Resources` will now be created including a `Build Config` and `Build` that will pull the source and build a deployment. When done on the overview section you should see summary information for the `Deployment Config` including that it has 1 `Pod` (note in a realistic environment we would set this to have > 1 Pod for failover but it makes it easier for us to see logs with this 1 Pod running without having to configure an `ELK` stack) and it is running. Take note also of the `Route` highlighted which is the public ingress point to the micro-service and this is needed for configuring the environment variable in the `BAW` [config section](/showtime/run-solution/#configure-servers) above.
+- A number of `Kubernetes Resources` will now be created including a `Build Config` and `Build` that will pull the source and build a deployment. When done on the overview section you should see summary information for the `Deployment Config` including that it has 1 `Pod` (note in a realistic environment we would set this to have > 1 Pod for failover but it makes it easier for us to see logs with this 1 Pod running without having to configure an `ELK` stack) and it is running. Take note also of the `Route` highlighted which is the public ingress point to the micro-service and this is needed for configuring the environment variable in the `BAW` [config section](#configure-servers) above.
 
 ![](images/micro-config-rhocp11.png)
 

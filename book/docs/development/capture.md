@@ -2,7 +2,7 @@
 
 Business Automation Content Analyzer (BACA) is a *no code* environment. So, although we include this topic under the Development section, it is really rather configuration that is done for a BACA solution.
 
-It is used in the solution when BAW needs to automatically process an uploaded vehicle repair estimate. For further details please see the design section [Mediated BACA integration](/design/workflow/#mediated-baca-integration).
+It is used in the solution when BAW needs to automatically process an uploaded vehicle repair estimate. For further details please see the design section [Mediated BACA integration](../design/workflow/#mediated-baca-integration).
 
 ## BACA ontology
 
@@ -16,13 +16,13 @@ Just to illustrate the different keys, below we see the focus on `tax rate` and 
 
 ![](images/baca-ontology2.png)
 
-Note that the [Showtime](/showtime/run-solution/) section  documents that in BAW, there are a number of environment variables related to BACA that need to be specified when configuring the deployed solution. The API section of the BACA front-end is where you find the `API Key` and the host information for the endpoint (the `Request URL` section).
+Note that the [Showtime](../showtime/run-solution.md) section  documents that in BAW, there are a number of environment variables related to BACA that need to be specified when configuring the deployed solution. The API section of the BACA front-end is where you find the `API Key` and the host information for the endpoint (the `Request URL` section).
 
 ![](images/baca-api1.png)
 
-## BACA-related micro-services
+## BACA-related micro-services <a name="baca-microservices"></a>
 
-A BACA Mediator micro-service has been developed that is used by BAW (as described in [BACA integration](/development/process-services/#baca-integration)) to interact with BACA (for details see [Content Analyser](/development/content-analyzer/)). The micro-service is implemented in Node.js and deployed on the Red Hat OpenShift Container Platform (OCP).
+A BACA Mediator micro-service has been developed that is used by BAW (as described in [BACA integration](./process-services.md#baca-integration)) to interact with BACA. The micro-service is implemented in Node.js and deployed on the Red Hat OpenShift Container Platform (OCP).
 
 ### Analyze a document
 For this single micro-service, and because we are not showing a full CI/CD DevOps cycle, we are using a simple code editor to display the code.

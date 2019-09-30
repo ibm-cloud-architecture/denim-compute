@@ -35,7 +35,7 @@ This is the BPM Process implementation of *Signal Adjuster Report Created* with 
 
 ![](images/workflow-design7.png)
 
-## Mediated BACA integration
+## Mediated BACA integration <a name="mediated-baca-integration"></a>
 A [side scenario](../usecase/baca-scenario-walkthrough.md) of the main scenario involves integration with Business Automation Content Analyzer (BACA) in order to automatically detect an uploaded document representing a vehicle repair estimate provided by a repair shop. The document is parsed by BACA and the data extracted to build up an estimate data structure that includes the set of vehicle parts needed to repair the damaged vehicle. In the Case, a case activity named `Process Repair Estimate` is configured to be triggered by the precondition of a document of class `Auto Repair Estimate` being added to the case.
 ![](images/workflow-design8.png)
 
