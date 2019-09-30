@@ -125,7 +125,7 @@ You now can see all the tracking data that was summarised into this process summ
 You should have installed the Cloud Pak for Automation as instructed in the various installation guidance documents in the [OpenShift](../environment/rhos-intro.md) environment section.
 
 ### BAW application installation
-- Install the application interchange [`.twx`](https://github.com/ibm-cloud-architecture/denim-compute}/solution/baw/auto-claims-emulation-bai-v0-10-0.twx) file into your environment, confirm that it is the version shown below or higher.
+- Install the application [`auto-claims-emulation-bai.twx`](https://github.com/ibm-cloud-architecture/denim-compute/blob/master/solution/baw/auto-claims-emulation-bai.twx) file into your environment (confirm that it is the version shown below or higher):
 ![](images/bai-scenario-walkthrough-install1.png)
 
 - Now you should have the exposed process that can be launched from `Process Portal` as shown below.
