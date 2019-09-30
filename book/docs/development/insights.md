@@ -66,7 +66,7 @@ In the `Options` section here we could have elected to `Show Labels` however we 
 An example of a `Metric` type is shown here in `Denim Compute - Delta Amounts`. The `Metrics` section shows that the source field is the `ClaimData Scripted field` discussed earlier.
 ![](images/insights-devt-baw18.png)
 
-In `Denim Compute - Settlements by Driver Age` we have an example of a `Bar` type that shows various aggregates for comparison side by side on a bar chart. The dimension (defined in the `Buckets` section) that they are organised by is the driver's age (`driverAge tracked field`). Additionally a `Histogram` is used as the `bucket type` which then automatically groups the age ranges into groups of 10.
+In `Denim Compute - Settlements by Driver Age` we have an example of a `Bar` type that shows various aggregates for comparison side by side on a bar chart. The dimension (defined in the `Buckets` section) that they are organized by is the driver's age (`driverAge tracked field`). Additionally a `Histogram` is used as the `bucket type` which then automatically groups the age ranges into groups of 10.
 ![](images/insights-devt-baw19.png)
 
 In this `Bar` we want to show aggregates that have different scales (for example the Claims numbers will be much lower that the settlement amounts), therefore to do that we assign the aggregates to different axes in the `Metrics & Axes` section.
@@ -78,13 +78,13 @@ In `Denim Compute - Max Settlement by Loss State` we have an example of a `Regio
 In the `Options` section the settings are configured specific to rendering US states on the map (which matches our scenario data that only uses a subset of US states).
 ![](images/insights-devt-baw22.png)
 
-In `Denim Compute - Avg Estimates by Policy Cover` we have an example of a `Gauge` type that organises estimated amounts according to the type of Policy Cover.
+In `Denim Compute - Avg Estimates by Policy Cover` we have an example of a `Gauge` type that organizes estimated amounts according to the type of Policy Cover.
 ![](images/insights-devt-baw23.png)
 
 `Gauges` allow for setting ranges that allow you to track things like a RAG status as illustrated here. This is done by configuring `Ranges` as shown.
 ![](images/insights-devt-baw24.png)
 
-In `Denim Compute - Avg Settlement by Vehicle Make` we have an example of a `Data Table` type that organises settlement amounts according to the policy holder's vehicle make and within that the vehicle make of the other vehicle involved. In the `Buckets` section the `Split Table` setting arranges columns of the `insuredVehicleMake tracked field` and `Split Rows` further sub-divides each row against the `otherVehicleMake tracked field`.
+In `Denim Compute - Avg Settlement by Vehicle Make` we have an example of a `Data Table` type that organizes settlement amounts according to the policy holder's vehicle make and within that the vehicle make of the other vehicle involved. In the `Buckets` section the `Split Table` setting arranges columns of the `insuredVehicleMake tracked field` and `Split Rows` further sub-divides each row against the `otherVehicleMake tracked field`.
 ![](images/insights-devt-baw25.png)
 
 When using this `Data Table` we spotted a deficiency in the options the `Kibana Visualization` provides. Ideally we want to display the average figures for the column as well as for the intersections of insured vehicle / other vehicle. However the only option is to `Show total` which in facts adds all the averages up and is not what we want. This is not displayed on the provided saved visualization named `Denim Compute - Avg Settlement by Vehicle Make`, we are only showing it here in order to illustrate the issue).

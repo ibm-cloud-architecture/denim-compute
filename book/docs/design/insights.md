@@ -32,7 +32,7 @@ The core concept for sending DEF events to BAI is using *tracking group* definit
 This can be seen in the fragment of `Initiate Claims Processing` below where a selection of the various tracking points are highlighted.
 ![](images/insights-design-baw1.png)
 
-Two different tracking groups are used in the workflow, one for fairly static data that is available at the start (such as information from the Policy and the First Notice of Loss) and one for data that is dynamically adjusted as the workflow progreses (e.g. the various amounts of estimates and adjustments). Below you can see that the tracking has been configured to use the tracking group named `AutoClaimTG` and the various state of workflow instance variables are mapped to the corresponding properties of `AutoClaimTG`.
+Two different tracking groups are used in the workflow, one for fairly static data that is available at the start (such as information from the Policy and the First Notice of Loss) and one for data that is dynamically adjusted as the workflow progresses (e.g. the various amounts of estimates and adjustments). Below you can see that the tracking has been configured to use the tracking group named `AutoClaimTG` and the various state of workflow instance variables are mapped to the corresponding properties of `AutoClaimTG`.
 ![](images/insights-design-baw2.png)
 
 And here we see an example from downstream in the workflow where data updates are available after `Claim Settlement` and they are mapped to the corresponding properties in the tracking group named `AutoClaimUpdatesTG`.

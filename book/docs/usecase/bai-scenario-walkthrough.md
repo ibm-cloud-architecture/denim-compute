@@ -1,6 +1,6 @@
 # BAI scenario walkthrough
 
-Before proceeding with this scenario it is recommended you familiarise yourself with the [main scenario](resources/denim-compute-scenario-walkthrough.pdf). That scenario shows the interactions for a "day in the life" of a Case instance of Auto Claims and while that sends data through for visualizing in Business Automation Insights (BAI), to fully appreciate the power of BAI you need to generate some realistic loads.
+Before proceeding with this scenario it is recommended you familiarize yourself with the [main scenario](resources/denim-compute-scenario-walkthrough.pdf). That scenario shows the interactions for a "day in the life" of a Case instance of Auto Claims and while that sends data through for visualizing in Business Automation Insights (BAI), to fully appreciate the power of BAI you need to generate some realistic loads.
 
 To that end, we have created a separate scenario that emulates the main scenario but without any real human interactions, so that it can execute many concurrent instances in batch and you can appreciate the value of BAI in a short amount of time. This emulation generates random data based on some configuration settings that are exposed for the end user to control as we shall see later in this document. 
 
@@ -22,7 +22,7 @@ This will exercise a path through the workflow that does everything except for i
 As the test emulation progresses you will see data variables set including the batch of emulated Auto Claim business objects (one instance is expanded in the list below for illustration).  
 ![](images/bai-scenario-walkthrough-baw5.png)
 
-The emulation workflow instances may take a few minutes to complete depending on the total number of claims that were specified as the logic organises the data into batches with a timed delay between them. When the emulation workflow instance has completed (which can be verified in Process Inspector) and we are satisfied it behaves as expected we can then relaunch the workflow and this time submit a real emulation run. Here in this first section we have set `Number of Claims` to 500 and the `Maximum Claim Amount` to 50000. (Please be aware that the more instances that are created here the more work for BAW operations team to clean up afterwards and purge the completed instances. Also the more instances requested the higher the relative load on the system so we recommend you exercise due care here and not unduly load a system that might have other business-critical workloads on it. If in doubt check with your operations team).
+The emulation workflow instances may take a few minutes to complete depending on the total number of claims that were specified as the logic organizes the data into batches with a timed delay between them. When the emulation workflow instance has completed (which can be verified in Process Inspector) and we are satisfied it behaves as expected we can then relaunch the workflow and this time submit a real emulation run. Here in this first section we have set `Number of Claims` to 500 and the `Maximum Claim Amount` to 50000. (Please be aware that the more instances that are created here the more work for BAW operations team to clean up afterwards and purge the completed instances. Also the more instances requested the higher the relative load on the system so we recommend you exercise due care here and not unduly load a system that might have other business-critical workloads on it. If in doubt check with your operations team).
 ![](images/bai-scenario-walkthrough-baw6.png)
 
 The next set of settings control the spread of paths through the `Auto Claims` workflow. Simple scenarios do not have any adjustment, fraud checking etc and so we set a relatively low figure for this. Next the `Percentage in Progress` setting controls the spread of items that have emulated delays in processing (so that later, in BAI Dashboards, you can see interactively how active instances behave and the changes that occur as they move through their lifecycles). `Percentage Potential Fraud` emulates the path in the workflow whereby the call out to ODM rules determines whether there is a potential fraud situation that needs investigating. The `Percentage Confirmed Fraud` setting then controls what percentage of those potential frauds have been determined to be actual frauds (the rest will end up as being cleared of fraud). 
@@ -56,7 +56,7 @@ At this point, we are ready to start examining the configured Dashboards in Kiba
 Scrolling down the page we can see some variations in types of visualization and the aggregated data that is displayed on them to highlight certain trends such as the influence of the `Weather Condition` on the estimate value of the claim. We also have a chart for tracking at what lifecycle stage various in-flight claims are (`Active Claims by Age and Status`).
 ![](images/bai-scenario-walkthrough-bai4.png)
 
-As the `Active Claims by Age and Status` X-axis legend is hard to see with the restricted space you can maximise that visualization (from the contextual menu on it) to see it in more detail.
+As the `Active Claims by Age and Status` X-axis legend is hard to see with the restricted space you can maximize that visualization (from the contextual menu on it) to see it in more detail.
 ![](images/bai-scenario-walkthrough-bai4-1.png)
 
 You can also use the contextual menu to inspect the underlying data for a visualization and even export it out in CSV format.
@@ -74,7 +74,7 @@ Similar to the previous dashboard, this one uses various `Visualizations` but th
 We again use the set of `Gauges` that focus on the `Policy Cover` dimension.
 ![](images/bai-scenario-walkthrough-bai8.png)
 
-In the bottom section of the dashboard we again see the `Data Tables` organised by `Vehicle Make` and again focussing on `Claim Settlement` data.
+In the bottom section of the dashboard we again see the `Data Tables` organized by `Vehicle Make` and again focusing on `Claim Settlement` data.
 ![](images/bai-scenario-walkthrough-bai9.png)
 
 With the visualization named `Settlements by Driver Age` opened in full screen mode we highlight one of the bars and can see the underlying data, in this case it is reflecting the age profiles (in the emulation we deliberately allocate more claims to certain higher risk age groups).
@@ -116,7 +116,7 @@ Back in the `Discover` section and with the `Search` set to `Denim Compute - Aut
 You can then expand the twisty against the row and it will allow inspecting the data in a table or as raw JSON.
 ![](images/bai-scenario-walkthrough-bai23.png)
 
-You now can see all the tracking data that was summarised into this process summary from the events sent to BAI from BAW. Take a look at some of the key data items and see if you can figure out what unusual set of circumstances led to this large claim and especially the high differential in damage amounts between the two vehicles involved. Also note that no fraud was suspected (see the highlighted tracking field below) even in such odd claim data, this is because the emulation uses random spreads of data and does not use any in depth intelligence in identifying and investigating fraud cases. In a later iteration, we will start infusing machine learning into this scenario in order to greatly improve this situation.
+You now can see all the tracking data that was summarized into this process summary from the events sent to BAI from BAW. Take a look at some of the key data items and see if you can figure out what unusual set of circumstances led to this large claim and especially the high differential in damage amounts between the two vehicles involved. Also note that no fraud was suspected (see the highlighted tracking field below) even in such odd claim data, this is because the emulation uses random spreads of data and does not use any in depth intelligence in identifying and investigating fraud cases. In a later iteration, we will start infusing machine learning into this scenario in order to greatly improve this situation.
 ![](images/bai-scenario-walkthrough-bai24.png)
 
 ## Scenario installation

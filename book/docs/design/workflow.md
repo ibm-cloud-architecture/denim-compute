@@ -46,7 +46,7 @@ The integration to BACA has to be mediated because BACA provides a generic inter
 
 A typical pattern for implementing a mediation between such business and technical concerns would be to use features of API Connect (APIC) and Application Connect Enterprise (ACE) from the [IBM Cloud Pak for Integration](https://www.ibm.com/cloud/cloud-pak-for-integration). In this scenario, we have opted to use a different approach to the mediation for two reasons:
 
- - To avoid readers having to obtain licencing for and install another IBM Cloud Pak.
+ - To avoid readers having to obtain licensing for and install another IBM Cloud Pak.
  
  - To illustrate how to develop and deploy a cloud native micro-service to the Red Hat OpenShift Container Platform and then integrate that with components from IBM Cloud Pak for Automation.
 

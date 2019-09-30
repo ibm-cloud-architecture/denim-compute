@@ -28,7 +28,7 @@ Since the Cloud Pak for Automation is on a continuous release schedule, the arch
 ### On 08/30/19
 The following features have been added:
 
-- [BACA integration scenario](../usecase/baca-scenario-walkthrough.md): The Denim Compute implementation now demonstrates automatic detection of an uploaded repair shop estimate and extraction of data from it using BACA.
+- [BACA integration scenario](./usecase/baca-scenario-walkthrough.md): The Denim Compute implementation now demonstrates automatic detection of an uploaded repair shop estimate and extraction of data from it using BACA.
 
 ### On 08/08/19
 The following features have been added:

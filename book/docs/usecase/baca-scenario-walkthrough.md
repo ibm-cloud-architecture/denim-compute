@@ -17,7 +17,7 @@ You should have:
 
 As this scenario builds on the [main scenario](./resources/denim-compute-scenario-walkthrough.pdf), it is recommended that a reader familiarises themselves with that first. In that document repair estimates are solicited from 4 repair shops (page 36) and we see work items in the BAW Process Portal.
 
-We are going to show that one of those repair shops (highlighted below) will in parallel send a PDF that will be automatically processed by BACA, and if successful, then the work item in Process Portal will be cancelled.
+We are going to show that one of those repair shops (highlighted below) will in parallel send a PDF that will be automatically processed by BACA, and if successful, then the work item in Process Portal will be canceled.
 ![](images/baca-scenario1.png)
 
 As the scenario will interact with a Node.js micro-service deployed on the OCP cluster, we first look at the `baca-mediator-app` project that uses a deployment config named `rhocp-baca-mediator`.
@@ -27,7 +27,7 @@ As the scenario will interact with a Node.js micro-service deployed on the OCP c
 The deployment config references a Kubernetes pod shown below:
 ![](images/baca-scenario3.png)
 
-Selecting the pod and then the Logs section shows the output of the container, and in this case shows that the micro-service is initialised and awaiting requests.
+Selecting the pod and then the Logs section shows the output of the container, and in this case shows that the micro-service is initialized and awaiting requests.
 ![](images/baca-scenario4.png)
 
 ## Upload invalid estimate PDF
