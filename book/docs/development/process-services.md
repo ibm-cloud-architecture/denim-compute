@@ -103,7 +103,7 @@ A previous step `Convert to JSON` is used to parse the `AutoClaim` BO and conver
 
 ## BACA integration <a name="baca-integration"></a>
 
-As seen in the design section [Mediated BACA Integration](../design/workflow.md#mediated-baca-integration), the `Case Activity` implementation (`Process Repair Estimate`) on receipt of an estimate PDF processes the document via BACA and then sends an event notification where it sets correlation data and the `VehicleRepair` BO.
+As seen in the *mediated BACA integration* section of the [workflow design](../design/workflow.md), the `Case Activity` implementation (`Process Repair Estimate`) on receipt of an estimate PDF processes the document via BACA and then sends an event notification where it sets correlation data and the `VehicleRepair` BO.
 
 ![](images/process-services24.png)
 
@@ -115,7 +115,7 @@ The event message correlates to the corresponding running instance of `Provide R
 
 ![](images/process-services26.png)
 
-The interaction with BACA is done via a mediation [microservice](./capture.md#baca-microservices) implemented in Node.js and deployed on Red Hat OpenShift Container Platform (OCP). The `Service Flow` invoked by `Handle Received Vehicle Repair Estimate` that handles the top level interaction with the microservice is `Analyze and Parse Auto Repair Estimate` shown below. The high level sequence of the logic is:
+The interaction with BACA is done via a mediation [micro-service](./capture.md) implemented in Node.js and deployed on Red Hat OpenShift Container Platform (OCP). The `Service Flow` invoked by `Handle Received Vehicle Repair Estimate` that handles the top level interaction with the microservice is `Analyze and Parse Auto Repair Estimate` shown below. The high level sequence of the logic is:
 
 - Call the microservice to upload the PDF for analysis
 - Wait before making a call to the microservice to check the status of the analysis and check that it has been parsed OK
