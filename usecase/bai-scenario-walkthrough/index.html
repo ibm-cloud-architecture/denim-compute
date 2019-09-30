@@ -36,7 +36,7 @@
     
     
       
-        <title>BAI scenario walkthrough - Denim Compute - A Cloud Pak for Automation reference implementation</title>
+        <title>BAI scenario - Denim Compute - A Cloud Pak for Automation reference implementation</title>
       
     
     
@@ -105,7 +105,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                BAI scenario walkthrough
+                BAI scenario
               
             </span>
           
@@ -267,11 +267,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
     
     <label class="md-nav__link" for="nav-2-2">
-      Scenarios
+      Scenario walkthroughs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-2-2">
-        Scenarios
+        Scenario walkthroughs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -294,8 +294,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario walkthrough" class="md-nav__link">
-      Main scenario walkthrough
+    <a href="../resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario" class="md-nav__link">
+      Main scenario
     </a>
   </li>
 
@@ -306,8 +306,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../baca-scenario-walkthrough/" title="BACA scenario walkthrough" class="md-nav__link">
-      BACA scenario walkthrough
+    <a href="../baca-scenario-walkthrough/" title="BACA scenario" class="md-nav__link">
+      BACA scenario
     </a>
   </li>
 
@@ -327,11 +327,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        BAI scenario walkthrough
+        BAI scenario
       </label>
     
-    <a href="./" title="BAI scenario walkthrough" class="md-nav__link md-nav__link--active">
-      BAI scenario walkthrough
+    <a href="./" title="BAI scenario" class="md-nav__link md-nav__link--active">
+      BAI scenario
     </a>
     
       
@@ -343,13 +343,6 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#scenario-summary" title="Scenario summary" class="md-nav__link">
-    Scenario summary
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#business-automation-workflow" title="Business Automation Workflow" class="md-nav__link">
@@ -885,13 +878,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scenario-summary" title="Scenario summary" class="md-nav__link">
-    Scenario summary
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#business-automation-workflow" title="Business Automation Workflow" class="md-nav__link">
     Business Automation Workflow
   </a>
@@ -959,83 +945,83 @@
                 
                 
                 <h1 id="bai-scenario-walkthrough">BAI scenario walkthrough</h1>
-<h2 id="scenario-summary">Scenario summary</h2>
-<p>Before proceeding with this scenario it is recommended you familiarise yourself with the main IBM Cloud Pak for Automation scenario as described in <a href="../resources/denim-compute-scenario-walkthrough.pdf">Main scenario walkthrough</a>. That scenario shows the interactions for a "day in the life" of a Case instance of Auto Claims and while that sends data through for visualizing in Business Automation Insights (BAI), to fully appreciate the power of BAI you need to generate some realistic loads. To do that we have created a separate scenario that emulates the main scenario but without any real human interactions (so that it can execute many concurrent instances in a batch and you can appreciate <code>BAI</code> in a short space of time). This emulation generates random data based on some configuration settings that are exposed for the end user to control as we shall see later in this document. </p>
+<p>Before proceeding with this scenario it is recommended you familiarise yourself with the <a href="../resources/denim-compute-scenario-walkthrough.pdf">main scenario</a>. That scenario shows the interactions for a "day in the life" of a Case instance of Auto Claims and while that sends data through for visualizing in Business Automation Insights (BAI), to fully appreciate the power of BAI you need to generate some realistic loads.</p>
+<p>To that end, we have created a separate scenario that emulates the main scenario but without any real human interactions, so that it can execute many concurrent instances in batch and you can appreciate the value of BAI in a short amount of time. This emulation generates random data based on some configuration settings that are exposed for the end user to control as we shall see later in this document. </p>
 <p>If you want to follow along with this scenario on your own environment, see the instructions for installing in the <a href="#scenario-installation">Scenario installation</a> section later in this document.</p>
 <h2 id="business-automation-workflow">Business Automation Workflow</h2>
 <p>The starting point is the Process Portal where any user can launch the <code>Denim Compute Auto Claims - Emulation Generator</code> workflow after which a work item <code>Set Emulation Controls</code> will appear to be actioned. 
 <img alt="" src="../images/bai-scenario-walkthrough-baw1.png" /></p>
-<p>The user interface <code>Coach</code> is displayed allowing for configuring options to control the spread of emulated instances and how they then affect the business insights data that will be later viewed in BAI. We will explain these settings a little later.
+<p>The user interface coach is displayed allowing for configuring options to control the spread of emulated instances and how they then affect the business insights data that will be later viewed in BAI. We will explain these settings a little later.
 <img alt="" src="../images/bai-scenario-walkthrough-baw2.png" /></p>
 <p>If this is being run for the first time in a <code>IBM Cloud Pak for Automation</code> environment it is a good idea to first verify the process behaves as expected without creating a lot of workflow instances. To do this set the <code>Number of Claims</code> to something like 300 instances (this will exercise the emulation's batch control which submits workflow instances in minimum batches of 100) and then choose the <code>Test Emulation</code> button option.
 <img alt="" src="../images/bai-scenario-walkthrough-baw3.png" /></p>
-<p>This will exercise a path through the workflow that does everything except for instantiating the instances (the logic has a <code>feature flag</code> switch that treats it as in test mode and skips the <code>message event</code> which will spawn workflow instances). To verify the test you access the workflow instance in <code>Process Inspector</code> within the <code>Process Admin Console</code> as shown below.
+<p>This will exercise a path through the workflow that does everything except for instantiating the instances (the logic has a feature flag switch that treats it as in test mode and skips the message event which will spawn workflow instances). To verify the test you access the workflow instance in Process Inspector within the Process Admin Console as shown below.
 <img alt="" src="../images/bai-scenario-walkthrough-baw4.png" /></p>
-<p>As the test emulation progresses you will see data variables set including the batch of emulated <code>Auto Claim</code> <code>Business Objects</code> (one is expanded in the list below for illustration).<br />
+<p>As the test emulation progresses you will see data variables set including the batch of emulated Auto Claim business objects (one instance is expanded in the list below for illustration).<br />
 <img alt="" src="../images/bai-scenario-walkthrough-baw5.png" /></p>
-<p>The emulation workflow instances may take a few minutes to complete depending on the total number of claims that were specified as the logic organises the data into batches with a timed delay between them. When the emulation workflow instance has completed (which can be verified in <code>Process Inspector</code>) and we are satisfied it behaves as expected we can then relaunch the workflow and this time submit a real emulation run. Here in this first section we have set <code>Number of Claims</code> to 500 and the <code>Maximum Claim Amount</code> to 50000. (Please be aware that the more instances that are created here the more work for the <code>Business Automation Workflow (BAW)</code> operations team to clean up afterwards and purge the completed instances. Also the more instances requested the higher the relative load on the system so we recommend you exercise due care here and not unduly load a system that might have other business-critical workloads on it. If in doubt check with your operations team).
+<p>The emulation workflow instances may take a few minutes to complete depending on the total number of claims that were specified as the logic organises the data into batches with a timed delay between them. When the emulation workflow instance has completed (which can be verified in Process Inspector) and we are satisfied it behaves as expected we can then relaunch the workflow and this time submit a real emulation run. Here in this first section we have set <code>Number of Claims</code> to 500 and the <code>Maximum Claim Amount</code> to 50000. (Please be aware that the more instances that are created here the more work for BAW operations team to clean up afterwards and purge the completed instances. Also the more instances requested the higher the relative load on the system so we recommend you exercise due care here and not unduly load a system that might have other business-critical workloads on it. If in doubt check with your operations team).
 <img alt="" src="../images/bai-scenario-walkthrough-baw6.png" /></p>
-<p>The next set of settings control the spread of paths through the <code>Auto Claims</code> workflow. <code>Simple</code> scenarios do not have any adjustment, fraud checking etc and so we set a relatively low figure for this. Next the <code>Percentage in Progress</code> setting controls the spread of items that have emulated delays in processing (so that later in <code>BAI Dashboards</code> you can see interactively how active instances behave and the changes that occur as they move through their lifecycles). <code>Percentage Potential Fraud</code> emulates the path in the workflow whereby the call out to <code>Operational Decision Management (ODM)</code> rules determines whether there is a potential fraud situation that needs investigating. The <code>Percentage Confirmed Fraud</code> setting then controls what percentage of those potential frauds have been determined to be actual frauds (the rest will end up as being cleared of fraud). 
+<p>The next set of settings control the spread of paths through the <code>Auto Claims</code> workflow. Simple scenarios do not have any adjustment, fraud checking etc and so we set a relatively low figure for this. Next the <code>Percentage in Progress</code> setting controls the spread of items that have emulated delays in processing (so that later, in BAI Dashboards, you can see interactively how active instances behave and the changes that occur as they move through their lifecycles). <code>Percentage Potential Fraud</code> emulates the path in the workflow whereby the call out to ODM rules determines whether there is a potential fraud situation that needs investigating. The <code>Percentage Confirmed Fraud</code> setting then controls what percentage of those potential frauds have been determined to be actual frauds (the rest will end up as being cleared of fraud). 
 <img alt="" src="../images/bai-scenario-walkthrough-baw7.png" /></p>
-<p>The final section controls the time delays for each part of the workflow that is not <code>STP (Straight Through Processing)</code>. Here in the settings 30 minutes delay is set for each so it will configure variable times up to that maximum, this should mean that all 500 instances will have completed in approximately 2 hours elapsed time.
+<p>The final section controls the time delays for each part of the workflow that is not straight-through processing (STP). Here in the settings 30 minutes delay is set for each so it will configure variable times up to that maximum, this should mean that all 500 instances will have completed in approximately 2 hours elapsed time.
 <img alt="" src="../images/bai-scenario-walkthrough-baw8.png" /></p>
-<p>We can visualize this in the BAW emulation workflow itself where the items color-coded green are <code>STP</code> and those in orange are the human interaction steps which matches how the main scenario behaves.
+<p>We can visualize this in the BAW emulation workflow itself where the items color-coded green are STP and those in orange are the human interaction steps which matches how the main scenario behaves.
 <img alt="" src="../images/bai-scenario-walkthrough-baw9.png" /></p>
 <p>Once satisfied with the settings the request is submitted by clicking the <code>Run Emulation</code> button option.
 <img alt="" src="../images/bai-scenario-walkthrough-baw10.png" /></p>
-<p>After giving it a few minutes you should start to see the instances getting created and registering in <code>Process Inspector</code> as shown here.
+<p>After giving it a few minutes you should start to see the instances getting created and registering in Process Inspector, as shown here.
 <img alt="" src="../images/bai-scenario-walkthrough-baw11.png" /></p>
 <h2 id="business-automation-insights">Business Automation Insights</h2>
-<p>When new tracking data fields are first encountered in BAI (in Elasticsearch) the <code>Index Pattern</code> that we want to use needs to be refreshed to pick up those field definitions. This is done from the <code>Kibana</code> console by clicking <code>Management</code> then <code>Index Patterns</code> and selecting the <code>Index Pattern</code> you are using, which in this scenario is the <code>process-s*</code> entry. Then click on the <code>Refresh</code> icon as highlighted below and confirm.
+<p>When new tracking data fields are first encountered in BAI (in Elasticsearch) the index pattern that we want to use needs to be refreshed to pick up those field definitions. This is done from the <code>Kibana</code> console by clicking <code>Management</code> then <code>Index Patterns</code> and selecting the index pattern you are using, which in this scenario is the <code>process-s*</code> entry. Then click on the <code>Refresh</code> icon as highlighted below and confirm.
 <img alt="" src="../images/bai-scenario-walkthrough-bai1.png" /></p>
 <p>Next we want to confirm that the events have been received in BAI from BAW and we can see some of the process summaries. We do this by moving to the <code>Discover</code> section in <code>Kibana</code> and then select the <code>Search</code> named <code>Denim Compute - Auto Claims All Processes</code> (you can do this by choosing the <code>Open</code> option and then filtering and finding the target <code>Search</code> definition). The screenshot below shows a point in time view of this <code>Search</code> where it has retrieved 193 hits. Highlighted are the active <code>Filters</code> used to identify the process summaries of interest for our scenario.
 <img alt="" src="../images/bai-scenario-walkthrough-bai2.png" /></p>
-<p>(Note if you are following along in your own environment and you do not see any hits then ensure you have followed the instructions in the <a href="#scenario-installation">Scenario installation</a> section of this document and in the <a href="../../environment/rhos-install-bai/">OpenShift BAI installation</a> section).</p>
-<p>So at this point we are ready to start examining the configured <code>Dashboards</code> in <code>Kibana</code>. Here from the <code>Dashboard</code> section we <code>Open</code> the one named <code>Denim Compute - Active Auto Claims</code> and there we see some <code>Visualizations</code> have been configured and arranged on the <code>Dashboard</code>. Additionally highlighted is a feature in <code>Kibana</code> where you can set the <code>Dashboard</code> to <code>Auto Refresh</code> and set a frequency. You can then also pause and play if you want to halt the refreshes in order to examine something in detail. Also note that there is a breadcrumbs trail that allows for switching between the various <code>Dashboards</code> that will be used for the scenario.
+<p>Note if you are following along in your own environment and you do not see any hits, make sure you have followed the instructions in the <a href="#scenario-installation">Scenario installation</a> section of this document and in the <a href="../../environment/rhos-install-bai/">OpenShift BAI installation</a> section.</p>
+<p>At this point, we are ready to start examining the configured Dashboards in Kibana. Here from the dashboard section we <code>Open</code> the one named <code>Denim Compute - Active Auto Claims</code> and there we see some visualizations have been configured and arranged on the dashboard. Additionally highlighted is a feature in Kibana where you can set the dashboard to <code>Auto Refresh</code> and set a frequency. You can then also pause and play if you want to halt the refreshes in order to examine something in detail. Also note that there is a breadcrumbs trail that allows for switching between the various dashboards that will be used for the scenario.
 <img alt="" src="../images/bai-scenario-walkthrough-bai3.png" /></p>
-<p>Scrolling down the page we can see some variations in types of <code>Visualization</code> and the aggregated data that is displayed on them to highlight certain trends such as the influence of the <code>Weather Condition</code> on the estimate value of the claim. We also have a chart for tracking at what lifecycle stage various in-flight claims are (<code>Active Claims by Age and Status</code>).
+<p>Scrolling down the page we can see some variations in types of visualization and the aggregated data that is displayed on them to highlight certain trends such as the influence of the <code>Weather Condition</code> on the estimate value of the claim. We also have a chart for tracking at what lifecycle stage various in-flight claims are (<code>Active Claims by Age and Status</code>).
 <img alt="" src="../images/bai-scenario-walkthrough-bai4.png" /></p>
-<p>As the <code>Active Claims by Age and Status</code> X axis legend is hard to see with the restricted space you can maximise that <code>Visualization</code> (from the contextual menu on it) to see it in more detail.
+<p>As the <code>Active Claims by Age and Status</code> X-axis legend is hard to see with the restricted space you can maximise that visualization (from the contextual menu on it) to see it in more detail.
 <img alt="" src="../images/bai-scenario-walkthrough-bai4-1.png" /></p>
-<p>You can also use the contextual menu to <code>Inspect</code> the underlying data for a <code>Visualization</code> and even export it out in <code>CSV</code> format.
+<p>You can also use the contextual menu to inspect the underlying data for a visualization and even export it out in CSV format.
 <img alt="" src="../images/bai-scenario-walkthrough-bai4-2.png" /></p>
-<p>After returning back to the main <code>Dashboard</code>view, at the bottom of the page are some <code>Data Table</code> types of <code>Visualization</code> that shows the breakdown of claims by the <code>Vehicle Make</code> for both the <code>insured party</code> and the <code>third party</code> involved. 
+<p>After returning back to the main dashboard view, at the bottom of the page are some data table types of visualization that shows the breakdown of claims by the <code>Vehicle Make</code> for both the <code>insured party</code> and the <code>third party</code> involved. 
 <img alt="" src="../images/bai-scenario-walkthrough-bai5.png" /></p>
-<p>Next we want to look at a different <code>Dashboard</code> that focuses on completed instances, so do that by clicking the <code>Completed Auto Claims</code> breadcrumb link. This <code>Dashboard</code> is named <code>Denim Compute - Completed Auto Claims</code> (note how it has a <code>Filter</code> configured that checks that the <code>completedTime</code> exists). In this <code>Dashboard</code> we can now show <code>Claim Settlement</code> figures and compare them to the <code>Damage Estimates</code>.
+<p>Next we want to look at a different dashboard that focuses on completed instances, so do that by clicking the <code>Completed Auto Claims</code> breadcrumb link. This dashboard is named <code>Denim Compute - Completed Auto Claims</code> (note how it has a filter configured that checks that the <code>completedTime</code> exists). In this dashboard we can now show <code>Claim Settlement</code> figures and compare them to the <code>Damage Estimates</code>.
 <img alt="" src="../images/bai-scenario-walkthrough-bai6.png" /></p>
-<p>Similar to the previous <code>Dashboard</code>, this one uses various <code>Visualizations</code> but this time it focuses on the aggregation of <code>Claim Settlement</code> figures against various dimensions. Also notice that there is a <code>Pie Chart</code> that highlights the breakdown of claims into whether Fraud was suspected or not and then whether it was confirmed or cleared following investigation. We will see later that there is a further <code>Dashboard</code> dedicated to the area of suspected fraudulent claims.
+<p>Similar to the previous dashboard, this one uses various <code>Visualizations</code> but this time it focuses on the aggregation of <code>Claim Settlement</code> figures against various dimensions. Also notice that there is a <code>Pie Chart</code> that highlights the breakdown of claims into whether Fraud was suspected or not and then whether it was confirmed or cleared following investigation. We will see later that there is a further dashboard dedicated to the area of suspected fraudulent claims.
 <img alt="" src="../images/bai-scenario-walkthrough-bai7.png" /></p>
 <p>We again use the set of <code>Gauges</code> that focus on the <code>Policy Cover</code> dimension.
 <img alt="" src="../images/bai-scenario-walkthrough-bai8.png" /></p>
-<p>In the bottom section of the <code>Dashboard</code> we again see the <code>Data Tables</code> organised by <code>Vehicle Make</code> and again focussing on <code>Claim Settlement</code> data.
+<p>In the bottom section of the dashboard we again see the <code>Data Tables</code> organised by <code>Vehicle Make</code> and again focussing on <code>Claim Settlement</code> data.
 <img alt="" src="../images/bai-scenario-walkthrough-bai9.png" /></p>
-<p>With the <code>Visualization</code> named <code>Settlements by Driver Age</code> opened in full screen mode we highlight one of the bars and can see the underlying data, in this case it is reflecting the age profiles (in the emulation we deliberately allocate more claims to certain higher risk age groups).
+<p>With the visualization named <code>Settlements by Driver Age</code> opened in full screen mode we highlight one of the bars and can see the underlying data, in this case it is reflecting the age profiles (in the emulation we deliberately allocate more claims to certain higher risk age groups).
 <img alt="" src="../images/bai-scenario-walkthrough-bai10.png" /></p>
-<p>Next we change to the <code>Dashboard</code> named <code>Denim Compute - Suspected Fraudulent Auto Claims</code> (accessed by clicking on the <code>Suspected Fraudulent Auto Claims</code> breadcrumb).
+<p>Next we change to the dashboard named <code>Denim Compute - Suspected Fraudulent Auto Claims</code> (accessed by clicking on the <code>Suspected Fraudulent Auto Claims</code> breadcrumb).
 <img alt="" src="../images/bai-scenario-walkthrough-bai12.png" /></p>
 <p>It has a small subset of the <code>Visualizations</code> just to illustrate that we can look at similar data but filtered to the subset of data that involves potential and investigated fraud cases.
 <img alt="" src="../images/bai-scenario-walkthrough-bai13.png" /></p>
-<p>The <code>Dashboard</code> is pre-configured with a <code>Filter</code> that is disabled by default. This <code>Filter</code> will allow us to find only those potential frauds that were confirmed by investigation.
+<p>The dashboard is pre-configured with a filter that is disabled by default. This filter will allow us to find only those potential frauds that were confirmed by investigation.
 <img alt="" src="../images/bai-scenario-walkthrough-bai14.png" /></p>
-<p>So to enable this we hover over the <code>Filter</code> where the options become visible, in this case we want the one to <code>Enable filter</code>.
+<p>So to enable this we hover over the filter where the options become visible, in this case we want the one to <code>Enable filter</code>.
 <img alt="" src="../images/bai-scenario-walkthrough-bai15.png" /></p>
-<p>The result is then dynamically updated in the <code>Dashboard</code> and we can see in this example that of the 79 potential frauds in fact 20 were confirmed (and of course in that case the <code>Claim Settlement</code> figures are 0 as no payment is made for fraud cases).
+<p>The result is then dynamically updated in the dashboard and we can see in this example that of the 79 potential frauds in fact 20 were confirmed (and of course in that case the <code>Claim Settlement</code> figures are 0 as no payment is made for fraud cases).
 <img alt="" src="../images/bai-scenario-walkthrough-bai16.png" /></p>
-<p>We can also switch the <code>Filter</code> to <code>Exclude matches</code> which in this case is looking for data on all potential frauds that were not proven 
+<p>We can also switch the filter to <code>Exclude matches</code> which in this case is looking for data on all potential frauds that were not proven 
 <img alt="" src="../images/bai-scenario-walkthrough-bai17.png" /></p>
-<p>Again the <code>Dashboard</code> refreshes to take account of the changed <code>Filter</code> and we see that 59 claims were not proven and in this case they do have payments made that are shown in the <code>Claim Settlement</code> figures.
+<p>Again the dashboard refreshes to take account of the changed filter and we see that 59 claims were not proven and in this case they do have payments made that are shown in the <code>Claim Settlement</code> figures.
 <img alt="" src="../images/bai-scenario-walkthrough-bai18.png" /></p>
-<p>Once the emulation batch of 500 instances have completed in <code>Denim Compute - Completed Auto Claims</code> we now notice that there is an anomaly with the maximum amounts. This is because the emulation logic deliberately throws an "outlier" case into every execution run so that we can highlight here in the <code>Dashboard</code>. We also highlight below that the skewed figure is in the state of Florida.
+<p>Once the emulation batch of 500 instances have completed in <code>Denim Compute - Completed Auto Claims</code> we now notice that there is an anomaly with the maximum amounts. This is because the emulation logic deliberately throws an "outlier" case into every execution run so that we can highlight here in the dashboard. We also highlight below that the skewed figure is in the state of Florida.
 <img alt="" src="../images/bai-scenario-walkthrough-bai19.png" /></p>
-<p>If we select that state in the <code>Region Map</code> a dynamic <code>Filter</code> is added and applied so that the <code>Dashboard</code> now shows data just for that state.
+<p>If we select that state in the <code>Region Map</code> a dynamic filter is added and applied so that the dashboard now shows data just for that state.
 <img alt="" src="../images/bai-scenario-walkthrough-bai20.png" /></p>
-<p>We can also use <code>Exclude matches</code> as we saw before on this new <code>Filter</code> and this allows us to examine the various dimensions without the false trends that the outlier case was contributing to.
+<p>We can also use <code>Exclude matches</code> as we saw before on this new filter and this allows us to examine the various dimensions without the false trends that the outlier case was contributing to.
 <img alt="" src="../images/bai-scenario-walkthrough-bai21.png" /></p>
-<p>Back in the <code>Discover</code> section and with the <code>Search</code> set to <code>Denim Compute - Auto Claims All Processes</code> we can filter for and examine the outlier case. By default a <code>Filter</code> on the state of <code>FL</code> has been provided and disabled so you enable that and it should then show just that one outlier instance.<br />
+<p>Back in the <code>Discover</code> section and with the <code>Search</code> set to <code>Denim Compute - Auto Claims All Processes</code> we can filter for and examine the outlier case. By default a filter on the state of <code>FL</code> has been provided and disabled so you enable that and it should then show just that one outlier instance.<br />
 <img alt="" src="../images/bai-scenario-walkthrough-bai22.png" /></p>
-<p>You can then expand the twisty against the row and it will allow inspecting the data in a <code>Table</code> or as raw <code>JSON</code>.
+<p>You can then expand the twisty against the row and it will allow inspecting the data in a table or as raw JSON.
 <img alt="" src="../images/bai-scenario-walkthrough-bai23.png" /></p>
-<p>You now can see all the tracking data that was summarised into this process summary from the events sent to BAI from BAW. Take a look at some of the key data items and see if you can figure out what unusual set of circumstances led to this large claim and especially the high differential in damage amounts between the two vehicles involved. Also note that no fraud was suspected (see the highlighted tracking field below) even in such odd claim data, this is because the emulation uses random spreads of data and does not use any in depth intelligence in identifying and investigating fraud cases. In a later iteration we will start infusing <code>Artificial Intelligence (AI)</code> into this scenario in order to greatly improve this situation.
+<p>You now can see all the tracking data that was summarised into this process summary from the events sent to BAI from BAW. Take a look at some of the key data items and see if you can figure out what unusual set of circumstances led to this large claim and especially the high differential in damage amounts between the two vehicles involved. Also note that no fraud was suspected (see the highlighted tracking field below) even in such odd claim data, this is because the emulation uses random spreads of data and does not use any in depth intelligence in identifying and investigating fraud cases. In a later iteration, we will start infusing machine learning into this scenario in order to greatly improve this situation.
 <img alt="" src="../images/bai-scenario-walkthrough-bai24.png" /></p>
 <h2 id="scenario-installation">Scenario installation</h2>
 <h3 id="prerequisites">Prerequisites</h3>
@@ -1058,7 +1044,7 @@
 <img alt="" src="../images/bai-scenario-walkthrough-install3.png" /></p>
 </li>
 <li>
-<p>Select the saved <code>Index Pattern</code> definition downloaded from <a href="https://github.com/ibm-cloud-architecture/denim-compute/solution/bai/dc-bai-custom-index-pattern.json"><code>dc-bai-custom-index-pattern.json</code></a> and click <code>Import</code>. (This will import a custom <code>Index Pattern</code> especially for <code>Denim Compute</code> which is configured with formatting of data fields and includes <code>Scripted fields</code>).
+<p>Select the saved index pattern definition downloaded from <a href="https://github.com/ibm-cloud-architecture/denim-compute/blob/master/solution/bai/dc-bai-custom-index-pattern.json"><code>dc-bai-custom-index-pattern.json</code></a> and click <code>Import</code>. This will import a custom index pattern especially for <code>Denim Compute</code> which is configured with formatting of data fields and includes scripted fields.
 <img alt="" src="../images/bai-scenario-walkthrough-install4.png" /></p>
 </li>
 <li>
@@ -1066,7 +1052,7 @@
 <img alt="" src="../images/bai-scenario-walkthrough-install5.png" /></p>
 </li>
 <li>
-<p>Repeat the previous steps to import the definitions downloaded from <a href="https://github.com/ibm-cloud-architecture/denim-compute/solution/bai/dc-bai-dashboards-and-related.json"><code>dc-bai-dashboards-and-related.json</code></a>.
+<p>Repeat the previous steps to import the definitions downloaded from <a href="https://github.com/ibm-cloud-architecture/denim-compute/blob/master/solution/bai/dc-bai-dashboards-and-related.json"><code>dc-bai-dashboards-and-related.json</code></a>.
 <img alt="" src="../images/bai-scenario-walkthrough-install6.png" /></p>
 </li>
 <li>
@@ -1095,7 +1081,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../baca-scenario-walkthrough/" title="BACA scenario walkthrough" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../baca-scenario-walkthrough/" title="BACA scenario" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1104,7 +1090,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                BACA scenario walkthrough
+                BACA scenario
               </span>
             </div>
           </a>

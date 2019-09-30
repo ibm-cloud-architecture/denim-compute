@@ -251,22 +251,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#071219" title="07/12/19" class="md-nav__link">
-    07/12/19
+  <a href="#on-083019" title="On 08/30/19" class="md-nav__link">
+    On 08/30/19
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#080819" title="08/08/19" class="md-nav__link">
-    08/08/19
+  <a href="#on-080819" title="On 08/08/19" class="md-nav__link">
+    On 08/08/19
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#083019" title="08/30/19" class="md-nav__link">
-    08/30/19
+  <a href="#on-071219" title="On 07/12/19" class="md-nav__link">
+    On 07/12/19
   </a>
   
 </li>
@@ -335,11 +335,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
     
     <label class="md-nav__link" for="nav-2-2">
-      Scenarios
+      Scenario walkthroughs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-2-2">
-        Scenarios
+        Scenario walkthroughs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -362,8 +362,8 @@
 
 
   <li class="md-nav__item">
-    <a href="usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario walkthrough" class="md-nav__link">
-      Main scenario walkthrough
+    <a href="usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario" class="md-nav__link">
+      Main scenario
     </a>
   </li>
 
@@ -374,8 +374,8 @@
 
 
   <li class="md-nav__item">
-    <a href="usecase/baca-scenario-walkthrough/" title="BACA scenario walkthrough" class="md-nav__link">
-      BACA scenario walkthrough
+    <a href="usecase/baca-scenario-walkthrough/" title="BACA scenario" class="md-nav__link">
+      BACA scenario
     </a>
   </li>
 
@@ -386,8 +386,8 @@
 
 
   <li class="md-nav__item">
-    <a href="usecase/bai-scenario-walkthrough/" title="BAI scenario walkthrough" class="md-nav__link">
-      BAI scenario walkthrough
+    <a href="usecase/bai-scenario-walkthrough/" title="BAI scenario" class="md-nav__link">
+      BAI scenario
     </a>
   </li>
 
@@ -875,22 +875,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#071219" title="07/12/19" class="md-nav__link">
-    07/12/19
+  <a href="#on-083019" title="On 08/30/19" class="md-nav__link">
+    On 08/30/19
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#080819" title="08/08/19" class="md-nav__link">
-    08/08/19
+  <a href="#on-080819" title="On 08/08/19" class="md-nav__link">
+    On 08/08/19
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#083019" title="08/30/19" class="md-nav__link">
-    08/30/19
+  <a href="#on-071219" title="On 07/12/19" class="md-nav__link">
+    On 07/12/19
   </a>
   
 </li>
@@ -928,31 +928,32 @@
                 
                 <h1 id="introduction">Introduction</h1>
 <p><img src="./images/denim-compute.png"/>The goal of <em>Denim Compute</em> is to provide a reference implementation for a <em>Digital Business Automation</em> (DBA) solution on Kubernetes application platforms.</p>
-<p>Denim Compute relies on the automobile insurance claim processing use case, a poster child of business automation, and focuses on the capabilities available in the <a href="https://www.ibm.com/cloud/cloud-pak-for-automation">IBM Cloud Pak for Automation</a> to implement it. As of <a href="https://www-01.ibm.com/support/docview.wss?uid=ibm10878709">version 19.0.1</a> of the Cloud Pak, these capabilities are:</p>
+<p>Denim Compute relies on the automobile insurance claim processing use case, a poster child of business automation applications, and focuses on the capabilities available in the <a href="https://www.ibm.com/cloud/cloud-pak-for-automation">IBM Cloud Pak for Automation</a> to implement it. As of <a href="https://www-01.ibm.com/support/docview.wss?uid=ibm10878709">version 19.0.1</a> of the Cloud Pak, these capabilities are:</p>
 <ul>
 <li><em>Workflow</em>, with the Business Automation Workflow (BAW) component.</li>
 <li><em>Content Management</em>, with the FileNet Content Manager component.</li>
-<li><em>Decisions</em>, with the Operational Decision Manager (ODM) component</li>
-<li><em>Operational Intelligence</em>, with the Business Automation Insights (BAI) component</li>
-<li><em>Capture</em>, with the Business Automation Content Analyzer (BACA) component</li>
+<li><em>Decisions</em>, with the Operational Decision Manager (ODM) component.</li>
+<li><em>Operational Intelligence</em>, with the Business Automation Insights (BAI) component.</li>
+<li><em>Capture</em>, with the Business Automation Content Analyzer (BACA) component.</li>
 </ul>
 <p>With this reference implementation, we intend to illustrate how the different capabilities of the platform come together through the sample use case to create a holistic automation solution. This includes demonstrating:</p>
 <ul>
 <li>How to install the different components of the Cloud Pak for Automation on a private cloud environment.</li>
-<li>When to use a mix of ad-hoc (Case Management) and sequential activities (BPMN)</li>
+<li>When to use a mix of ad-hoc (Case Management) and sequential activities (BPMN).</li>
 <li>How to implement the hand-shake between Case and BPMN, and the exchange of data elements.</li>
 <li>How a machine learning model can be used in conjunction with ODM to render decisions.</li>
 <li>How to use BAI to monitor business events from decisions and process execution.</li>
-<li>How to use BACA to capture data from unstructured documents</li>
+<li>How to use BACA to capture data from unstructured documents.</li>
 </ul>
 <p>Since the Cloud Pak for Automation is on a continuous release schedule, the architecture and implementation of Denim Compute will be aligned with the new features and capabilities of the pak as they become available. So check back often for improvements and extensions in the <a href="#whats-new">What's new</a> section below.</p>
 <hr />
 <h2 id="whats-new">What's new <a name="whats-new"></a></h2>
-<h3 id="071219">07/12/19</h3>
+<h3 id="on-083019">On 08/30/19</h3>
+<p>The following features have been added:</p>
 <ul>
-<li>Initial release.</li>
+<li><a href="/usecase/baca-scenario-walkthrough/">BACA integration scenario</a>: The Denim Compute implementation now demonstrates automatic detection of an uploaded repair shop estimate and extraction of data from it using BACA.</li>
 </ul>
-<h3 id="080819">08/08/19</h3>
+<h3 id="on-080819">On 08/08/19</h3>
 <p>The following features have been added:</p>
 <ul>
 <li>
@@ -962,10 +963,9 @@
 <p><a href="usecase/bai-scenario-walkthrough/">BAI dashboards for BPMN</a>: The Denim Compute implementation now demonstrates the monitoring of BPM business events with complex BAI dashboards.</p>
 </li>
 </ul>
-<h3 id="083019">08/30/19</h3>
-<p>The following features have been added:</p>
+<h3 id="on-071219">On 07/12/19</h3>
 <ul>
-<li><a href="/usecase/baca-scenario-walkthrough/">BACA integration scenario</a>: The Denim Compute implementation now demonstrates automatic detection of an uploaded repair shop estimate and extraction of data from it using BACA.</li>
+<li>Published the initial release.</li>
 </ul>
 <hr />
 <h2 id="documentation">Documentation</h2>

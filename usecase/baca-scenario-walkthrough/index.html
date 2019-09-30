@@ -36,7 +36,7 @@
     
     
       
-        <title>BACA scenario walkthrough - Denim Compute - A Cloud Pak for Automation reference implementation</title>
+        <title>BACA scenario - Denim Compute - A Cloud Pak for Automation reference implementation</title>
       
     
     
@@ -105,7 +105,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                BACA scenario walkthrough
+                BACA scenario
               
             </span>
           
@@ -267,11 +267,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
     
     <label class="md-nav__link" for="nav-2-2">
-      Scenarios
+      Scenario walkthroughs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-2-2">
-        Scenarios
+        Scenario walkthroughs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -294,8 +294,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario walkthrough" class="md-nav__link">
-      Main scenario walkthrough
+    <a href="../resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario" class="md-nav__link">
+      Main scenario
     </a>
   </li>
 
@@ -315,11 +315,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        BACA scenario walkthrough
+        BACA scenario
       </label>
     
-    <a href="./" title="BACA scenario walkthrough" class="md-nav__link md-nav__link--active">
-      BACA scenario walkthrough
+    <a href="./" title="BACA scenario" class="md-nav__link md-nav__link--active">
+      BACA scenario
     </a>
     
       
@@ -331,13 +331,6 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" title="Introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#scenario-installation" title="Scenario installation" class="md-nav__link">
@@ -384,8 +377,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../bai-scenario-walkthrough/" title="BAI scenario walkthrough" class="md-nav__link">
-      BAI scenario walkthrough
+    <a href="../bai-scenario-walkthrough/" title="BAI scenario" class="md-nav__link">
+      BAI scenario
     </a>
   </li>
 
@@ -865,13 +858,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" title="Introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#scenario-installation" title="Scenario installation" class="md-nav__link">
     Scenario installation
   </a>
@@ -919,35 +905,34 @@
                 
                 
                 <h1 id="baca-scenario-walkthrough">BACA scenario walkthrough</h1>
-<h2 id="introduction">Introduction</h2>
-<p>This scenario builds on the <a href="/usecase/resources/denim-compute-scenario-walkthrough.pdf">Main scenario</a>. It follows an alternate path whereby, instead of a Repairer interacting with the Process Portal to submit a repair estimate, they send it in a PDF document which is then detected and sent to Business Automation Content Analyzer (BACA) for processing. BACA identifies relevant content based on a modeled ontology.</p>
-<p>Business Automation Workflow (BAW) interacts with BACA in this scenario via an intermediary microservice (implemented in Node.js) deployed on the OCP cluster.</p>
+<p>This scenario builds on the <a href="../resources/denim-compute-scenario-walkthrough.pdf">main scenario</a>. It follows an alternate path whereby, instead of a Repairer interacting with the Process Portal to submit a repair estimate, they send it in a PDF document which is then detected and sent to Business Automation Content Analyzer (BACA) for processing. BACA identifies relevant content based on a modeled ontology.</p>
+<p>Business Automation Workflow (BAW) interacts with BACA in this scenario via an intermediary micro-service (implemented in Node.js) deployed on the OCP cluster.</p>
 <h2 id="scenario-installation">Scenario installation</h2>
 <p>You should have:</p>
 <ul>
 <li>
-<p>Installed the Cloud Pak for Automation as instructed in the various installation guidance documents in the <a href="/environment/rhos-intro/">OpenShift</a> environment section.</p>
+<p>Installed the Cloud Pak for Automation as instructed in the various installation guidance documents in the <a href="../../environment/rhos-intro/">OpenShift</a> environment section.</p>
 </li>
 <li>
-<p>Followed the instructions in <a href="/showtime/deploy-solution/">Showtime Deploy</a> and <a href="/showtime/run-solution/">Showtime Run</a> to deploy and configure the BAW, BACA and Node.js microservice solutions.</p>
+<p>Followed the instructions in <a href="../../showtime/deploy-solution/">Showtime Deploy</a> and <a href="../../showtime/run-solution/">Showtime Run</a> to deploy and configure the BAW, BACA and Node.js micro-service solutions.</p>
 </li>
 <li>
-<p>Downloaded the two PDF documents from <a href="https://github.com/ibm-cloud-architecture/denim-compute/solution/baca">this</a> directory.</p>
+<p>Downloaded the two PDF documents from <a href="https://github.com/ibm-cloud-architecture/denim-compute/tree/master/solution/baca">this directory</a>.</p>
 </li>
 </ul>
 <h2 id="scenario-starting-point">Scenario starting point</h2>
-<p>As this scenario builds on the <a href="/usecase/resources/denim-compute-scenario-walkthrough.pdf">Main scenario</a>, it is recommended that a reader familiarises themselves with that first. In that document repair estimates are solicited from 4 repair shops (page 36) and we see work items in the BAW Process Portal.</p>
-<p>We are going to show that one of those repair shops (highlighted below) will in parallel send a PDF that will be automatically processed by BACA, and if successful, then the work item in <code>Process Portal</code> will be cancelled.
+<p>As this scenario builds on the <a href="../resources/denim-compute-scenario-walkthrough.pdf">main scenario</a>, it is recommended that a reader familiarises themselves with that first. In that document repair estimates are solicited from 4 repair shops (page 36) and we see work items in the BAW Process Portal.</p>
+<p>We are going to show that one of those repair shops (highlighted below) will in parallel send a PDF that will be automatically processed by BACA, and if successful, then the work item in Process Portal will be cancelled.
 <img alt="" src="../images/baca-scenario1.png" /></p>
-<p>As the scenario is going to interact with a Node.js microservice deployed to OCP, we first will look at the deployed component, here we see inside the <code>baca-mediator-app</code> project that there is a <code>Deployment Config</code> named <code>rhocp-baca-mediator</code>.</p>
+<p>As the scenario will interact with a Node.js micro-service deployed on the OCP cluster, we first look at the <code>baca-mediator-app</code> project that uses a deployment config named <code>rhocp-baca-mediator</code>.</p>
 <p><img alt="" src="../images/baca-scenario2.png" /></p>
-<p>The deployment config references a Kubernetes pod shown below.
+<p>The deployment config references a Kubernetes pod shown below:
 <img alt="" src="../images/baca-scenario3.png" /></p>
-<p>Selecting the pod and then the Logs section shows the output of the container, and in this case shows that the microservice is initialised and awaiting requests.
+<p>Selecting the pod and then the Logs section shows the output of the container, and in this case shows that the micro-service is initialised and awaiting requests.
 <img alt="" src="../images/baca-scenario4.png" /></p>
 <h2 id="upload-invalid-estimate-pdf">Upload invalid estimate PDF</h2>
-<p>We are going to demonstrate first with a deliberately malformed PDF of an estimate which does not follow agreed conventions and will not be able to result in it being parsed into a valid estimate that can be processed.</p>
-<p>In the <code>BAW Case Client</code> a Case worker searches on the <code>Insured LName</code> and finds the relevant in-progress Case instance (in this example there are several for a policy holder named <code>Simmons</code>). They then click on it to open the <code>Case Summary</code> page.
+<p>We are going to demonstrate first with a deliberately malformed PDF of an estimate, which does not follow agreed conventions and will not be able to result in it being parsed into a valid estimate.</p>
+<p>In the BAW Case Client, a Case worker searches on the <code>Insured LName</code> and finds the relevant in-progress Case instance (in this example there are several for a policy holder named <code>Simmons</code>). They then click on it to open the <code>Case Summary</code> page.
 <img alt="" src="../images/baca-scenario5.png" /></p>
 <p>They next go to the <code>Documents</code> tab and select the target folder <code>Repair Estimates and Invoices</code> as shown below.
 <img alt="" src="../images/baca-scenario6.png" /></p>
@@ -957,9 +942,9 @@
 <img alt="" src="../images/baca-scenario8.png" /></p>
 <p>In the document upload dialog, the worker chooses the <code>Auto Repair Estimate Document Class</code> which then displays a list of metadata properties (please ignore the <code>Claim Number</code> option - this is due to an issue in the test environment were it retained an older reference from an earlier version of the <code>Document Class</code> definition). They browse and select the file named <code>error-estimate-example1.pdf</code> and ensure they choose the matching <code>Vehicle VIN</code> and <code>Repairer Code</code>. When happy with the selections, clicking <code>Add</code> will complete the upload. 
 <img alt="" src="../images/baca-scenario9.png" /></p>
-<p>At this point we want to examine how BAW detects the uploaded document for the defined <code>Auto Repair Estimate Document Class</code> and starts processing it. In the Process Admin Console, we go to the <code>Process Inspector</code> where we can see that an instance of <code>Process Repair Estimate</code> has been started.
+<p>At this point, we want to examine how BAW detects the uploaded document for the defined <code>Auto Repair Estimate Document Class</code> and starts processing it. In the Process Admin Console, we go to the <code>Process Inspector</code> where we can see that an instance of <code>Process Repair Estimate</code> has been started.
 <img alt="" src="../images/baca-scenario10.png" /></p>
-<p>That process in turn invokes the microservice and we can see the log outputs of that interaction back in OCP for the pod, as shown below. If you examine that output closely you will see that several of the debugging log outputs show that some data has invalid values.
+<p>That process in turn invokes the micro-service and we can see the log outputs of that interaction back in OCP for the pod, as shown below. If you examine that output closely you will see that several of the debugging log outputs show that some data has invalid values.
 <img alt="" src="../images/baca-scenario11.png" /></p>
 <p>If we now access the BAW Process Portal, we can see that a new work item has been created named <code>Display Vehicle Estimate Errors</code>. In the process it detects when it cannot process the uploaded PDF correctly to arrive at a valid estimate and so creates this work item to report on it.
 <img alt="" src="../images/baca-scenario12.png" /></p>
@@ -970,12 +955,12 @@
 <h2 id="upload-valid-estimate-pdf">Upload valid estimate PDF</h2>
 <p>Having seen the principles behind the scenario, we can now look at the "happy path". This time the case worker selects the valid document <code>apcars-estimate-example1.pdf</code> to add to the target folder (<code>Repair Estimates and Invoices</code>).
 <img alt="" src="../images/baca-scenario15.png" /></p>
-<p>In Process Inspector, we can observe that a second instance of <code>Process Repair Estimate</code> has executed and this time it has completed. We can also see highlighted the event data that has been extracted from the document by the combination of the mediator microservice and BACA.</p>
+<p>In Process Inspector, we can observe that a second instance of <code>Process Repair Estimate</code> has executed and this time it has completed. We can also see highlighted the event data that has been extracted from the document by the combination of the mediator micro-service and BACA.</p>
 <p>This is then used to send an interrupting event to the instance of the process that is awaiting the completion of the earlier work item for this specific repairer. (Note you can also look again at the OCP logs for the pod and see the fresh debugging output for this newly uploaded PDF).
 <img alt="" src="../images/baca-scenario16.png" /></p>
-<p>And finally, to verify that this has happened, in BAW Process Portal, we can see that the list of work items refreshes and the one for <code>Athelstan Prestige Cars</code> is no longer there. At this point the <a href="/usecase/resources/denim-compute-scenario-walkthrough.pdf">Main scenario</a> would continue from page 44.
+<p>And finally, to verify that this has happened, in BAW Process Portal, we can see that the list of work items refreshes and the one for <code>Athelstan Prestige Cars</code> is no longer there. At this point, the <a href="../resources/denim-compute-scenario-walkthrough.pdf">main scenario</a> would continue from page 44.
 <img alt="" src="../images/baca-scenario17.png" /></p>
-<p>So now we have seen the interaction between BAW and BACA via a mediator microservice deployed on OCP.</p>
+<p>So now we have seen the interaction between BAW and BACA via a mediator micro-service deployed on OCP.</p>
                 
                   
                 
@@ -996,7 +981,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario walkthrough" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1005,19 +990,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Main scenario walkthrough
+                Main scenario
               </span>
             </div>
           </a>
         
         
-          <a href="../bai-scenario-walkthrough/" title="BAI scenario walkthrough" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../bai-scenario-walkthrough/" title="BAI scenario" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                BAI scenario walkthrough
+                BAI scenario
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

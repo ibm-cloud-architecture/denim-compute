@@ -263,11 +263,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
     
     <label class="md-nav__link" for="nav-2-2">
-      Scenarios
+      Scenario walkthroughs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-2-2">
-        Scenarios
+        Scenario walkthroughs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -290,8 +290,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario walkthrough" class="md-nav__link">
-      Main scenario walkthrough
+    <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario" class="md-nav__link">
+      Main scenario
     </a>
   </li>
 
@@ -302,8 +302,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../usecase/baca-scenario-walkthrough/" title="BACA scenario walkthrough" class="md-nav__link">
-      BACA scenario walkthrough
+    <a href="../../usecase/baca-scenario-walkthrough/" title="BACA scenario" class="md-nav__link">
+      BACA scenario
     </a>
   </li>
 
@@ -314,8 +314,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../usecase/bai-scenario-walkthrough/" title="BAI scenario walkthrough" class="md-nav__link">
-      BAI scenario walkthrough
+    <a href="../../usecase/bai-scenario-walkthrough/" title="BAI scenario" class="md-nav__link">
+      BAI scenario
     </a>
   </li>
 
@@ -736,8 +736,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bai-kibana-search-index-patterns" title="BAI (Kibana) Search Index Patterns" class="md-nav__link">
-    BAI (Kibana) Search Index Patterns
+  <a href="#bai-kibana-search-index-patterns" title="BAI (Kibana) search index patterns" class="md-nav__link">
+    BAI (Kibana) search index patterns
   </a>
   
 </li>
@@ -912,8 +912,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bai-kibana-search-index-patterns" title="BAI (Kibana) Search Index Patterns" class="md-nav__link">
-    BAI (Kibana) Search Index Patterns
+  <a href="#bai-kibana-search-index-patterns" title="BAI (Kibana) search index patterns" class="md-nav__link">
+    BAI (Kibana) search index patterns
   </a>
   
 </li>
@@ -960,47 +960,47 @@
                 
                 <h1 id="insights-development">Insights development</h1>
 <h2 id="introduction">Introduction</h2>
-<p>This section provides more in depth details to the design information in the <a href="../../design/insights/">Insights design</a> section. </p>
+<p>This section provides more in depth details to the design information in the <a href="../../design/insights/">insights design</a> section. </p>
 <p>In order to integrate from BAW to BAI we have augmented different BAW solutions. The main scenario (see the <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf">main scenario walkthrough</a>) is configured but as this involved a lot of human interaction it takes some time to progress through instances. In order to generate load and demonstrate realistic levels of claim cases we also have an emulated process and this is used as the basis for the BAI Dashboards as demonstrated in the <a href="../../usecase/bai-scenario-walkthrough/">BAI scenario walkthrough</a>.</p>
 <h2 id="baw-tracking-general">BAW tracking (general)</h2>
-<p>The data to be tracked in the workflows and sent to BAI as <code>Dynamic Event Framework (DEF)</code> events is defined in <code>Tracking Groups</code> in the <code>BAW Toolkit</code> named <code>Denim Compute Auto Claims - Common</code>.
+<p>The data to be tracked in the workflows and sent to BAI as Dynamic Event Framework (DEF) events is defined in tracking groups in the BAW Toolkit named <code>Denim Compute Auto Claims - Common</code>.
 <img alt="" src="../images/insights-devt-baw1.png" /></p>
-<p>Here you see they are found in the <code>Performance</code> section within <code>Process Designer</code>. <code>AutoClaimTG</code> is used to track static data that is available at the start of the workflow while <code>AutoClaimUpdatesTG</code> tracks more dynamic data that is updated in several places as the workflow progresses through to final settlement of the claim.
+<p>Here you see they are found in the <code>Performance</code> section within Process Designer. <code>AutoClaimTG</code> is used to track static data that is available at the start of the workflow while <code>AutoClaimUpdatesTG</code> tracks more dynamic data that is updated in several places as the workflow progresses through to final settlement of the claim.
 <img alt="" src="../images/insights-devt-baw2.png" /></p>
-<p>Here we see the details within one of the <code>Tracking Groups</code> and highlighted is one of the <code>Tracked Fields</code> named <code>lossDateReported</code> of type <code>Date/Time</code>.
+<p>Here we see the details within one of the tracking groups and highlighted is one of the tracked fields named <code>lossDateReported</code> of type <code>Date/Time</code>.
 <img alt="" src="../images/insights-devt-baw3.png" /></p>
 <h2 id="baw-tracking-main-scenario">BAW tracking (main scenario)</h2>
 <p>For further information on the workflow itself please see <a href="../workflow-intro/">Development - Workflow</a>. In the main scenario workflow the tracking points are set in <code>Initiate Claims Processing</code> as highlighted in the image below.
 <img alt="" src="../images/insights-devt-baw4.png" /></p>
-<p>The <code>linked process</code> named <code>Loss Assessment</code> also has some additional tracking points defined as shown below.
+<p>The linked process named <code>Loss Assessment</code> also has some additional tracking points defined as shown below.
 <img alt="" src="../images/insights-devt-baw5.png" /></p>
-<p>The <code>Post Tracking Point</code> on the activity <code>Claim Initial Preparation</code> is highlighted below. Here you can see that it is <code>Tracking Group</code> named <code>AutoClaimTG</code> that is used and has data from the variables of the process mapped to the <code>tracked fields</code>. 
+<p>The post tracking point on the activity <code>Claim Initial Preparation</code> is highlighted below. Here you can see that it is tracking group named <code>AutoClaimTG</code> that is used and has data from the variables of the process mapped to the tracked fields. 
 <img alt="" src="../images/insights-devt-baw6.png" /></p>
-<p>In the rest of the process the more dynamic data is mapped in various places to <code>AutoClaimUpdatesTG</code>. In the highlighted example an explicit <code>Tracking Intermediate Event</code>is used because you cannot map to two different <code>Tracking Groups</code> at the same point, so because the data is available after <code>Claim Initial Preparation</code> we need this additional tracking point to capture the dynamic updates in <code>AutoClaimUpdatesTG</code>.
+<p>In the rest of the process the more dynamic data is mapped in various places to <code>AutoClaimUpdatesTG</code>. In the highlighted example an explicit tracking intermediate event is used because you cannot map to two different tracking groups at the same point, so because the data is available after <code>Claim Initial Preparation</code> we need this additional tracking point to capture the dynamic updates in <code>AutoClaimUpdatesTG</code>.
 <img alt="" src="../images/insights-devt-baw7.png" /></p>
 <h2 id="baw-tracking-emulated-scenario">BAW tracking (emulated scenario)</h2>
 <p>For further information on the workflow itself please see the <a href="../bai-emulated-workflow/">Workflow for emulated BAI</a> section. In the emulated scenario workflow the tracking points are set in <code>Emulate Auto Claim Processing</code> as highlighted in the image below.
 <img alt="" src="../images/insights-devt-baw8.png" /></p>
-<p>The <code>Pre Tracking Point</code> on the activity <code>Claim Initial Preparation</code> is highlighted below. Here you can see that it is <code>Tracking Group</code> named <code>AutoClaimTG</code> that is used and has data from the variables of the process mapped to the <code>tracked fields</code>.
+<p>The pre-tracking point on the activity <code>Claim Initial Preparation</code> is highlighted below. Here you can see that it is tracking group named <code>AutoClaimTG</code> that is used and has data from the variables of the process mapped to the tracked fields.
 <img alt="" src="../images/insights-devt-baw9.png" /></p>
-<p>The <code>Post Tracking Point</code> on the activity <code>Claim Initial Preparation</code> is highlighted below. Here you can see that it is <code>Tracking Group</code> named <code>AutoClaimUpdatesTG</code> that is used and has data from the variables of the process mapped to the <code>tracked fields</code>. This differs slightly from the main scenario it emulates due to the fact that there the initial data for tracking is available at the start of <code>Claim Initial Preparation</code> (because the workflow configures the emulated data prior to this activity).
+<p>The post-tracking point on the activity <code>Claim Initial Preparation</code> is highlighted below. Here you can see that it is tracking group named <code>AutoClaimUpdatesTG</code> that is used and has data from the variables of the process mapped to the tracked fields. This differs slightly from the main scenario it emulates due to the fact that there the initial data for tracking is available at the start of <code>Claim Initial Preparation</code> (because the workflow configures the emulated data prior to this activity).
 <img alt="" src="../images/insights-devt-baw10.png" /></p>
-<h2 id="bai-kibana-search-index-patterns">BAI (Kibana) Search Index Patterns</h2>
-<p>In the <code>BAI Kibana Dashboards</code> some of the <code>Visualizations</code> reference <code>Scripted fields</code> defined on an <code>Index Pattern</code>. These are used where there is a requirement to derive or calculate data fields from the source <code>tracked fields</code> passed as events. The <code>Scripted fields</code> section is shown here on <code>process-s*</code> which is the chosen <code>Index Pattern</code> that has been used as the basis for <code>Searches</code>, <code>Visualizations</code>, and <code>Dashboards</code>.
+<h2 id="bai-kibana-search-index-patterns">BAI (Kibana) search index patterns</h2>
+<p>In the Kibana dashboards some of the visualizations reference scripted fields defined on an index pattern. These are used where there is a requirement to derive or calculate data fields from the source tracked fields passed as events. The scripted fields section is shown here on <code>process-s*</code> which is the chosen index pattern that has been used as the basis for searches, visualizations, and dashboards.
 <img alt="" src="../images/insights-devt-baw11.png" /></p>
-<p>Below you can see that three <code>Scripted fields</code> have been defined named <code>ClaimDelta</code>, <code>Settlement Duration</code>, and <code>FormattedLossDate</code>. <code>ClaimDelta</code> is used to calculate the difference between estimate and settlement amounts in the claim which is then used in the <code>Visualization</code> named <code>Denim Compute - Delta Amounts</code>. <code>SettlementDuration</code> is used to calculate the time difference between the date the loss was reported and the date the claim was settled. <code>FormattedLossDate</code> is just a way to display the loss date in a more condensed format in order to display it more succinctly on the <code>Visualization</code> named <code>Denim Compute - Settlement Duration by Loss Status</code>.
+<p>Below you can see that three scripted fields have been defined named <code>ClaimDelta</code>, <code>Settlement Duration</code>, and <code>FormattedLossDate</code>. <code>ClaimDelta</code> is used to calculate the difference between estimate and settlement amounts in the claim which is then used in the visualization named <code>Denim Compute - Delta Amounts</code>. <code>SettlementDuration</code> is used to calculate the time difference between the date the loss was reported and the date the claim was settled. <code>FormattedLossDate</code> is just a way to display the loss date in a more condensed format in order to display it more succinctly on the visualization named <code>Denim Compute - Settlement Duration by Loss Status</code>.
 <img alt="" src="../images/insights-devt-baw12.png" /></p>
 <h2 id="bai-kibana-searches">BAI (Kibana) searches</h2>
-<p>The data events sent from BAW to BAI are organized into active and completed summaries. BAI then has a number of <code>Index Patterns</code> defined that reference the <code>ElasticSearch</code> indices for these summaries. For the scenario end goal of showing claim summaries on various charts (<code>Visualizations</code>) we want just the top level process summary information. Here in the <code>Search</code> definition named <code>Denim Compute - Auto Claims All Processes</code> we are using the <code>process-s* Index Pattern</code> and have configured various <code>Filters</code> so that we only see process level data for our process application. Note there are a number of <code>Filters</code> configured and set as disabled. What this allows is for the user to turn them on / off in order to search for specific results in here while leaving the default saved settings that are relied upon by the <code>Visualizations</code> that aggregate the data for display in the <code>Dashboards</code>.
+<p>The data events sent from BAW to BAI are organized into active and completed summaries. BAI then has a number of index patterns defined that reference the <code>ElasticSearch</code> indices for these summaries. For the scenario end-goal of showing claim summaries on various charts (visualizations) we want just the top level process summary information. Here in the <code>Search</code> definition named <code>Denim Compute - Auto Claims All Processes</code> we are using the <code>process-s*</code> index pattern and have configured various filters so that we only see process level data for our process application. Note there are a number of filters configured and set as disabled. What this allows is for the user to turn them on / off in order to search for specific results in here while leaving the default saved settings that are relied upon by the visualizations that aggregate the data for display in the dashboards.
 <img alt="" src="../images/insights-devt-baw13.png" /></p>
 <p>The <code>Search</code> is configured with viewable columns based on the <code>Selected fields</code> section where these fields have been added from the <code>Available fields</code> section below.
 <img alt="" src="../images/insights-devt-baw14.png" /></p>
 <h2 id="bai-kibana-visualizations">BAI (Kibana) visualizations</h2>
-<p>All of the <code>Visualizations</code> defined start with the keywords "Denim Compute" and can be found by providing a search entry as shown here.
+<p>All of the visualizations defined start with the keywords "Denim Compute" and can be found by providing a search entry as shown here.
 <img alt="" src="../images/insights-devt-baw15.png" /></p>
 <p>To take an example of a <code>Pie</code> type here you see <code>Denim Compute - Claims by Fraud Status</code> and it references the <code>Search</code> we discussed in the previous section. In this example it uses a <code>Count aggregation</code> and then divides the <code>Pie</code> into <code>Buckets</code> based on the unique <code>Terms</code> found in the events for the <code>claimFraudStatus tracked field</code>.
 <img alt="" src="../images/insights-devt-baw16.png" /></p>
-<p>In the <code>Options</code> section here we could have elected to <code>Show Labels</code> however we found that they did not resize properly when subsequently laying out in the available space of the target <code>Dashboard</code> which seems to be a <code>Kibana</code> issue.
+<p>In the <code>Options</code> section here we could have elected to <code>Show Labels</code> however we found that they did not resize properly when subsequently laying out in the available space of the target dashboard which seems to be a <code>Kibana</code> issue.
 <img alt="" src="../images/insights-devt-baw17.png" /></p>
 <p>An example of a <code>Metric</code> type is shown here in <code>Denim Compute - Delta Amounts</code>. The <code>Metrics</code> section shows that the source field is the <code>ClaimData Scripted field</code> discussed earlier.
 <img alt="" src="../images/insights-devt-baw18.png" /></p>
@@ -1018,15 +1018,15 @@
 <img alt="" src="../images/insights-devt-baw24.png" /></p>
 <p>In <code>Denim Compute - Avg Settlement by Vehicle Make</code> we have an example of a <code>Data Table</code> type that organises settlement amounts according to the policy holder's vehicle make and within that the vehicle make of the other vehicle involved. In the <code>Buckets</code> section the <code>Split Table</code> setting arranges columns of the <code>insuredVehicleMake tracked field</code> and <code>Split Rows</code> further sub-divides each row against the <code>otherVehicleMake tracked field</code>.
 <img alt="" src="../images/insights-devt-baw25.png" /></p>
-<p>When using this <code>Data Table</code> we spotted a deficiency in the options the <code>Kibana Visualization</code> provides. Ideally we want to display the average figures for the column as well as for the intersections of insured vehicle / other vehicle. However the only option is to <code>Show total</code> which in facts adds all the averages up and is not what we want. This is not displayed on the provided saved <code>Visualization</code> named <code>Denim Compute - Avg Settlement by Vehicle Make</code>, we are only showing it here in order to illustrate the issue).
+<p>When using this <code>Data Table</code> we spotted a deficiency in the options the <code>Kibana Visualization</code> provides. Ideally we want to display the average figures for the column as well as for the intersections of insured vehicle / other vehicle. However the only option is to <code>Show total</code> which in facts adds all the averages up and is not what we want. This is not displayed on the provided saved visualization named <code>Denim Compute - Avg Settlement by Vehicle Make</code>, we are only showing it here in order to illustrate the issue).
 <img alt="" src="../images/insights-devt-baw26.png" /></p>
 <p>There are various other <code>Visualizations</code> for you to explore, we have covered the essential ones here that illustrate some of the data and configuration patterns used.</p>
 <h2 id="bai-kibana-dashboards">BAI (Kibana) dashboards</h2>
 <p>The Kibana Dashboards provided for the scenario are shown below.
 <img alt="" src="../images/insights-devt-baw27.png" /></p>
-<p>Looking in more detail at one of them (<code>Denim Compute - Completed Auto Claims</code>), here we have <code>Filters</code> defined on the <code>Dashboard</code> itself. This allows for reusing <code>Visualizations</code> and their underlying <code>Searches</code> across different <code>Dashboards</code> by setting <code>Filters</code> here that are specific to the intent of the <code>Dashboard</code> (in this case to only focus on completed Auto Claim instances). Navigating between the provided <code>Dashboards</code> is achieved by <code>breadcrumbs</code> implemented in <code>Markdown</code> in a special type of <code>Markdown Visualization</code>. Also highlighted are two of the earlier covered <code>Visualizations</code> laid out as tiles on the <code>Dashboard</code>. 
+<p>Looking in more detail at one of them (<code>Denim Compute - Completed Auto Claims</code>), here we have filters defined on the dashboard itself. This allows for reusing <code>Visualizations</code> and their underlying <code>Searches</code> across different <code>Dashboards</code> by setting filters here that are specific to the intent of the dashboard (in this case to only focus on completed Auto Claim instances). Navigating between the provided <code>Dashboards</code> is achieved by <code>breadcrumbs</code> implemented in <code>Markdown</code> in a special type of <code>Markdown Visualization</code>. Also highlighted are two of the earlier covered <code>Visualizations</code> laid out as tiles on the dashboard. 
 <img alt="" src="../images/insights-devt-baw28.png" /></p>
-<p>Below you see the different <code>Filters</code> defined for the other <code>Dashboards</code> in the scenario. There is also a disabled <code>Filter</code> in the case of <code>Denim Compute - Suspected Fraudulent Auto Claims</code> which means all potential frauds are displayed by default. The end user can then enable and adjust the provided filter to drill down into the sub-categories of suspected fraud (those confirmed to be real frauds versus those cleared by the fraud investigation).
+<p>Below you see the different filters defined for the other <code>Dashboards</code> in the scenario. There is also a disabled filter in the case of <code>Denim Compute - Suspected Fraudulent Auto Claims</code> which means all potential frauds are displayed by default. The end user can then enable and adjust the provided filter to drill down into the sub-categories of suspected fraud (those confirmed to be real frauds versus those cleared by the fraud investigation).
 <img alt="" src="../images/insights-devt-baw29.png" /></p>
                 
                   

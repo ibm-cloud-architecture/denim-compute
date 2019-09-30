@@ -263,11 +263,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
     
     <label class="md-nav__link" for="nav-2-2">
-      Scenarios
+      Scenario walkthroughs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-2-2">
-        Scenarios
+        Scenario walkthroughs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -290,8 +290,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario walkthrough" class="md-nav__link">
-      Main scenario walkthrough
+    <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario" class="md-nav__link">
+      Main scenario
     </a>
   </li>
 
@@ -302,8 +302,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../usecase/baca-scenario-walkthrough/" title="BACA scenario walkthrough" class="md-nav__link">
-      BACA scenario walkthrough
+    <a href="../../usecase/baca-scenario-walkthrough/" title="BACA scenario" class="md-nav__link">
+      BACA scenario
     </a>
   </li>
 
@@ -314,8 +314,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../usecase/bai-scenario-walkthrough/" title="BAI scenario walkthrough" class="md-nav__link">
-      BAI scenario walkthrough
+    <a href="../../usecase/bai-scenario-walkthrough/" title="BAI scenario" class="md-nav__link">
+      BAI scenario
     </a>
   </li>
 
@@ -899,7 +899,7 @@
 <p><img alt="Rule projects" src="../images/odm-projects-organization.png" title="Rule projects" /></p>
 <h2 id="injecting-machine-learning">Injecting machine learning</h2>
 <p>The claim fraud assessment decision service is a good candidate to inject a fraud detection service based on a machine learning (ML) model. The typical division of responsibility is that the ML model excels in detecting patterns of fraud, while rules can flag outliers, marginal or heuristic cases that have been detected but do not yet represent a pattern.</p>
-<p><strong>NB</strong>: We are planning to integrate the ML-based scoring model for fraud in a future Denim Compute iteration. For now, we just have a clean set of labeled data (see the <a href="https://github.com/ibm-cloud-architecture/denim-compute/source/ml/denim-insurance_fraud-data.csv">denim-insurance_fraud-data.csv</a> file).</p>
+<p><strong>NB</strong>: We are planning to integrate the ML-based scoring model for fraud in a future Denim Compute iteration. For now, we just have a clean set of labeled data (see the <a href="https://github.com/ibm-cloud-architecture/denim-compute/source/ml/denim-insurance-fraud-data.csv">denim-insurance-fraud-data.csv</a> file).</p>
 <p>This sample fraud dataset is a good fit for the AutoAI feature of <a href="https://cloud.ibm.com/catalog/services/machine-learning">Watson Studio</a>:</p>
 <p><img alt="AutoAI project" src="../images/ml-project-type.png" /></p>
 <p>AutoAI will automatically determine a set of ML pipelines that perform well given the dataset and the dependent feature (in our case, the <code>Fraudulent</code> column).</p>

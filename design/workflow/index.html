@@ -263,11 +263,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
     
     <label class="md-nav__link" for="nav-2-2">
-      Scenarios
+      Scenario walkthroughs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-2-2">
-        Scenarios
+        Scenario walkthroughs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -290,8 +290,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario walkthrough" class="md-nav__link">
-      Main scenario walkthrough
+    <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario" class="md-nav__link">
+      Main scenario
     </a>
   </li>
 
@@ -302,8 +302,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../usecase/baca-scenario-walkthrough/" title="BACA scenario walkthrough" class="md-nav__link">
-      BACA scenario walkthrough
+    <a href="../../usecase/baca-scenario-walkthrough/" title="BACA scenario" class="md-nav__link">
+      BACA scenario
     </a>
   </li>
 
@@ -314,8 +314,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../usecase/bai-scenario-walkthrough/" title="BAI scenario walkthrough" class="md-nav__link">
-      BAI scenario walkthrough
+    <a href="../../usecase/bai-scenario-walkthrough/" title="BAI scenario" class="md-nav__link">
+      BAI scenario
     </a>
   </li>
 
@@ -516,8 +516,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#case-and-process-collaboration" title="Case and Process collaboration" class="md-nav__link">
-    Case and Process collaboration
+  <a href="#case-and-process-collaboration" title="Case and process collaboration" class="md-nav__link">
+    Case and process collaboration
   </a>
   
 </li>
@@ -842,8 +842,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#case-and-process-collaboration" title="Case and Process collaboration" class="md-nav__link">
-    Case and Process collaboration
+  <a href="#case-and-process-collaboration" title="Case and process collaboration" class="md-nav__link">
+    Case and process collaboration
   </a>
   
 </li>
@@ -875,14 +875,14 @@
                 
                 
                 <h1 id="workflow-design">Workflow design</h1>
-<p>This section covers the design of the Denim Compute workflow using the Business Automation Workflow (BAW) platform. It is recommended to be familiar with <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf">Scenario walkthrough</a> in conjunction with this section.</p>
-<h2 id="case-and-process-collaboration">Case and Process collaboration</h2>
+<p>This section covers the design of the Denim Compute workflow using the Business Automation Workflow (BAW) platform. It is recommended to be familiar with the <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf">scenario walkthrough</a> in conjunction with this section.</p>
+<h2 id="case-and-process-collaboration">Case and process collaboration</h2>
 <p>Denim Compute uses the combined capabilities of Case Management and Process flow from Business Automation Workflow in the solution scenario. Case-oriented workflows are typically modeled in <a href="https://www.omg.org/spec/CMMN/About-CMMN/">CMMN</a> notation while Process-oriented ones use <a href="http://www.bpmn.org/">BPMN</a> notation.</p>
 <p>In order to show the collaboration between the Case and Process aspects we show a BPMN collaboration diagram as a close approximation of how the separation of focus is achieved.</p>
 <p>The following two figures show the high level workflow as a BPMN Collaboration with Case ad-hoc activities in one pool and Process directed acyclic graph in the other pool and message exchanges between both as control passes back and forth.</p>
 <p><img alt="" src="../images/workflow-design1.png" /></p>
 <p><img alt="" src="../images/workflow-design2.png" /></p>
-<p>Within the Case activities there is one special one (highlighted in the image below) that has scope for the duration of the Process it invokes. This is because the manner in which other Case activities are invoked is via property updates that in turn trigger pre-conditions on the activities. In order to update a Case property the Process must be able to reference its parent Case activity which remains in scope.</p>
+<p>Within the case activities, there is one special one (highlighted in the image below) that has scope for the duration of the Process it invokes. This is because the manner in which other Case activities are invoked is via property updates that in turn trigger pre-conditions on the activities. In order to update a Case property the Process must be able to reference its parent Case activity which remains in scope.</p>
 <p><img alt="" src="../images/workflow-design3.png" /></p>
 <p>If we look at the Case Builder part of Business Automation Workflow, the highlighted activities match the earlier depiction whereby <em>Gather Accident Information</em> is a P8 Process implementation that updates a case property that then triggers the <em>Initiate Claims Processing</em> activity which is a BPM Process implementation.</p>
 <p><img alt="" src="../images/workflow-design4.png" /></p>
@@ -894,7 +894,7 @@
 <p>This is the BPM Process implementation of <em>Signal Adjuster Report Created</em> with the message send event highlighted.</p>
 <p><img alt="" src="../images/workflow-design7.png" /></p>
 <h2 id="mediated-baca-integration">Mediated BACA integration</h2>
-<p>A <a href="/usecase/baca-scenario-walkthrough/">side scenario</a> of the main scenario involves integration with Business Automation Content Analyzer (BACA) in order to automatically detect an uploaded document representing a vehicle repair estimate provided by a repair shop. The document is parsed by BACA and the data extracted to build up an estimate data structure that includes the set of vehicle parts needed to repair the damaged vehicle. In the Case, a case activity named <code>Process Repair Estimate</code> is configured to be triggered by the precondition of a document of class <code>Auto Repair Estimate</code> being added to the case.
+<p>A <a href="../../usecase/baca-scenario-walkthrough/">side scenario</a> of the main scenario involves integration with Business Automation Content Analyzer (BACA) in order to automatically detect an uploaded document representing a vehicle repair estimate provided by a repair shop. The document is parsed by BACA and the data extracted to build up an estimate data structure that includes the set of vehicle parts needed to repair the damaged vehicle. In the Case, a case activity named <code>Process Repair Estimate</code> is configured to be triggered by the precondition of a document of class <code>Auto Repair Estimate</code> being added to the case.
 <img alt="" src="../images/workflow-design8.png" /></p>
 <p>The case activity implementation shown below involves integrating to BACA and deciding whether the resulting parsed data is a valid estimate or not. If valid it is then sent as a message event using a publish-subscribe paradigm for interested subscribers to react to the newly available repair estimate.
 <img alt="" src="../images/workflow-design9.png" /></p>

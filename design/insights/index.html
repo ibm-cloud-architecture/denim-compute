@@ -263,11 +263,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
     
     <label class="md-nav__link" for="nav-2-2">
-      Scenarios
+      Scenario walkthroughs
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-2-2">
-        Scenarios
+        Scenario walkthroughs
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -290,8 +290,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario walkthrough" class="md-nav__link">
-      Main scenario walkthrough
+    <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf" title="Main scenario" class="md-nav__link">
+      Main scenario
     </a>
   </li>
 
@@ -302,8 +302,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../usecase/baca-scenario-walkthrough/" title="BACA scenario walkthrough" class="md-nav__link">
-      BACA scenario walkthrough
+    <a href="../../usecase/baca-scenario-walkthrough/" title="BACA scenario" class="md-nav__link">
+      BACA scenario
     </a>
   </li>
 
@@ -314,8 +314,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../usecase/bai-scenario-walkthrough/" title="BAI scenario walkthrough" class="md-nav__link">
-      BAI scenario walkthrough
+    <a href="../../usecase/bai-scenario-walkthrough/" title="BAI scenario" class="md-nav__link">
+      BAI scenario
     </a>
   </li>
 
@@ -920,20 +920,21 @@
 </tbody>
 </table>
 <h2 id="baw-dashboard">BAW dashboard</h2>
-<p>The BAW data sent to BAI as <code>DEF (Dynamic Event Framework)</code> events is then visualized on a set of <code>Kibana Dashboards</code>, this is illustrated in detail in <a href="../../usecase/bai-scenario-walkthrough/">BAI scenario walkthrough</a>. That scenario shows how to batch load the data in order to see realistic trends in the <code>Dashboards</code>, however the concepts are the same for the main scenario described in <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf">Main scenario walkthrough</a>.</p>
-<p>The core concept for sending <code>DEF</code> events to BAI is using <code>Tracking Group</code> definitions in BAW which emits data of relevance at critical points in the workflow (see <a href="../workflow/">Workflow design</a> to familiarize yourself with the workflow). This can be seen in the fragment of <code>Initiate Claims Processing</code> below where a selection of the various tracking points are highlighted.
+<p>The BAW data sent to BAI as Dynamic Event Framework (DEF) events is then visualized on a set of Kibana dashboards, this is illustrated in detail in <a href="../../usecase/bai-scenario-walkthrough/">BAI scenario walkthrough</a>. That scenario shows how to batch load the data in order to see realistic trends in the dashboards, however the concepts are the same for the main scenario described in <a href="../../usecase/resources/denim-compute-scenario-walkthrough.pdf">Main scenario walkthrough</a>.</p>
+<p>The core concept for sending DEF events to BAI is using <em>tracking group</em> definitions in BAW which emits data of relevance at critical points in the workflow (see <a href="../workflow/">Workflow design</a> to familiarize yourself with the workflow).</p>
+<p>This can be seen in the fragment of <code>Initiate Claims Processing</code> below where a selection of the various tracking points are highlighted.
 <img alt="" src="../images/insights-design-baw1.png" /></p>
-<p>Two different <code>Tracking Groups</code> are used in the workflow, one for fairly static data that is available at the start (such as information from the Policy and the First Notice of Loss) and one for data that is dynamically adjusted as the workflow progreses (e.g. the various amounts of estimates and adjustments). Below you can see that the tracking has been configured to use the <code>Tracking Group</code> named <code>AutoClaimTG</code> and the various state of workflow instance variables are mapped to the corresponding properties of <code>AutoClaimTG</code>.
+<p>Two different tracking groups are used in the workflow, one for fairly static data that is available at the start (such as information from the Policy and the First Notice of Loss) and one for data that is dynamically adjusted as the workflow progreses (e.g. the various amounts of estimates and adjustments). Below you can see that the tracking has been configured to use the tracking group named <code>AutoClaimTG</code> and the various state of workflow instance variables are mapped to the corresponding properties of <code>AutoClaimTG</code>.
 <img alt="" src="../images/insights-design-baw2.png" /></p>
-<p>And here we see an example from downstream in the workflow where data updates are available after <code>Claim Settlement</code> and they are mapped to the corresponding properties in the <code>Tracking Group</code> named <code>AutoClaimUpdatesTG</code>.
+<p>And here we see an example from downstream in the workflow where data updates are available after <code>Claim Settlement</code> and they are mapped to the corresponding properties in the tracking group named <code>AutoClaimUpdatesTG</code>.
 <img alt="" src="../images/insights-design-baw3.png" /></p>
-<p>In the Kibana console you then see the results of those <code>DEF</code> events where they are aggregated into <code>process summaries</code> and then exposed as various <code>Visualizations</code> on a <code>Dashboard</code>. In the highlighted example is a specific <code>Visualization</code> that shows various aggregated metrics.
+<p>In the Kibana console you then see the results of those DEF events where they are aggregated into process summaries and then exposed as various visualizations on a dashboard. In the highlighted example is a specific visualization that shows various aggregated metrics.
 <img alt="" src="../images/insights-design-baw4.png" /></p>
-<p>Here you can see the definition of that <code>Visualization</code> and a specific metric is highlighted where it averages the values from the <code>claimSettlementAmount</code> property in  <code>AutoClaimUpdatesTG</code>.
+<p>Here you can see the definition of that visualization and a specific metric is highlighted where it averages the values from the <code>claimSettlementAmount</code> property in <code>AutoClaimUpdatesTG</code>.
 <img alt="" src="../images/insights-design-baw5.png" /></p>
-<p>The <code>Visualization</code> in turn uses an <code>Elasticsearch Search</code> shown below. It has various <code>Filters</code> applied against the <code>Index Pattern</code> named <code>process-s*</code> in order to find specific summaries of interest to our scenario. The columns have been configured to highlight the base data that then feeds into the aggregation that calculated the average that we saw previously in the <code>Visualization</code>.
+<p>The visualization in turn uses an Elasticsearch search shown below. It has various filters applied against the index pattern named <code>process-s*</code> in order to find specific summaries of interest to our scenario. The columns have been configured to highlight the base data that then feeds into the aggregation that calculated the average that we saw previously in the visualization.
 <img alt="" src="../images/insights-design-baw6.png" /></p>
-<p>For further details on how the BAI integration with BAW was achieved, please see the <a href="../../development/insights/">Insights</a> development section.</p>
+<p>For further details on how the BAI integration with BAW was achieved, please see the <a href="../../development/insights/">insights development</a> section.</p>
                 
                   
                 
