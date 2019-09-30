@@ -1,8 +1,8 @@
 # Workflow design  
 
-This section covers the design of the Denim Compute workflow using the Business Automation Workflow (BAW) platform. It is recommended to be familiar with [Scenario walkthrough](../usecase/resources/denim-compute-scenario-walkthrough.pdf) in conjunction with this section.
+This section covers the design of the Denim Compute workflow using the Business Automation Workflow (BAW) platform. It is recommended to be familiar with the [scenario walkthrough](../usecase/resources/denim-compute-scenario-walkthrough.pdf) in conjunction with this section.
 
-## Case and Process collaboration  
+## Case and process collaboration  
 Denim Compute uses the combined capabilities of Case Management and Process flow from Business Automation Workflow in the solution scenario. Case-oriented workflows are typically modeled in [CMMN](https://www.omg.org/spec/CMMN/About-CMMN/) notation while Process-oriented ones use [BPMN](http://www.bpmn.org/) notation.
 
 In order to show the collaboration between the Case and Process aspects we show a BPMN collaboration diagram as a close approximation of how the separation of focus is achieved.
@@ -13,7 +13,7 @@ The following two figures show the high level workflow as a BPMN Collaboration w
 
 ![](images/workflow-design2.png)
 
-Within the Case activities there is one special one (highlighted in the image below) that has scope for the duration of the Process it invokes. This is because the manner in which other Case activities are invoked is via property updates that in turn trigger pre-conditions on the activities. In order to update a Case property the Process must be able to reference its parent Case activity which remains in scope.
+Within the case activities, there is one special one (highlighted in the image below) that has scope for the duration of the Process it invokes. This is because the manner in which other Case activities are invoked is via property updates that in turn trigger pre-conditions on the activities. In order to update a Case property the Process must be able to reference its parent Case activity which remains in scope.
 
 ![](images/workflow-design3.png)
 
@@ -36,7 +36,7 @@ This is the BPM Process implementation of *Signal Adjuster Report Created* with 
 ![](images/workflow-design7.png)
 
 ## Mediated BACA integration
-A [side scenario](/usecase/baca-scenario-walkthrough/) of the main scenario involves integration with Business Automation Content Analyzer (BACA) in order to automatically detect an uploaded document representing a vehicle repair estimate provided by a repair shop. The document is parsed by BACA and the data extracted to build up an estimate data structure that includes the set of vehicle parts needed to repair the damaged vehicle. In the Case, a case activity named `Process Repair Estimate` is configured to be triggered by the precondition of a document of class `Auto Repair Estimate` being added to the case.
+A [side scenario](../usecase/baca-scenario-walkthrough.md) of the main scenario involves integration with Business Automation Content Analyzer (BACA) in order to automatically detect an uploaded document representing a vehicle repair estimate provided by a repair shop. The document is parsed by BACA and the data extracted to build up an estimate data structure that includes the set of vehicle parts needed to repair the damaged vehicle. In the Case, a case activity named `Process Repair Estimate` is configured to be triggered by the precondition of a document of class `Auto Repair Estimate` being added to the case.
 ![](images/workflow-design8.png)
 
 The case activity implementation shown below involves integrating to BACA and deciding whether the resulting parsed data is a valid estimate or not. If valid it is then sent as a message event using a publish-subscribe paradigm for interested subscribers to react to the newly available repair estimate.

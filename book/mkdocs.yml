@@ -5,11 +5,11 @@ nav:
     - Introduction: index.md
     - Use case:
         - Use case definition: ./usecase/use-case-definition.md
-        - Scenarios:
+        - Scenario walkthroughs:
             - Introduction: ./usecase/scenarios-intro.md
-            - Main scenario walkthrough: ./usecase/resources/denim-compute-scenario-walkthrough.pdf
-            - BACA scenario walkthrough: ./usecase/baca-scenario-walkthrough.md
-            - BAI scenario walkthrough: ./usecase/bai-scenario-walkthrough.md
+            - Main scenario: ./usecase/resources/denim-compute-scenario-walkthrough.pdf
+            - BACA scenario: ./usecase/baca-scenario-walkthrough.md
+            - BAI scenario: ./usecase/bai-scenario-walkthrough.md
     - Environment:
         - OpenShift:
             - Introduction: ./environment/rhos-intro.md

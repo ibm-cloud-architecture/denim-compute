@@ -25,24 +25,26 @@ The dashboard is created following the steps in [this tutorial](https://github.c
 | Segment Claim | `data.claim_processing.segment_claim.out.complexity.complexity` | `ComplexityAssessment.complexity` |
 
 ## BAW dashboard
-The BAW data sent to BAI as `DEF (Dynamic Event Framework)` events is then visualized on a set of `Kibana Dashboards`, this is illustrated in detail in [BAI scenario walkthrough](../usecase/bai-scenario-walkthrough.md). That scenario shows how to batch load the data in order to see realistic trends in the `Dashboards`, however the concepts are the same for the main scenario described in [Main scenario walkthrough](../usecase/resources/denim-compute-scenario-walkthrough.pdf).
+The BAW data sent to BAI as Dynamic Event Framework (DEF) events is then visualized on a set of Kibana dashboards, this is illustrated in detail in [BAI scenario walkthrough](../usecase/bai-scenario-walkthrough.md). That scenario shows how to batch load the data in order to see realistic trends in the dashboards, however the concepts are the same for the main scenario described in [Main scenario walkthrough](../usecase/resources/denim-compute-scenario-walkthrough.pdf).
 
-The core concept for sending `DEF` events to BAI is using `Tracking Group` definitions in BAW which emits data of relevance at critical points in the workflow (see [Workflow design](./workflow.md) to familiarize yourself with the workflow). This can be seen in the fragment of `Initiate Claims Processing` below where a selection of the various tracking points are highlighted.
+The core concept for sending DEF events to BAI is using *tracking group* definitions in BAW which emits data of relevance at critical points in the workflow (see [Workflow design](./workflow.md) to familiarize yourself with the workflow).
+
+This can be seen in the fragment of `Initiate Claims Processing` below where a selection of the various tracking points are highlighted.
 ![](images/insights-design-baw1.png)
 
-Two different `Tracking Groups` are used in the workflow, one for fairly static data that is available at the start (such as information from the Policy and the First Notice of Loss) and one for data that is dynamically adjusted as the workflow progreses (e.g. the various amounts of estimates and adjustments). Below you can see that the tracking has been configured to use the `Tracking Group` named `AutoClaimTG` and the various state of workflow instance variables are mapped to the corresponding properties of `AutoClaimTG`.
+Two different tracking groups are used in the workflow, one for fairly static data that is available at the start (such as information from the Policy and the First Notice of Loss) and one for data that is dynamically adjusted as the workflow progreses (e.g. the various amounts of estimates and adjustments). Below you can see that the tracking has been configured to use the tracking group named `AutoClaimTG` and the various state of workflow instance variables are mapped to the corresponding properties of `AutoClaimTG`.
 ![](images/insights-design-baw2.png)
 
-And here we see an example from downstream in the workflow where data updates are available after `Claim Settlement` and they are mapped to the corresponding properties in the `Tracking Group` named `AutoClaimUpdatesTG`.
+And here we see an example from downstream in the workflow where data updates are available after `Claim Settlement` and they are mapped to the corresponding properties in the tracking group named `AutoClaimUpdatesTG`.
 ![](images/insights-design-baw3.png)
 
-In the Kibana console you then see the results of those `DEF` events where they are aggregated into `process summaries` and then exposed as various `Visualizations` on a `Dashboard`. In the highlighted example is a specific `Visualization` that shows various aggregated metrics.
+In the Kibana console you then see the results of those DEF events where they are aggregated into process summaries and then exposed as various visualizations on a dashboard. In the highlighted example is a specific visualization that shows various aggregated metrics.
 ![](images/insights-design-baw4.png)
 
-Here you can see the definition of that `Visualization` and a specific metric is highlighted where it averages the values from the `claimSettlementAmount` property in  `AutoClaimUpdatesTG`.
+Here you can see the definition of that visualization and a specific metric is highlighted where it averages the values from the `claimSettlementAmount` property in `AutoClaimUpdatesTG`.
 ![](images/insights-design-baw5.png)
 
-The `Visualization` in turn uses an `Elasticsearch Search` shown below. It has various `Filters` applied against the `Index Pattern` named `process-s*` in order to find specific summaries of interest to our scenario. The columns have been configured to highlight the base data that then feeds into the aggregation that calculated the average that we saw previously in the `Visualization`.
+The visualization in turn uses an Elasticsearch search shown below. It has various filters applied against the index pattern named `process-s*` in order to find specific summaries of interest to our scenario. The columns have been configured to highlight the base data that then feeds into the aggregation that calculated the average that we saw previously in the visualization.
 ![](images/insights-design-baw6.png)
 
-For further details on how the BAI integration with BAW was achieved, please see the [Insights](../development/insights.md) development section.
+For further details on how the BAI integration with BAW was achieved, please see the [insights development](../development/insights.md) section.
