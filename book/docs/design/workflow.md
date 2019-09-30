@@ -36,16 +36,19 @@ This is the BPM Process implementation of *Signal Adjuster Report Created* with 
 ![](images/workflow-design7.png)
 
 ## Mediated BACA integration
-A [side scenario](/usecase/baca-scenario-walkthrough/) of the main scenario involves integration with `Business Automation Content Analyzer (BACA)` in order to automatically detect an uploaded document representing a vehicle repair estimate provided by a repair shop. The document is parsed by `BACA` and the data extracted to build up an estimate data structure that includes the set of vehicle parts needed to repair the damaged vehicle. In the Case a `Case Activity` named `Process Repair Estimate` is configured to be triggered by the precondition of a document of class `Auto Repair Estimate` being added to the Case.
+A [side scenario](/usecase/baca-scenario-walkthrough/) of the main scenario involves integration with Business Automation Content Analyzer (BACA) in order to automatically detect an uploaded document representing a vehicle repair estimate provided by a repair shop. The document is parsed by BACA and the data extracted to build up an estimate data structure that includes the set of vehicle parts needed to repair the damaged vehicle. In the Case, a case activity named `Process Repair Estimate` is configured to be triggered by the precondition of a document of class `Auto Repair Estimate` being added to the case.
 ![](images/workflow-design8.png)
 
-The `Case Activity` implementation shown below involves integrating to BACA and deciding whether the resulting parsed data is a valid estimate or not. If valid it is then sent as a `message event` using a `publish-subscribe`paradigm for interested subscribers to react to the newly available repair estimate.
+The case activity implementation shown below involves integrating to BACA and deciding whether the resulting parsed data is a valid estimate or not. If valid it is then sent as a message event using a publish-subscribe paradigm for interested subscribers to react to the newly available repair estimate.
 ![](images/workflow-design9.png)
 
-The integration to `BACA` has to be mediated because `BACA` provides a generic interface and in the case of how you retrieve parsed data results it contains a lot of technical details that in this case the `BAW` business scenario is not interested in. A typical pattern for implementing a mediation between such business and technical concerns would be to use features of `API Connect (APIC)` and `Application Connect Enterprise (ACE)` from [IBM Cloud Pak for Integration](https://www.ibm.com/uk-en/cloud/cloud-pak-for-integration). In this scenario the team has opted to use a different approach to the mediation for two reasons :-<br>
+The integration to BACA has to be mediated because BACA provides a generic interface and the captured data contains a lot of details that our BAW business scenario is not interested in.
 
- - To avoid readers having to obtain licencing for and install another IBM Cloud Pak
- - To illustrate how to develop and deploy a `Cloud Native microservice` to `Red Hat OpenShift Container Platform` and then integrate that with components from `IBM Cloud Pak for Automation`
+A typical pattern for implementing a mediation between such business and technical concerns would be to use features of API Connect (APIC) and Application Connect Enterprise (ACE) from the [IBM Cloud Pak for Integration](https://www.ibm.com/cloud/cloud-pak-for-integration). In this scenario, we have opted to use a different approach to the mediation for two reasons:
+
+ - To avoid readers having to obtain licencing for and install another IBM Cloud Pak.
+ 
+ - To illustrate how to develop and deploy a cloud native micro-service to the Red Hat OpenShift Container Platform and then integrate that with components from IBM Cloud Pak for Automation.
 
 After the message is published the subscriber is an in-flight instance of the `Provide Estimates Per Repairer`  process. In that the `user task` has an `interrupting boundary message event` configured with correlation details set (such as the specific `Auto Claim` and the `Vehicle VIN`) so that the specific instance of this process can be identified and the message delivered to it.
 ![](images/workflow-design10.png)

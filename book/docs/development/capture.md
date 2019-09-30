@@ -20,12 +20,12 @@ Note that the [Showtime](/showtime/run-solution/) section  documents that in BAW
 
 ![](images/baca-api1.png)
 
-## BACA-related microservices
+## BACA-related micro-services
 
-A BACA Mediator microservice has been developed that is used by BAW (as described in [BACA integration](/development/process-services/#baca-integration)) to interact with BACA (for details see [Content Analyser](/development/content-analyzer/)). The microservice is implemented in Node.js and deployed on the Red Hat OpenShift Container Platform (OCP).
+A BACA Mediator micro-service has been developed that is used by BAW (as described in [BACA integration](/development/process-services/#baca-integration)) to interact with BACA (for details see [Content Analyser](/development/content-analyzer/)). The micro-service is implemented in Node.js and deployed on the Red Hat OpenShift Container Platform (OCP).
 
 ### Analyze a document
-For this single microservice, and because we are not showing a full CI/CD DevOps cycle, we are using a simple code editor to display the code.
+For this single micro-service, and because we are not showing a full CI/CD DevOps cycle, we are using a simple code editor to display the code.
 If you are interested in Cloud Native development using the latest tooling, then have a look at [Kabanero](https://kabanero.io/).
 
 The [application](https://github.com/ibm-cloud-architecture/denim-compute/solution/baca/mediator) is shown here with the core Node.js code (`server.js`) to declare dependencies and use `Express` to start a HTTP Server listening for inbound REST requests.
@@ -68,7 +68,7 @@ The delegated implementation is the `status` method in `BACAAccessor` as shown b
 
 ### Retrieve JSON result
 
-Once an uploaded analysis has completed and the status reports it has been parsed successfully, you then need to call BACA to retrieve the results. This is where the microservice has the most post-processing to do because the JSON payload from BACA is quite complex and we need to expose a more business interface to BAW plus we have to manipulate the BACA returned JSON in order to construct the nested array structure of `Vehicle Parts` inside the estimate.
+Once an uploaded analysis has completed and the status reports it has been parsed successfully, you then need to call BACA to retrieve the results. This is where the micro-service has the most post-processing to do because the JSON payload from BACA is quite complex and we need to expose a more business interface to BAW plus we have to manipulate the BACA returned JSON in order to construct the nested array structure of `Vehicle Parts` inside the estimate.
 
 As with the other methods, the point of entry is in `server.js` which then delegates to `BACAAccessor` to do the heavy lifting. It also passes in a callback function (`processBACARetrieve`) that will process the response.
 
@@ -92,7 +92,7 @@ The `createItemsList` function has to walk a tree of complex nested structures r
 
 ![](images/microservices-baca14.png)
 
-Back in `server.js` the callback function that was passed to the `BACAAccessor` method is invoked with the response. It first sets up some mappings in order to translate the BACA objects to ones that are expected by BAW and are defined in the OpenAPI interface of our microservice. 
+Back in `server.js` the callback function that was passed to the `BACAAccessor` method is invoked with the response. It first sets up some mappings in order to translate the BACA objects to ones that are expected by BAW and are defined in the OpenAPI interface of our micro-service. 
 
 ![](images/microservices-baca15.png)
 
@@ -133,7 +133,7 @@ The `cleanup` method is shown which then invokes BACA using the r2 Node.js modul
 
 ### Packaging
 
-In order to run the microservice in a Kubernetes environment (such as our target OCP environment),  we have to provide a declarative `Dockerfile` that is used by `Docker` to build the container for deployment.
+In order to run the micro-service in a Kubernetes environment (such as our target OCP environment),  we have to provide a declarative `Dockerfile` that is used by `Docker` to build the container for deployment.
 
 This is shown below which contains various directives for copying source code and configuring permissions and specifying the initial entry script to run.
 ![](images/microservices-baca24.png)
