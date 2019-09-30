@@ -815,8 +815,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-the-baca-mediator-microservice" title="Deploy the BACA Mediator microservice" class="md-nav__link">
-    Deploy the BACA Mediator microservice
+  <a href="#deploy-the-baca-mediator-micro-service" title="Deploy the BACA Mediator micro-service" class="md-nav__link">
+    Deploy the BACA Mediator micro-service
   </a>
   
     <nav class="md-nav">
@@ -939,8 +939,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-the-baca-mediator-microservice" title="Deploy the BACA Mediator microservice" class="md-nav__link">
-    Deploy the BACA Mediator microservice
+  <a href="#deploy-the-baca-mediator-micro-service" title="Deploy the BACA Mediator micro-service" class="md-nav__link">
+    Deploy the BACA Mediator micro-service
   </a>
   
     <nav class="md-nav">
@@ -1022,15 +1022,15 @@
 </ul>
 <p><img alt="" src="../images/case-security3.png" /></p>
 <ul>
-<li>Provide a <code>Security manifest name</code> and click <code>Next</code>.</li>
+<li>Provide a <code>Security manifest name</code> (e.g. <code>denim_security_config</code>) and click <code>Next</code>.</li>
 </ul>
 <p><img alt="" src="../images/case-security4.png" /></p>
 <ul>
-<li>Set permissions against the security <code>Roles</code> (in this example all permissions are assigned to each <code>Role</code>) and click <code>Next</code>.</li>
+<li>Set permissions against the security roles (in this example all permissions are assigned to each role) and click <code>Next</code>.</li>
 </ul>
 <p><img alt="" src="../images/case-security5.png" /></p>
 <ul>
-<li>You can then set the adminstrators, if you want you can <code>Add</code> others.</li>
+<li>In this step, you set the administrators. You can add administrators besides the pre-defined one if you want, by clicking the <code>Add</code> button, or you can just click <code>Next</code>.</li>
 </ul>
 <p><img alt="" src="../images/case-security6.png" /></p>
 <ul>
@@ -1038,15 +1038,15 @@
 </ul>
 <p><img alt="" src="../images/case-security7.png" /></p>
 <ul>
-<li>Next you map groups and users to the Case <code>Roles</code>. Select each <code>Role</code> and click <code>Add</code> then follow the earlier instructions for how to find and assign users and groups.</li>
+<li>Next you map groups and users to the Case roles. Select each role and click <code>Add</code> then follow the earlier instructions for how to find and assign users and groups.</li>
 </ul>
 <p><img alt="" src="../images/case-security8.png" /></p>
 <ul>
-<li>In this example we have just added a default user to the <code>Claim Intake Services</code> <code>Role</code>. You repeat these steps for the other <code>Roles</code>.</li>
+<li>In this example, we have just added a default user to the <code>Claim Intake Services</code> <code>Role</code>. You repeat these steps for the other <code>Roles</code>.</li>
 </ul>
 <p><img alt="" src="../images/case-security9.png" /></p>
 <ul>
-<li>Here is the final situation were example users are added to each <code>Role</code> (if you want a more realistic scenario you should setup different users and groups and assign them to the <code>Roles</code>). Click <code>Next</code> when done with this section.</li>
+<li>Here is the final situation, where example users are added to each role (if you want a more realistic scenario you should setup different users and groups and assign them to the roles). Click <code>Next</code> when done with this section.</li>
 </ul>
 <p><img alt="" src="../images/case-security10.png" /></p>
 <ul>
@@ -1064,28 +1064,28 @@
 <h2 id="create-bpm-user-groups">Create BPM user groups</h2>
 <ul>
 <li>
-<p>The solution has a number of BPM <code>Teams</code> defined that need to map to users and groups. To do that, launch the <code>Process Admin Console</code> and then select <code>Server Admin</code> section.</p>
+<p>The solution has a number of BPM teams defined that need to be mapped to users and groups. To do that, launch the Process Admin Console and then select <code>Server Admin</code> section.</p>
 </li>
 <li>
-<p>Within that select <code>User Management</code> and <code>Group Management</code> and type <code>denim</code> in <code>Select Group to Modify</code> and you should see the groups that have been created as a result of the <code>Team</code> definitions.</p>
+<p>Open <code>User Management</code>, select <code>Group Management</code> and type <code>denim</code> in <code>Select Group to Modify</code> and you should see the groups that have been created as a result of the team definitions.</p>
 </li>
 </ul>
 <p><img alt="" src="../images/bpm-user-groups1.png" /></p>
 <ul>
-<li>You then need to assign users and groups for your environment against those pre-defined groups. Here is an example were we have assigned a number of users to the <code>denim-adjusters</code> group.</li>
+<li>You then need to assign users and groups for your environment against those pre-defined groups. Here is an example where we have assigned a number of users to the <code>denim-adjusters</code> group.</li>
 </ul>
 <p><img alt="" src="../images/bpm-user-groups2.png" /></p>
 <h2 id="configure-servers">Configure servers</h2>
-<p>The solution integrates to ODM and ECM by using defined <code>Servers</code>. By default these are mapped to the environment the IBM team used in testing. You have to now re-map these to your own cluster environment.</p>
+<p>The solution integrates with the ODM and ECM components by using defined servers. By default, these are mapped to the environment that we used for testing purpose. Obviously, you have to re-map these servers to your own cluster environment. To do this, use the following instructions:</p>
 <ul>
-<li>To do this you must first ensure the deployed BAW solution is activated. Select it in the Workflow Center and click the <code>View Details</code> icon in the lower left corner of the tile.</li>
+<li>First, ensure that the deployed BAW solution is activated. Select it in the Workflow Center and click the <code>View Details</code> icon in the lower left corner of the tile.</li>
 </ul>
 <p><img alt="" src="../images/config-servers1.png" /></p>
 <ul>
 <li>Next choose the <code>Snapshots</code> section, select your snapshot (NB: the latest available snapshot is now v0.10.0) and from the contextual menu you <code>Activate</code> it.</li>
 </ul>
 <p><img alt="" src="../images/config-servers2.png" /></p>
-<p>Note the next steps reference environment variables which require information from the <a href="#deploy-the-baca-mediator-microservice">deployment of the microservice</a> so if you have not completed that yet then go to that section and return here to complete the <code>BAW</code> servers configuration.</p>
+<p>Note the next steps reference environment variables which require information from the <a href="#deploy-the-baca-mediator-microservice">deployment of the micro-service</a> so if you have not completed that yet then go to that section and return here to complete the <code>BAW</code> servers configuration.</p>
 <ul>
 <li>After this you can now go to the <code>Process Admin Console</code> and you should see the snapshot in the list of <code>Installed Apps</code>.</li>
 </ul>
@@ -1105,20 +1105,20 @@
 <h2 id="configure-baca-ontology">Configure BACA ontology</h2>
 <p>Currently <code>Business Automation Content Analyzer (BACA)</code> only allows for the import and export of an entire ontology, there is no merge capability of selective import. Therefore we recommend that you backup any existing ontology before proceeding.</p>
 <ul>
-<li>So first use the <strong>Export Ontology</strong> option as shown and save your existing ontology.</li>
+<li>First use the <code>Export Ontology</code> option as shown and save your existing ontology.</li>
 </ul>
 <p><img alt="" src="../images/config-baca1.png" /></p>
 <ul>
-<li>Then use <strong>Import Ontology</strong> and select the JSON file you should download from <code>https://github.com/ibm-cloud-architecture/denim-compute/solution/baca/</code> directory as shown.</li>
+<li>Then use <code>Import Ontology</code> and select the <a href="https://github.com/ibm-cloud-architecture/denim-compute/blob/master/solution/baca/dc-baca-ontology.json"><code>dc-baca-ontology.json</code></a> file.</li>
 </ul>
 <p><img alt="" src="../images/config-baca2.png" /></p>
 <ul>
-<li>You should now have an ontology similar to that shown here.</li>
+<li>You should now have an ontology similar to that shown below:</li>
 </ul>
 <p><img alt="" src="../images/config-baca3.png" /></p>
 <p>When you are finished with trying out the <a href="/usecase/baca-scenario-walkthrough/">BACA scenario</a> you can re-import the saved JSON export of your original ontology.</p>
-<h2 id="deploy-the-baca-mediator-microservice">Deploy the BACA Mediator microservice</h2>
-<p><strong>NB The instructions that follow are for the Red Hat OpenShift Container Platform (OCP) environment the team used which is version 3.11.</strong></p>
+<h2 id="deploy-the-baca-mediator-micro-service">Deploy the BACA Mediator micro-service</h2>
+<p><strong>NB:</strong> The following instructions are for an OCP 3.11 cluster.</p>
 <h3 id="configure-github-repository">Configure GitHub repository</h3>
 <p>We recommend using a secure private repository rather than a <code>GitHub</code> Public one and these instructions assume that is the case. The start point is that you should fork this repository so that you can then configure your own security settings.</p>
 <ul>
@@ -1183,7 +1183,7 @@
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp10.png" /></p>
 <ul>
-<li>A number of <code>Kubernetes Resources</code> will now be created including a <code>Build Config</code> and <code>Build</code> that will pull the source and build a deployment. When done on the overview section you should see summary information for the <code>Deployment Config</code> including that it has 1 <code>Pod</code> (note in a realistic environment we would set this to have &gt; 1 Pod for failover but it makes it easier for us to see logs with this 1 Pod running without having to configure an <code>ELK</code> stack) and it is running. Take note also of the <code>Route</code> highlighted which is the public ingress point to the microservice and this is needed for configuring the environment variable in the <code>BAW</code> <a href="/showtime/run-solution/#configure-servers">config section</a> above.</li>
+<li>A number of <code>Kubernetes Resources</code> will now be created including a <code>Build Config</code> and <code>Build</code> that will pull the source and build a deployment. When done on the overview section you should see summary information for the <code>Deployment Config</code> including that it has 1 <code>Pod</code> (note in a realistic environment we would set this to have &gt; 1 Pod for failover but it makes it easier for us to see logs with this 1 Pod running without having to configure an <code>ELK</code> stack) and it is running. Take note also of the <code>Route</code> highlighted which is the public ingress point to the micro-service and this is needed for configuring the environment variable in the <code>BAW</code> <a href="/showtime/run-solution/#configure-servers">config section</a> above.</li>
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp11.png" /></p>
 <ul>
@@ -1195,7 +1195,7 @@
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp13.png" /></p>
 <ul>
-<li>In the <code>Logs</code> you can now verify that the microservice is up and ready to accept requests.</li>
+<li>In the <code>Logs</code> you can now verify that the micro-service is up and ready to accept requests.</li>
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp14.png" /></p>
                 

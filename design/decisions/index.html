@@ -899,7 +899,7 @@
 <p><img alt="Rule projects" src="../images/odm-projects-organization.png" title="Rule projects" /></p>
 <h2 id="injecting-machine-learning">Injecting machine learning</h2>
 <p>The claim fraud assessment decision service is a good candidate to inject a fraud detection service based on a machine learning (ML) model. The typical division of responsibility is that the ML model excels in detecting patterns of fraud, while rules can flag outliers, marginal or heuristic cases that have been detected but do not yet represent a pattern.</p>
-<p><strong>NB</strong>: We are planning to integrate the ML-based scoring model for fraud in a future Denim Compute iteration. For now, we just have a clean set of labeled data (see the <a href="https://github.com/ibm-cloud-architecture/denim-compute/source/ml/denim-insurance-fraud-data.csv">denim-insurance-fraud-data.csv</a> file).</p>
+<p><strong>NB</strong>: We are planning to integrate the ML-based scoring model for fraud in a future Denim Compute iteration. For now, we just have a clean set of labeled data (see the <a href="https://github.com/ibm-cloud-architecture/denim-compute/blob/master/source/ml/denim-insurance-fraud-data.csv"><code>denim-insurance-fraud-data.csv</code></a> file).</p>
 <p>This sample fraud dataset is a good fit for the AutoAI feature of <a href="https://cloud.ibm.com/catalog/services/machine-learning">Watson Studio</a>:</p>
 <p><img alt="AutoAI project" src="../images/ml-project-type.png" /></p>
 <p>AutoAI will automatically determine a set of ML pipelines that perform well given the dataset and the dependent feature (in our case, the <code>Fraudulent</code> column).</p>
