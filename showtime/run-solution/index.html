@@ -801,8 +801,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-servers" title="Configure servers" class="md-nav__link">
-    Configure servers
+  <a href="#configure-servers" title="Configure servers " class="md-nav__link">
+    Configure servers 
   </a>
   
 </li>
@@ -925,8 +925,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configure-servers" title="Configure servers" class="md-nav__link">
-    Configure servers
+  <a href="#configure-servers" title="Configure servers " class="md-nav__link">
+    Configure servers 
   </a>
   
 </li>
@@ -1075,7 +1075,7 @@
 <li>You then need to assign users and groups for your environment against those pre-defined groups. Here is an example where we have assigned a number of users to the <code>denim-adjusters</code> group.</li>
 </ul>
 <p><img alt="" src="../images/bpm-user-groups2.png" /></p>
-<h2 id="configure-servers">Configure servers</h2>
+<h2 id="configure-servers">Configure servers <a name="configure-servers"></a></h2>
 <p>The solution integrates with the ODM and ECM components by using defined servers. By default, these are mapped to the environment that we used for testing purpose. Obviously, you have to re-map these servers to your own cluster environment. To do this, use the following instructions:</p>
 <ul>
 <li>First, ensure that the deployed BAW solution is activated. Select it in the Workflow Center and click the <code>View Details</code> icon in the lower left corner of the tile.</li>
@@ -1116,7 +1116,7 @@
 <li>You should now have an ontology similar to that shown below:</li>
 </ul>
 <p><img alt="" src="../images/config-baca3.png" /></p>
-<p>When you are finished with trying out the <a href="/usecase/baca-scenario-walkthrough/">BACA scenario</a> you can re-import the saved JSON export of your original ontology.</p>
+<p>When you are finished with trying out the <a href="../../usecase/baca-scenario-walkthrough/">BACA scenario</a> you can re-import the saved JSON export of your original ontology.</p>
 <h2 id="deploy-the-baca-mediator-micro-service">Deploy the BACA Mediator micro-service</h2>
 <p><strong>NB:</strong> The following instructions are for an OCP 3.11 cluster.</p>
 <h3 id="configure-github-repository">Configure GitHub repository</h3>
@@ -1183,7 +1183,7 @@
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp10.png" /></p>
 <ul>
-<li>A number of <code>Kubernetes Resources</code> will now be created including a <code>Build Config</code> and <code>Build</code> that will pull the source and build a deployment. When done on the overview section you should see summary information for the <code>Deployment Config</code> including that it has 1 <code>Pod</code> (note in a realistic environment we would set this to have &gt; 1 Pod for failover but it makes it easier for us to see logs with this 1 Pod running without having to configure an <code>ELK</code> stack) and it is running. Take note also of the <code>Route</code> highlighted which is the public ingress point to the micro-service and this is needed for configuring the environment variable in the <code>BAW</code> <a href="/showtime/run-solution/#configure-servers">config section</a> above.</li>
+<li>A number of <code>Kubernetes Resources</code> will now be created including a <code>Build Config</code> and <code>Build</code> that will pull the source and build a deployment. When done on the overview section you should see summary information for the <code>Deployment Config</code> including that it has 1 <code>Pod</code> (note in a realistic environment we would set this to have &gt; 1 Pod for failover but it makes it easier for us to see logs with this 1 Pod running without having to configure an <code>ELK</code> stack) and it is running. Take note also of the <code>Route</code> highlighted which is the public ingress point to the micro-service and this is needed for configuring the environment variable in the <code>BAW</code> <a href="#configure-servers">config section</a> above.</li>
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp11.png" /></p>
 <ul>

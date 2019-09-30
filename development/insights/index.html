@@ -1004,7 +1004,7 @@
 <img alt="" src="../images/insights-devt-baw17.png" /></p>
 <p>An example of a <code>Metric</code> type is shown here in <code>Denim Compute - Delta Amounts</code>. The <code>Metrics</code> section shows that the source field is the <code>ClaimData Scripted field</code> discussed earlier.
 <img alt="" src="../images/insights-devt-baw18.png" /></p>
-<p>In <code>Denim Compute - Settlements by Driver Age</code> we have an example of a <code>Bar</code> type that shows various aggregates for comparison side by side on a bar chart. The dimension (defined in the <code>Buckets</code> section) that they are organised by is the driver's age (<code>driverAge tracked field</code>). Additionally a <code>Histogram</code> is used as the <code>bucket type</code> which then automatically groups the age ranges into groups of 10.
+<p>In <code>Denim Compute - Settlements by Driver Age</code> we have an example of a <code>Bar</code> type that shows various aggregates for comparison side by side on a bar chart. The dimension (defined in the <code>Buckets</code> section) that they are organized by is the driver's age (<code>driverAge tracked field</code>). Additionally a <code>Histogram</code> is used as the <code>bucket type</code> which then automatically groups the age ranges into groups of 10.
 <img alt="" src="../images/insights-devt-baw19.png" /></p>
 <p>In this <code>Bar</code> we want to show aggregates that have different scales (for example the Claims numbers will be much lower that the settlement amounts), therefore to do that we assign the aggregates to different axes in the <code>Metrics &amp; Axes</code> section.
 <img alt="" src="../images/insights-devt-baw20.png" /></p>
@@ -1012,11 +1012,11 @@
 <img alt="" src="../images/insights-devt-baw21.png" /></p>
 <p>In the <code>Options</code> section the settings are configured specific to rendering US states on the map (which matches our scenario data that only uses a subset of US states).
 <img alt="" src="../images/insights-devt-baw22.png" /></p>
-<p>In <code>Denim Compute - Avg Estimates by Policy Cover</code> we have an example of a <code>Gauge</code> type that organises estimated amounts according to the type of Policy Cover.
+<p>In <code>Denim Compute - Avg Estimates by Policy Cover</code> we have an example of a <code>Gauge</code> type that organizes estimated amounts according to the type of Policy Cover.
 <img alt="" src="../images/insights-devt-baw23.png" /></p>
 <p><code>Gauges</code> allow for setting ranges that allow you to track things like a RAG status as illustrated here. This is done by configuring <code>Ranges</code> as shown.
 <img alt="" src="../images/insights-devt-baw24.png" /></p>
-<p>In <code>Denim Compute - Avg Settlement by Vehicle Make</code> we have an example of a <code>Data Table</code> type that organises settlement amounts according to the policy holder's vehicle make and within that the vehicle make of the other vehicle involved. In the <code>Buckets</code> section the <code>Split Table</code> setting arranges columns of the <code>insuredVehicleMake tracked field</code> and <code>Split Rows</code> further sub-divides each row against the <code>otherVehicleMake tracked field</code>.
+<p>In <code>Denim Compute - Avg Settlement by Vehicle Make</code> we have an example of a <code>Data Table</code> type that organizes settlement amounts according to the policy holder's vehicle make and within that the vehicle make of the other vehicle involved. In the <code>Buckets</code> section the <code>Split Table</code> setting arranges columns of the <code>insuredVehicleMake tracked field</code> and <code>Split Rows</code> further sub-divides each row against the <code>otherVehicleMake tracked field</code>.
 <img alt="" src="../images/insights-devt-baw25.png" /></p>
 <p>When using this <code>Data Table</code> we spotted a deficiency in the options the <code>Kibana Visualization</code> provides. Ideally we want to display the average figures for the column as well as for the intersections of insured vehicle / other vehicle. However the only option is to <code>Show total</code> which in facts adds all the averages up and is not what we want. This is not displayed on the provided saved visualization named <code>Denim Compute - Avg Settlement by Vehicle Make</code>, we are only showing it here in order to illustrate the issue).
 <img alt="" src="../images/insights-devt-baw26.png" /></p>

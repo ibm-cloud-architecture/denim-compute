@@ -727,8 +727,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#baca-related-micro-services" title="BACA-related micro-services" class="md-nav__link">
-    BACA-related micro-services
+  <a href="#baca-related-micro-services" title="BACA-related micro-services " class="md-nav__link">
+    BACA-related micro-services 
   </a>
   
     <nav class="md-nav">
@@ -890,8 +890,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#baca-related-micro-services" title="BACA-related micro-services" class="md-nav__link">
-    BACA-related micro-services
+  <a href="#baca-related-micro-services" title="BACA-related micro-services " class="md-nav__link">
+    BACA-related micro-services 
   </a>
   
     <nav class="md-nav">
@@ -958,17 +958,17 @@
                 
                 <h1 id="capture-development">Capture development</h1>
 <p>Business Automation Content Analyzer (BACA) is a <em>no code</em> environment. So, although we include this topic under the Development section, it is really rather configuration that is done for a BACA solution.</p>
-<p>It is used in the solution when BAW needs to automatically process an uploaded vehicle repair estimate. For further details please see the design section <a href="/design/workflow/#mediated-baca-integration">Mediated BACA integration</a>.</p>
+<p>It is used in the solution when BAW needs to automatically process an uploaded vehicle repair estimate. For further details please see the design section <a href="../design/workflow/#mediated-baca-integration">Mediated BACA integration</a>.</p>
 <h2 id="baca-ontology">BACA ontology</h2>
 <p>In the BACA front-end, the Ontology Management Tool is used to define document classes such as our <code>Auto Repair Estimate</code> and within that, we define a set of keys which is data we want to train BACA to recognize in uploaded documents and to parse the results out (in our case we want the JSON representation).</p>
 <p>In the image below we show the set of keys and have highlighted one example <code>repairer code</code>. We also then define a set of key aliases for a key to represent the different terms we might expect in a document that really mean the field is a <code>repairer code</code>.</p>
 <p><img alt="" src="../images/baca-ontology1.png" /></p>
 <p>Just to illustrate the different keys, below we see the focus on <code>tax rate</code> and it expanded to show the various key aliases defined for it.</p>
 <p><img alt="" src="../images/baca-ontology2.png" /></p>
-<p>Note that the <a href="/showtime/run-solution/">Showtime</a> section  documents that in BAW, there are a number of environment variables related to BACA that need to be specified when configuring the deployed solution. The API section of the BACA front-end is where you find the <code>API Key</code> and the host information for the endpoint (the <code>Request URL</code> section).</p>
+<p>Note that the <a href="../../showtime/run-solution/">Showtime</a> section  documents that in BAW, there are a number of environment variables related to BACA that need to be specified when configuring the deployed solution. The API section of the BACA front-end is where you find the <code>API Key</code> and the host information for the endpoint (the <code>Request URL</code> section).</p>
 <p><img alt="" src="../images/baca-api1.png" /></p>
-<h2 id="baca-related-micro-services">BACA-related micro-services</h2>
-<p>A BACA Mediator micro-service has been developed that is used by BAW (as described in <a href="/development/process-services/#baca-integration">BACA integration</a>) to interact with BACA (for details see <a href="/development/content-analyzer/">Content Analyser</a>). The micro-service is implemented in Node.js and deployed on the Red Hat OpenShift Container Platform (OCP).</p>
+<h2 id="baca-related-micro-services">BACA-related micro-services <a name="baca-microservices"></a></h2>
+<p>A BACA Mediator micro-service has been developed that is used by BAW (as described in <a href="../process-services/#baca-integration">BACA integration</a>) to interact with BACA. The micro-service is implemented in Node.js and deployed on the Red Hat OpenShift Container Platform (OCP).</p>
 <h3 id="analyze-a-document">Analyze a document</h3>
 <p>For this single micro-service, and because we are not showing a full CI/CD DevOps cycle, we are using a simple code editor to display the code.
 If you are interested in Cloud Native development using the latest tooling, then have a look at <a href="https://kabanero.io/">Kabanero</a>.</p>

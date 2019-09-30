@@ -922,13 +922,13 @@
 </ul>
 <h2 id="scenario-starting-point">Scenario starting point</h2>
 <p>As this scenario builds on the <a href="../resources/denim-compute-scenario-walkthrough.pdf">main scenario</a>, it is recommended that a reader familiarises themselves with that first. In that document repair estimates are solicited from 4 repair shops (page 36) and we see work items in the BAW Process Portal.</p>
-<p>We are going to show that one of those repair shops (highlighted below) will in parallel send a PDF that will be automatically processed by BACA, and if successful, then the work item in Process Portal will be cancelled.
+<p>We are going to show that one of those repair shops (highlighted below) will in parallel send a PDF that will be automatically processed by BACA, and if successful, then the work item in Process Portal will be canceled.
 <img alt="" src="../images/baca-scenario1.png" /></p>
 <p>As the scenario will interact with a Node.js micro-service deployed on the OCP cluster, we first look at the <code>baca-mediator-app</code> project that uses a deployment config named <code>rhocp-baca-mediator</code>.</p>
 <p><img alt="" src="../images/baca-scenario2.png" /></p>
 <p>The deployment config references a Kubernetes pod shown below:
 <img alt="" src="../images/baca-scenario3.png" /></p>
-<p>Selecting the pod and then the Logs section shows the output of the container, and in this case shows that the micro-service is initialised and awaiting requests.
+<p>Selecting the pod and then the Logs section shows the output of the container, and in this case shows that the micro-service is initialized and awaiting requests.
 <img alt="" src="../images/baca-scenario4.png" /></p>
 <h2 id="upload-invalid-estimate-pdf">Upload invalid estimate PDF</h2>
 <p>We are going to demonstrate first with a deliberately malformed PDF of an estimate, which does not follow agreed conventions and will not be able to result in it being parsed into a valid estimate.</p>
