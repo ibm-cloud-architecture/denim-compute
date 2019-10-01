@@ -36,7 +36,8 @@ This is the BPM Process implementation of *Signal Adjuster Report Created* with 
 ![](images/workflow-design7.png)
 
 ## Mediated BACA integration <a name="mediated-baca-integration"></a>
-A [side scenario](../usecase/baca-scenario-walkthrough.md) of the main scenario involves integration with Business Automation Content Analyzer (BACA) in order to automatically detect an uploaded document representing a vehicle repair estimate provided by a repair shop. The document is parsed by BACA and the data extracted to build up an estimate data structure that includes the set of vehicle parts needed to repair the damaged vehicle. In the Case, a case activity named `Process Repair Estimate` is configured to be triggered by the precondition of a document of class `Auto Repair Estimate` being added to the case.
+
+Aside from the main scenario, a [capture scenario](../usecase/baca-scenario-walkthrough.md) involves integration with Business Automation Content Analyzer (BACA) in order to automatically detect an uploaded document representing a vehicle repair estimate provided by a repair shop. The document is parsed by BACA and the data extracted to build up an estimate data structure that includes the set of vehicle parts needed to repair the damaged vehicle. In the Case, a case activity named `Process Repair Estimate` is configured to be triggered by the precondition of a document of class `Auto Repair Estimate` being added to the case.
 ![](images/workflow-design8.png)
 
 The case activity implementation shown below involves integrating to BACA and deciding whether the resulting parsed data is a valid estimate or not. If valid it is then sent as a message event using a publish-subscribe paradigm for interested subscribers to react to the newly available repair estimate.
@@ -52,3 +53,13 @@ A typical pattern for implementing a mediation between such business and technic
 
 After the message is published the subscriber is an in-flight instance of the `Provide Estimates Per Repairer`  process. In that the `user task` has an `interrupting boundary message event` configured with correlation details set (such as the specific `Auto Claim` and the `Vehicle VIN`) so that the specific instance of this process can be identified and the message delivered to it.
 ![](images/workflow-design10.png)
+
+## Sundries
+
+### Leveraging case persistence
+The claims solution implements a Policy case which is persisted as a record to represent the insurance policy. The Policy case type stores the policy information and claims are generated from the policy by a *create claim* activity, which creates the new claim case and also transfer existing policy information into the claim.
+
+### Case data model and business objects
+The Case data model currently does not fully support Business Objects, therefore an interim solution have been implemented to map properties.
+The interface of the Case Manager data model with other BAW components may require the implementation of distinct case properties to match each element of a business object. A new upcoming version of Case Manager will fully support business objects and allow better data integration with other BAW components.
+

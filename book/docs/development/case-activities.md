@@ -1,5 +1,4 @@
 # Case activities
----
 
 ## Leveraging case persistence
 The claims solution implements a Policy case which is persisted as a record to represent the insurance policy. The Policy case type stores the policy information and claims are generated from the policy by a *create claim* activity, which creates the new claim case and also transfer existing policy information into the claim.
@@ -27,10 +26,38 @@ Where <connection point> is the the FileNet workflow system connection point con
 
 ![Create New Claim Activity Process Desiger](images/create-new-claim-activity-PD.PNG)
 
----
-
 ### Case data model and business objects
 The Case data model currently does not fully support Business Objects, therefore an interim solution has been implemented to map properties.
 The interface of the Case Manager data model with other BAW components may require the implementation of distinct case properties to match each element of a business object. A new upcoming version of Case Manager will fully support business objects and allow better data integration with other BAW components.
 
----
+### Process and Case data integration
+
+BAW 19.0.0.1 offers JavaScript facilities (object and associated set of methods) to allow the data integration between Process and Case. These objects and methods allow to transfer case properties into the process and subsequently to save back into the case property data updated.
+
+In processes that implement case activities, you can interact with the JavaScript case operations through the new operations that have been added to the [`TWProcessInstance`](https://www.ibm.com/support/knowledgecenter/en/SS8JB4/com.ibm.wbpm.ref.doc/ae/doc/JSAPI.html#TWProcessInstance) JavaScript API in Business Automation Workflow. Useful methods are:
+
+- `addCommentToParentActivity`
+- `addCommentToParentCase`
+- `completeParentCaseStage`
+- `createCaseUsingSameCaseType`
+- `createCaseUsingSpecifiedCaseType`
+- `createDiscretionaryActivityInParentCase`
+- `createDiscretionaryActivityInParentCaseWithWorkflowParams`
+- `createParentCaseDiscretionaryActivityWithProps`
+- `createSubfolderUnderParentCase`
+- `getParentActivityPropertyNames`
+- `getParentActivityPropertyValues`
+- `getParentCaseCasePropertyNames`
+- `getParentCaseCasePropertyValues`
+- `getParentCaseStructure`
+- `relateParentCase`
+- `searchParentCaseActivities`
+- `setParentActivityPropertyValues`
+- `setParentCaseCasePropertyValues`
+- `unrelateParentCase`
+
+### Case properties validation
+
+Case Manager delivers basic property validation OOTB.
+For instance, properties are validated according to type and whether they are required or not. Other more complex validation rules, with more complex logic require the implementation of scripts. The claims processing solution implements some of these script-based property validation to showcase the concept.
+

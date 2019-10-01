@@ -69,3 +69,17 @@ One the test suite run is complete, you will be switched to the `Reports` tab. Y
 
 ![Test decisions](images/decision-testing-3.png)
 
+## Sundries
+
+### Integrating multiple decision services based on a common BOM
+While ODM rulesets are grouped in a RuleApp deployment artifact, the corresponding service definitions are generated individually for each ruleset, as shown below: 
+
+![HTDS description file](images/odm-htds-description.png)
+
+In our use case, we use one `claim_processing` RuleApp, and we have to generate three separate service definition files, one for each `segment_claim`, `assess_fraud` and `review_escalation`.
+
+Because all three decision services are sharing the same [input object model](../design/decisions.md#odm-object-model), importing these separate service definition files in BAW will create three separate (but identical) versions of the business objects hierarchy.
+
+One solution, using e.g. the YAML definition files, is to rename each `Request` and `Response` definitions in the generated service definition files with a unique name, and then merge the multiple YAML files into a single one that reflects the services exposed by the RuleApp.
+
+![RuleApp API](images/claim-processing-api.png)

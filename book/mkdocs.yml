@@ -23,7 +23,6 @@ nav:
         - Workflow: ./design/workflow.md
         - Decisions: ./design/decisions.md
         - Insights: ./design/insights.md
-        - Sundries: ./design/sundries.md
     - Development:
         - Workflow: 
             - Introduction: ./development/workflow-intro.md
@@ -36,7 +35,6 @@ nav:
         - Decisions: ./development/decisions.md
         - Insights: ./development/insights.md
         - Capture: ./development/capture.md
-        - Sundries: ./development/sundries.md
     - Showtime:
         - Deploy: ./showtime/deploy-solution.md
         - Run: ./showtime/run-solution.md
