@@ -1,8 +1,8 @@
 # Capture development
 
-Business Automation Content Analyzer (BACA) is a *no code* environment. So, although we include this topic under the Development section, it is really rather configuration that is done for a BACA solution.
+Business Automation Content Analyzer (BACA) is a *no-code* environment. So, although we include this topic under the Development section, it is really rather configuration that is done for a BACA solution.
 
-It is used in the solution when BAW needs to automatically process an uploaded vehicle repair estimate. For further details please see the design section [Mediated BACA integration](../design/workflow/#mediated-baca-integration).
+It is used in the solution when BAW needs to automatically process an uploaded vehicle repair estimate. For further details please see the [mediated BACA integration](../design/workflow.md/#mediated-baca-integration) section.
 
 ## BACA ontology
 
