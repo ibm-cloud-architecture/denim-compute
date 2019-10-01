@@ -529,6 +529,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sundries" title="Sundries" class="md-nav__link">
+    Sundries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leveraging-case-persistence" title="Leveraging case persistence" class="md-nav__link">
+    Leveraging case persistence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-data-model-and-business-objects" title="Case data model and business objects" class="md-nav__link">
+    Case data model and business objects
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -560,18 +587,6 @@
   <li class="md-nav__item">
     <a href="../insights/" title="Insights" class="md-nav__link">
       Insights
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../sundries/" title="Sundries" class="md-nav__link">
-      Sundries
     </a>
   </li>
 
@@ -744,18 +759,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../development/sundries/" title="Sundries" class="md-nav__link">
-      Sundries
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -855,6 +858,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sundries" title="Sundries" class="md-nav__link">
+    Sundries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leveraging-case-persistence" title="Leveraging case persistence" class="md-nav__link">
+    Leveraging case persistence
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-data-model-and-business-objects" title="Case data model and business objects" class="md-nav__link">
+    Case data model and business objects
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -894,7 +924,7 @@
 <p>This is the BPM Process implementation of <em>Signal Adjuster Report Created</em> with the message send event highlighted.</p>
 <p><img alt="" src="../images/workflow-design7.png" /></p>
 <h2 id="mediated-baca-integration">Mediated BACA integration <a name="mediated-baca-integration"></a></h2>
-<p>A <a href="../../usecase/baca-scenario-walkthrough/">side scenario</a> of the main scenario involves integration with Business Automation Content Analyzer (BACA) in order to automatically detect an uploaded document representing a vehicle repair estimate provided by a repair shop. The document is parsed by BACA and the data extracted to build up an estimate data structure that includes the set of vehicle parts needed to repair the damaged vehicle. In the Case, a case activity named <code>Process Repair Estimate</code> is configured to be triggered by the precondition of a document of class <code>Auto Repair Estimate</code> being added to the case.
+<p>Aside from the main scenario, a <a href="../../usecase/baca-scenario-walkthrough/">capture scenario</a> involves integration with Business Automation Content Analyzer (BACA) in order to automatically detect an uploaded document representing a vehicle repair estimate provided by a repair shop. The document is parsed by BACA and the data extracted to build up an estimate data structure that includes the set of vehicle parts needed to repair the damaged vehicle. In the Case, a case activity named <code>Process Repair Estimate</code> is configured to be triggered by the precondition of a document of class <code>Auto Repair Estimate</code> being added to the case.
 <img alt="" src="../images/workflow-design8.png" /></p>
 <p>The case activity implementation shown below involves integrating to BACA and deciding whether the resulting parsed data is a valid estimate or not. If valid it is then sent as a message event using a publish-subscribe paradigm for interested subscribers to react to the newly available repair estimate.
 <img alt="" src="../images/workflow-design9.png" /></p>
@@ -910,6 +940,12 @@
 </ul>
 <p>After the message is published the subscriber is an in-flight instance of the <code>Provide Estimates Per Repairer</code>  process. In that the <code>user task</code> has an <code>interrupting boundary message event</code> configured with correlation details set (such as the specific <code>Auto Claim</code> and the <code>Vehicle VIN</code>) so that the specific instance of this process can be identified and the message delivered to it.
 <img alt="" src="../images/workflow-design10.png" /></p>
+<h2 id="sundries">Sundries</h2>
+<h3 id="leveraging-case-persistence">Leveraging case persistence</h3>
+<p>The claims solution implements a Policy case which is persisted as a record to represent the insurance policy. The Policy case type stores the policy information and claims are generated from the policy by a <em>create claim</em> activity, which creates the new claim case and also transfer existing policy information into the claim.</p>
+<h3 id="case-data-model-and-business-objects">Case data model and business objects</h3>
+<p>The Case data model currently does not fully support Business Objects, therefore an interim solution have been implemented to map properties.
+The interface of the Case Manager data model with other BAW components may require the implementation of distinct case properties to match each element of a business object. A new upcoming version of Case Manager will fully support business objects and allow better data integration with other BAW components.</p>
                 
                   
                 

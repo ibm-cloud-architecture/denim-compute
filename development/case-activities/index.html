@@ -517,18 +517,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../design/sundries/" title="Sundries" class="md-nav__link">
-      Sundries
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -678,6 +666,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#process-and-case-data-integration" title="Process and Case data integration" class="md-nav__link">
+    Process and Case data integration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-properties-validation" title="Case properties validation" class="md-nav__link">
+    Case properties validation
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -755,18 +757,6 @@
   <li class="md-nav__item">
     <a href="../capture/" title="Capture" class="md-nav__link">
       Capture
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../sundries/" title="Sundries" class="md-nav__link">
-      Sundries
     </a>
   </li>
 
@@ -878,6 +868,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#process-and-case-data-integration" title="Process and Case data integration" class="md-nav__link">
+    Process and Case data integration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-properties-validation" title="Case properties validation" class="md-nav__link">
+    Case properties validation
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -903,7 +907,6 @@
                 
                 
                 <h1 id="case-activities">Case activities</h1>
-<hr />
 <h2 id="leveraging-case-persistence">Leveraging case persistence</h2>
 <p>The claims solution implements a Policy case which is persisted as a record to represent the insurance policy. The Policy case type stores the policy information and claims are generated from the policy by a <em>create claim</em> activity, which creates the new claim case and also transfer existing policy information into the claim.</p>
 <p><img alt="Policy Claim Model" src="../images/policy-claim-model.png" /> </p>
@@ -919,11 +922,36 @@ The details of the activity can be accessed from BAW Case Builder.</p>
 <p><code>install_root/FileNet/ContentEngine/tools/PE/pedesigner.bat &lt;connection point&gt;</code></p>
 <p>Where <connection point> is the the FileNet workflow system connection point configured in your environment. In the following is show  the general view of the workflow and the details of the step and ICM_Operation to create a new claim case.</p>
 <p><img alt="Create New Claim Activity Process Desiger" src="../images/create-new-claim-activity-PD.PNG" /></p>
-<hr />
 <h3 id="case-data-model-and-business-objects">Case data model and business objects</h3>
 <p>The Case data model currently does not fully support Business Objects, therefore an interim solution has been implemented to map properties.
 The interface of the Case Manager data model with other BAW components may require the implementation of distinct case properties to match each element of a business object. A new upcoming version of Case Manager will fully support business objects and allow better data integration with other BAW components.</p>
-<hr />
+<h3 id="process-and-case-data-integration">Process and Case data integration</h3>
+<p>BAW 19.0.0.1 offers JavaScript facilities (object and associated set of methods) to allow the data integration between Process and Case. These objects and methods allow to transfer case properties into the process and subsequently to save back into the case property data updated.</p>
+<p>In processes that implement case activities, you can interact with the JavaScript case operations through the new operations that have been added to the <a href="https://www.ibm.com/support/knowledgecenter/en/SS8JB4/com.ibm.wbpm.ref.doc/ae/doc/JSAPI.html#TWProcessInstance"><code>TWProcessInstance</code></a> JavaScript API in Business Automation Workflow. Useful methods are:</p>
+<ul>
+<li><code>addCommentToParentActivity</code></li>
+<li><code>addCommentToParentCase</code></li>
+<li><code>completeParentCaseStage</code></li>
+<li><code>createCaseUsingSameCaseType</code></li>
+<li><code>createCaseUsingSpecifiedCaseType</code></li>
+<li><code>createDiscretionaryActivityInParentCase</code></li>
+<li><code>createDiscretionaryActivityInParentCaseWithWorkflowParams</code></li>
+<li><code>createParentCaseDiscretionaryActivityWithProps</code></li>
+<li><code>createSubfolderUnderParentCase</code></li>
+<li><code>getParentActivityPropertyNames</code></li>
+<li><code>getParentActivityPropertyValues</code></li>
+<li><code>getParentCaseCasePropertyNames</code></li>
+<li><code>getParentCaseCasePropertyValues</code></li>
+<li><code>getParentCaseStructure</code></li>
+<li><code>relateParentCase</code></li>
+<li><code>searchParentCaseActivities</code></li>
+<li><code>setParentActivityPropertyValues</code></li>
+<li><code>setParentCaseCasePropertyValues</code></li>
+<li><code>unrelateParentCase</code></li>
+</ul>
+<h3 id="case-properties-validation">Case properties validation</h3>
+<p>Case Manager delivers basic property validation OOTB.
+For instance, properties are validated according to type and whether they are required or not. Other more complex validation rules, with more complex logic require the implementation of scripts. The claims processing solution implements some of these script-based property validation to showcase the concept.</p>
                 
                   
                 

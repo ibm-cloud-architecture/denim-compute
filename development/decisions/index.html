@@ -517,18 +517,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../design/sundries/" title="Sundries" class="md-nav__link">
-      Sundries
-    </a>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -730,6 +718,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sundries" title="Sundries" class="md-nav__link">
+    Sundries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integrating-multiple-decision-services-based-on-a-common-bom" title="Integrating multiple decision services based on a common BOM" class="md-nav__link">
+    Integrating multiple decision services based on a common BOM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -761,18 +769,6 @@
   <li class="md-nav__item">
     <a href="../capture/" title="Capture" class="md-nav__link">
       Capture
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../sundries/" title="Sundries" class="md-nav__link">
-      Sundries
     </a>
   </li>
 
@@ -897,6 +893,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sundries" title="Sundries" class="md-nav__link">
+    Sundries
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integrating-multiple-decision-services-based-on-a-common-bom" title="Integrating multiple decision services based on a common BOM" class="md-nav__link">
+    Integrating multiple decision services based on a common BOM
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -958,6 +974,14 @@ We have set-up the following properties in the deployment configuration. Once de
 <p><img alt="Test decisions" src="../images/decision-testing-2.png" /></p>
 <p>One the test suite run is complete, you will be switched to the <code>Reports</code> tab. You can then click on the newly generated test execution report to inspect the individual test scenarios execution:</p>
 <p><img alt="Test decisions" src="../images/decision-testing-3.png" /></p>
+<h2 id="sundries">Sundries</h2>
+<h3 id="integrating-multiple-decision-services-based-on-a-common-bom">Integrating multiple decision services based on a common BOM</h3>
+<p>While ODM rulesets are grouped in a RuleApp deployment artifact, the corresponding service definitions are generated individually for each ruleset, as shown below: </p>
+<p><img alt="HTDS description file" src="../images/odm-htds-description.png" /></p>
+<p>In our use case, we use one <code>claim_processing</code> RuleApp, and we have to generate three separate service definition files, one for each <code>segment_claim</code>, <code>assess_fraud</code> and <code>review_escalation</code>.</p>
+<p>Because all three decision services are sharing the same <a href="../../design/decisions/#odm-object-model">input object model</a>, importing these separate service definition files in BAW will create three separate (but identical) versions of the business objects hierarchy.</p>
+<p>One solution, using e.g. the YAML definition files, is to rename each <code>Request</code> and <code>Response</code> definitions in the generated service definition files with a unique name, and then merge the multiple YAML files into a single one that reflects the services exposed by the RuleApp.</p>
+<p><img alt="RuleApp API" src="../images/claim-processing-api.png" /></p>
                 
                   
                 
