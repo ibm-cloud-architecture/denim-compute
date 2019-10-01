@@ -957,8 +957,8 @@
                 
                 
                 <h1 id="capture-development">Capture development</h1>
-<p>Business Automation Content Analyzer (BACA) is a <em>no code</em> environment. So, although we include this topic under the Development section, it is really rather configuration that is done for a BACA solution.</p>
-<p>It is used in the solution when BAW needs to automatically process an uploaded vehicle repair estimate. For further details please see the design section <a href="../design/workflow/#mediated-baca-integration">Mediated BACA integration</a>.</p>
+<p>Business Automation Content Analyzer (BACA) is a <em>no-code</em> environment. So, although we include this topic under the Development section, it is really rather configuration that is done for a BACA solution.</p>
+<p>It is used in the solution when BAW needs to automatically process an uploaded vehicle repair estimate. For further details please see the <a href="../design/workflow.md/#mediated-baca-integration">mediated BACA integration</a> section.</p>
 <h2 id="baca-ontology">BACA ontology</h2>
 <p>In the BACA front-end, the Ontology Management Tool is used to define document classes such as our <code>Auto Repair Estimate</code> and within that, we define a set of keys which is data we want to train BACA to recognize in uploaded documents and to parse the results out (in our case we want the JSON representation).</p>
 <p>In the image below we show the set of keys and have highlighted one example <code>repairer code</code>. We also then define a set of key aliases for a key to represent the different terms we might expect in a document that really mean the field is a <code>repairer code</code>.</p>
