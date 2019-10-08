@@ -114,65 +114,64 @@ Currently `Business Automation Content Analyzer (BACA)` only allows for the impo
 
 - Then use `Import Ontology` and select the [`dc-baca-ontology.json`](https://github.com/ibm-cloud-architecture/denim-compute/blob/master/solution/baca/dc-baca-ontology.json) file.
 
-![](images/config-baca2.png)
-
 - You should now have an ontology similar to that shown below:
 
-![](images/config-baca3.png)
+![](images/config-baca2.png)
 
 When you are finished with trying out the [BACA scenario](../usecase/baca-scenario-walkthrough.md) you can re-import the saved JSON export of your original ontology.
 
-## Deploy the BACA Mediator micro-service
+## Deploy the BACA mediator micro-service
 
-**NB:** The following instructions are for an OCP 3.11 cluster.
+**NB:** The following instructions are valid for an OCP 3.11 cluster.
 
 ### Configure GitHub repository
-We recommend using a secure private repository rather than a `GitHub` Public one and these instructions assume that is the case. The start point is that you should fork this repository so that you can then configure your own security settings.
+We recommend using a secure private repository rather than a GitHub public one; the following instructions assume that is the case.
+The starting point is that you should fork this repository so you can then configure your own security settings.
 
-- Generate an `SSH Key pair` and ensure to specify the flag for no passphrase as shown below.
+- Generate an SSH key pair, making sure to specify the flag for no passphrase as shown below.
 
 ![](images/micro-config-github1.png)
 
-- In your target GitHub repository go to `Settings` then `Deploy keys` and click **Add deploy key**. 
+- In your target GitHub repository go to `Settings` then `Deploy keys` and click `Add deploy key`. 
 
 ![](images/micro-config-github2.png)
 
-- Provide a meaningful title that shows what the key is for (in our case to allow source code deploy in OCP) and then upload the public key that was generated earlier and then click **Add key**.
+- Provide a meaningful title that shows the role of the key (in our case to allow to deploy source code to OCP), upload the public key that was generated earlier and click `Add key`.
 
 ![](images/micro-config-github3.png)
 
-- You should now have something like that shown below for our repository.
+- You should now have something like that shown below:
 
 ![](images/micro-config-github4.png)
 
-### Create Project in OCP
-- From the OCP web console select the **Create Project** option.
+### Create a project
+- From the OCP web console select the `Create Project` option.
 
 ![](images/micro-config-rhocp1.png)
 
-- Provide a name (we suggest something like `baca-mediate-app`) and **Create**.
+- Provide a name (we suggest something like `baca-mediate-app`) and click `Create`.
 
 ![](images/micro-config-rhocp2.png)
 
-### Create Secret in OCP
-We need to create a secret to reference the `SSH Key` generated earlier for interacting with the source repository in `GitHub`.
+### Create a secret
+We need to create a secret to reference the SSH key generated earlier for interacting with the source repository in GitHub.
 
-- In the newly created Project, select `Resources`, then `Secrets` and click **Create Secret**.
+- In the newly created Project, select `Resources`, then `Secrets` and click `Create Secret`.
 
 ![](images/micro-config-rhocp3.png)
 
-- Select `Source Secret`, enter the name `dc-gh-baca-mediator-secret`, select `SSH Key` and click **Browse.." and then find the `SSH Private Key` generated earlier.
+- Select `Source Secret`, enter the name `dc-gh-baca-mediator-secret`, select `SSH Key` and click `Browse..` and then find the SSH private key file generated earlier.
 
 ![](images/micro-config-rhocp4.png)
 
-- Check the option to link the secret and choose `builder` as the target `Service Account`, then click **Create** to finish.
+- Check the option to link the secret and choose `builder` as the target `Service Account`, then click `Create` to finish.
 
 ![](images/micro-config-rhocp5.png)
 
-### Deploy using Source to Image (S2I)
-There are a number of options for deploying to OCP, we are going to use `Source to Image` which directly builds from a source code repository such as `GitHub`.
+### Deploy using Source to Image
+There are a number of options for deploying to OCP, we are going to use *Source to Image (S2I)* which directly builds from a source code repository such as GitHub.
 
-- Click **Add to Project** and select the **Browse Catalog** option.
+- Click `Add to Project` and select the `Browse Catalog` option.
 
 ![](images/micro-config-rhocp6.png)
 
@@ -180,7 +179,7 @@ There are a number of options for deploying to OCP, we are going to use `Source 
 
 ![](images/micro-config-rhocp7.png)
 
-- Supply an application name and provide the SSH url for the target GitHub repository. Then it is important to click the **advanced options** link as we need to configure some non-standard items as this is a secure repository.
+- Supply an application name and provide the SSH URL for the target GitHub repository. Then it is important to click the `advanced options` link as we need to configure some non-standard items as this is a secure repository.
 
 ![](images/micro-config-rhocp8.png)
 
@@ -188,19 +187,19 @@ There are a number of options for deploying to OCP, we are going to use `Source 
 
 ![](images/micro-config-rhocp9.png)
 
-- There are many other options available but we want to go with the defaults so scroll down and click the **Create** button to complete.
+- There are many other options available, but we want to go with the defaults so scroll down and click the `Create` button to complete.
 
 ![](images/micro-config-rhocp10.png)
 
-- A number of `Kubernetes Resources` will now be created including a `Build Config` and `Build` that will pull the source and build a deployment. When done on the overview section you should see summary information for the `Deployment Config` including that it has 1 `Pod` (note in a realistic environment we would set this to have > 1 Pod for failover but it makes it easier for us to see logs with this 1 Pod running without having to configure an `ELK` stack) and it is running. Take note also of the `Route` highlighted which is the public ingress point to the micro-service and this is needed for configuring the environment variable in the `BAW` [config section](#configure-servers) above.
+- A number of Kubernetes resources will now be created including a *Build Config* and *Build* that will pull the source and build a deployment. When done on the overview section you should see summary information for the Deployment Config including that it has one pod (note in a realistic environment we may want to set this to have more than Pod for failover but it makes it easier for us to see logs with this one pod running without having to configure an `ELK` stack) and it is running. Take note also of the route highlighted which is the public ingress point to the micro-service and this is needed for configuring the environment variable in the BAW [config section](#configure-servers) above.
 
 ![](images/micro-config-rhocp11.png)
 
-- Expand the twisty and you see more information on the `Deployment Config` including links to other resources which you can click on and explore. For now we want to verify the `Pod` is as expected so click on the icon of the `Pod` (top right).
+- Expand the twisty and you see more information on the `Deployment Config` including links to other resources which you can click on and explore. For now we want to verify the pod is as expected so click on the icon of the pod (top right).
 
 ![](images/micro-config-rhocp12.png)
 
-- You are taken to the `Pod` summary and within that there is a `Logs` tab.
+- You are taken to the pod summary and within that there is a `Logs` tab.
 
 ![](images/micro-config-rhocp13.png)
 
