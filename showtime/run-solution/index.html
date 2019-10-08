@@ -791,8 +791,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-the-baca-mediator-micro-service" title="Deploy the BACA Mediator micro-service" class="md-nav__link">
-    Deploy the BACA Mediator micro-service
+  <a href="#deploy-the-baca-mediator-micro-service" title="Deploy the BACA mediator micro-service" class="md-nav__link">
+    Deploy the BACA mediator micro-service
   </a>
   
     <nav class="md-nav">
@@ -806,22 +806,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-project-in-ocp" title="Create Project in OCP" class="md-nav__link">
-    Create Project in OCP
+  <a href="#create-a-project" title="Create a project" class="md-nav__link">
+    Create a project
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-secret-in-ocp" title="Create Secret in OCP" class="md-nav__link">
-    Create Secret in OCP
+  <a href="#create-a-secret" title="Create a secret" class="md-nav__link">
+    Create a secret
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#deploy-using-source-to-image-s2i" title="Deploy using Source to Image (S2I)" class="md-nav__link">
-    Deploy using Source to Image (S2I)
+  <a href="#deploy-using-source-to-image" title="Deploy using Source to Image" class="md-nav__link">
+    Deploy using Source to Image
   </a>
   
 </li>
@@ -915,8 +915,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-the-baca-mediator-micro-service" title="Deploy the BACA Mediator micro-service" class="md-nav__link">
-    Deploy the BACA Mediator micro-service
+  <a href="#deploy-the-baca-mediator-micro-service" title="Deploy the BACA mediator micro-service" class="md-nav__link">
+    Deploy the BACA mediator micro-service
   </a>
   
     <nav class="md-nav">
@@ -930,22 +930,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-project-in-ocp" title="Create Project in OCP" class="md-nav__link">
-    Create Project in OCP
+  <a href="#create-a-project" title="Create a project" class="md-nav__link">
+    Create a project
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#create-secret-in-ocp" title="Create Secret in OCP" class="md-nav__link">
-    Create Secret in OCP
+  <a href="#create-a-secret" title="Create a secret" class="md-nav__link">
+    Create a secret
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#deploy-using-source-to-image-s2i" title="Deploy using Source to Image (S2I)" class="md-nav__link">
-    Deploy using Source to Image (S2I)
+  <a href="#deploy-using-source-to-image" title="Deploy using Source to Image" class="md-nav__link">
+    Deploy using Source to Image
   </a>
   
 </li>
@@ -1085,61 +1085,63 @@
 </ul>
 <p><img alt="" src="../images/config-baca1.png" /></p>
 <ul>
-<li>Then use <code>Import Ontology</code> and select the <a href="https://github.com/ibm-cloud-architecture/denim-compute/blob/master/solution/baca/dc-baca-ontology.json"><code>dc-baca-ontology.json</code></a> file.</li>
+<li>
+<p>Then use <code>Import Ontology</code> and select the <a href="https://github.com/ibm-cloud-architecture/denim-compute/blob/master/solution/baca/dc-baca-ontology.json"><code>dc-baca-ontology.json</code></a> file.</p>
+</li>
+<li>
+<p>You should now have an ontology similar to that shown below:</p>
+</li>
 </ul>
 <p><img alt="" src="../images/config-baca2.png" /></p>
-<ul>
-<li>You should now have an ontology similar to that shown below:</li>
-</ul>
-<p><img alt="" src="../images/config-baca3.png" /></p>
 <p>When you are finished with trying out the <a href="../../usecase/baca-scenario-walkthrough/">BACA scenario</a> you can re-import the saved JSON export of your original ontology.</p>
-<h2 id="deploy-the-baca-mediator-micro-service">Deploy the BACA Mediator micro-service</h2>
-<p><strong>NB:</strong> The following instructions are for an OCP 3.11 cluster.</p>
+<h2 id="deploy-the-baca-mediator-micro-service">Deploy the BACA mediator micro-service</h2>
+<p><strong>NB:</strong> The following instructions are valid for an OCP 3.11 cluster.</p>
 <h3 id="configure-github-repository">Configure GitHub repository</h3>
-<p>We recommend using a secure private repository rather than a <code>GitHub</code> Public one and these instructions assume that is the case. The start point is that you should fork this repository so that you can then configure your own security settings.</p>
+<p>We recommend using a secure private repository rather than a GitHub public one; the following instructions assume that is the case.
+The starting point is that you should fork this repository so you can then configure your own security settings.</p>
 <ul>
-<li>Generate an <code>SSH Key pair</code> and ensure to specify the flag for no passphrase as shown below.</li>
+<li>Generate an SSH key pair, making sure to specify the flag for no passphrase as shown below.</li>
 </ul>
 <p><img alt="" src="../images/micro-config-github1.png" /></p>
 <ul>
-<li>In your target GitHub repository go to <code>Settings</code> then <code>Deploy keys</code> and click <strong>Add deploy key</strong>. </li>
+<li>In your target GitHub repository go to <code>Settings</code> then <code>Deploy keys</code> and click <code>Add deploy key</code>. </li>
 </ul>
 <p><img alt="" src="../images/micro-config-github2.png" /></p>
 <ul>
-<li>Provide a meaningful title that shows what the key is for (in our case to allow source code deploy in OCP) and then upload the public key that was generated earlier and then click <strong>Add key</strong>.</li>
+<li>Provide a meaningful title that shows the role of the key (in our case to allow to deploy source code to OCP), upload the public key that was generated earlier and click <code>Add key</code>.</li>
 </ul>
 <p><img alt="" src="../images/micro-config-github3.png" /></p>
 <ul>
-<li>You should now have something like that shown below for our repository.</li>
+<li>You should now have something like that shown below:</li>
 </ul>
 <p><img alt="" src="../images/micro-config-github4.png" /></p>
-<h3 id="create-project-in-ocp">Create Project in OCP</h3>
+<h3 id="create-a-project">Create a project</h3>
 <ul>
-<li>From the OCP web console select the <strong>Create Project</strong> option.</li>
+<li>From the OCP web console select the <code>Create Project</code> option.</li>
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp1.png" /></p>
 <ul>
-<li>Provide a name (we suggest something like <code>baca-mediate-app</code>) and <strong>Create</strong>.</li>
+<li>Provide a name (we suggest something like <code>baca-mediate-app</code>) and click <code>Create</code>.</li>
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp2.png" /></p>
-<h3 id="create-secret-in-ocp">Create Secret in OCP</h3>
-<p>We need to create a secret to reference the <code>SSH Key</code> generated earlier for interacting with the source repository in <code>GitHub</code>.</p>
+<h3 id="create-a-secret">Create a secret</h3>
+<p>We need to create a secret to reference the SSH key generated earlier for interacting with the source repository in GitHub.</p>
 <ul>
-<li>In the newly created Project, select <code>Resources</code>, then <code>Secrets</code> and click <strong>Create Secret</strong>.</li>
+<li>In the newly created Project, select <code>Resources</code>, then <code>Secrets</code> and click <code>Create Secret</code>.</li>
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp3.png" /></p>
 <ul>
-<li>Select <code>Source Secret</code>, enter the name <code>dc-gh-baca-mediator-secret</code>, select <code>SSH Key</code> and click **Browse.." and then find the <code>SSH Private Key</code> generated earlier.</li>
+<li>Select <code>Source Secret</code>, enter the name <code>dc-gh-baca-mediator-secret</code>, select <code>SSH Key</code> and click <code>Browse..</code> and then find the SSH private key file generated earlier.</li>
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp4.png" /></p>
 <ul>
-<li>Check the option to link the secret and choose <code>builder</code> as the target <code>Service Account</code>, then click <strong>Create</strong> to finish.</li>
+<li>Check the option to link the secret and choose <code>builder</code> as the target <code>Service Account</code>, then click <code>Create</code> to finish.</li>
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp5.png" /></p>
-<h3 id="deploy-using-source-to-image-s2i">Deploy using Source to Image (S2I)</h3>
-<p>There are a number of options for deploying to OCP, we are going to use <code>Source to Image</code> which directly builds from a source code repository such as <code>GitHub</code>.</p>
+<h3 id="deploy-using-source-to-image">Deploy using Source to Image</h3>
+<p>There are a number of options for deploying to OCP, we are going to use <em>Source to Image (S2I)</em> which directly builds from a source code repository such as GitHub.</p>
 <ul>
-<li>Click <strong>Add to Project</strong> and select the <strong>Browse Catalog</strong> option.</li>
+<li>Click <code>Add to Project</code> and select the <code>Browse Catalog</code> option.</li>
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp6.png" /></p>
 <ul>
@@ -1147,7 +1149,7 @@
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp7.png" /></p>
 <ul>
-<li>Supply an application name and provide the SSH url for the target GitHub repository. Then it is important to click the <strong>advanced options</strong> link as we need to configure some non-standard items as this is a secure repository.</li>
+<li>Supply an application name and provide the SSH URL for the target GitHub repository. Then it is important to click the <code>advanced options</code> link as we need to configure some non-standard items as this is a secure repository.</li>
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp8.png" /></p>
 <ul>
@@ -1155,19 +1157,19 @@
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp9.png" /></p>
 <ul>
-<li>There are many other options available but we want to go with the defaults so scroll down and click the <strong>Create</strong> button to complete.</li>
+<li>There are many other options available, but we want to go with the defaults so scroll down and click the <code>Create</code> button to complete.</li>
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp10.png" /></p>
 <ul>
-<li>A number of <code>Kubernetes Resources</code> will now be created including a <code>Build Config</code> and <code>Build</code> that will pull the source and build a deployment. When done on the overview section you should see summary information for the <code>Deployment Config</code> including that it has 1 <code>Pod</code> (note in a realistic environment we would set this to have &gt; 1 Pod for failover but it makes it easier for us to see logs with this 1 Pod running without having to configure an <code>ELK</code> stack) and it is running. Take note also of the <code>Route</code> highlighted which is the public ingress point to the micro-service and this is needed for configuring the environment variable in the <code>BAW</code> <a href="#configure-servers">config section</a> above.</li>
+<li>A number of Kubernetes resources will now be created including a <em>Build Config</em> and <em>Build</em> that will pull the source and build a deployment. When done on the overview section you should see summary information for the Deployment Config including that it has one pod (note in a realistic environment we may want to set this to have more than Pod for failover but it makes it easier for us to see logs with this one pod running without having to configure an <code>ELK</code> stack) and it is running. Take note also of the route highlighted which is the public ingress point to the micro-service and this is needed for configuring the environment variable in the BAW <a href="#configure-servers">config section</a> above.</li>
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp11.png" /></p>
 <ul>
-<li>Expand the twisty and you see more information on the <code>Deployment Config</code> including links to other resources which you can click on and explore. For now we want to verify the <code>Pod</code> is as expected so click on the icon of the <code>Pod</code> (top right).</li>
+<li>Expand the twisty and you see more information on the <code>Deployment Config</code> including links to other resources which you can click on and explore. For now we want to verify the pod is as expected so click on the icon of the pod (top right).</li>
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp12.png" /></p>
 <ul>
-<li>You are taken to the <code>Pod</code> summary and within that there is a <code>Logs</code> tab.</li>
+<li>You are taken to the pod summary and within that there is a <code>Logs</code> tab.</li>
 </ul>
 <p><img alt="" src="../images/micro-config-rhocp13.png" /></p>
 <ul>
