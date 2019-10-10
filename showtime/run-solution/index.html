@@ -756,22 +756,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#deploy-the-case-solution-in-workflow-center" title="Deploy the case solution in Workflow Center" class="md-nav__link">
-    Deploy the case solution in Workflow Center
+  <a href="#deploy-the-case-solution" title="Deploy the case solution" class="md-nav__link">
+    Deploy the case solution
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-case-security-configuration" title="Create Case security configuration" class="md-nav__link">
-    Create Case security configuration
+  <a href="#create-the-case-security-configuration" title="Create the case security configuration" class="md-nav__link">
+    Create the case security configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-bpm-user-groups" title="Create BPM user groups" class="md-nav__link">
-    Create BPM user groups
+  <a href="#create-the-bpm-user-groups" title="Create the BPM user groups" class="md-nav__link">
+    Create the BPM user groups
   </a>
   
 </li>
@@ -791,8 +791,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-the-baca-mediator-micro-service" title="Deploy the BACA mediator micro-service" class="md-nav__link">
-    Deploy the BACA mediator micro-service
+  <a href="#deploy-the-baca-mediator-service" title="Deploy the BACA mediator service" class="md-nav__link">
+    Deploy the BACA mediator service
   </a>
   
     <nav class="md-nav">
@@ -880,22 +880,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#deploy-the-case-solution-in-workflow-center" title="Deploy the case solution in Workflow Center" class="md-nav__link">
-    Deploy the case solution in Workflow Center
+  <a href="#deploy-the-case-solution" title="Deploy the case solution" class="md-nav__link">
+    Deploy the case solution
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-case-security-configuration" title="Create Case security configuration" class="md-nav__link">
-    Create Case security configuration
+  <a href="#create-the-case-security-configuration" title="Create the case security configuration" class="md-nav__link">
+    Create the case security configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-bpm-user-groups" title="Create BPM user groups" class="md-nav__link">
-    Create BPM user groups
+  <a href="#create-the-bpm-user-groups" title="Create the BPM user groups" class="md-nav__link">
+    Create the BPM user groups
   </a>
   
 </li>
@@ -915,8 +915,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-the-baca-mediator-micro-service" title="Deploy the BACA mediator micro-service" class="md-nav__link">
-    Deploy the BACA mediator micro-service
+  <a href="#deploy-the-baca-mediator-service" title="Deploy the BACA mediator service" class="md-nav__link">
+    Deploy the BACA mediator service
   </a>
   
     <nav class="md-nav">
@@ -975,7 +975,7 @@
                 
                 
                 <h1 id="running-the-solution">Running the solution</h1>
-<h2 id="deploy-the-case-solution-in-workflow-center">Deploy the case solution in Workflow Center</h2>
+<h2 id="deploy-the-case-solution">Deploy the case solution</h2>
 <ul>
 <li>Login to Workflow Center and open the Case Solution named <code>Denim Compute Auto Claims</code>:</li>
 </ul>
@@ -984,7 +984,7 @@
 <li>Click the deploy icon in the upper-right corner of the Case Builder:</li>
 </ul>
 <p><img alt="Deploy Case solution" src="../images/deploy-case-solution.png" title="Deploy Case solution" /></p>
-<h2 id="create-case-security-configuration">Create Case security configuration</h2>
+<h2 id="create-the-case-security-configuration">Create the case security configuration</h2>
 <ul>
 <li>In the Workflow Center, select the solution and click the contextual menu and then <code>Advanced</code>.</li>
 </ul>
@@ -1037,7 +1037,7 @@
 <li>Note if you ever need to review or change the security configuration settings you can launch it again and choose the <code>Edit a security configuration</code> option as shown here.</li>
 </ul>
 <p><img alt="" src="../images/case-security13.png" /></p>
-<h2 id="create-bpm-user-groups">Create BPM user groups</h2>
+<h2 id="create-the-bpm-user-groups">Create the BPM user groups</h2>
 <ul>
 <li>
 <p>The solution has a number of BPM teams defined that need to be mapped to users and groups. To do that, launch the Process Admin Console and then select <code>Server Admin</code> section.</p>
@@ -1058,20 +1058,20 @@
 </ul>
 <p><img alt="" src="../images/config-servers1.png" /></p>
 <ul>
-<li>Next choose the <code>Snapshots</code> section, select your snapshot (NB: the latest available snapshot is now v0.10.0) and from the contextual menu you <code>Activate</code> it.</li>
+<li>Next choose the <code>Snapshots</code> section, select your snapshot (the latest available snapshot is now v0.10.0) and from the contextual menu you <code>Activate</code> it. If the <code>Activate</code> menu item is not showing in the drop-down, make sure you have selected the <code>Advanced</code> profile for the user in the Workflow Center.</li>
 </ul>
 <p><img alt="" src="../images/config-servers2.png" /></p>
-<p>Note the next steps reference environment variables which require information from the <a href="#deploy-the-baca-mediator-microservice">deployment of the micro-service</a> so if you have not completed that yet then go to that section and return here to complete the <code>BAW</code> servers configuration.</p>
+<p>Note that the next steps reference environment variables which require information from the <a href="#deploy-the-baca-mediator-microservice">deployment of the micro-service</a>, so if you have not completed that yet, go to that section and return here to complete the <code>BAW</code> servers configuration.</p>
 <ul>
-<li>After this you can now go to the <code>Process Admin Console</code> and you should see the snapshot in the list of <code>Installed Apps</code>.</li>
+<li>Open the <code>Process Admin Console</code>; you should see the snapshot in the list of <code>Installed Apps</code>.</li>
 </ul>
 <p><img alt="" src="../images/config-servers3.png" /></p>
 <ul>
-<li>You click on the snapshot and then select the <code>Servers</code> section and you should see the two server definitions used (<code>DenimODMServer</code> for the referenced ODM Sever and <code>IBMBAW</code> for the referenced ECM server).</li>
+<li>Click on the snapshot and select the <code>Servers</code> section and you should see the two server definitions used (<code>DenimODMServer</code> for the referenced ODM Sever and <code>IBMBAW</code> for the referenced ECM server).</li>
 </ul>
 <p><img alt="" src="../images/config-servers4.png" /></p>
 <ul>
-<li>You should change the settings for the respective configured servers to match how you installed your environment (the <code>Hostname</code>, <code>Port</code> (if non standard) and user credentials (where relevant) need to be configured).</li>
+<li>You should change the settings for the respective configured servers to match your environment, i.e. the <code>Hostname</code>, the <code>Port</code> if non-standard, and user credentials (where relevant) need to be configured.</li>
 </ul>
 <p><img alt="" src="../images/config-servers5.png" /></p>
 <ul>
@@ -1079,7 +1079,7 @@
 </ul>
 <p><img alt="" src="../images/config-servers6.png" /></p>
 <h2 id="configure-baca-ontology">Configure BACA ontology</h2>
-<p>Currently <code>Business Automation Content Analyzer (BACA)</code> only allows for the import and export of an entire ontology, there is no merge capability of selective import. Therefore we recommend that you backup any existing ontology before proceeding.</p>
+<p>As of version 19.0.1 of the Cloud Pak for Automation, Business Automation Content Analyzer (BACA) only allows for the import and export of an entire ontology, there is no merge capability of selective import. Therefore we recommend that you backup any existing ontology before proceeding.</p>
 <ul>
 <li>First use the <code>Export Ontology</code> option as shown and save your existing ontology.</li>
 </ul>
@@ -1094,7 +1094,7 @@
 </ul>
 <p><img alt="" src="../images/config-baca2.png" /></p>
 <p>When you are finished with trying out the <a href="../../usecase/baca-scenario-walkthrough/">BACA scenario</a> you can re-import the saved JSON export of your original ontology.</p>
-<h2 id="deploy-the-baca-mediator-micro-service">Deploy the BACA mediator micro-service</h2>
+<h2 id="deploy-the-baca-mediator-service">Deploy the BACA mediator service</h2>
 <p><strong>NB:</strong> The following instructions are valid for an OCP 3.11 cluster.</p>
 <h3 id="configure-github-repository">Configure GitHub repository</h3>
 <p>We recommend using a secure private repository rather than a GitHub public one; the following instructions assume that is the case.
