@@ -1,6 +1,6 @@
 # Running the solution
 
-## Deploy the case solution in Workflow Center
+## Deploy the case solution
 - Login to Workflow Center and open the Case Solution named `Denim Compute Auto Claims`:
 
 ![Open Case solution](images/open-case-solution.png "Open Case solution")
@@ -9,7 +9,7 @@
 
 ![Deploy Case solution](images/deploy-case-solution.png "Deploy Case solution")
 
-## Create Case security configuration
+## Create the case security configuration
 
 - In the Workflow Center, select the solution and click the contextual menu and then `Advanced`.
 
@@ -63,7 +63,7 @@
 
 ![](images/case-security13.png)
 
-## Create BPM user groups
+## Create the BPM user groups
 
 - The solution has a number of BPM teams defined that need to be mapped to users and groups. To do that, launch the Process Admin Console and then select `Server Admin` section.
 
@@ -83,21 +83,21 @@ The solution integrates with the ODM and ECM components by using defined servers
 
 ![](images/config-servers1.png)
 
-- Next choose the `Snapshots` section, select your snapshot (NB: the latest available snapshot is now v0.10.0) and from the contextual menu you `Activate` it.
+- Next choose the `Snapshots` section, select your snapshot (the latest available snapshot is now v0.10.0) and from the contextual menu you `Activate` it. If the `Activate` menu item is not showing in the drop-down, make sure you have selected the `Advanced` profile for the user in the Workflow Center.
 
 ![](images/config-servers2.png)
 
-Note the next steps reference environment variables which require information from the [deployment of the micro-service](#deploy-the-baca-mediator-microservice) so if you have not completed that yet then go to that section and return here to complete the `BAW` servers configuration.
+Note that the next steps reference environment variables which require information from the [deployment of the micro-service](#deploy-the-baca-mediator-microservice), so if you have not completed that yet, go to that section and return here to complete the `BAW` servers configuration.
 
-- After this you can now go to the `Process Admin Console` and you should see the snapshot in the list of `Installed Apps`.
+- Open the `Process Admin Console`; you should see the snapshot in the list of `Installed Apps`.
 
 ![](images/config-servers3.png)
 
-- You click on the snapshot and then select the `Servers` section and you should see the two server definitions used (`DenimODMServer` for the referenced ODM Sever and `IBMBAW` for the referenced ECM server).
+- Click on the snapshot and select the `Servers` section and you should see the two server definitions used (`DenimODMServer` for the referenced ODM Sever and `IBMBAW` for the referenced ECM server).
 
 ![](images/config-servers4.png)
 
-- You should change the settings for the respective configured servers to match how you installed your environment (the `Hostname`, `Port` (if non standard) and user credentials (where relevant) need to be configured).
+- You should change the settings for the respective configured servers to match your environment, i.e. the `Hostname`, the `Port` if non-standard, and user credentials (where relevant) need to be configured.
 
 ![](images/config-servers5.png)
 
@@ -106,7 +106,7 @@ Note the next steps reference environment variables which require information fr
 ![](images/config-servers6.png)
 
 ## Configure BACA ontology
-Currently `Business Automation Content Analyzer (BACA)` only allows for the import and export of an entire ontology, there is no merge capability of selective import. Therefore we recommend that you backup any existing ontology before proceeding.
+As of version 19.0.1 of the Cloud Pak for Automation, Business Automation Content Analyzer (BACA) only allows for the import and export of an entire ontology, there is no merge capability of selective import. Therefore we recommend that you backup any existing ontology before proceeding.
 
 - First use the `Export Ontology` option as shown and save your existing ontology.
 
@@ -120,7 +120,7 @@ Currently `Business Automation Content Analyzer (BACA)` only allows for the impo
 
 When you are finished with trying out the [BACA scenario](../usecase/baca-scenario-walkthrough.md) you can re-import the saved JSON export of your original ontology.
 
-## Deploy the BACA mediator micro-service
+## Deploy the BACA mediator service
 
 **NB:** The following instructions are valid for an OCP 3.11 cluster.
 

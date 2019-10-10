@@ -1,6 +1,6 @@
 # Introduction
 
-<img src="./images/denim-compute.png"/>The goal of *Denim Compute* is to provide a reference implementation for a *Digital Business Automation* (DBA) solution on Kubernetes application platforms.
+<img src="./images/denim-compute.png" style="border: 0px"/> The goal of *Denim Compute* is to provide a reference implementation for a *Digital Business Automation* (DBA) solution on Kubernetes application platforms.
 
 Denim Compute relies on the automobile insurance claim processing use case, a poster child of business automation applications, and focuses on the capabilities available in the [IBM Cloud Pak for Automation](https://www.ibm.com/cloud/cloud-pak-for-automation) to implement it. As of [version 19.0.1](https://www-01.ibm.com/support/docview.wss?uid=ibm10878709) of the Cloud Pak, these capabilities are:
 
